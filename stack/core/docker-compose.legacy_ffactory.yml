@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  legacy-ffactory-bridge:
+    image: alpine:3.20
+    container_name: hyper_legacy_ffactory_bridge
+    command: |
+      sh -c '
+        echo "🔗 جسر اتصال مع ffactory القديم"
+        echo "📍 هذا الحاوية تربط HyperFFactory بالمشاريع القديمة"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    networks:
+      - hyperffactory-net
+
+  legacy-ffactory2-bridge:
+    image: alpine:3.20
+    container_name: hyper_legacy_ffactory2_bridge
+    command: |
+      sh -c '
+        echo "🔗 جسر اتصال مع ffactory2 القديم"
+        echo "📍 هذا الحاوية تربط HyperFFactory بالمشاريع القديمة"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    networks:
+      - hyperffactory-net
+
+networks:
+  hyperffactory-net:
+    driver: bridge
+    name: hyperffactory-legacy-bridge

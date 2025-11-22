@@ -1,0 +1,82 @@
+track_id: backend_junior
+name: "Backend Junior Skills – HyperFFactory"
+phases:
+  - id: phase0_basics
+    name: "أساسيات الحاسب"
+    skills:
+      - id: computer_basics
+        name: "Computer Basics"
+      - id: terminal_basics
+        name: "Terminal Basics"
+      - id: git_basics
+        name: "Git Basics"
+
+  - id: phase1_python_core
+    name: "أساسيات بايثون"
+    skills:
+      - id: python_syntax_basics
+        name: "Python Syntax Basics"
+      - id: python_control_flow
+        name: "Control Flow"
+      - id: python_functions_basics
+        name: "Functions Basics"
+      - id: python_collections_basics
+        name: "Collections Basics"
+
+  - id: phase2_python_project
+    name: "بايثون للمشاريع"
+    skills:
+      - id: python_oop_basics
+        name: "OOP Basics"
+      - id: python_errors_handling
+        name: "Error Handling"
+      - id: python_modules_packages
+        name: "Modules & Packages"
+      - id: python_venv_pip
+        name: "venv & pip"
+
+  - id: phase3_backend_basics
+    name: "Backend Basics"
+    skills:
+      - id: web_http_fundamentals
+        name: "HTTP Fundamentals"
+      - id: rest_api_concepts
+        name: "REST API Concepts"
+      - id: backend_framework_intro
+        name: "Backend Framework Intro"
+      - id: request_response_handling
+        name: "Request/Response Handling"
+
+  - id: phase4_db
+    name: "قواعد البيانات"
+    skills:
+      - id: db_relational_basics
+        name: "Relational DB Basics"
+      - id: sql_query_basics
+        name: "SQL Query Basics"
+      - id: db_modeling_basic
+        name: "DB Modeling Basics"
+      - id: orm_basics
+        name: "ORM Basics"
+
+  - id: phase5_craft
+    name: "Backend Craft"
+    skills:
+      - id: auth_basics
+        name: "Auth Basics"
+      - id: validation_and_schemas
+        name: "Validation & Schemas"
+      - id: logging_basics
+        name: "Logging Basics"
+      - id: testing_basics
+        name: "Testing Basics"
+
+  - id: phase6_deploy
+    name: "النشر"
+    skills:
+      - id: environments_config
+        name: "Environments & Config"
+      - id: basic_deployment_vps
+        name: "Basic VPS Deployment"
+      - id: container_intro
+        name: "Containers Intro"

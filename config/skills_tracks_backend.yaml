@@ -1,0 +1,51 @@
+tracks:
+  - id: backend_junior
+    name: "Backend Junior Track"
+    phases:
+      - id: phase0_basics
+        name: "Phase 0 – الأساسيات"
+        skills:
+          - computer_basics
+          - terminal_basics
+          - git_basics
+      - id: phase1_python_fundamentals
+        name: "Phase 1 – أساسيات بايثون"
+        skills:
+          - python_syntax_basics
+          - python_control_flow
+          - python_functions_basics
+          - python_collections_basics
+      - id: phase2_python_projects
+        name: "Phase 2 – بايثون المتقدمة للمشاريع"
+        skills:
+          - python_oop_basics
+          - python_errors_handling
+          - python_modules_packages
+          - python_venv_pip
+      - id: phase3_backend_basics
+        name: "Phase 3 – Backend Basics"
+        skills:
+          - web_http_fundamentals
+          - rest_api_concepts
+          - backend_framework_intro
+          - request_response_handling
+      - id: phase4_databases
+        name: "Phase 4 – قواعد بيانات"
+        skills:
+          - db_relational_basics
+          - sql_query_basics
+          - db_modeling_basic
+          - orm_basics
+      - id: phase5_backend_craft
+        name: "Phase 5 – Backend Craft"
+        skills:
+          - auth_basics
+          - validation_and_schemas
+          - logging_basics
+          - testing_basics
+      - id: phase6_deployment
+        name: "Phase 6 – Deployment"
+        skills:
+          - environments_config
+          - basic_deployment_vps
+          - container_intro

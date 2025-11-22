@@ -1,0 +1,34 @@
+apps:
+  - id: timeline_analyzer
+    name: "Timeline Analyzer"
+    category: "forensics"
+    path: "apps/timeline_analyzer"
+    entry_script: "run.sh"
+    required_stacks:
+      - core_elk
+    ports:
+      - "8081"
+    description: "تحليل خطوط الزمن من اللوجات والأحداث (Placeholder)."
+
+  - id: netflow_inspector
+    name: "Netflow Inspector"
+    category: "network"
+    path: "apps/netflow_inspector"
+    entry_script: "run.sh"
+    required_stacks:
+      - core_elk
+      - monitoring
+    ports:
+      - "8082"
+    description: "تحليل تدفق الشبكة وربطها باللوجات (Placeholder)."
+
+  - id: backend_coach_api
+    name: "Backend Coach API"
+    category: "ai_coach"
+    path: "apps/backend_coach_api"
+    entry_script: "run.sh"
+    required_stacks:
+      - ai_support
+    ports:
+      - "9090"
+    description: "API لتدريب المبرمجين على مسار Backend Junior باستخدام Skills & Tracks (Placeholder)."

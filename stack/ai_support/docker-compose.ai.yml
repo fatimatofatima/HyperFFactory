@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  ai_gateway:
+    image: alpine:3.20
+    command: ["sh", "-c", "echo 'ai_support placeholder running'; tail -f /dev/null"]
+    container_name: hyper_ai_gateway

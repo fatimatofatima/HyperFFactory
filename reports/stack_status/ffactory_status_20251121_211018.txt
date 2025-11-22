@@ -1,0 +1,30 @@
+HyperFFactory – Status 20251121_211018
+===============================
+
+Stack: hyper_ffactory
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Docker containers (summary):
+NAMES                    STATUS         PORTS
+hyper_ai_gateway         Up 2 minutes   
+hyper_monitoring_node    Up 2 minutes   
+hyper_core_logstore      Up 2 minutes   
+ffactory-elk-example-1   Up 36 hours    0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+web-redis-1              Up 3 days      6379/tcp

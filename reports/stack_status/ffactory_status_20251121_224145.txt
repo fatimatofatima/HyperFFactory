@@ -1,0 +1,109 @@
+HyperFFactory – Status 20251121_224145
+===============================
+
+Stack: core_elk
+--------------------
+NAME                            IMAGE                                                  COMMAND                    SERVICE                   CREATED          STATUS          PORTS
+ffactory-elk-example-1          docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"     elk-example               37 hours ago     Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway                alpine:3.20                                            "sh -c 'echo 'ai_sup…"     ai_gateway                2 hours ago      Up 2 hours      
+hyper_core_logstore             alpine:3.20                                            "sh -c 'echo 'core_e…"     core_logstore             2 hours ago      Up 2 hours      
+hyper_legacy_ffactory2_bridge   alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory2-bridge   15 minutes ago   Up 15 minutes   
+hyper_legacy_ffactory_bridge    alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory-bridge    15 minutes ago   Up 15 minutes   
+hyper_monitoring_node           alpine:3.20                                            "sh -c 'echo 'monito…"     monitoring_node           2 hours ago      Up 2 hours      
+
+Stack: monitoring
+--------------------
+NAME                            IMAGE                                                  COMMAND                    SERVICE                   CREATED          STATUS          PORTS
+ffactory-elk-example-1          docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"     elk-example               37 hours ago     Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway                alpine:3.20                                            "sh -c 'echo 'ai_sup…"     ai_gateway                2 hours ago      Up 2 hours      
+hyper_core_logstore             alpine:3.20                                            "sh -c 'echo 'core_e…"     core_logstore             2 hours ago      Up 2 hours      
+hyper_legacy_ffactory2_bridge   alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory2-bridge   15 minutes ago   Up 15 minutes   
+hyper_legacy_ffactory_bridge    alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory-bridge    15 minutes ago   Up 15 minutes   
+hyper_monitoring_node           alpine:3.20                                            "sh -c 'echo 'monito…"     monitoring_node           2 hours ago      Up 2 hours      
+
+Stack: ai_support
+--------------------
+NAME                            IMAGE                                                  COMMAND                    SERVICE                   CREATED          STATUS          PORTS
+ffactory-elk-example-1          docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"     elk-example               37 hours ago     Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway                alpine:3.20                                            "sh -c 'echo 'ai_sup…"     ai_gateway                2 hours ago      Up 2 hours      
+hyper_core_logstore             alpine:3.20                                            "sh -c 'echo 'core_e…"     core_logstore             2 hours ago      Up 2 hours      
+hyper_legacy_ffactory2_bridge   alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory2-bridge   15 minutes ago   Up 15 minutes   
+hyper_legacy_ffactory_bridge    alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory-bridge    15 minutes ago   Up 15 minutes   
+hyper_monitoring_node           alpine:3.20                                            "sh -c 'echo 'monito…"     monitoring_node           2 hours ago      Up 2 hours      
+
+Stack: smartfriend_ai
+--------------------
+Compose file not found: /root/HyperFFactory/stack/ai_support/docker-compose.smartfriend.yml
+stack/ai_support/docker-compose.smartfriend.yml
+
+Stack: smartfriend_suite
+--------------------
+  sf-bot-programmer.service                                                                             loaded    active     running      SmartFriend Programmer Bot
+  sf-bot.service                                                                                        loaded    active     running      Main Telegram Bot
+  sf-core.service                                                                                       loaded    active     running      SmartFriend Core API (8383)
+  sf-health.service                                                                                     loaded    active     running      SmartFriend Health Gate (8210)
+  sf-web.service                                                                                        loaded    active     running      SmartFriend Web UI (8390)
+  sf-bots.target                                                                                        loaded    inactive   dead         SmartFriend Telegram Bots
+
+Stack: timeline_analyzer
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: netflow_inspector
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: backend_coach_api
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: legacy_bridge
+--------------------
+NAME                            IMAGE                                                  COMMAND                    SERVICE                   CREATED          STATUS          PORTS
+ffactory-elk-example-1          docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"     elk-example               37 hours ago     Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway                alpine:3.20                                            "sh -c 'echo 'ai_sup…"     ai_gateway                2 hours ago      Up 2 hours      
+hyper_core_logstore             alpine:3.20                                            "sh -c 'echo 'core_e…"     core_logstore             2 hours ago      Up 2 hours      
+hyper_legacy_ffactory2_bridge   alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory2-bridge   15 minutes ago   Up 15 minutes   
+hyper_legacy_ffactory_bridge    alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory-bridge    15 minutes ago   Up 15 minutes   
+hyper_monitoring_node           alpine:3.20                                            "sh -c 'echo 'monito…"     monitoring_node           2 hours ago      Up 2 hours      
+
+Stack: debug_expert
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: system_architect
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: technical_coach
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: integration_specialist
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: legacy_bridge
+--------------------
+NAME                            IMAGE                                                  COMMAND                    SERVICE                   CREATED          STATUS          PORTS
+ffactory-elk-example-1          docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"     elk-example               37 hours ago     Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway                alpine:3.20                                            "sh -c 'echo 'ai_sup…"     ai_gateway                2 hours ago      Up 2 hours      
+hyper_core_logstore             alpine:3.20                                            "sh -c 'echo 'core_e…"     core_logstore             2 hours ago      Up 2 hours      
+hyper_legacy_ffactory2_bridge   alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory2-bridge   15 minutes ago   Up 15 minutes   
+hyper_legacy_ffactory_bridge    alpine:3.20                                            "sh -c '\n  echo \"🔗 …"   legacy-ffactory-bridge    15 minutes ago   Up 15 minutes   
+hyper_monitoring_node           alpine:3.20                                            "sh -c 'echo 'monito…"     monitoring_node           2 hours ago      Up 2 hours      
+
+Stack: smartfriend_ai
+--------------------
+Compose file not found: /root/HyperFFactory/stack/ai_support/docker-compose.smartfriend.yml
+stack/ai_support/docker-compose.smartfriend.yml
+
+Docker containers (summary):
+NAMES                           STATUS          PORTS
+hyper_legacy_ffactory2_bridge   Up 15 minutes   
+hyper_legacy_ffactory_bridge    Up 15 minutes   
+hyper_ai_gateway                Up 2 hours      
+hyper_monitoring_node           Up 2 hours      
+hyper_core_logstore             Up 2 hours      
+ffactory-elk-example-1          Up 37 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+web-redis-1                     Up 4 days       6379/tcp

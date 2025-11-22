@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  core_logstore:
+    image: alpine:3.20
+    command: ["sh", "-c", "echo 'core_elk placeholder running'; tail -f /dev/null"]
+    container_name: hyper_core_logstore

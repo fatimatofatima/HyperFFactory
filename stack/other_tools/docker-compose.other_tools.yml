@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  hyper-tools-manager:
+    image: alpine:3.20
+    container_name: hyper_tools_manager
+    command: |
+      sh -c '
+        echo "🛠️ مدير أدوات HyperFFactory"
+        echo "📍 إدارة الأدوات والوظائف المساعدة"
+        echo "🔧 أدوات: تنظيف, نسخ احتياطي, تحليل"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    networks:
+      hyperffactory-core-net:
+        aliases:
+          - tools-manager
+
+  hyper-utilities:
+    image: alpine:3.20
+    container_name: hyper_utilities
+    command: |
+      sh -c '
+        echo "🔧 أدوات مساعدة HyperFFactory"
+        echo "📍 وظائف مساعدة متنوعة"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    networks:
+      hyperffactory-core-net:
+        aliases:
+          - utilities
+
+networks:
+  hyperffactory-core-net:
+    external: true
+    name: hyperffactory-core-net

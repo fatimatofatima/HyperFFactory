@@ -1,0 +1,14 @@
+HyperFFactory – Status 20251121_234715
+===============================
+
+Docker containers (summary):
+NAMES                           STATUS             PORTS
+hyper_smartfriend_knowledge     Up 4 minutes       
+hyper_smartfriend_ai_bridge     Up 4 minutes       0.0.0.0:8484->8484/tcp, [::]:8484->8484/tcp
+hyper_legacy_ffactory2_bridge   Up About an hour   
+hyper_legacy_ffactory_bridge    Up About an hour   
+hyper_ai_gateway                Up 3 hours         
+hyper_monitoring_node           Up 3 hours         
+hyper_core_logstore             Up 3 hours         
+ffactory-elk-example-1          Up 38 hours        0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+web-redis-1                     Up 4 days          6379/tcp

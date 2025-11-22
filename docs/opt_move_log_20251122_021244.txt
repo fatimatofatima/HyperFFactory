@@ -1,0 +1,32 @@
+OPT MOVE LOG 20251122_021244
+SRC: /opt
+DST: /root/HyperFFactory/imported/opt
+
+OK	/opt/COMPLETE_CODE_BACKUP	/root/HyperFFactory/imported/opt/COMPLETE_CODE_BACKUP
+OK	/opt/ULTIMATE_FUSION	/root/HyperFFactory/imported/opt/ULTIMATE_FUSION
+OK	/opt/__pycache__	/root/HyperFFactory/imported/opt/__pycache__
+OK	/opt/bin	/root/HyperFFactory/imported/opt/bin
+OK	/opt/FINAL_REPORT.md	/root/HyperFFactory/imported/opt/FINAL_REPORT.md
+OK	/opt/README.md	/root/HyperFFactory/imported/opt/README.md
+OK	/opt/REAL_COMPLETE_INDEX.md	/root/HyperFFactory/imported/opt/REAL_COMPLETE_INDEX.md
+OK	/opt/LICENSE	/root/HyperFFactory/imported/opt/LICENSE
+OK	/opt/android-sdk	/root/HyperFFactory/imported/opt/android-sdk
+OK	/opt/backup	/root/HyperFFactory/imported/opt/backup
+OK	/opt/build_smart.py	/root/HyperFFactory/imported/opt/build_smart.py
+OK	/opt/deepseek	/root/HyperFFactory/imported/opt/deepseek
+OK	/opt/control_panel.sh	/root/HyperFFactory/imported/opt/control_panel.sh
+OK	/opt/ffactory_quick.sh	/root/HyperFFactory/imported/opt/ffactory_quick.sh
+OK	/opt/github_cache	/root/HyperFFactory/imported/opt/github_cache
+OK	/opt/jadx	/root/HyperFFactory/imported/opt/jadx
+OK	/opt/report	/root/HyperFFactory/imported/opt/report
+OK	/opt/portsboard	/root/HyperFFactory/imported/opt/portsboard
+OK	/opt/containerd	/root/HyperFFactory/imported/opt/containerd
+OK	/opt/server_scripts.tar.gz	/root/HyperFFactory/imported/opt/server_scripts.tar.gz
+OK	/opt/sf-venv	/root/HyperFFactory/imported/opt/sf-venv
+OK	/opt/smartfriend-suite	/root/HyperFFactory/imported/opt/smartfriend-suite
+OK	/opt/lib	/root/HyperFFactory/imported/opt/lib
+OK	/opt/quick_start.sh	/root/HyperFFactory/imported/opt/quick_start.sh
+OK	/opt/smartfriend_quick.sh	/root/HyperFFactory/imported/opt/smartfriend_quick.sh
+OK	/opt/smartfriend_builder.sh	/root/HyperFFactory/imported/opt/smartfriend_builder.sh
+OK	/opt/secure	/root/HyperFFactory/imported/opt/secure
+OK	/opt/smartfrind	/root/HyperFFactory/imported/opt/smartfrind

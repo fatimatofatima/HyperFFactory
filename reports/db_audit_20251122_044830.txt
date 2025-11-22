@@ -1,0 +1,110 @@
+==================================================
+ HyperFFactory DB Audit (READ-ONLY)
+ Timestamp : 20251122_044830
+ Root      : /root/HyperFFactory
+ Runtime   : /opt/hyper-factory/var/db
+ Report    : /root/HyperFFactory/reports/db_audit_20251122_044830.txt
+==================================================
+
+== [META] hyper_meta.db summary ==
+memory_core|278|60139.17
+other|61|11967.47
+knowledge_hub|107|7913.3
+factory_ops|1|10.03
+meta_control|10|4.96
+identity|36|3.63
+smartfriend_legacy|11|0.32
+data_home|6|0.07
+|29|0.0
+
+== [META] Top 30 DB files by size (role, size_mb, path) ==
+!! تعذر قراءة قائمة أكبر الملفات
+
+== [RUNTIME] identity.db – basic info ==
+Path: /opt/hyper-factory/var/db/identity/identity.db
+-- integrity_check --
+ok
+
+-- .tables --
+tables: capabilities             entity_capabilities      identity_sources       
+tables: capabilities_profile     identity_migrations      role_assignments       
+tables: entities                 identity_migrations_new  roles                  
+
+-- row counts (entities/roles/role_assignments/capabilities/identity_sources/capabilities_profile/entity_capabilities) --
+count(entities) = 0
+count(roles) = 0
+count(role_assignments) = 0
+count(capabilities) = 0
+count(entity_capabilities) = 0
+count(identity_sources) = 0
+count(capabilities_profile) = 0
+count(identity_migrations) = 0
+
+-- schema: entities --
+CREATE TABLE entities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_type TEXT NOT NULL,            -- user / agent / service / project / device ...
+    name TEXT NOT NULL,                   -- اسم الكيان
+    status TEXT,                          -- active / disabled / legacy / unknown
+    external_ref TEXT UNIQUE,             -- مرجع (db:table:pk) من قواعد قديمة
+    meta_json TEXT,                       -- مساحة مفتوحة لأي ميتا إضافي
+    created_at TEXT NOT NULL,
+    updated_at TEXT
+, external_id TEXT, external_source TEXT, metadata_json TEXT);
+CREATE INDEX idx_entities_type   ON entities(entity_type);
+CREATE INDEX idx_entities_status ON entities(status);
+CREATE INDEX idx_entities_external ON entities(external_id, external_source);
+
+== [RUNTIME] memory_core_2025.db – basic info ==
+Path: /opt/hyper-factory/var/db/memory/memory_core_2025.db
+-- integrity_check --
+ok
+
+-- .tables --
+tables: events           sessions         state_snapshots
+
+-- row counts (events/sessions/state_snapshots) --
+count(events) = 0
+count(sessions) = 0
+count(state_snapshots) = 0
+
+-- schema: events --
+CREATE TABLE events (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp        TEXT NOT NULL,
+    source_entity_id INTEGER,
+    event_type       TEXT NOT NULL,
+    severity         TEXT,
+    payload_json     TEXT NOT NULL,
+    correlation_id   TEXT,
+    created_at       TEXT NOT NULL
+);
+CREATE INDEX idx_events_time   ON events(timestamp);
+CREATE INDEX idx_events_type   ON events(event_type);
+CREATE INDEX idx_events_entity ON events(source_entity_id);
+
+-- schema: state_snapshots --
+CREATE TABLE state_snapshots (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    snapshot_key     TEXT NOT NULL,
+    taken_at         TEXT NOT NULL,
+    source_entity_id INTEGER,
+    scope_type       TEXT NOT NULL,
+    scope_id         TEXT,
+    summary          TEXT,
+    state_json       TEXT NOT NULL
+);
+CREATE INDEX idx_snapshots_time  ON state_snapshots(taken_at);
+CREATE INDEX idx_snapshots_scope ON state_snapshots(scope_type, scope_id);
+
+== [LEGACY/KNOWLEDGE] ملخص من hyper_meta.db (بدون فتح قواعد البيانات نفسها) ==
+-- memory_core مصادر الذاكرة التاريخية (top 10 by size) --
+
+-- knowledge_hub مصادر المعرفة (top 10 by size) --
+
+-- smartfriend_legacy قواعد البيانات القديمة (كلها) --
+
+==================================================
+انتهى الفحص (READ-ONLY). التقرير محفوظ في:
+  /root/HyperFFactory/reports/db_audit_20251122_044830.txt
+==================================================

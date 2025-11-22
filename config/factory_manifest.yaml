@@ -1,0 +1,33 @@
+# HyperFFactory Factory Manifest
+# هذا الملف يحدد كل الـ stacks والـ apps المتاحة
+
+stacks:
+  core_elk:
+    type: docker
+    compose_file: stack/core/docker-compose.core.yml
+    description: "Core ELK stack with Elasticsearch, Logstash, Kibana"
+
+  monitoring:
+    type: docker  
+    compose_file: stack/monitoring/docker-compose.monitoring.yml
+    description: "Monitoring stack with alerts and dashboards"
+
+  ai_support:
+    type: docker
+    compose_file: stack/ai_support/docker-compose.ai.yml  
+    description: "AI support stack with gateway and agents"
+
+  smartfriend_ai:
+    type: docker
+    compose_file: stack/ai_support/docker-compose.smartfriend.yml
+    description: "Bridge stack to SmartFriend AI Suite"
+
+  legacy_bridge:
+    type: docker
+    compose_file: stack/core/docker-compose.legacy_ffactory.yml
+    description: "Bridge to legacy ffactory systems"
+
+apps:
+  smartfriend_suite:
+    type: systemd
+    description: "SmartFriend AI Suite (systemd services)"

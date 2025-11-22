@@ -1,0 +1,5 @@
+services:
+  noop:
+    image: alpine:3.20
+    container_name: hyper_noop_placeholder
+    command: ["sh", "-c", "echo 'HyperFFactory noop logical stack'; sleep 3600"]

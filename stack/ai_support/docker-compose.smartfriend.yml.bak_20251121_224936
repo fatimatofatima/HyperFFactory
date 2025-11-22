@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  smartfriend-ai-bridge:
+    image: alpine:3.20
+    container_name: hyper_smartfriend_ai_bridge
+    command: |
+      sh -c '
+        echo "🧠 جسر اتصال مع SmartFriend AI Suite"
+        echo "📍 هذا الحاوية تربط HyperFFactory بنظام الذكاء الاصطناعي"
+        echo "🔗 APIs: /api/v1/chat, /api/v1/agents, /api/v1/knowledge"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    ports:
+      - "8484:8484"  # SmartFriend AI Bridge
+    networks:
+      - hyperffactory-ai-net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+
+  smartfriend-knowledge-base:
+    image: alpine:3.20
+    container_name: hyper_smartfriend_knowledge
+    command: |
+      sh -c '
+        echo "📚 قاعدة معرفة SmartFriend AI"
+        echo "📍 تخزين وتحليل البيانات المعرفية"
+        echo "🕒 تم الإنشاء: $(date)"
+        tail -f /dev/null
+      '
+    networks:
+      - hyperffactory-ai-net
+    volumes:
+      - ./knowledge:/app/knowledge
+
+networks:
+  hyperffactory-ai-net:
+    driver: bridge
+    name: hyperffactory-ai-net

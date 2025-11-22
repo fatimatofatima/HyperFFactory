@@ -1,0 +1,35 @@
+HyperFFactory Stack Health - 20251121_214655
+==================================
+
+Stack: core_elk
+--------------------
+NAME                     IMAGE                                                  COMMAND                  SERVICE           CREATED          STATUS          PORTS
+ffactory-elk-example-1   docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"   elk-example       36 hours ago     Up 36 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway         alpine:3.20                                            "sh -c 'echo 'ai_sup…"   ai_gateway        39 minutes ago   Up 39 minutes   
+hyper_core_logstore      alpine:3.20                                            "sh -c 'echo 'core_e…"   core_logstore     39 minutes ago   Up 39 minutes   
+hyper_monitoring_node    alpine:3.20                                            "sh -c 'echo 'monito…"   monitoring_node   39 minutes ago   Up 39 minutes   
+
+Stack: monitoring
+--------------------
+NAME                     IMAGE                                                  COMMAND                  SERVICE           CREATED          STATUS          PORTS
+ffactory-elk-example-1   docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"   elk-example       36 hours ago     Up 36 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway         alpine:3.20                                            "sh -c 'echo 'ai_sup…"   ai_gateway        39 minutes ago   Up 39 minutes   
+hyper_core_logstore      alpine:3.20                                            "sh -c 'echo 'core_e…"   core_logstore     39 minutes ago   Up 39 minutes   
+hyper_monitoring_node    alpine:3.20                                            "sh -c 'echo 'monito…"   monitoring_node   39 minutes ago   Up 39 minutes   
+
+Stack: ai_support
+--------------------
+NAME                     IMAGE                                                  COMMAND                  SERVICE           CREATED          STATUS          PORTS
+ffactory-elk-example-1   docker.elastic.co/elasticsearch/elasticsearch:8.15.0   "/bin/tini -- /usr/l…"   elk-example       36 hours ago     Up 36 hours     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 9300/tcp
+hyper_ai_gateway         alpine:3.20                                            "sh -c 'echo 'ai_sup…"   ai_gateway        39 minutes ago   Up 39 minutes   
+hyper_core_logstore      alpine:3.20                                            "sh -c 'echo 'core_e…"   core_logstore     39 minutes ago   Up 39 minutes   
+hyper_monitoring_node    alpine:3.20                                            "sh -c 'echo 'monito…"   monitoring_node   39 minutes ago   Up 39 minutes   
+
+Stack: smartfriend_suite
+--------------------
+  sf-bot-programmer.service                                                                             loaded    active     running      SmartFriend Programmer Bot
+  sf-bot.service                                                                                        loaded    active     running      Main Telegram Bot
+  sf-core.service                                                                                       loaded    active     running      SmartFriend Core API (8383)
+  sf-health.service                                                                                     loaded    active     running      SmartFriend Health Gate (8210)
+  sf-web.service                                                                                        loaded    active     running      SmartFriend Web UI (8390)
+  sf-bots.target                                                                                        loaded    inactive   dead         SmartFriend Telegram Bots

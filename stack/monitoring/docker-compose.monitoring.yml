@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  monitoring_node:
+    image: alpine:3.20
+    command: ["sh", "-c", "echo 'monitoring placeholder running'; tail -f /dev/null"]
+    container_name: hyper_monitoring_node

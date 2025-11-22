@@ -1,0 +1,13 @@
+HyperFFactory – Simple Patterns Report - 20251121_142028
+===============================================
+Total lines in messages.jsonl: 1
+
+Top keywords (very naive grep counts):
+  - ERROR: 0
+  - Traceback: 0
+  - WARNING: 0
+  - BUG: 0
+  - FIX: 0
+  - TODO: 0
+
+This is فقط تحليل بدائي. لاحقًا يربط مع Python/LLM لتحليل أعمق.

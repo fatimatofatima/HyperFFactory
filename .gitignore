@@ -1,0 +1,96 @@
+# الملفات والمجلدات الكبيرة
+_root_legacy_20251122_023221/
+opt/imported/
+opt/_root_legacy_20251122_023221/
+collected_databases_20251122_081409/
+original_system_dbs_20251122_085558/
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+._*
+
+# الملفات المؤقتة
+*.tmp
+*.temp
+*.log
+*.cache
+logs/
+tmp/
+temp/
+cache/
+.cache/
+
+# ملفات بايثون
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ملفات النسخ الاحتياطي
+*.bak
+*.backup
+*_backup/
+backup*/
+backups/
+backups_legacy/
+
+# ملفات البيانات الكبيرة
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.sqlite3-journal
+
+# ملفات الوسائط
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+
+# ملفات الأرشيف
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.iso
+
+# ملفات التثبيت
+*.deb
+*.rpm
+*.msi
+*.dmg
+*.pkg
+
+# ملفات السجلات
+*.log
+logs/
+var/log/
+
+# ملفات IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ملفات النظام المحددة
+snap/
+.trash/

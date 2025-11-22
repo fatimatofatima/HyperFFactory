@@ -1,0 +1,47 @@
+
+  legacy_bridge:
+    type: docker
+    compose_file: stack/core/docker-compose.legacy_ffactory.yml
+    description: "Bridge stack for ffactory / ffactory2 legacy services"
+
+
+
+  smartfriend_ai:
+    type: docker
+    compose_file: stack/ai_support/docker-compose.smartfriend.yml
+    description: "Bridge stack to SmartFriend AI Suite (systemd services + APIs)"
+
+  timeline_analyzer:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for timeline analyzer (no containers)"
+
+  netflow_inspector:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for netflow inspector (no containers)"
+
+  backend_coach_api:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for backend coach api"
+
+  debug_expert:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for debug expert agent"
+
+  system_architect:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for system architect agent"
+
+  technical_coach:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for technical coach agent"
+
+  integration_specialist:
+    type: docker
+    compose_file: stack/core/docker-compose.noop.yml
+    description: "Logical stack placeholder for integration specialist agent"

@@ -1,0 +1,18 @@
+HyperFFactory Stack Health - 20251121_141318
+==================================
+
+Stack: hyper_ffactory
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
+
+Stack: id:
+--------------------
+Compose file not found: /root/HyperFFactory/
