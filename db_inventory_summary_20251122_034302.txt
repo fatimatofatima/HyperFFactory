@@ -1,0 +1,144 @@
+=== HyperFFactory DB Inventory ===
+ROOT: /root/HyperFFactory
+DB_DIR: /root/HyperFFactory/all_legacy_dbs
+Total DB files: 539
+Total size (MB): 80038.93
+
+=== Errors / Non-SQLite (29) ===
+- memory.v10.db :: NOT_SQLITE
+- memory.v18.db :: NOT_SQLITE
+- memory.v22.db :: NOT_SQLITE
+- memory.v25.db :: NOT_SQLITE
+- memory.v28.db :: NOT_SQLITE
+- memory.v29.db :: NOT_SQLITE
+- memory.v37.db :: NOT_SQLITE
+- memory.v4.db :: NOT_SQLITE
+- memory.v40.db :: NOT_SQLITE
+- memory.v43.db :: NOT_SQLITE
+- memory.v48.db :: NOT_SQLITE
+- memory.v5.db :: NOT_SQLITE
+- memory.v59.db :: NOT_SQLITE
+- memory.v62.db :: NOT_SQLITE
+- memory.v9.db :: NOT_SQLITE
+- smart_core_memory.db :: NOT_SQLITE
+- smart_core_memory.v10.db :: NOT_SQLITE
+- smart_core_memory.v11.db :: NOT_SQLITE
+- smart_core_memory.v13.db :: NOT_SQLITE
+- smart_core_memory.v14.db :: NOT_SQLITE
+- smart_core_memory.v2.db :: NOT_SQLITE
+- smart_core_memory.v3.db :: NOT_SQLITE
+- smart_core_memory.v4.db :: NOT_SQLITE
+- smart_core_memory.v6.db :: NOT_SQLITE
+- smart_core_memory.v7.db :: NOT_SQLITE
+- smart_core_memory.v8.db :: NOT_SQLITE
+- smart_core_memory.v9.db :: NOT_SQLITE
+- smartfriend_unified.db :: NOT_SQLITE
+- smartfriend_unified.v13.db :: NOT_SQLITE
+
+=== Roles Overview ===
+[data_home] count=6, size_mb=0.07
+[factory_ops] count=1, size_mb=10.03
+[identity] count=36, size_mb=3.63
+[knowledge_hub] count=107, size_mb=7913.29
+[memory_core] count=278, size_mb=60139.18
+[meta_control] count=10, size_mb=4.96
+[other] count=61, size_mb=11967.45
+[smartfriend_legacy] count=11, size_mb=0.32
+[unknown] count=29, size_mb=0.00
+
+=== Top DBs per Role (by size) ===
+
+## Role: data_home
+- data_home.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.db
+- data_home.v2.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.v2.db
+- data_home.v3.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.v3.db
+- data_home.v4.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.v4.db
+- data_home.v5.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.v5.db
+- data_home.v6.db | 0.01 MB | tables=2 | path=all_legacy_dbs/data_home.v6.db
+
+## Role: factory_ops
+- factory.db | 10.03 MB | tables=31 | path=all_legacy_dbs/factory.db
+
+## Role: identity
+- smartfrind.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.db
+- smartfrind.v11.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v11.db
+- smartfrind.v12.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v12.db
+- smartfrind.v13.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v13.db
+- smartfrind.v14.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v14.db
+- smartfrind.v2.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v2.db
+- smartfrind.v3.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v3.db
+- smartfrind.v6.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v6.db
+- smartfrind.v7.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v7.db
+- smartfrind.v9.db | 0.18 MB | tables=36 | path=all_legacy_dbs/smartfrind.v9.db
+
+## Role: knowledge_hub
+- smartfriend_unified.v37.db | 373.47 MB | tables=20 | path=all_legacy_dbs/smartfriend_unified.v37.db
+- smartfriend_unified.v39.db | 373.47 MB | tables=27 | path=all_legacy_dbs/smartfriend_unified.v39.db
+- smartfriend_unified.v41.db | 373.47 MB | tables=20 | path=all_legacy_dbs/smartfriend_unified.v41.db
+- smartfriend_unified.v44.db | 373.47 MB | tables=20 | path=all_legacy_dbs/smartfriend_unified.v44.db
+- smartfriend_unified.v46.db | 373.47 MB | tables=20 | path=all_legacy_dbs/smartfriend_unified.v46.db
+- smartfriend_unified-20251115-194803.db | 208.47 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified-20251115-194803.db
+- smartfriend_unified-20251115-194803.v10.db | 208.47 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified-20251115-194803.v10.db
+- smartfriend_unified-20251115-194803.v11.db | 208.47 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified-20251115-194803.v11.db
+- smartfriend_unified-20251115-194803.v12.db | 208.47 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified-20251115-194803.v12.db
+- smartfriend_unified-20251115-194803.v13.db | 208.47 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified-20251115-194803.v13.db
+
+## Role: memory_core
+- smartfriend_unified.v20.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v20.db
+- smartfriend_unified.v22.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v22.db
+- smartfriend_unified.v23.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v23.db
+- smartfriend_unified.v24.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v24.db
+- smartfriend_unified.v25.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v25.db
+- smartfriend_unified.v26.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v26.db
+- smartfriend_unified.v27.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v27.db
+- smartfriend_unified.v28.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v28.db
+- smartfriend_unified.v32.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v32.db
+- smartfriend_unified.v33.db | 427.86 MB | tables=31 | path=all_legacy_dbs/smartfriend_unified.v33.db
+
+## Role: meta_control
+- cma.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.sqlite
+- cma.v2.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v2.sqlite
+- cma.v3.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v3.sqlite
+- cma.v4.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v4.sqlite
+- cma.v5.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v5.sqlite
+- cma.v6.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v6.sqlite
+- cma.v7.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v7.sqlite
+- cma.v8.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v8.sqlite
+- cma.v9.sqlite | 0.55 MB | tables=7 | path=all_legacy_dbs/cma.v9.sqlite
+- psmart_meta.db | 0.00 MB | tables=0 | path=all_legacy_dbs/psmart_meta.db
+
+## Role: other
+- backup_20251109_003142.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.db
+- backup_20251109_003142.v2.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.v2.db
+- backup_20251109_003142.v3.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.v3.db
+- backup_20251109_003142.v4.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.v4.db
+- backup_20251109_003142.v5.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.v5.db
+- backup_20251109_003142.v6.db | 373.47 MB | tables=19 | path=all_legacy_dbs/backup_20251109_003142.v6.db
+- backup_20251109_011547.db | 373.47 MB | tables=20 | path=all_legacy_dbs/backup_20251109_011547.db
+- backup_20251109_011547.v2.db | 373.47 MB | tables=20 | path=all_legacy_dbs/backup_20251109_011547.v2.db
+- backup_20251109_011547.v3.db | 373.47 MB | tables=20 | path=all_legacy_dbs/backup_20251109_011547.v3.db
+- backup_20251109_011547.v4.db | 373.47 MB | tables=20 | path=all_legacy_dbs/backup_20251109_011547.v4.db
+
+## Role: smartfriend_legacy
+- smartfriend_prime_v8.db | 0.15 MB | tables=26 | path=all_legacy_dbs/smartfriend_prime_v8.db
+- smartfrind.v10.db | 0.02 MB | tables=4 | path=all_legacy_dbs/smartfrind.v10.db
+- smartfrind.v17.db | 0.02 MB | tables=4 | path=all_legacy_dbs/smartfrind.v17.db
+- smartfrind.v4.db | 0.02 MB | tables=4 | path=all_legacy_dbs/smartfrind.v4.db
+- smartfrind.v5.db | 0.02 MB | tables=4 | path=all_legacy_dbs/smartfrind.v5.db
+- smartfrind.v8.db | 0.02 MB | tables=4 | path=all_legacy_dbs/smartfrind.v8.db
+- smartfriend_os.db | 0.01 MB | tables=2 | path=all_legacy_dbs/smartfriend_os.db
+- smartfriend_os.v2.db | 0.01 MB | tables=2 | path=all_legacy_dbs/smartfriend_os.v2.db
+- smartfriend_os.v3.db | 0.01 MB | tables=2 | path=all_legacy_dbs/smartfriend_os.v3.db
+- smartfrind.v15.db | 0.01 MB | tables=1 | path=all_legacy_dbs/smartfrind.v15.db
+
+## Role: unknown
+- memory.v10.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v10.db
+- memory.v18.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v18.db
+- memory.v22.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v22.db
+- memory.v25.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v25.db
+- memory.v28.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v28.db
+- memory.v29.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v29.db
+- memory.v37.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v37.db
+- memory.v4.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v4.db
+- memory.v40.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v40.db
+- memory.v43.db | 0.00 MB | tables=0 | path=all_legacy_dbs/memory.v43.db

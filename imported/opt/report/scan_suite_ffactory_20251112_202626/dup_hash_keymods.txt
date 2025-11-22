@@ -1,0 +1,20 @@
+DUP ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880
+  ff: ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880  /opt/ffactory/scripts/ff_healthd.py
+  su: ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880  /opt/smartfriend-suite/factory/scripts/ff_healthd.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-gateway/main.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-service/main.py
+
+DUP 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7
+  ff: 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7  /opt/ffactory/apps/ingest-worker/worker.py
+  su: 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7  /opt/smartfriend-suite/factory/apps/ingest-worker/worker.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-worker/main.py
+

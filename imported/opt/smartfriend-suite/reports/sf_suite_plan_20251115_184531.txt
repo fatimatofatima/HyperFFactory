@@ -1,0 +1,398 @@
+==================================================
+      SmartFriend Suite - خطة تنفيذ وتشخيص
+==================================================
+التاريخ : Sat Nov 15 18:45:31 +03 2025
+السيرفر : vmi2733174
+
+==================================================
+1) حالة النظام (Uptime / Load / Memory / Disk)
+==================================================
+[2025-11-15 18:45:31] === UPTIME / LOAD ===
+ 18:45:31 up 7 days, 10:20,  2 users,  load average: 1.41, 1.19, 1.19
+
+[2025-11-15 18:45:31] === MEMORY (free -h) ===
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.2Gi       7.9Gi        84Mi       2.7Gi        10Gi
+Swap:             0B          0B          0B
+
+[2025-11-15 18:45:31] === DISK USAGE (/, /opt/smartfriend-suite) ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       388G  180G  209G  47% /
+/dev/sda1       388G  180G  209G  47% /
+
+==================================================
+2) حصر وحدات SmartFriend (systemd units)
+==================================================
+[2025-11-15 18:45:31] === كل الوحدات المعرفة (list-unit-files) ===
+UNIT FILE                         STATE    VENDOR PRESET
+smartfrind-bot.path               disabled enabled
+sf-audit-bot.service              disabled enabled
+sf-backup.service                 disabled enabled
+sf-bot-assistant.service          enabled  enabled
+sf-bot-behavior.service           enabled  enabled
+sf-bot-dev.service                enabled  enabled
+sf-bot-model.service              enabled  enabled
+sf-bot-programmer.service         enabled  enabled
+sf-bot.service                    enabled  enabled
+sf-cognitive.service              enabled  enabled
+sf-core.service                   enabled  enabled
+sf-db-backup.service              static   -
+sf-db-maintenance.service         static   -
+sf-download.service               static   -
+sf-factory.service                enabled  enabled
+sf-fts-maint.service              enabled  enabled
+sf-health.service                 enabled  enabled
+sf-ingest.service                 enabled  enabled
+sf-kb-build.service               enabled  enabled
+sf-keys-rotate.service            enabled  enabled
+sf-learn.service                  enabled  enabled
+sf-learning.service               enabled  enabled
+sf-memory.service                 enabled  enabled
+sf-service-template@.service      disabled enabled
+sf-smartfactory.service           disabled enabled
+sf-smartfriend.service            disabled enabled
+sf-smartfrind.service             enabled  enabled
+sf-smoke.service                  static   -
+sf-spider.service                 disabled enabled
+sf-telegram-audit.service         disabled enabled
+sf-telegram.service               disabled enabled
+sf-unified.service                enabled  enabled
+sf-web.service                    enabled  enabled
+smartfriend-api.service           enabled  enabled
+smartfriend-hybrid.service        enabled  enabled
+smartfriend-smartcore.service     enabled  enabled
+smartfriend-unified.service       enabled  enabled
+smartfrind-advanced.service       enabled  enabled
+smartfrind-ai-gateway.service     enabled  enabled
+smartfrind-api.service            enabled  enabled
+smartfrind-ask.service            enabled  enabled
+smartfrind-autolearn.service      static   -
+smartfrind-backup.service         static   -
+smartfrind-bot.service            enabled  enabled
+smartfrind-cma-sync.service       enabled  enabled
+smartfrind-core-watchdog.service  static   -
+smartfrind-core.service           enabled  enabled
+smartfrind-delta.sh.service       masked   enabled
+smartfrind-envwatch.service       static   -
+smartfrind-final.service          enabled  enabled
+smartfrind-gateway.service        enabled  enabled
+smartfrind-guard.service          static   -
+smartfrind-guardian.service       enabled  enabled
+smartfrind-harvest.service        static   -
+smartfrind-ingest.service         static   -
+smartfrind-learner.service        enabled  enabled
+smartfrind-learning-agent.service static   -
+smartfrind-learning.service       enabled  enabled
+smartfrind-local.service          enabled  enabled
+smartfrind-monitor.service        enabled  enabled
+smartfrind-qa.service             enabled  enabled
+smartfrind-raw-clean.service      static   -
+smartfrind-reflector.service      static   -
+smartfrind-runner.service         enabled  enabled
+smartfrind-setup.sh.service       masked   enabled
+smartfrind-simple.service         disabled enabled
+smartfrind-trainer.service        disabled enabled
+smartfrind-ultra.service          disabled enabled
+smartfrind-unified.service        disabled enabled
+smartfrind-watchdog.service       static   -
+smartfrind-gateway.socket         disabled enabled
+sf-bots.target                    static   -
+sf-backup.timer                   enabled  enabled
+sf-bot-programmer.timer           masked   enabled
+sf-db-backup.timer                enabled  enabled
+sf-db-maintenance.timer           enabled  enabled
+sf-download.timer                 enabled  enabled
+sf-fts-maint.timer                enabled  enabled
+sf-kb-build.timer                 enabled  enabled
+sf-keys-rotate.timer              enabled  enabled
+sf-learn.timer                    enabled  enabled
+sf-smoke.timer                    enabled  enabled
+sf-spider.timer                   disabled enabled
+smartfrind-autolearn.timer        enabled  enabled
+smartfrind-backup.timer           enabled  enabled
+smartfrind-cma-sync.timer         enabled  enabled
+smartfrind-core-watchdog.timer    enabled  enabled
+smartfrind-envwatch.timer         enabled  enabled
+smartfrind-guard.timer            disabled enabled
+smartfrind-harvest.timer          enabled  enabled
+smartfrind-ingest.timer           enabled  enabled
+smartfrind-learner.timer          enabled  enabled
+smartfrind-learning-agent.timer   enabled  enabled
+smartfrind-raw-clean.timer        enabled  enabled
+smartfrind-reflector.timer        enabled  enabled
+smartfrind-watchdog.timer         enabled  enabled
+
+96 unit files listed.
+
+[2025-11-15 18:45:31] === حالة الوحدات (status مختصر) ===
+---- sf-bot-dev.service ----
+● sf-bot-dev.service - SmartFriend Telegram Bot (Developer)
+     Loaded: loaded (/etc/systemd/system/sf-bot-dev.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2025-11-15 15:02:14 +03; 3h 43min ago
+   Main PID: 4094668 (python)
+      Tasks: 2 (limit: 14298)
+     Memory: 29.0M
+        CPU: 10.980s
+     CGroup: /system.slice/sf-bot-dev.service
+             └─4094668 /opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py
+
+Nov 15 18:45:11 vmi2733174 python[4094668]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 200, in post
+Nov 15 18:45:11 vmi2733174 python[4094668]:     result = await self._request_wrapper(
+Nov 15 18:45:11 vmi2733174 python[4094668]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+Nov 15 18:45:11 vmi2733174 python[4094668]:     raise Conflict(message)
+Nov 15 18:45:11 vmi2733174 python[4094668]: telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+---- sf-bot-model.service ----
+● sf-bot-model.service - SmartFriend Telegram Bot (Model)
+     Loaded: loaded (/etc/systemd/system/sf-bot-model.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2025-11-15 15:02:15 +03; 3h 43min ago
+   Main PID: 4094676 (python)
+      Tasks: 2 (limit: 14298)
+     Memory: 29.2M
+        CPU: 10.945s
+     CGroup: /system.slice/sf-bot-model.service
+             └─4094676 /opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py
+
+Nov 15 18:45:11 vmi2733174 python[4094676]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 200, in post
+Nov 15 18:45:11 vmi2733174 python[4094676]:     result = await self._request_wrapper(
+Nov 15 18:45:11 vmi2733174 python[4094676]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+Nov 15 18:45:11 vmi2733174 python[4094676]:     raise Conflict(message)
+Nov 15 18:45:11 vmi2733174 python[4094676]: telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+---- sf-bot-programmer.service ----
+● sf-bot-programmer.service - SmartFriend Programmer Bot
+     Loaded: loaded (/etc/systemd/system/sf-bot-programmer.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-bot-programmer.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Sat 2025-11-15 18:42:55 +03; 2min 36s ago
+   Main PID: 237685 (python3)
+      Tasks: 6 (limit: 14298)
+     Memory: 31.8M
+        CPU: 1.206s
+     CGroup: /system.slice/sf-bot-programmer.service
+             └─237685 /usr/bin/python3 apps/telegram-bots/main.py --role programmer --ffactory http://127.0.0.1:8210 --unified http://127.0.0.1:8220 --memory ""
+
+Nov 15 18:42:56 vmi2733174 python3[237685]: INFO:     Waiting for application startup.
+Nov 15 18:42:56 vmi2733174 python3[237685]: [app] Module starting up...
+Nov 15 18:42:56 vmi2733174 python3[237685]: [app] Module initialization complete.
+Nov 15 18:42:56 vmi2733174 python3[237685]: INFO:     Application startup complete.
+Nov 15 18:42:56 vmi2733174 python3[237685]: INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+
+---- sf-bot.service ----
+● sf-bot.service - Main Telegram Bot
+     Loaded: loaded (/etc/systemd/system/sf-bot.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-bot.service.d
+             └─20-smartfriend-env.conf, 30-secrets-fix.conf, 40-final-fix.conf
+     Active: active (running) since Sat 2025-11-15 15:04:07 +03; 3h 41min ago
+   Main PID: 4097641 (python)
+      Tasks: 2 (limit: 14298)
+     Memory: 28.4M
+        CPU: 12.876s
+     CGroup: /system.slice/sf-bot.service
+             └─4097641 /opt/smartfriend-suite/smartfrind/venv/bin/python /opt/smartfriend-suite/bots/main_bot.py
+
+Nov 15 18:45:23 vmi2733174 python[4097641]:   File "/opt/smartfriend-suite/smartfrind/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 200, in post
+Nov 15 18:45:23 vmi2733174 python[4097641]:     result = await self._request_wrapper(
+Nov 15 18:45:23 vmi2733174 python[4097641]:   File "/opt/smartfriend-suite/smartfrind/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+Nov 15 18:45:23 vmi2733174 python[4097641]:     raise Conflict(message)
+Nov 15 18:45:23 vmi2733174 python[4097641]: telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+---- sf-cognitive.service ----
+● sf-cognitive.service - SmartFriend Cognitive System
+     Loaded: loaded (/etc/systemd/system/sf-cognitive.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:26 +03; 5s ago
+    Process: 240972 ExecStart=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/cognitive_system/consciousness/self_awareness.py (code=exited, status=1/FAILURE)
+   Main PID: 240972 (code=exited, status=1/FAILURE)
+        CPU: 65ms
+
+---- sf-core.service ----
+● sf-core.service - SmartFriend Core API (8383)
+     Loaded: loaded (/etc/systemd/system/sf-core.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-core.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Sat 2025-11-15 18:05:12 +03; 40min ago
+   Main PID: 194314 (python3)
+      Tasks: 6 (limit: 14298)
+     Memory: 31.9M
+        CPU: 6.090s
+     CGroup: /system.slice/sf-core.service
+             └─194314 /usr/bin/python3 -m uvicorn services.ffactory.simple_api:app --host 127.0.0.1 --port 8383 --workers 1
+
+Nov 15 18:05:12 vmi2733174 systemd[1]: Started SmartFriend Core API (8383).
+Nov 15 18:05:13 vmi2733174 python3[194314]: INFO:     Started server process [194314]
+Nov 15 18:05:13 vmi2733174 python3[194314]: INFO:     Waiting for application startup.
+Nov 15 18:05:13 vmi2733174 python3[194314]: INFO:     Application startup complete.
+Nov 15 18:05:13 vmi2733174 python3[194314]: INFO:     Uvicorn running on http://127.0.0.1:8383 (Press CTRL+C to quit)
+
+---- sf-memory.service ----
+● sf-memory.service - SmartFriend Suite - memory
+     Loaded: loaded (/etc/systemd/system/sf-memory.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-memory.service.d
+             └─20-smartfriend-env.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:31 +03; 145ms ago
+    Process: 241013 ExecStart=/opt/smartfriend-suite/bin/sf-service-memory (code=exited, status=1/FAILURE)
+   Main PID: 241013 (code=exited, status=1/FAILURE)
+        CPU: 390ms
+
+---- sf-smartfrind.service ----
+● sf-smartfrind.service - SmartFrind Telegram Bot
+     Loaded: loaded (/etc/systemd/system/sf-smartfrind.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-smartfrind.service.d
+             └─20-smartfriend-env.conf, api-override.conf, secrets.conf
+     Active: active (running) since Sat 2025-11-15 15:02:24 +03; 3h 43min ago
+   Main PID: 4094852 (flock)
+      Tasks: 3 (limit: 14298)
+     Memory: 38.5M
+        CPU: 10.940s
+     CGroup: /system.slice/sf-smartfrind.service
+             ├─4094852 /usr/bin/flock -n /run/lock/sf-smartfrind.lock /usr/bin/python3 /opt/smartfriend-suite/integrations/smartfrind_bot.py
+             └─4094853 /usr/bin/python3 /opt/smartfriend-suite/integrations/smartfrind_bot.py
+
+Nov 15 18:45:27 vmi2733174 flock[4094853]:   File "/usr/local/lib/python3.10/dist-packages/telegram/request/_baserequest.py", line 198, in post
+Nov 15 18:45:27 vmi2733174 flock[4094853]:     result = await self._request_wrapper(
+Nov 15 18:45:27 vmi2733174 flock[4094853]:   File "/usr/local/lib/python3.10/dist-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+Nov 15 18:45:27 vmi2733174 flock[4094853]:     raise exception
+Nov 15 18:45:27 vmi2733174 flock[4094853]: telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+---- sf-telegram.service ----
+● sf-telegram.service - SmartFriend Main Bot
+     Loaded: loaded (/etc/systemd/system/sf-telegram.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-telegram.service.d
+             └─20-smartfriend-env.conf, secrets.conf
+     Active: active (running) since Sat 2025-11-15 15:02:15 +03; 3h 43min ago
+   Main PID: 4094689 (python)
+      Tasks: 2 (limit: 14298)
+     Memory: 28.8M
+        CPU: 10.753s
+     CGroup: /system.slice/sf-telegram.service
+             └─4094689 /opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py
+
+Nov 15 18:45:05 vmi2733174 python[4094689]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 200, in post
+Nov 15 18:45:05 vmi2733174 python[4094689]:     result = await self._request_wrapper(
+Nov 15 18:45:05 vmi2733174 python[4094689]:   File "/opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+Nov 15 18:45:05 vmi2733174 python[4094689]:     raise Conflict(message)
+Nov 15 18:45:05 vmi2733174 python[4094689]: telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+---- sf-web.service ----
+● sf-web.service - SmartFriend Web UI (8390)
+     Loaded: loaded (/etc/systemd/system/sf-web.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-web.service.d
+             └─20-smartfriend-env.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:29 +03; 2s ago
+    Process: 240994 ExecStart=/usr/bin/python3 -m uvicorn apps.web.web_dashboard:app --host 0.0.0.0 --port $PORT --workers 1 (code=exited, status=1/FAILURE)
+   Main PID: 240994 (code=exited, status=1/FAILURE)
+        CPU: 435ms
+
+---- smartfrind-api.service ----
+● smartfrind-api.service - SmartFrind API Gateway (with QA fallback)
+     Loaded: loaded (/etc/systemd/system/smartfrind-api.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-api.service.d
+             └─10-db.conf, 20-smartfriend-env.conf, 40-port.conf, override.conf
+     Active: active (running) since Sat 2025-11-15 18:05:15 +03; 40min ago
+   Main PID: 194976 (uvicorn)
+      Tasks: 1 (limit: 14298)
+     Memory: 34.4M
+        CPU: 8.282s
+     CGroup: /system.slice/smartfrind-api.service
+             └─194976 /opt/smartfriend-suite/smartfrind/venv/bin/python /opt/smartfriend-suite/smartfriend/venv/bin/uvicorn asgi_gateway:app --host 127.0.0.1 --port 8220 --workers 1 --proxy-headers
+
+Nov 15 18:05:15 vmi2733174 systemd[1]: Started SmartFrind API Gateway (with QA fallback).
+Nov 15 18:05:16 vmi2733174 uvicorn[194976]: INFO:     Started server process [194976]
+Nov 15 18:05:16 vmi2733174 uvicorn[194976]: INFO:     Waiting for application startup.
+Nov 15 18:05:16 vmi2733174 uvicorn[194976]: INFO:     Application startup complete.
+Nov 15 18:05:16 vmi2733174 uvicorn[194976]: INFO:     Uvicorn running on http://127.0.0.1:8220 (Press CTRL+C to quit)
+
+---- smartfrind-bot.service ----
+● smartfrind-bot.service - SmartFrind Telegram Bot
+     Loaded: loaded (/etc/systemd/system/smartfrind-bot.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:28 +03; 3s ago
+    Process: 240992 ExecStart=/opt/smartfriend-suite/smartfriend/venv/bin/python -m smartfrind.telebot (code=exited, status=1/FAILURE)
+   Main PID: 240992 (code=exited, status=1/FAILURE)
+        CPU: 534ms
+
+---- smartfrind-core.service ----
+● smartfrind-core.service - SmartFrind Core AI Service
+     Loaded: loaded (/etc/systemd/system/smartfrind-core.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-core.service.d
+             └─10-env.conf, 20-smartfriend-env.conf, override.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:27 +03; 4s ago
+    Process: 240971 ExecStart=/opt/smartfriend-suite/smartfriend/venv/bin/python3 /opt/smartfriend-suite/smartfriend/venv/bin/uvicorn api.main:app --host 127.0.0.1 --port 8213 --workers 1 --proxy-headers (code=exited, status=1/FAILURE)
+   Main PID: 240971 (code=exited, status=1/FAILURE)
+        CPU: 940ms
+
+---- smartfrind-envwatch.service ----
+● smartfrind-envwatch.service - SmartFrind Env Watcher
+     Loaded: loaded (/etc/systemd/system/smartfrind-envwatch.service; static)
+    Drop-In: /etc/systemd/system/smartfrind-envwatch.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Sat 2025-11-15 14:03:33 +03; 4h 41min ago
+TriggeredBy: ● smartfrind-envwatch.timer
+   Main PID: 3759043 (python)
+      Tasks: 1 (limit: 14298)
+     Memory: 4.4M
+        CPU: 359ms
+     CGroup: /system.slice/smartfrind-envwatch.service
+             └─3759043 /opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/smartfriend/app/bin/envwatch.py
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+
+---- smartfrind-gateway.service ----
+● smartfrind-gateway.service - SmartFriend API Gateway (Unified)
+     Loaded: loaded (/etc/systemd/system/smartfrind-gateway.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-gateway.service.d
+             └─10-env.conf, 20-smartfriend-env.conf
+     Active: active (running) since Sat 2025-11-15 18:44:59 +03; 33s ago
+   Main PID: 239648 (python)
+      Tasks: 1 (limit: 14298)
+     Memory: 32.1M
+        CPU: 1.045s
+     CGroup: /system.slice/smartfrind-gateway.service
+             └─239648 /opt/smartfriend-suite/smartfriend/venv/bin/python smartfrind/gateway.py
+
+Nov 15 18:44:59 vmi2733174 systemd[1]: Started SmartFriend API Gateway (Unified).
+Nov 15 18:44:59 vmi2733174 python[239648]: INFO:     Started server process [239648]
+Nov 15 18:44:59 vmi2733174 python[239648]: INFO:     Waiting for application startup.
+Nov 15 18:44:59 vmi2733174 python[239648]: INFO:     Application startup complete.
+Nov 15 18:44:59 vmi2733174 python[239648]: INFO:     Uvicorn running on http://127.0.0.1:8210 (Press CTRL+C to quit)
+
+---- smartfrind-monitor.service ----
+● smartfrind-monitor.service - SmartFrind Monitor (placeholder)
+     Loaded: loaded (/etc/systemd/system/smartfrind-monitor.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-monitor.service.d
+             └─20-smartfriend-env.conf
+     Active: active (exited) since Sat 2025-11-15 10:59:28 +03; 7h ago
+   Main PID: 3456262 (code=exited, status=0/SUCCESS)
+        CPU: 3ms
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+
+---- smartfrind-qa.service ----
+● smartfrind-qa.service - SmartFrind QA Sidecar (Arabic-aware)
+     Loaded: loaded (/etc/systemd/system/smartfrind-qa.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-qa.service.d
+             └─10-workdir.conf, 20-smartfriend-env.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-15 18:45:31 +03; 353ms ago
+    Process: 241071 ExecStart=/opt/smartfriend-suite/smartfriend/venv/bin/python -m uvicorn /opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages//opt/smartfriend-suite/smartfriend/venv/lib/python3.10/site-packages/qa_sidecar:app --host 127.0.0.1 --port 8212 --workers 1 (code=exited, status=1/FAILURE)
+   Main PID: 241071 (code=exited, status=1/FAILURE)
+        CPU: 304ms
+
+---- smartfrind-runner.service ----
+● smartfrind-runner.service - SmartFrind Runner (Python executor)
+     Loaded: loaded (/etc/systemd/system/smartfrind-runner.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/smartfrind-runner.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Sat 2025-11-15 14:03:34 +03; 4h 41min ago
+   Main PID: 3759103 (python)
+      Tasks: 1 (limit: 14298)
+     Memory: 28.7M
+        CPU: 46.552s
+     CGroup: /system.slice/smartfrind-runner.service
+             └─3759103 /opt/smartfriend-suite/smartfriend/venv/bin/python -m smartfrind.runner_service
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+
+==================================================
+3) حصر قواعد البيانات (DB Inventory تحت /opt/smartfriend-suite)
+==================================================
+
+[2025-11-15 18:45:32] 📂 فحص المجلد: /opt/smartfriend-suite/var/db

@@ -1,0 +1,127 @@
+============================================================
+ SmartFriend Suite – DRY RUN Consolidation Plan
+ Timestamp : 2025-11-17 05:17:41
+ Hostname  : vmi2733174
+============================================================
+
+------------------------------------------------------------
+1) ملخص العائلات (G1 – فجوة البراند والخدمات)
+------------------------------------------------------------
+• عائلة sf-*
+  - عدد unit files : 44
+  - عدد الوحدات المحمّلة : 26
+    * active : 15
+    * failed : 0
+• عائلة smartfriend-*
+  - عدد unit files : 4
+  - عدد الوحدات المحمّلة : 3
+    * active : 0
+    * failed : 0
+• عائلة smartfrind-*
+  - عدد unit files : 2
+  - عدد الوحدات المحمّلة : 5
+    * active : 2
+    * failed : 3
+
+------------------------------------------------------------
+2) Legacy smartfrind-* المرشّحة للتجميد (G1, G10)
+------------------------------------------------------------
+
+[smartfrind-delta.sh.service]
+  - enabled : masked
+  - active  : inactive
+unknown
+  - الخطة (DRY-RUN):
+      • systemctl stop smartfrind-delta.sh.service          # إيقاف تشغيل legacy
+      • systemctl disable smartfrind-delta.sh.service       # تعطيل من الإقلاع
+      • نقل ملف unit إلى: /opt/smartfriend-suite/legacy_units/ (أرشفة بدون حذف كود أو DB)
+
+[smartfrind-setup.sh.service]
+  - enabled : masked
+  - active  : inactive
+unknown
+  - الخطة (DRY-RUN):
+      • systemctl stop smartfrind-setup.sh.service          # إيقاف تشغيل legacy
+      • systemctl disable smartfrind-setup.sh.service       # تعطيل من الإقلاع
+      • نقل ملف unit إلى: /opt/smartfriend-suite/legacy_units/ (أرشفة بدون حذف كود أو DB)
+
+------------------------------------------------------------
+3) خدمات السيوت الأساسية المراد ترقيتها (G2, G3, G4, G5, G6, G8)
+------------------------------------------------------------
+
+[sf-unified.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Gateway / Unified API رسمي (G2)
+      • الخطة: ربطه ببورت 8210 عبر Nginx ليكون /unified/ و /ffactory/ لو مناسب.
+
+[sf-core.service]
+  - enabled : enabled
+  - active  : active
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Core API داخلي (G2)
+      • الخطة: تشغيله على 8211 (بدلاً من smartfriend-api) مع توحيد المنطق.
+
+[sf-memory.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Memory API (G3)
+      • الخطة: تشغيله على 8214 واستخدامه لمسار /memory/ من Nginx.
+
+[sf-web.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Web UI / Dashboard (G4)
+      • الخطة: تشغيل لوحة السيوت على 8390 وربطها من /dashboard/ في Nginx.
+
+[sf-health.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Health / Guard رسمي (G8)
+      • الخطة: دمج منطق المراقبة القديم smartfrind-guardian في هذه الخدمة فقط.
+
+[sf-spider.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Spider / Harvester رسمي (G6)
+      • الخطة: نقل أفضل ما في smartfrind-harvest/ingest إليه.
+
+[sf-learning.service]
+  - enabled : enabled
+  - active  : activating
+unknown
+  - الدور المستهدف (Target Role) – DRY-RUN:
+      • Continuous Learning / Brain Loop (G5)
+      • الخطة: إصلاح loop وإعادة استخدام خبرة smartfrind-learning تحت هذا الاسم فقط.
+
+------------------------------------------------------------
+4) البوتات – توحيد الأدوار (G7)
+------------------------------------------------------------
+هدف التصميم:
+  • Bot رئيسي للمستخدم (Main Assistant Bot)
+  • Bot للمبرمج (Programmer Bot)
+  • Bot للمراجعة والتدقيق (Audit Bot)
+  • باقي البوتات: إمّا تُدمج أو تُجمّد حسب الحاجة.
+
+Bots من عائلة sf-*:
+  - sf-bot-assistant.service (active=activating
+unknown)
+  - sf-bot-behavior.service (active=active)
+  - sf-bot-dev.service (active=active)
+  - sf-bot-model.service (active=inactive
+unknown)
+  - sf-bot-programmer.service (active=activating
+unknown)
+  - sf-bot.service (active=active)
+
+Bots من عائلة smartfrind-* (Legacy):

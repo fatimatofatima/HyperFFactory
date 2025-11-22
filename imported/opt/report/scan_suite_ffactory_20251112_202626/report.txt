@@ -1,0 +1,1627 @@
+[2025-11-12 20:26:26] === Read-only scan ===
+[paths] suite=/opt/smartfriend-suite | ffactory=/opt/ffactory
+
+# (0) /opt inventory
+BRAIN_CORE                          drwxr-xr-x
+FINAL_REPORT.md                     -rw-r--r--
+LICENSE                             -rw-r--r--
+MyFriend                            drwxr-xr-x
+README.md                           -rw-r--r--
+REAL_COMPLETE_INDEX.md              -rw-r--r--
+SmartFriend                         drwxr-xr-x
+SmartFrind_Miracle                  drwxr-xr-x
+ULTIMATE_FUSION                     drwxr-xr-x
+__pycache__                         drwxr-xr-x
+android-sdk                         drwxr-xr-x
+bin                                 drwxr-xr-x
+build_smart.py                      -rw-r--r--
+containerd                          drwx--x--x
+control_panel.sh                    -rwxr-xr-x
+deepseek                            drwxr-xr-x
+ffactory                            drwxr-xr-x
+ffactory_quick.sh                   -rwxr-xr-x
+jadx                                drwxr-xr-x
+lib                                 drwxr-xr-x
+portsboard                          drwxr-xr-x
+quick_start.sh                      -rwxr-xr-x
+report                              drwxr-xr-x
+secure                              drwx------
+server_scripts.tar.gz               -rw-r--r--
+sf-venv                             drwxr-xr-x
+smartfriend-suite                   drwxr-x---
+smartfriend-suite-backup            drwxr-x---
+smartfriend-suite-backup-20251109-025421 drwxr-x---
+smartfriend_builder.sh              -rwxr-xr-x
+smartfriend_quick.sh                -rwxr-xr-x
+smartfrind                          drwxr-xr-x
+smartfrind_backup_20251108_052245   drwxr-xr-x
+smartfrind_unified                  drwxr-xr-x
+
+# (1) Basic stats
+/opt/smartfriend-suite       files=90365  py=28745  sh=395    size=34G
+/opt/ffactory                files=4854   py=113    sh=245    size=649M
+
+# (2) Orphan run scripts under /opt
+- /opt/build_smart.py
+- /opt/ffactory_quick.sh
+- /opt/quick_start.sh
+- /opt/control_panel.sh
+- /opt/smartfriend_quick.sh
+
+# (3) Duplicate filenames (suite ∩ ffactory)
+00_prep.sh
+01_stubs.sh
+02_compose_write.sh
+03_preflight.sh
+04_up.sh
+05_health.sh
+advanced_memory_forensics.py
+alert_system.py
+app.py
+asr_service.py
+audio_analysis.sh
+audit.sh
+backup.sh
+backup_manager.py
+bot.py
+bots_fix_and_wire.sh
+complete_setup.sh
+correlation_service.py
+deploy-ultimate-system.sh
+detection_engine.py
+docker-entrypoint.sh
+docker-entrypoint.wait.sh
+doctor_case_manager.sh
+engine.py
+enhanced_bot.py
+entry.py
+ff_00_env.sh
+ff_100_all.sh
+ff_10_clean.sh
+ff_20_core_up.sh
+ff_30_apps_up.sh
+ff_40_ai_echo.sh
+ff_50_health_fix.sh
+ff_70_services.sh
+ff_90_verify.sh
+ff_ai_fix_final.sh
+ff_ai_services_fix.sh
+ff_armor_up.sh
+ff_asr_final_production.sh
+ff_asr_power_final.sh
+ff_auto_backup.sh
+ff_backup.sh
+ff_backup_now.sh
+ff_behavior_pack.sh
+ff_board.sh
+ff_check_all.sh
+ff_comment.sh
+ff_complete_fix.sh
+ff_compose_cycle.sh
+ff_core_fix_now.sh
+ff_core_init_once.sh
+ff_core_repair_now.sh
+ff_core_report.sh
+ff_core_restore.sh
+ff_correlation_power.sh
+ff_crash_diagnostic.sh
+ff_crashwatch.sh
+ff_create_ai_apps.sh
+ff_create_real_ai.sh
+ff_create_real_ai_fixed.sh
+ff_db_hotfix.sh
+ff_db_rescue.sh
+ff_db_surgery.sh
+ff_diagnostic_report.sh
+ff_doctor.sh
+ff_doctor_enhanced.sh
+ff_emergency_fix.sh
+ff_env_bootstrap.sh
+ff_ext_hotfix_and_boot.sh
+ff_ext_pack.sh
+ff_ext_repair.sh
+ff_ext_upgrade.sh
+ff_final_fix.sh
+ff_final_merge.sh
+ff_final_power.sh
+ff_final_power_fixed.sh
+ff_final_status.sh
+ff_final_test.sh
+ff_fix_all.sh
+ff_fix_all_now.sh
+ff_fix_and_boot.sh
+ff_fix_and_run.sh
+ff_fix_build_deps.sh
+ff_fix_local_images.sh
+ff_fix_now.sh
+ff_force_up.sh
+ff_full_diag.sh
+ff_full_power.sh
+ff_health_lib.sh
+ff_healthd.py
+ff_hotfix_doctor.sh
+ff_hotfix_smart_runner.sh
+ff_install_board.sh
+ff_install_smart_doctor.sh
+ff_king_control.sh
+ff_lib.sh
+ff_lib_multi.sh
+ff_live_monitor.sh
+ff_max_power.sh
+ff_minio_worm.sh
+ff_neo4j_fix.sh
+ff_nlp_power.sh
+ff_nsrl_load.sh
+ff_omni.sh
+ff_onekey_boot.sh
+ff_patch_helpers.sh
+ff_pg_fix.sh
+ff_pg_rescue.sh
+ff_pg_single_fix.sh
+ff_port_check.sh
+ff_port_fix.sh
+ff_postgres_setup.sh
+ff_power_check.sh
+ff_power_fix_all.sh
+ff_power_pack.sh
+ff_power_pack_II.sh
+ff_power_pack_max.sh
+ff_power_pack_maxfix.sh
+ff_power_pack_v2.sh
+ff_production_check.sh
+
+# (4) Exact duplicates by SHA256 (key modules)
+DUP ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880
+  ff: ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880  /opt/ffactory/scripts/ff_healthd.py
+  su: ea83491162eb100c2882156d84630eb474b9fdb04c256b9ccf80da1d28452880  /opt/smartfriend-suite/factory/scripts/ff_healthd.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-gateway/main.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-service/main.py
+
+DUP 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7
+  ff: 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7  /opt/ffactory/apps/ingest-worker/worker.py
+  su: 20af3c6c137a52358f891cea07598c5c35574b5881191621789008a2e26a70d7  /opt/smartfriend-suite/factory/apps/ingest-worker/worker.py
+
+DUP 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b
+  ff: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/ffactory/apps/ingest-worker/main.py
+  su: 7a591d03c761a40ecb2fe2cd24423bda0593768bd1bf881fefba928286d9de8b  /opt/smartfriend-suite/factory/apps/ingest-worker/main.py
+
+
+# (5) Cross refs (suite → ffactory | ffactory → smartfriend/smartfrind)
+suite refs 'ffactory':
+- /opt/smartfriend-suite/scripts/sf_code_indexer.py:6:SRC = os.environ.get("SRC_DIRS", "/opt/ffactory;/opt/smartfrind").split(";")
+- /opt/smartfriend-suite/comprehensive_project_scan.sh:112:    "ffactory.service" 
+- /opt/smartfriend-suite/comprehensive_project_scan.sh:273:echo "   - إعادة تشغيل الخدمات: systemctl restart sf-memory ffactory sf-health sf-unified factory-gw"
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:6:cd /opt/ffactory/stack || { echo "✗ stack dir missing"; exit 0; }
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:10:docker compose -p ffactory \
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:13:  config >/tmp/ffactory_compose.base.yaml 2>/tmp/ffactory_compose.base.err
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:17:  sed -n '1,200p' /tmp/ffactory_compose.base.err
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:21:docker compose -p ffactory \
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:24:  config >/tmp/ffactory_compose.full.yaml 2>/tmp/ffactory_compose.full.err
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:28:  sed -n '1,200p' /tmp/ffactory_compose.full.err
+- /opt/smartfriend-suite/factory/stack/safe_up.sh:33:  docker compose -p ffactory \
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:5:install -d -m 755 /opt/ffactory
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:7:cat >/opt/ffactory/ffactory_titan_full.sh <<'EOF'
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:11:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:18:LOG_FILE="$LOGS/ffactory_titan_full_$TS.log"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:19:PROJECT="ffactory"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:40:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:41:FF_NETWORK=ffactory_net
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:49:PGDB=ffactory_core
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:195:    location /api/       { proxy_pass http://ffactory_investigation_api:8080/; }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:196:    location /analytics/ { proxy_pass http://ffactory_behavioral_analytics:8080/; }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:197:    location /feedback/  { proxy_pass http://ffactory_feedback_api:8080/; }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:219:ORCH="http://ffactory_orchestrator:8060"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:253:SCANNER="http://ffactory_social_analyzer:8103"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:254:CORR="http://ffactory_correlation_engine:8080"
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:438:PGUSER=os.getenv('PGUSER','forensic_user'); PGPASSWORD=os.getenv('PGPASSWORD','Forensic123!'); PGDB=os.getenv('PGDB','ffactory_core')
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:446:  arc=os.path.join(BACKUP_DIR,f"ffactory_backup_$TS.tar.gz".replace("$TS", ts))
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:589:networks: { ffactory_net: {driver: bridge} }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:605:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:615:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:624:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:628:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:637:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:647:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:656:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:666:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:675:    container_name: ffactory_ollama
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:679:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:683:    container_name: ffactory_metabase
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:692:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:697:    container_name: ffactory_ntp
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:703:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:707:    container_name: ffactory_vault
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:714:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:719:    container_name: ffactory_investigation_api
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:722:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:728:    container_name: ffactory_behavioral_analytics
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:731:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:737:    container_name: ffactory_feedback_api
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:740:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:744:  neural-core:        { build: { context: ../apps/neural-core },        container_name: ffactory_neural_core,       restart: unless-stopped, ports: ["127.0.0.1:8000:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:745:  correlation-engine: { build: { context: ../apps/correlation-engine },  container_name: ffactory_correlation_engine, restart: unless-stopped, ports: ["127.0.0.1:8005:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:746:  asr-engine:         { build: { context: ../apps/asr-engine },         container_name: ffactory_asr_engine,        restart: unless-stopped, ports: ["127.0.0.1:8004:8080"], volumes: [asr_models:/root/.cache], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:747:  social-intelligence:{ build: { context: ../apps/social-intelligence }, container_name: ffactory_social_intelligence, restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:748:  quantum-security:   { build: { context: ../apps/quantum-security },   container_name: ffactory_quantum_security,   restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:751:    container_name: ffactory_ai_reporting
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:754:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:759:    container_name: ffactory_orchestrator
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:762:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:767:    container_name: ffactory_ingest_service
+- /opt/smartfriend-suite/factory/stack/run_titan_safe.sh:771:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_nlp_power.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_nlp_power.sh:11:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_asr_power_final.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_asr_power_final.sh:12:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:6:FF=/opt/ffactory; STACK=$FF/stack; APPS=$FF/apps; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:204:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:205:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:211:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:212:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:223:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:224:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:235:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:236:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:254:MC="docker run --rm --network $NET -e MC_HOST_ffminio=http://$MINIO_ROOT_USER:$MINIO_ROOT_PASSWORD@ffactory_minio:9000 minio/mc"
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:261:log "docker ps (first 2 ffactory_*)"
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack.sh:262:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep '^ffactory_' | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_correlation_power.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_correlation_power.sh:11:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_correlation_power.sh:56:        PG_DB = os.environ.get("DB_NAME", "ffactory")
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:4:MEMORY_FILE="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:5:BASE_DIR="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:11:DEFAULT_SERVICES=("ffactory_vision" "ffactory_media_forensics" "ffactory_hashset")
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:41:  echo "  2) كل خدمات ffactory-* الشغالة دلوقتي (restart)"
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:51:      # نجيب كل الحاويات اللي اسمها ffactory_*
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:52:      mapfile -t running < <(docker ps --format '{{.Names}}' | grep '^ffactory_' || true)
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:88:    # جرّب بنفس الاسم من غير ffactory_
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:89:    if docker ps --format '{{.Names}}' | grep -qx "ffactory_$svc"; then
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:90:      svc="ffactory_$svc"
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:125:echo "📋 حالة كل خدمات ffactory بعد الإصلاح:"
+- /opt/smartfriend-suite/factory/scripts/ff_selective_restore.sh:126:docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}' | grep ffactory || true
+- /opt/smartfriend-suite/factory/scripts/ff_minio_worm.sh:3:FF=/opt/ffactory; . "$FF/.env"
+- /opt/smartfriend-suite/factory/scripts/ff_minio_worm.sh:4:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_minio_worm.sh:6:$MC alias set ffminio "http://ffactory_minio:9000" "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_safe_apply.sh:4:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_safe_apply.sh:5:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_fixer.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_fixer.sh:10:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:26:  up POSTGRES_USER ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:27:  up POSTGRES_DB ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:43:  [ -n "$DB" ] && docker exec "$DB" pg_isready -U ffactory -d ffactory || true
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:81:  NET=$(docker network ls --format '{{.Name}}' | awk '/ffactory/{print;exit}')
+- /opt/smartfriend-suite/factory/scripts/ff_king_control.sh:82:  [ -z "$NET" ] && NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_force_up.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_force_up.sh:7:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_force_up.sh:24:OLD_CONTAINERS=$(docker ps -a --format '{{.Names}}' | grep '^ffactory_' || true)
+- /opt/smartfriend-suite/factory/scripts/ff_force_up.sh:31:  log "ℹ️ مفيش حاويات قديمة باسم ffactory_"
+- /opt/smartfriend-suite/factory/scripts/ff_force_up.sh:54:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_doctor.sh:3:LIB=/opt/ffactory/scripts/ff_lib.sh
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_doctor.sh:4:DOC=/opt/ffactory/scripts/ff_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_doctor.sh:5:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_doctor.sh:11:# أ) أضف dc() = docker compose ثابت على مشروع ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_doctor.sh:16:  docker compose --project-name ffactory \
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_doctor.sh:5:OPS=/opt/ffactory/stack/docker-compose.ops.yml
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_doctor.sh:6:PROJ=ffactory
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_doctor.sh:7:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_doctor.sh:8:REPORT_DIR=/opt/ffactory/reports
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_doctor.sh:49:      - ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:4:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:8:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:17:docker ps -q --filter "name=ffactory" | xargs -r docker stop 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:18:docker network rm $NET ffactory_default 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:30:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:32:  ffactory_ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:44:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:48:      POSTGRES_DB: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:56:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:65:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:75:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:84:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:94:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:103:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:114:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:126:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:128:  ffactory_ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:134:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:137:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:148:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:151:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:162:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:165:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_final_fix.sh:199:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_
+- /opt/smartfriend-suite/factory/scripts/ffactory_health.sh:3:exec /root/ffactory_advanced_health.sh "$@"
+- /opt/smartfriend-suite/factory/scripts/ff_salvage.sh:11:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_salvage.sh:15:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/neo4j_stable_fix.sh:4:PROJ="${PROJ:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_stable_fix.sh:5:OPS_NEW="${OPS_NEW:-/opt/ffactory/stack/docker-compose.neo4j.yml}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_stable_fix.sh:6:CONT_NAME="${CONT_NAME:-ffactory-neo4j-1}"
+- /opt/smartfriend-suite/factory/scripts/ff_health_lib.sh:5:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_health_lib.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_report.sh:3:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_report.sh:14:[ -n "$DB" ] && docker exec "$DB" pg_isready -U ffactory -d ffactory || true
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:4:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:8:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:17:docker ps -q --filter "name=ffactory" | xargs -r docker stop 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:94:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:96:  ffactory_ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:108:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:112:      POSTGRES_DB: ${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:120:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:129:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:139:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:148:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:161:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:170:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:181:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:193:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:195:  ffactory_ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:203:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:209:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:222:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:225:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:238:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:246:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:259:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:262:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:275:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:278:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:291:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:294:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:307:    container_name: ffactory_social
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:315:      - ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:349:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_
+- /opt/smartfriend-suite/factory/scripts/ff_complete_fix.sh:352:/opt/ffactory/scripts/ff_check_all.sh
+- /opt/smartfriend-suite/factory/scripts/ff_smart_maintain.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart_maintain.sh:26:for container in $(docker ps --filter "name=ffactory" --format "{{.Names}}"); do
+- /opt/smartfriend-suite/factory/scripts/ff_smart_maintain.sh:37:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.RunningFor}}"
+- /opt/smartfriend-suite/factory/scripts/ff_nsrl_load.sh:3:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ffactory_fix_and_run.sh:4:OPS="/opt/ffactory/stack/docker-compose.ops.yml"
+- /opt/smartfriend-suite/factory/scripts/ffactory_fix_and_run.sh:5:PROJ="ffactory"
+- /opt/smartfriend-suite/factory/scripts/ffactory_fix_and_run.sh:6:APP_DIR="/opt/ffactory/apps/behavioral-analytics"
+- /opt/smartfriend-suite/factory/scripts/ffactory_fix_and_run.sh:7:OVR="/opt/ffactory/stack/docker-compose.behavior.yml"
+- /opt/smartfriend-suite/factory/scripts/ffactory_fix_and_run.sh:265:    container_name: ffactory_behavioral_analytics
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:3:. /opt/ffactory/scripts/ff_lib.sh
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:5:ID=/opt/ffactory/scripts/system_identity.sh
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:6:MEM=/opt/ffactory/scripts/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:20:  total=$(docker ps --filter "name=ffactory" --format '{{.ID}}' | wc -l | tr -d ' ')
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:21:  healthy=$(docker ps --filter "name=ffactory" --filter "health=healthy" --format '{{.ID}}' | wc -l | tr -d ' ')
+- /opt/smartfriend-suite/factory/scripts/self_aware_monitor.sh:33:du_p=$(df -h /opt/ffactory | awk 'NR==2{gsub("%","",$5);print $5}')
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:3:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:6:docker compose -p ffactory -f docker-compose.core.yml up -d
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:9:docker compose -p ffactory -f docker-compose.advanced.yml build --parallel
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:10:docker compose -p ffactory -f docker-compose.core.yml -f docker-compose.advanced.yml up -d
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:16:docker compose -p ffactory -f docker-compose.core.yml ps
+- /opt/smartfriend-suite/factory/scripts/deploy-ultimate-system.sh:17:docker compose -p ffactory -f docker-compose.advanced.yml ps
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:4:MEM=/opt/ffactory/system_memory.json
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:5:MEMCMD=/opt/ffactory/scripts/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:6:DOCTOR=/opt/ffactory/scripts/ff_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:11:CID=$(docker ps --format '{{.Names}}' | grep -E "ffactory[_-]${SVC//-/_}$" || true)
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:45:  /opt/ffactory/scripts/system_memory.sh service_restart "$SVC" "$HP" || true
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:47:  . /opt/ffactory/scripts/ff_lib.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v2.sh:48:  . /opt/ffactory/scripts/ff_lib_multi.sh
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:7:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:11:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:21:POSTGRES_DB=${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:45:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:50:    container_name: ffactory-db
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:62:    container_name: ffactory-redis
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:67:    container_name: ffactory-neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:84:    container_name: ffactory-minio
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:105:for i in $(seq 1 60); do docker exec ffactory-db pg_isready -U "$POSTGRES_USER" >/dev/null 2>&1 && break || sleep 2; done
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:323:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:328:    container_name: ffactory-vision
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:333:    container_name: ffactory-media-forensics
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:338:    container_name: ffactory-hashset
+- /opt/smartfriend-suite/factory/scripts/ff_recover_core_apps.sh:344:    container_name: ffactory-relationship-intel
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:20:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:22:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:82:  docker network ls | grep -E 'ffactory|NAME' || true
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:149:if docker ps --format '{{.Names}}' | grep -q '^ffactory_db$'; then
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:150:  try docker exec ffactory_db pg_isready -U postgres
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:152:  warn "ffactory_db container not found"
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:155:if docker ps --format '{{.Names}}' | grep -q '^ffactory_redis$'; then
+- /opt/smartfriend-suite/factory/scripts/ff_full_diag.sh:157:  [ -n "${REDIS_PASSWORD:-}" ] && try docker exec ffactory_redis redis-cli -a "$REDIS_PASSWORD" ping || warn "redis-cli ping skipped"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all_now.sh:5:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all_now.sh:29:docker ps --format "table {{.Names}}\t{{.Ports}}" | grep ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all_now.sh:53:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_comment.sh:6:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:5:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:9:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:44:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:48:      POSTGRES_USER: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:50:      POSTGRES_DB: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:52:      - ffactory_db_data:/var/lib/postgresql/data
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:58:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:63:      - ffactory_ff_redis:/data
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:69:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:77:      - ffactory_ff_minio:/data
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:84:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:92:      - ffactory_ff_neo4j:/data
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:93:      - ffactory_neo4j_plugins:/plugins
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:103:  ffactory_db_data:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:104:  ffactory_ff_redis:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:105:  ffactory_ff_minio:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:106:  ffactory_ff_neo4j:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:107:  ffactory_neo4j_plugins:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:108:  ffactory_ff_pg:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:118:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:120:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:129:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:131:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:140:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:142:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:151:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:153:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:162:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:164:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:173:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:175:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:183:  ffactory_ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:219:  cname="ffactory_${s}"
+- /opt/smartfriend-suite/factory/scripts/ff_super.sh:247:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_production_check.sh:32:docker volume ls --filter "name=ffactory" --format "table {{.Name}}\t{{.Driver}}"
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:9:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:10:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:11:NET="${PROJECT}_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:12:DB_CN=ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:17:export POSTGRES_DB="ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_postgres_setup.sh:49:log "3/4. إنشاء الدور ffadmin والقاعدة ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:5:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:161:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:165:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:176:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:180:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:191:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:195:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:203:  ffactory_default:
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai.sh:205:    name: ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_ai_services_fix.sh:8:docker stop ffactory_asr ffactory_nlp ffactory_correlation 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ai_services_fix.sh:11:docker rm ffactory_asr ffactory_nlp ffactory_correlation 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ai_services_fix.sh:18:        --name "ffactory_$service" \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_services_fix.sh:19:        --network ffactory_ffactory_net \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_services_fix.sh:27:docker ps --filter "name=ffactory_asr\|ffactory_nlp\|ffactory_correlation" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_doctor.sh:7:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart_doctor.sh:11:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_smart_doctor.sh:35:add_env POSTGRES_USER "ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_doctor.sh:37:add_env POSTGRES_DB "ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_doctor.sh:48:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_full_power.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_full_power.sh:7:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_full_power.sh:25:CORE_NAMES="ffactory_db ffactory_redis ffactory_minio ffactory_neo4j"
+- /opt/smartfriend-suite/factory/scripts/ff_full_power.sh:50:  name="ffactory_${svc%%:*}"
+- /opt/smartfriend-suite/factory/scripts/ff_full_power.sh:70:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ | tee -a "$LOG" || true
+- /opt/smartfriend-suite/factory/scripts/ff_40_ai_echo.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_40_ai_echo.sh:8:  [ffactory_asr]=8086
+- /opt/smartfriend-suite/factory/scripts/ff_40_ai_echo.sh:9:  [ffactory_nlp]=8000
+- /opt/smartfriend-suite/factory/scripts/ff_40_ai_echo.sh:10:  [ffactory_correlation]=8170
+- /opt/smartfriend-suite/factory/scripts/ff_40_ai_echo.sh:11:  [ffactory_social]=8088
+- /opt/smartfriend-suite/factory/scripts/ff_compose_cycle.sh:3:. /opt/ffactory/scripts/ff_health_lib.sh
+- /opt/smartfriend-suite/factory/scripts/ff_compose_cycle.sh:7:while IFS= read -r -d '' f; do ARGS+=(-f "$f"); done < <(find /opt/ffactory/stack -maxdepth 1 -type f -name 'docker-compose*.yml' -print0 | sort -z)
+- /opt/smartfriend-suite/factory/scripts/ff_compose_cycle.sh:9:[[ -f /opt/ffactory/stack/docker-compose.health.yml ]] && ARGS+=(-f /opt/ffactory/stack/docker-compose.health.yml)
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:7:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:593:    container_name: ffactory-advanced-forensics
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:599:      - /opt/ffactory/data/memory_dumps:/data/memory_dumps
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:600:      - /opt/ffactory/data/usb_logs:/data/usb_logs
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:612:    container_name: ffactory-usb-forensics  
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:626:docker compose -p ffactory build advanced-forensics
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:627:docker compose -p ffactory up -d advanced-forensics usb-forensics
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:647:cat > /opt/ffactory/scripts/use_advanced_forensics.sh << 'USEEOF'
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:679:chmod +x /opt/ffactory/scripts/use_advanced_forensics.sh
+- /opt/smartfriend-suite/factory/scripts/setup_real_forensics.sh:697:echo "📖 دليل الاستخدام: /opt/ffactory/scripts/use_advanced_forensics.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:9:docker stop ffactory_neo4j 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:13:docker rm ffactory_neo4j 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:17:docker volume rm ffactory_ff_neo4j 2>/dev/null || warn "Volume already removed or in use"
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:22:  --name ffactory_neo4j \
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:27:  --network ffactory_ffactory_net \
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:28:  -v ffactory_ff_neo4j:/data \
+- /opt/smartfriend-suite/factory/scripts/ff_neo4j_fix.sh:45:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:5:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:30:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:238:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:239:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:243:    container_name: ffactory_relationship_intel
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:254:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:261:echo "---- docker ps | grep ffactory_ | head -n 2 ----"
+- /opt/smartfriend-suite/factory/scripts/ff_relation_pack.sh:262:docker ps | grep ffactory_ | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:7:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:12:PROJECT=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:33:    sed -i 's/^COMPOSE_PROJECT_NAME=.*/COMPOSE_PROJECT_NAME=ffactory/' "$ENV_FILE"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:35:    echo 'COMPOSE_PROJECT_NAME=ffactory' >> "$ENV_FILE"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:96:        | grep -E "^(ffactory[-_]?${s}(-[0-9]+)?)$" | head -1 || true)"
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:124:    if ! docker ps --format '{{.Names}}' | grep -qE "ffactory[-_]?${s}"; then
+- /opt/smartfriend-suite/factory/scripts/ff_smart_fix.sh:182:        | grep -E "^(ffactory[-_]?"$s"(-[0-9]+)?)$" | head -1 || true)"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_rescue.sh:4:CN="${CN:-ffactory_db}"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_rescue.sh:5:VOL="${VOL:-ffactory_postgres_data}"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_rescue.sh:16:run "CREATE DATABASE ffactory WITH OWNER ffadmin;"
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:26:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:124:cat > /opt/ffactory/scripts/audio_analysis.sh << 'AUDIOEOF'
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:129:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:153:chmod +x /opt/ffactory/scripts/audio_analysis.sh
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:366:docker compose -p ffactory down
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:368:docker compose -p ffactory up -d --build
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:378:    if docker ps | grep -q "ffactory-$service"; then
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:400:cat > /opt/ffactory/scripts/telegram_bots.sh << 'TGEOF'
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:405:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:588:print_status "SUCCESS" "تم إنشاء بوتات التليجرام في /opt/ffactory/stack/telegram-bots"
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:592:echo "1. cd /opt/ffactory/stack/telegram-bots"
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:598:chmod +x /opt/ffactory/scripts/telegram_bots.sh
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:604:mkdir -p /opt/ffactory/docs
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:606:cat > /opt/ffactory/docs/api-endpoints.md << 'DOCEOF'
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:661:echo "🤖 لتفعيل البوتات: /opt/ffactory/scripts/telegram_bots.sh"
+- /opt/smartfriend-suite/factory/scripts/complete_setup.sh:662:echo "🔍 للفحص: /opt/ffactory/scripts/system_audit.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:12:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:17:docker network inspect ffactory_ffactory_net 2>/dev/null | jq -r '.[].Containers | keys[]' 2>/dev/null || echo "🔴 الشبكة غير موجودة"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:22:[ -f "/opt/ffactory/.env" ] && echo "✅ .env موجود" || echo "🔴 .env مفقود"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:23:[ -f "/opt/ffactory/stack/docker-compose.core.yml" ] && echo "✅ core compose موجود" || echo "🔴 core compose مفقود"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:24:[ -f "/opt/ffactory/stack/docker-compose.apps.yml" ] && echo "✅ apps compose موجود" || echo "🔴 apps compose مفقود"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:25:[ -f "/opt/ffactory/stack/docker-compose.apps.ext.yml" ] && echo "✅ ext compose موجود" || echo "🔴 ext compose مفقود"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:42:echo "1. تشغيل إصلاح المنافذ: sudo bash /opt/ffactory/scripts/ff_port_fix.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:43:echo "2. إعادة بناء كامل: sudo bash /opt/ffactory/scripts/ff_emergency_fix_all.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_port_check.sh:44:echo "3. فحص شامل: sudo bash /opt/ffactory/scripts/ff_diagnose.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:6:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:9:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:24:upsert MINIO_ACCESS_KEY   "ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:62:log "minio: create test user ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:65:  mc admin user add local ${MINIO_ACCESS_KEY:-ffactory} ${MINIO_SECRET_KEY:-$PW} || true &&
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:66:  mc admin policy attach local readwrite --user ${MINIO_ACCESS_KEY:-ffactory} || true
+- /opt/smartfriend-suite/factory/scripts/ff_set_test_pw.sh:75:  mc alias set local http://minio:9000 ${MINIO_ACCESS_KEY:-ffactory} ${MINIO_SECRET_KEY:-$PW} &&
+- /opt/smartfriend-suite/factory/scripts/ff_00_env.sh:4:export FF_HOME="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_00_env.sh:8:export FF_NET="ffactory_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:6:PROJ="${PROJ:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:7:OPS="${OPS:-/opt/ffactory/stack/docker-compose.ops.yml}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:9:NEO4J_CONT="${NEO4J_CONT:-ffactory-neo4j-1}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:12:REPORT_DIR="${REPORT_DIR:-/opt/ffactory/reports}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:32:    container_name: ffactory-zookeeper-1
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:35:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:39:    container_name: ffactory-kafka-1
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:45:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:49:    container_name: ffactory-neo4j-1
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:60:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/neo4j_doctor_smart.sh:63:  ffactory_net: {}
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:7:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:11:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:19:POSTGRES_DB=${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:41:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:45:    name: ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:49:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:59:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:67:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:77:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:96:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:100:    name: ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:105:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:115:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:125:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_safe_rebuild.sh:139:docker rm -f ffactory_vision ffactory_media_forensics ffactory_hashset >/dev/null 2>&1 || true
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:9:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:217:DB=os.getenv("DB_NAME","ffactory"); U=os.getenv("DB_USER","ffadmin"); P=os.getenv("DB_PASSWORD"); H=os.getenv("DB_HOST","db"); PORT=int(os.getenv("DB_PORT","5432"))
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:252:DB=os.getenv("DB_NAME","ffactory"); U=os.getenv("DB_USER","ffadmin"); P=os.getenv("DB_PASSWORD"); H=os.getenv("DB_HOST","db"); PORT=int(os.getenv("DB_PORT","5432"))
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:304:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:305:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:311:    container_name: ffactory_ocr
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:312:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:318:    container_name: ffactory_face
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:319:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:324:    container_name: ffactory_embed
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:325:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:331:    container_name: ffactory_audit
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:339:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:344:    container_name: ffactory_evidence
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:352:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:357:    container_name: ffactory_api_gateway
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:358:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:364:    container_name: ffactory-prometheus
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:365:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:374:    container_name: ffactory-grafana
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:375:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:380:    container_name: ffactory-cadvisor
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:381:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:392:    container_name: ffactory-node-exporter
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:393:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:415:echo "---- docker ps | grep ffactory_ | head -n 2 ----"
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_II.sh:416:docker ps | grep ffactory_ | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/wait-core.sh:3:docker run --rm --network ffactory_ffactory_net python:3.11-alpine python - <<'PY'
+- /opt/smartfriend-suite/factory/scripts/wait-core.sh:5:targets=[("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]
+- /opt/smartfriend-suite/factory/scripts/ff_asr_final_production.sh:7:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_asr_final_production.sh:19:# /opt/ffactory/apps/asr-engine/Dockerfile
+- /opt/smartfriend-suite/factory/scripts/ff_asr_final_production.sh:190:# نعتمد على أن ملفات Compose الأساسية قد تم إعدادها مسبقاً في المسار /opt/ffactory/stack/
+- /opt/smartfriend-suite/factory/scripts/ff_fix_local_images.sh:8:  "ffactory/vision-engine:local|ffactory/vision-engine:latest"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_local_images.sh:9:  "ffactory/media-forensics:local|ffactory/media-forensics:latest"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_local_images.sh:10:  "ffactory/hashset-service:local|ffactory/hashset-service:latest"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_local_images.sh:26:cd /opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; NET=ffactory_ffactory_net; ENV=$FF/.env
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:28:DBN=os.getenv("POSTGRES_DB","ffactory"); DBU=os.getenv("POSTGRES_USER","ffadmin"); DBPW=os.getenv("POSTGRES_PASSWORD")
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:260:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:261:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:266:    container_name: ffactory_social_archive
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:268:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:276:    container_name: ffactory_video_meta
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:277:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:285:    container_name: ffactory_social_linker
+- /opt/smartfriend-suite/factory/scripts/ff_social_pack.sh:291:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:3:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:6:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:15:POSTGRES_DB=${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:26:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:27:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:33:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:42:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:51:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:55:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:64:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:72:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:76:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:84:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_fix_now.sh:98:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_env_bootstrap.sh:3:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_env_bootstrap.sh:15:grep -q '^POSTGRES_DB='          "$ENV" || echo "POSTGRES_DB=ffactory"         | sudo tee -a "$ENV" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:12:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:16:    name: ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:23:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:38:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_create_ai_apps.sh:53:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:6:CN="ffactory_db"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:7:VOL_DEFAULT="ffactory_postgres_data"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:8:NET_DEFAULT="ffactory_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:54:  IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname=''ffactory'') THEN
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:55:    CREATE DATABASE ffactory OWNER ffadmin;
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:69:  --health-cmd='psql -h 127.0.0.1 -U ffadmin -d ffactory -c "SELECT 1" >/dev/null 2>&1 || exit 1' \
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:82:docker exec "$CN" psql -h 127.0.0.1 -U ffadmin -d ffactory -c "SELECT current_user, current_database();" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:84:say "OK: ffadmin/ffactory جاهزان. كلمة السر مضبوطة."
+- /opt/smartfriend-suite/factory/scripts/ff_pg_single_fix.sh:85:say "اتصال الخدمات داخل الشبكة: host=db, port=5432, user=ffadmin, db=ffactory, password=$PW"
+- /opt/smartfriend-suite/factory/scripts/ff_ext_upgrade.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ext_upgrade.sh:209:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep '^ffactory_' | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:4:/opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:5:/opt/ffactory/scripts/ff_10_clean.sh     # يمسح كل ffactory_* قديم
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:6:/opt/ffactory/scripts/ff_20_core_up.sh   # يشغّل core
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:7:/opt/ffactory/scripts/ff_30_apps_up.sh   # يشغّل apps لو موجودة
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:8:/opt/ffactory/scripts/ff_40_ai_echo.sh   # يشغّل خدمات AI على البورتات
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:9:/opt/ffactory/scripts/ff_50_health_fix.sh
+- /opt/smartfriend-suite/factory/scripts/ff_100_all.sh:10:/opt/ffactory/scripts/ff_90_verify.sh
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:4:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:8:NET="ffactory_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:38:POSTGRES_DB=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:53:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:70:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:84:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:102:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:129:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:138:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:147:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:156:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:165:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:174:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_smart.sh:197:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:5:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:6:P="-p ffactory -f $STACK/docker-compose.yml -f $STACK/docker-compose.depends.yml -f $STACK/docker-compose.db-env.yml -f $STACK/docker-compose.neo4j-env.yml"
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:12:for s in ffactory_db ffactory_neo4j ffactory_redis ffactory_minio; do
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:21:docker run --rm --network ffactory_ffactory_net bash:5 bash -lc '
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:25:for host,port in [("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]:
+- /opt/smartfriend-suite/factory/scripts/ff_start.sh:34:docker exec -i ffactory_neo4j cypher-shell -u neo4j -p 'Forensic123!' 'RETURN 1;' || true
+- /opt/smartfriend-suite/factory/scripts/ff_test_restart_grafana.sh:3:FF=/opt/ffactory; S=$FF/scripts; MEM=$FF/system_memory.json
+- /opt/smartfriend-suite/factory/scripts/ff_test_restart_grafana.sh:4:D=$S/ff_doctor_enhanced.sh; F=/opt/ffactory/stack/docker-compose.obsv.yml
+- /opt/smartfriend-suite/factory/scripts/ff_test_restart_grafana.sh:11:import json; d=json.load(open("/opt/ffactory/system_memory.json"))
+- /opt/smartfriend-suite/factory/scripts/ff_test_restart_grafana.sh:18:docker compose -p ffactory -f "$F" stop grafana
+- /opt/smartfriend-suite/factory/scripts/ff_test_restart_grafana.sh:22:docker compose -p ffactory -f "$F" ps grafana || true
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; NET=ffactory_ffactory_net; ENV=$FF/.env
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:36:DBN=os.getenv("POSTGRES_DB","ffactory"); DBU=os.getenv("POSTGRES_USER","ffadmin"); DBPW=os.getenv("POSTGRES_PASSWORD")
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:255:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:256:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:260:    container_name: ffactory_social_correlator
+- /opt/smartfriend-suite/factory/scripts/ff_social_link_power.sh:271:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/neo4j_quick_fix.sh:3:OPS=/opt/ffactory/stack/docker-compose.ops.yml
+- /opt/smartfriend-suite/factory/scripts/neo4j_quick_fix.sh:4:PROJ=ffactory
+- /opt/smartfriend-suite/factory/scripts/neo4j_quick_fix.sh:13:[ -f /opt/ffactory/stack/.env ] && sed -i -E "s|^NEO4J_AUTH=.*$|NEO4J_AUTH=neo4j/$PW|" /opt/ffactory/stack/.env || true
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:9:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:27:  && sed -i 's/^COMPOSE_PROJECT_NAME=.*/COMPOSE_PROJECT_NAME=ffactory/' "$ENV_FILE" \
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:28:  || echo 'COMPOSE_PROJECT_NAME=ffactory' >> "$ENV_FILE"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:29:say "ثبّت COMPOSE_PROJECT_NAME=ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:37:MEM="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:73:FF=/opt/ffactory; STACK=$FF/stack
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:74:dcf(){ COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$1" "${@:2}"; }
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:92:  local proj="${COMPOSE_PROJECT_NAME:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:133:  COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$f" restart "$svc" >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:134:    || COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$f" up -d --no-deps "$svc" >/dev/null 2>&1
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:147:FF=/opt/ffactory; S=$FF/scripts; LOGS=$FF/logs; ALERT="$LOGS/.ff_alert"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:159:      WATCH="/opt/ffactory/stack /opt/ffactory/scripts /opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_install_board.sh:271:ExecStart=/usr/bin/tmux new -d -s ffboard '/opt/ffactory/scripts/ff_board.sh'
+- /opt/smartfriend-suite/factory/scripts/ff_patch_helpers.sh:6:  for f in /opt/ffactory/scripts/ff_doctor_enhanced.sh /opt/ffactory/scripts/ff_crash_diagnostic.sh; do
+- /opt/smartfriend-suite/factory/scripts/ff_patch_helpers.sh:17:  local f=/opt/ffactory/scripts/ff_crash_diagnostic.sh
+- /opt/smartfriend-suite/factory/scripts/ff_patch_helpers.sh:43:sed -i 's/("127\.0\.0\.1", 9191)/("0.0.0.0", 9191)/' /opt/ffactory/scripts/ff_healthd.py || true
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:2:# Neo4j Smart Repair — diagnose+fix+report (for ffactory stack)
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:5:OPS=/opt/ffactory/stack/docker-compose.ops.yml
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:6:PROJ=ffactory
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:8:REPORT_DIR=/opt/ffactory/reports
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:57:  if [ -f /opt/ffactory/stack/.env ]; then
+- /opt/smartfriend-suite/factory/scripts/neo4j_smart_repair.sh:58:    sed -i -E "s|^NEO4J_AUTH=.*$|NEO4J_AUTH=neo4j/${NEWPW}|" /opt/ffactory/stack/.env || true
+- /opt/smartfriend-suite/factory/scripts/ff_crash_diagnostic.sh:10:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_crash_diagnostic.sh:14:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:10:docker stop ffactory_asr ffactory_nlp ffactory_correlation 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:11:docker rm ffactory_asr ffactory_nlp ffactory_correlation 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:17:  --name ffactory_asr \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:18:  --network ffactory_ffactory_net \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:23:  --name ffactory_nlp \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:24:  --network ffactory_ffactory_net \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:29:  --name ffactory_correlation \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:30:  --network ffactory_ffactory_net \
+- /opt/smartfriend-suite/factory/scripts/ff_ai_fix_final.sh:37:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -E "ffactory_asr|ffactory_nlp|ffactory_correlation"
+- /opt/smartfriend-suite/factory/scripts/ff_db_rescue.sh:8:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_db_rescue.sh:10:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_db_rescue.sh:31:      POSTGRES_DB: ${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_db_rescue.sh:35:      test: ["CMD-SHELL","pg_isready -U ${POSTGRES_USER:-ffadmin} -d ${POSTGRES_DB:-ffactory} -h 127.0.0.1"]
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:4:BASE=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:16:log = logging.getLogger("ffactory-bot")
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:60:ENV_BOTS=/opt/ffactory/stack/.env.bots
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:85:  --network ffactory_default \
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:96:  --network ffactory_default \
+- /opt/smartfriend-suite/factory/scripts/fix_bots_and_health.sh:129:/usr/local/sbin/ffactory-ready-check.sh || true
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:11:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:29:MEM="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:34:p="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:118:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:119:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:237:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:258:  mapfile -t running_svcs < <(docker ps --filter "label=com.docker.compose.project=${COMPOSE_PROJECT_NAME:-ffactory}" \
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:297:import json,sys; json.load(open("/opt/ffactory/system_memory.json"))
+- /opt/smartfriend-suite/factory/scripts/ff_hotfix_smart_runner.sh:313:p="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_healthd.py:5:MEM = "/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_healthd.py:6:LOGS = "/opt/ffactory/logs"
+- /opt/smartfriend-suite/factory/scripts/ff_healthd.py:24:        "project": "ffactory",
+- /opt/smartfriend-suite/factory/scripts/ff_verify_all.sh:9:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_
+- /opt/smartfriend-suite/factory/scripts/ff_verify_all.sh:49:docker network inspect ffactory_ffactory_net --format '{{.Name}}: {{range .Containers}}{{.Name}} {{end}}' 2>/dev/null || echo "Network not found"
+- /opt/smartfriend-suite/factory/scripts/ff_verify_all.sh:54:docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}" | grep ffactory_ 2>/dev/null || echo "No resource data available"
+- /opt/smartfriend-suite/factory/scripts/ff_verify_all.sh:59:docker ps --filter "name=ffactory" --format "{{.Names}}" | while read container; do
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:9:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:13:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:23:{ docker network disconnect "$NET" ffactory_minio >/dev/null 2>&1 || true; } || true
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:24:docker network connect --alias minio "$NET" ffactory_minio 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:244:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:308:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:309:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:315:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:316:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:322:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:323:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:329:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:330:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:339:    container_name: ffactory_social_correlator
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:350:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_fix_all.sh:368:docker ps | grep ffactory_ | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:7:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:9:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:10:NET="${PROJECT}_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:14:export POSTGRES_DB="ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:16:DB_CN=ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:17:DATA_VOL=ffactory_postgres_data
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:44:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:46:  ffactory_net: { external: true, name: ${NET} }
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:62:log "تصحيح الأدوار وقاعدة ffactory بنمط single-user"
+- /opt/smartfriend-suite/factory/scripts/ff_final_merge.sh:81:  -- قاعدة ffactory
+- /opt/smartfriend-suite/factory/scripts/fix_now.sh:5:cd /opt/ffactory/stack || { echo "❌ /opt/ffactory/stack غير موجود"; exit 1; }
+- /opt/smartfriend-suite/factory/scripts/fix_now.sh:46:docker compose -p ffactory --env-file bots.env up -d bot-admin bot-nextwin || true
+- /opt/smartfriend-suite/factory/scripts/fix_now.sh:47:docker compose -p ffactory restart bot-admin bot-nextwin || true
+- /opt/smartfriend-suite/factory/scripts/ff_backup.sh:3:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_backup.sh:14:DB_FILE="$BACK/db_${PGDB:-ffactory}_$TS.sql.gz"
+- /opt/smartfriend-suite/factory/scripts/ff_backup.sh:16:docker exec ffactory_db pg_dump -U "${PGUSER:-forensic}" -d "${PGDB:-ffactory}" | gzip -9 > "$DB_FILE"
+- /opt/smartfriend-suite/factory/scripts/ff_backup.sh:22:vol() { docker volume ls --format '{{.Name}}' | grep -E '^ffactory_' | grep "$1" || true; }
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:10:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:29:POSTGRES_DB=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:49:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:59:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:60:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:66:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:71:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:82:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:88:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:99:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:102:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:113:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:114:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:128:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:129:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:135:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:140:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:151:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:153:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:164:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:166:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:187:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:188:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:194:    container_name: ffactory_prometheus
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:200:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:213:    container_name: ffactory_grafana
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:215:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:229:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:235:for host,port in [("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]:
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:241:  curl -fsS http://ffactory_minio:9000/minio/health/live >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:316:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_|^ff_asr' || true
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:318:docker exec -i ffactory_neo4j cypher-shell -u neo4j -p "${NEO4J_PASS}" 'RETURN 1;' || echo "neo4j: check failed"
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_power.sh:319:docker run --rm --network "$NET" -e PGPASSWORD="$PG_PASS" postgres:16 psql -h db -U ffadmin -d ffactory -c "SELECT 1;" || echo "db: check failed"
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:75:VOL_SYMBOLS_HOST=/opt/ffactory/vol_symbols
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:85:  ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:100:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:117:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:121:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:131:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:135:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:152:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:156:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:173:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:177:    container_name: ffactory_metabase
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:192:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:196:    container_name: ffactory_ollama
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:202:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:207:    container_name: ffactory_neural_core
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:223:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:227:    container_name: ffactory_correlation_engine
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:245:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:249:    container_name: ffactory_ai_reporting
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:265:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:270:    container_name: ffactory_advanced_forensics
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:284:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:289:    container_name: ffactory_quantum_security
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:291:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:295:    container_name: ffactory_social_intelligence
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:297:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:301:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:303:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:307:    container_name: ffactory_asr_engine
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:311:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:315:    container_name: ffactory_backup_manager
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:317:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:322:    container_name: ffactory_bot_admin
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:332:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:336:    container_name: ffactory_bot_reports
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:346:    networks: [ffactory_net]
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:651:$DC -p ffactory -f docker-compose.ultimate.yml build >>"$LOG" 2>&1
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:655:$DC -p ffactory -f docker-compose.ultimate.yml up -d db redis neo4j minio metabase ollama >>"$LOG" 2>&1
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:659:$DC -p ffactory -f docker-compose.ultimate.yml up -d neural-core correlation-engine ai-reporting advanced-forensics >>"$LOG" 2>&1
+- /opt/smartfriend-suite/factory/scripts/ffactory_all_in_one.sh:684:echo "   cd $STACK && $DC -p ffactory -f docker-compose.ultimate.yml --profile bots up -d bot-admin bot-reports"
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:9:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:12:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:256:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:261:    container_name: ffactory-behavioral-analytics
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:266:    container_name: ffactory-mobility-analytics
+- /opt/smartfriend-suite/factory/scripts/ff_behavior_pack.sh:271:    container_name: ffactory-relationship-risk
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_launch.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_launch.sh:12:docker rm -f $(docker ps -aq --filter "name=ffactory") 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_launch.sh:16:docker network create ffactory_ffactory_net 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_ultimate_launch.sh:39:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/audit.sh:3:OUT="/opt/ffactory/audit/$(date +%F_%H%M%S).md"
+- /opt/smartfriend-suite/factory/scripts/audit.sh:15:ENVF="/opt/ffactory/stack/.env"
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:5:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:211:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:212:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:218:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:220:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:230:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:232:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:242:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:244:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:263:docker run --rm --network "$NET" minio/mc alias set ffminio "http://ffactory_minio:9000" "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_ext_hotfix_and_boot.sh:270:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_(vision|media_forensics|hashset)' || true
+- /opt/smartfriend-suite/factory/scripts/ff_crashwatch.sh:2:# يراقب أحداث Docker للحاويات التابعة لمشروع ffactory ويرسل تنبيهات عند die/restart/unhealthy
+- /opt/smartfriend-suite/factory/scripts/ff_crashwatch.sh:4:FF="/opt/ffactory"; STACK="$FF/stack"; ENV_FILE="$STACK/.env"; LOG="$FF/logs/crashwatch.log"
+- /opt/smartfriend-suite/factory/scripts/ff_crashwatch.sh:25:  --filter 'label=com.docker.compose.project=ffactory' \
+- /opt/smartfriend-suite/factory/scripts/ff_30_apps_up.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:6:FF=/opt/ffactory; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:20:FF=/opt/ffactory; . "$FF/.env"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:21:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:23:$MC alias set ffminio "http://ffactory_minio:9000" "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:35:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:254:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:255:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:260:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:262:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:272:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:274:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:284:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:289:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:315:DB=os.getenv("DB_NAME","ffactory"); DBU=os.getenv("DB_USER","ffadmin"); DBP=os.getenv("DB_PASSWORD"); DBH=os.getenv("DB_HOST","db"); DBPORT=int(os.getenv("DB_PORT","5432"))
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:355:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:356:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:360:    container_name: ffactory_social_correlator
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:371:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_all.sh:399:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_' | head -n 2
+- /opt/smartfriend-suite/factory/scripts/ff_90_verify.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_90_verify.sh:16:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:6:CN="${CN:-ffactory_db}"                # اسم الحاوية
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:7:VOL="${VOL:-ffactory_postgres_data}"   # اسم الڤوليوم
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:8:NET="${NET:-ffactory_ffactory_net}"    # اسم الشبكة
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:38:  IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname=''ffactory'') THEN
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:39:    CREATE DATABASE ffactory OWNER ffadmin;
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:64:  --health-cmd="pg_isready -U ffadmin -d ffactory -h 127.0.0.1 >/dev/null 2>&1 || exit 1" \
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:78:  psql -h db -U ffadmin -d ffactory -c "SELECT current_user, current_database();" >/dev/null \
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:82:say "OK. db=healthy user=ffadmin dbname=ffactory pw=$PW"
+- /opt/smartfriend-suite/factory/scripts/ff_db_surgery.sh:90:for s in ffactory_api_gateway ffactory_investigation_api ffactory_correlation_engine ffactory_behavioral_analytics; do
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:30:if [ -d "/opt/ffactory/stack" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:36:        if [ -d "/opt/ffactory/stack/$dir" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:43:    print_status "ERROR" "المجلد الرئيسي /opt/ffactory/stack غير موجود"
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:51:    if [ -f "/opt/ffactory/stack/$file" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:54:        if [ ! -s "/opt/ffactory/stack/$file" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:80:            if docker ps --format "{{.Names}}" | grep -q "ffactory-$service"; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:81:                status=$(docker ps --filter "name=ffactory-$service" --format "{{.Status}}")
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:111:if [ -f "/opt/ffactory/stack/.env" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:117:        if grep -q "^$var=" /opt/ffactory/stack/.env; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:148:scripts_dir="/opt/ffactory/scripts"
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:169:docs_dir="/opt/ffactory/docs"
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:199:docker logs ffactory-correlation-engine-1 --tail 5 2>/dev/null | while read line; do
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:251:    if ! docker ps | grep -q "ffactory-correlation-engine"; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:252:        echo "   - إعادة تشغيل correlation-engine: docker compose -p ffactory up -d correlation-engine"
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:259:    if [ ! -d "/opt/ffactory/stack/correlation-engine" ]; then
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:260:        echo "   - إنشاء مجلد correlation-engine: mkdir -p /opt/ffactory/stack/correlation-engine"
+- /opt/smartfriend-suite/factory/scripts/system_audit.sh:265:echo "📝 للتشغيل الفوري: cd /opt/ffactory/stack && docker compose -p ffactory up -d"
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:5:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:9:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:26:    if docker exec ffactory_db pg_isready -U "$POSTGRES_USER" >/dev/null 2>&1; then return 0; fi
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:35:    if docker exec ffactory_redis sh -lc "redis-cli -a '$REDIS_PASSWORD' ping | grep -q PONG"; then return 0; fi
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:69:POSTGRES_DB=${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:81:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:83:  ffactory_ffactory_net: { external: true }
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:91:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:102:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:106:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:112:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:116:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:125:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:129:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:136:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:159:  cnt=$(docker exec -e PGPASSWORD="$POSTGRES_PASSWORD" ffactory_db \
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:172:    gunzip -c "$dump" | docker exec -i -e PGPASSWORD="$POSTGRES_PASSWORD" ffactory_db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB"
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:174:    docker exec -i -e PGPASSWORD="$POSTGRES_PASSWORD" ffactory_db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" < "$dump"
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:183:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:184:log "[PG]" ; docker exec ffactory_db pg_isready -U "$POSTGRES_USER" || true
+- /opt/smartfriend-suite/factory/scripts/ff_total_restore.sh:185:log "[REDIS]"; docker exec ffactory_redis sh -lc "redis-cli -a '$REDIS_PASSWORD' ping" || true
+- /opt/smartfriend-suite/factory/scripts/ff_20_core_up.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:29:tee /etc/profile.d/ffactory.sh >/dev/null <<'E'
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:30:export COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:33:chmod +x /etc/profile.d/ffactory.sh
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:35:  && sed -i 's/^COMPOSE_PROJECT_NAME=.*/COMPOSE_PROJECT_NAME=ffactory/' "$ENV_FILE" \
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:36:  || { mkdir -p "$(dirname "$ENV_FILE")"; echo 'COMPOSE_PROJECT_NAME=ffactory' >> "$ENV_FILE"; }
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:37:ok "ثبّت COMPOSE_PROJECT_NAME=ffactory و COMPOSE_IGNORE_ORPHANS=1"
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:43:MEM="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:88:FF=/opt/ffactory; STACK=$FF/stack
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:89:dcf(){ COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$1" "${@:2}"; }
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:104:  local svc="$1" proj="${COMPOSE_PROJECT_NAME:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:147:  COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$f" restart "$svc" >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:148:  || COMPOSE_IGNORE_ORPHANS=1 docker compose -p "${COMPOSE_PROJECT_NAME:-ffactory}" -f "$f" up -d --no-deps "$svc" >/dev/null 2>&1
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:163:FF=/opt/ffactory; S=$FF/scripts; LOGS=$FF/logs; MEM=$S/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:197:FF=/opt/ffactory; S=$FF/scripts
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:203:  inotifywait -mq -e modify,create,delete /opt/ffactory/scripts /opt/ffactory/stack | \
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:211:  echo "Project: ${COMPOSE_PROJECT_NAME:-ffactory}    (COMPOSE_IGNORE_ORPHANS=${COMPOSE_IGNORE_ORPHANS:-0})"
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:213:  docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sed '1,40!d'
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:217:    jq -r '.services | to_entries[] | "\(.key): restart=\(.value.restart_count // 0), status=\(.value.last_status // "n/a")"' /opt/ffactory/system_memory.json 2>/dev/null | sed -n '1,20p' || true
+- /opt/smartfriend-suite/factory/scripts/ff_repair_pack.sh:233:ok "تم تثبيت الحزمة. للتشغيل الحي:  tmux new -s ffboard /opt/ffactory/scripts/ff_board.sh"
+- /opt/smartfriend-suite/factory/scripts/doctor_case_manager.sh:3:C="ffactory_case_manager"
+- /opt/smartfriend-suite/factory/scripts/doctor_case_manager.sh:4:STACK="/opt/ffactory/stack"
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:12:NET1=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:13:NET2=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:63:  env_upsert POSTGRES_USER        ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:64:  env_upsert POSTGRES_DB          ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:79:  docker ps --format ' Container {{.Names}}  {{.Status}}' --filter "name=ffactory" | tee -a "$LOG"
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:101:  wait_for "PostgreSQL" dex "$id" pg_isready -U "${POSTGRES_USER:-ffactory}" -d "${POSTGRES_DB:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:153:  # اسم الحجم غالبًا ffactory_neo4j_data
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:154:  vol="$(docker volume ls --format '{{.Name}}' | grep -E '^ffactory_neo4j_data$' || true)"
+- /opt/smartfriend-suite/factory/scripts/ff_omni.sh:167:  docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:6:CN="ffactory_db"                      # اسم الحاوية
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:7:VOL_DEFAULT="ffactory_postgres_data"  # اسم الڤوليوم الافتراضي
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:8:NET_DEFAULT="ffactory_ffactory_net"   # اسم الشبكة الافتراضي
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:40:# 3) تعديل الكتالوج بنمط single-user: فرض وجود/تعديل أدوار وكلمة السر وقاعدة ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:56:  IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname='ffactory') THEN
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:57:    EXECUTE $$CREATE DATABASE ffactory OWNER ffadmin$$;
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:101:say "فحص اتصال ffadmin@ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:102:docker exec "$CN" bash -lc 'psql -v ON_ERROR_STOP=1 -U ffadmin -d ffactory -h 127.0.0.1 -c "CREATE TABLE IF NOT EXISTS _probe(x int); INSERT INTO _probe VALUES (1) ON CONFLICT DO NOTHING; SELECT count(*) FROM _probe;"' >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_pg_fix.sh:105:say "بيانات الاتصال داخل الشبكة: host=db أو ffactory_db, port=5432, user=ffadmin, db=ffactory, password='"$PW"'"
+- /opt/smartfriend-suite/factory/scripts/ff_core_repair_now.sh:4:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_repair_now.sh:16:up POSTGRES_USER ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_repair_now.sh:17:up POSTGRES_DB   ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_repair_now.sh:27:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/test_grafana_fix.sh:3:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:3:. /opt/ffactory/scripts/ff_lib.sh
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:25:  docker ps --filter "name=ffactory" --format " {{.Names}}\t{{.Status}}\t{{.Ports}}" || true
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:27:  docker images --format " {{.Repository}}\t{{.Tag}}\t{{.Size}}" | grep -E '^ffactory-|^neo4j|^redis' || true
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:35:  total=$(docker ps --filter "name=ffactory" --format '{{.ID}}' | wc -l | tr -d ' ')
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:36:  healthy=$(docker ps --filter "name=ffactory" --filter "health=healthy" --format '{{.ID}}' | wc -l | tr -d ' ')
+- /opt/smartfriend-suite/factory/scripts/system_identity.sh:56:(command -v docker >/dev/null 2>&1 && docker network ls --format " {{.Name}}" | grep ffactory) || echo " no ffactory network or docker unavailable"
+- /opt/smartfriend-suite/factory/scripts/ff_board.sh:3:FF=/opt/ffactory; S=$FF/scripts
+- /opt/smartfriend-suite/factory/scripts/ff_board.sh:9:  inotifywait -mq -e modify,create,delete /opt/ffactory/scripts /opt/ffactory/stack | \
+- /opt/smartfriend-suite/factory/scripts/ff_board.sh:17:  echo "Project: ${COMPOSE_PROJECT_NAME:-ffactory}    (COMPOSE_IGNORE_ORPHANS=${COMPOSE_IGNORE_ORPHANS:-0})"
+- /opt/smartfriend-suite/factory/scripts/ff_board.sh:19:  docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sed '1,40!d'
+- /opt/smartfriend-suite/factory/scripts/ff_board.sh:23:    jq -r '.services | to_entries[] | "\(.key): restart=\(.value.restart_count // 0), status=\(.value.last_status // "n/a")"' /opt/ffactory/system_memory.json 2>/dev/null | sed -n '1,20p' || true
+- /opt/smartfriend-suite/factory/scripts/ff_final_power_fixed.sh:5:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_db_hotfix.sh:11:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_db_hotfix.sh:13:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_db_hotfix.sh:27:      POSTGRES_DB: ${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_db_hotfix.sh:34:      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ffadmin} -d ${POSTGRES_DB:-ffactory} -h 127.0.0.1"]
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:5:PREFIX="ffactory_"
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:7:LOG="/opt/ffactory/logs/ff_power_check.$(date +%F_%H%M%S).log"
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:8:mkdir -p /opt/ffactory/logs
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:73:CONFLICTS=$(docker ps -a --format '{{.Names}}' | grep '^ffactory_' | sort)
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:79:log "   docker stop ffactory_db ffactory_redis ffactory_minio ffactory_neo4j || true"
+- /opt/smartfriend-suite/factory/scripts/ff_power_check.sh:80:log "   docker rm   ffactory_db ffactory_redis ffactory_minio ffactory_neo4j || true"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:2:. /opt/ffactory/scripts/ff_lib.sh 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:3:. /opt/ffactory/scripts/ff_lib_multi.sh 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:4:MEMORY_SCRIPT="/opt/ffactory/scripts/system_memory.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:8:  cn=$(docker ps --format '{{.Names}}' | grep -E "ffactory[_-]${svc//-/_}$" || true)
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:32:MEMORY_SCRIPT="/opt/ffactory/scripts/system_memory.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:33:MEMORY_SCRIPT="/opt/ffactory/scripts/system_memory.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:35:. /opt/ffactory/scripts/ff_lib.sh
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:40:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:84:        PGDB)        echo "PGDB=${PGDB:-ffactory}" >> "$ENV_FILE" ;;
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:90:    echo "DATABASE_URL=postgresql://${PGUSER:-forensic}:${PGPASSWORD:-Forensic123!}@db:${PGPORT:-5433}/${PGDB:-ffactory}" >> "$ENV_FILE"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:160:    docker logs --tail=80 "ffactory_${svc//-/_}" 2>/dev/null || dc -f "$COMPOSE" logs --tail=80 "$svc" || true
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:174:      st="$(inspect_status "ffactory_${s//-/_}")"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:181:  docker cp "$out" ffactory_frontend_dashboard:/usr/share/nginx/html/health.html >/dev/null 2>&1 || true
+- /opt/smartfriend-suite/factory/scripts/ff_doctor.sh:218:        | grep -E "^(ffactory[-_]?"$s"(-[0-9]+)?)$" | head -1 || true)"
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:5:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:9:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:27:add POSTGRES_DB ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:38:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:39:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:45:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:53:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:62:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:66:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:75:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:84:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:93:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:98:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:114:wait_cmd pg 'docker exec ffactory_db pg_isready -U "${POSTGRES_USER:-ffadmin}" >/dev/null' || { docker logs ffactory_db --tail=200; exit 3; }
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:116:wait_cmd redis 'docker exec ffactory_redis redis-cli -a "${REDIS_PASSWORD:-ffredis}" PING | grep -q PONG' || { docker logs ffactory_redis --tail=200; exit 3; }
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:118:wait_cmd neo4j 'curl -fsS http://127.0.0.1:7474 >/dev/null' || { docker logs ffactory_neo4j --tail=200; exit 3; }
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:120:wait_cmd minio 'curl -fsS http://127.0.0.1:9000/minio/health/ready >/dev/null' || { docker logs ffactory_minio --tail=200; exit 3; }
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:125:tar -C /opt -czf "$BACK/apps-full-$TS.tgz" ffactory/apps || true
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:127:tar -C /opt -czf "$BACK/scripts-$TS.tgz" ffactory/scripts || true
+- /opt/smartfriend-suite/factory/scripts/ff_recover_all.sh:136:docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep ffactory_ || true
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:8:for app in /opt/ffactory/apps/*; do
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:19:for compose in /opt/ffactory/stack/docker-compose.*.yml; do
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:31:echo "   🔥 $(find /opt/ffactory/scripts -name "*.sh" | wc -l) سكربت قوة"
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:32:echo "   ⚡ $(docker ps -q --filter "name=ffactory" | wc -l) خدمة نشطة"
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:36:echo "   📡 sudo /opt/ffactory/scripts/ff_power_pack.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:37:echo "   🧠 sudo /opt/ffactory/scripts/ff_ultimate_power.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:38:echo "   🔗 sudo /opt/ffactory/scripts/ff_relation_pack.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_70_services.sh:39:echo "   🌐 sudo /opt/ffactory/scripts/ff_social_pack.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_max_power.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_max_power.sh:11:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/bots_fix_and_wire.sh:3:APPS="/opt/ffactory/apps/telegram-bots"; mkdir -p "$APPS"
+- /opt/smartfriend-suite/factory/scripts/bots_fix_and_wire.sh:45:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/bots_fix_and_wire.sh:46:docker compose -p ffactory build bot-admin bot-nextwin
+- /opt/smartfriend-suite/factory/scripts/bots_fix_and_wire.sh:47:docker compose -p ffactory up -d bot-admin bot-nextwin
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:9:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:232:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:233:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:239:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:241:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:252:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:254:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:265:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_ext_pack.sh:269:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_run.sh:12:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_run.sh:16:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:10:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:26:POSTGRES_DB=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:44:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:54:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:55:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:61:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:64:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:75:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:81:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:92:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:95:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:106:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:107:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:119:docker run --rm --network ffactory_ffactory_net python:3.11-alpine python - <<'PY'
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:121:for host,port in [("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]:
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:271:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:331:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:332:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:338:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:341:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:352:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:354:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:357:      - "/opt/ffactory/scripts/wait-entrypoint.sh:/opt/wait-entrypoint.sh:ro"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:367:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:378:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:380:      - "/opt/ffactory/scripts/wait-entrypoint.sh:/opt/wait-entrypoint.sh:ro"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:398:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:399:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:405:    container_name: ffactory_prometheus
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:410:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:423:    container_name: ffactory_grafana
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:424:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:437:  VOL="$(docker inspect -f '{{range .Mounts}}{{if eq .Destination "/var/lib/postgresql/data"}}{{.Name}}{{end}}{{end}}' ffactory_db 2>/dev/null || true)"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:438:  [ -n "$VOL" ] || VOL="ffactory_postgres_data"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:439:  docker rm -f ffactory_db >/dev/null 2>&1 || true
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:446:  run_single "CREATE DATABASE ffactory WITH OWNER ffadmin;"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:463:log "docker ps snapshot (ffactory*)"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:464:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep '^ffactory_' || true
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:466:docker exec -i ffactory_neo4j cypher-shell -u neo4j -p "${NEO_PASS}" 'RETURN 1;' || echo "neo4j: check failed"
+- /opt/smartfriend-suite/factory/scripts/ff_onekey_boot.sh:468:docker run --rm --network "$NET" -e PGPASSWORD="$PG_PASS" postgres:16 psql -h db -U ffadmin -d ffactory -c "SELECT 1;" || echo "db: check failed"
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:4:#   bash /opt/ffactory/scripts/ffactory_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:5:#   FF_FORCE=1 FF_ENABLE_MISP=1 bash /opt/ffactory/scripts/ffactory_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:11:BASE="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:17:REPORT_FILE="$REPORT_DIR/ffactory_report_$(date +%F_%H%M%S).txt"
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:129:  ffactory_default:
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:130:    name: ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:134:  ffactory_db_data:
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:135:  ffactory_redis_data:
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:142:      - ffactory_db_data:/var/lib/postgresql/data
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:144:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:154:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:173:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:186:  ffactory_default:
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:188:    name: ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:200:      - cluster.name=ffactory-opensearch
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:210:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:221:      - cluster.name=ffactory-opensearch
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:230:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:237:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:246:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:261:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:273:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:284:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:290:      - SECRET_KEY=ffactory-timesketch-secret
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:293:      - POSTGRES_HOST=ffactory-db-1
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:295:      - REDIS_HOST=ffactory-redis-1
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:298:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:308:      - POSTGRES_URL=postgresql://forensic_user:forensic_pass@ffactory-db-1:5432/forensic_db
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:315:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:326:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:344:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:349:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:362:      - MISP_ADMIN_EMAIL=admin@ffactory.local
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:366:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:494:logging.basicConfig(level=logging.INFO); log=logging.getLogger("ffactory-bot")
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:534:run "CORE: docker network ffactory_default" 'docker network inspect ffactory_default >/dev/null 2>&1 || docker network create ffactory_default'
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:535:run "CORE: up" 'dcompose --env-file ./db.env -p ffactory -f ./docker-compose.core.yml up -d'
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:537:run "CORE: wait for DB" 'docker exec -e PGPASSWORD=forensic_pass -i ffactory-db-1 pg_isready -U forensic_user -d forensic_db'
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:540:docker exec -e PGPASSWORD=forensic_pass -i ffactory-db-1 psql -U forensic_user -d forensic_db -f /docker-entrypoint-initdb.d/init_security.sql >/dev/null 2>&1 && ok "CORE: schema applied" || wi "CORE: schema apply skipped"
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:553:      --network ffactory_default \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:564:      --network ffactory_default \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:602:docker exec -it ffactory_kafka kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic forensic-events --replication-factor 1 --partitions 3 >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:611:docker run --rm --network ffactory_default \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:623:docker exec -e PGPASSWORD=forensic_pass -i ffactory-db-1 psql -U forensic_user -d forensic_db -c "SELECT 1;" >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:627:docker exec -i ffactory-redis-1 redis-cli ping >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/ffactory_doctor.sh:638:docker exec -i ffactory_kafka kafka-topics --list --bootstrap-server kafka:9092 >/dev/null 2>&1 \
+- /opt/smartfriend-suite/factory/scripts/system_memory.sh:3:MEM="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/system_memory.sh:8:p="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:9:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:42:# --- Compose helper (bind to ffactory project) ---
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:44:  local STACK="/opt/ffactory/stack"
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:46:  docker compose --project-name ffactory \
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:58:MEM="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:59:mkdir -p /opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:119:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:120:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:256:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:335:p="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_install_smart_doctor.sh:352:p="/opt/ffactory/system_memory.json"
+- /opt/smartfriend-suite/factory/scripts/ff_final_status.sh:56:echo "💾 مساحة التخزين: $(df -h /opt/ffactory | awk 'NR==2 {print $4 " free"}')"
+- /opt/smartfriend-suite/factory/scripts/pack_apps_sh.sh:4:SRC=${1:-/opt/ffactory/apps}
+- /opt/smartfriend-suite/factory/scripts/pack_apps_sh.sh:5:BACKUP_DIR=${BACKUP_DIR:-/opt/ffactory/backups}
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:6:FF=/opt/ffactory; STACK=$FF/stack; APPS=$FF/apps; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:209:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:210:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:215:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:217:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:227:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:229:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:239:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:244:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:261:  $MC alias set ffminio "http://ffactory_minio:9000" "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD" >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_ext_repair.sh:277:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_' | head -n 2
+- /opt/smartfriend-suite/factory/scripts/neo4j_port_fix_run.sh:4:PROJ="${PROJ:-ffactory}"
+- /opt/smartfriend-suite/factory/scripts/neo4j_port_fix_run.sh:5:OPS="/opt/ffactory/stack/neo4j.only.yml"
+- /opt/smartfriend-suite/factory/scripts/neo4j_port_fix_run.sh:6:NAME="${NAME:-ffactory-neo4j-1}"
+- /opt/smartfriend-suite/factory/scripts/ff_doctor_enhanced.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_doctor_enhanced.sh:25:  mapfile -t running_svcs < <(docker ps --filter "label=com.docker.compose.project=${COMPOSE_PROJECT_NAME:-ffactory}" \
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; NET=ffactory_ffactory_net; ENVF=$FF/.env
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:230:S3=os.getenv("S3_ENDPOINT","ffactory_minio:9000")
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:265:ENV S3_ENDPOINT=ffactory_minio:9000 S3_SECURE=0
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:273:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:274:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:279:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:280:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:288:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:289:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:297:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:298:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:299:    volumes: [ "/opt/ffactory/data/hashsets:/data/hashsets" ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:307:    container_name: ffactory_vprobe
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:308:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:316:    container_name: ffactory_evidence_uploader
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:319:      - S3_ENDPOINT=ffactory_minio:9000
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:323:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:336:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_(vision|media_forensics|hashset|vprobe|evidence)' | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_maxfix.sh:343:$MC alias set ffminio http://ffactory_minio:9000 "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD" >/dev/null 2>&1 || true
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:10:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:14:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:42:POSTGRES_DB=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:62:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:74:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:75:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:81:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:84:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:95:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:101:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:112:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:115:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:126:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:127:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:140:docker run --rm --network ffactory_ffactory_net python:3.11-alpine python - <<'PY'
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:142:targets=[("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:157:CN="${CN:-ffactory_db}"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:158:VOL="${VOL:-ffactory_postgres_data}"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:169:run "CREATE DATABASE ffactory WITH OWNER ffadmin;"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:293:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:342:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:343:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:349:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:352:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:363:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:365:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:376:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:387:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:402:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_' || true
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:405:  psql -h db -U ffadmin -d ffactory -c "SELECT 1;" >/dev/null 2>&1 && echo "DB OK" || echo "DB FAIL"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_and_boot.sh:406:docker exec -i ffactory_neo4j cypher-shell -u "$(grep '^NEO4J_USER=' "$FF/.env" | cut -d= -f2-)" -p "$(grep '^NEO4J_PASSWORD=' "$FF/.env" | cut -d= -f2-)" 'RETURN 1;' >/dev/null 2>&1 && echo "NEO4J OK" || echo "NEO4J FAIL"
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:3:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:5:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:13:POSTGRES_DB=${POSTGRES_DB:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:24:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:25:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:31:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:37:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:46:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:50:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:59:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:64:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:74:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:82:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:94:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:95:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:99:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:100:    image: ffactory-vision-engine
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:101:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:104:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:105:    image: ffactory-media-forensics
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:106:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:109:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:110:    image: ffactory-hashset-service
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:111:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_core_restore.sh:123:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v3.sh:4:MEM=/opt/ffactory/system_memory.json
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v3.sh:5:MEMCMD=/opt/ffactory/scripts/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v3.sh:6:DOCTOR=/opt/ffactory/scripts/ff_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory_v3.sh:54:  /opt/ffactory/scripts/system_memory.sh service_restart "$SVC" "" || true
+- /opt/smartfriend-suite/factory/scripts/ff_50_health_fix.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_50_health_fix.sh:11:    svc="${cname#ffactory_}"
+- /opt/smartfriend-suite/factory/scripts/ff_50_health_fix.sh:18:if docker ps --format '{{.Names}}' | grep -q '^ffactory_vision$'; then
+- /opt/smartfriend-suite/factory/scripts/ff_50_health_fix.sh:19:  log "📡 إعداد /health.sh داخل ffactory_vision ..."
+- /opt/smartfriend-suite/factory/scripts/ff_50_health_fix.sh:20:  docker exec ffactory_vision sh -c '
+- /opt/smartfriend-suite/factory/scripts/ff_fix_now.sh:11:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_fix_now.sh:15:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:3:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:13:tar -C "$FF" -czf "$OUT/ffactory_configs_${TS}.tgz" stack apps scripts || true
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:16:PGU="$(docker exec ffactory_db printenv POSTGRES_USER 2>/dev/null || echo forensic)"
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:17:PGDB="$(docker exec ffactory_db printenv POSTGRES_DB 2>/dev/null || echo ffactory)"
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:19:docker exec -i ffactory_db pg_dump -U "$PGU" "$PGDB" \
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:24:docker exec ffactory_redis redis-cli --rdb /data/dump.rdb >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:25:docker cp ffactory_redis:/data/dump.rdb "$OUT/redis_${TS}.rdb"
+- /opt/smartfriend-suite/factory/scripts/ff_backup_now.sh:44:  docker ps --format '{{.Names}}\t{{.Image}}\t{{.Status}}' | grep ffactory || true
+- /opt/smartfriend-suite/factory/scripts/ff_10_clean.sh:3:. /opt/ffactory/scripts/ff_00_env.sh
+- /opt/smartfriend-suite/factory/scripts/ff_10_clean.sh:5:log "🧹 تنظيف الحاويات القديمة (ffactory_*)..."
+- /opt/smartfriend-suite/factory/scripts/ff_10_clean.sh:6:OLD=$(docker ps -a --format '{{.Names}}' | grep '^ffactory_' || true)
+- /opt/smartfriend-suite/factory/scripts/ff_core_init_once.sh:3:ROOT=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_core_init_once.sh:7:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_core_init_once.sh:30:  mc admin user add local ffactory $PW || true &&
+- /opt/smartfriend-suite/factory/scripts/ff_core_init_once.sh:31:  mc admin policy attach local readwrite --user ffactory || true &&
+- /opt/smartfriend-suite/factory/scripts/ff_check_all.sh:4:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:6:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:7:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:8:NET_NAME=${PROJECT}_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:9:VOL_NAME=ffactory_postgres_data
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:10:CN=ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:43:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:46:  ffactory_net:
+- /opt/smartfriend-suite/factory/scripts/ff_recover_db_minimal.sh:70:  echo "$PGPW" > /opt/ffactory/.pgpw  # للاستخدام المؤقت
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_fix.sh:4:OPS=/opt/ffactory/stack/docker-compose.ops.yml
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_fix.sh:5:PROJ=ffactory
+- /opt/smartfriend-suite/factory/scripts/ffactory_neo4j_fix.sh:6:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/backup.sh:5:docker compose -f "$COMPOSE_MAIN" exec -T db pg_dump -U forensic_user ffactory_core > "$BACKUP_DIR/db_backup.sql"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_build_deps.sh:9:  if [ -d "/opt/ffactory/apps/$svc" ]; then
+- /opt/smartfriend-suite/factory/scripts/ff_fix_build_deps.sh:11:    cd "/opt/ffactory/apps/$svc"
+- /opt/smartfriend-suite/factory/scripts/ff_fix_build_deps.sh:38:    docker build -t ffactory/$svc:local .
+- /opt/smartfriend-suite/factory/scripts/ff_fix_build_deps.sh:40:    echo "ℹ️ /opt/ffactory/apps/$svc not found, skip."
+- /opt/smartfriend-suite/factory/scripts/ff_lib.sh:2:. /opt/ffactory/scripts/ff_lib_multi.sh || true
+- /opt/smartfriend-suite/factory/scripts/ff_lib.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_lib.sh:22:    docker compose -f "$compose" ps --services 2>/dev/null | grep -qx "$svc" || { echo "ffactory_${svc//-/_}"; return; }
+- /opt/smartfriend-suite/factory/scripts/ff_lib.sh:26:  echo "ffactory_${svc//-/_}"
+- /opt/smartfriend-suite/factory/scripts/ff_lib.sh:33:  docker compose --project-name ffactory \
+- /opt/smartfriend-suite/factory/scripts/ff_armor_up.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_armor_up.sh:21:tar -czf /root/ffactory-ultimate-backup-$(date +%s).tgz -C /opt ffactory/ 2>/dev/null && \
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:5:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:164:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:168:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:179:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:183:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:194:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:198:      - ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:206:  ffactory_default:
+- /opt/smartfriend-suite/factory/scripts/ff_create_real_ai_fixed.sh:208:    name: ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:189:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:190:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:196:    container_name: ffactory_ocr
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:197:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:203:    container_name: ffactory_face
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:204:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:210:    container_name: ffactory_embed
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:211:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:212:    volumes: [ "/opt/ffactory/data/embeds:/data/embeds" ]
+- /opt/smartfriend-suite/factory/scripts/ff_ultra_pack.sh:221:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_(ocr|face|embed)' | head -n 2 || true
+- /opt/smartfriend-suite/factory/scripts/ff_lib_multi.sh:3:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:6:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:10:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:311:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:312:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:318:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:320:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:330:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:332:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:342:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:344:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:358:    -e MC_HOST_ffminio="http://${MINIO_ROOT_USER}:${MINIO_ROOT_PASSWORD}@ffactory_minio:9000" \
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:361:    -e MC_HOST_ffminio="http://${MINIO_ROOT_USER}:${MINIO_ROOT_PASSWORD}@ffactory_minio:9000" \
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:364:    -e MC_HOST_ffminio="http://${MINIO_ROOT_USER}:${MINIO_ROOT_PASSWORD}@ffactory_minio:9000" \
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_max.sh:377:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_(vision|media_forensics|hashset)' || true
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:8:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:10:PROJECT="ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:11:NET="${PROJECT}_ffactory_net"
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:31:AI_SERVICES="ffactory_asr ffactory_nlp ffactory_correlation"
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:44:  psql -h db -U ffadmin -d ffactory -c "SELECT current_user, current_database();" >/dev/null 2>&1
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:47:  log "✅ Postgres Auth OK. الأدوار ffadmin/ffactory جاهزة."
+- /opt/smartfriend-suite/factory/scripts/ff_diagnostic_report.sh:54:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Health}}' | grep ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_auto_backup.sh:3:docker exec ffactory_db pg_dump -U ffadmin ffactory_forensic > /opt/ffactory/backups/$(date +%Y%m%d_%H%M%S)_db_backup.sql
+- /opt/smartfriend-suite/factory/scripts/ff_auto_backup.sh:4:tar -czf /opt/ffactory/backups/$(date +%Y%m%d_%H%M%S)_neo4j_backup.tar.gz /opt/ffactory/data/neo4j_data/
+- /opt/smartfriend-suite/factory/scripts/ff_auto_backup.sh:5:echo "✅ تم النسخ الاحتياطي في: /opt/ffactory/backups/"
+- /opt/smartfriend-suite/factory/scripts/wait-for-core.sh:3:NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/wait-for-core.sh:9:for host,port in [("db",5432),("neo4j",7687),("ffactory_minio",9000),("ffactory_redis",6379)]:
+- /opt/smartfriend-suite/factory/scripts/wait-for-core.sh:15:  curl -fsS http://ffactory_minio:9000/minio/health/live >/dev/null
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:5:BASE=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:9:NET=ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:30:sudo tee /etc/sysctl.d/99-ffactory.conf >/dev/null <<EOF || true
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:43:  ffactory_default:
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:45:    name: ffactory_default
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:58:      - cluster.name=ffactory-opensearch
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:71:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:81:      - cluster.name=ffactory-opensearch
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:92:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:100:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:113:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:128:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:145:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:163:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:183:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:197:    networks: [ffactory_default]
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:289:docker compose -p ffactory -f "$OPS_YAML" build || wi "build warnings (non-fatal)"
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:291:docker compose -p ffactory -f "$OPS_YAML" up -d || er "OPS up failed"
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:309:KAFKA_CONT=$(docker ps --filter "label=com.docker.compose.project=ffactory" --filter "label=com.docker.compose.service=kafka" --format "{{.Names}}" | head -n1 || true)
+- /opt/smartfriend-suite/factory/scripts/ffactory_ops_fix.sh:330:docker compose -p ffactory -f "$OPS_YAML" ps
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:5:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:9:docker stop ffactory_vision ffactory_media_forensics 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:10:docker rm ffactory_vision ffactory_media_forensics 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:36:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:37:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:43:    container_name: ffactory_vision
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:45:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:55:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:57:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:67:    container_name: ffactory_hashset
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:72:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_port_fix.sh:92:docker ps --filter "name=ffactory" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+- /opt/smartfriend-suite/factory/scripts/test_grafana_memory.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/test_grafana_memory.sh:11:PROJECT=${COMPOSE_PROJECT_NAME:-ffactory}
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory.sh:5:MEM=/opt/ffactory/system_memory.json
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory.sh:6:DOCTOR=/opt/ffactory/scripts/ff_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/test_restart_memory.sh:7:MEMCMD=/opt/ffactory/scripts/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:6:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; ENVF=$FF/.env; NET=ffactory_ffactory_net
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:251:name: ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:252:networks: { ffactory_ffactory_net: { external: true } }
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:258:    container_name: ffactory_ocr
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:260:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:270:    container_name: ffactory_face
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:272:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:282:    container_name: ffactory_embed
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:284:    networks: [ ffactory_ffactory_net ]
+- /opt/smartfriend-suite/factory/scripts/ff_power_pack_v2.sh:302:docker ps --format '{{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_(ocr|face|embed)' || true
+- /opt/smartfriend-suite/factory/scripts/audio_analysis.sh:5:cd /opt/ffactory/stack
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:9:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:60:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:62:      - POSTGRES_DB=ffactory_forensic
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:79:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:84:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:106:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:111:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:127:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:136:  ffactory_network:
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:150:    container_name: ffactory_correlation
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:156:      - DB_NAME=ffactory_forensic
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:174:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:181:    container_name: ffactory_asr
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:197:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:204:    container_name: ffactory_nlp
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:219:      - ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:226:  ffactory_network:
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:228:    name: ffactory_ffactory_network
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:291:                "postgresql://ffadmin:Aa100200@@@postgres:5433/ffactory_forensic"
+- /opt/smartfriend-suite/factory/scripts/ff_final_power.sh:726:        if docker exec "ffactory_$name" curl -f -s "http://localhost:$port/health" >/dev/null 2>&1; then
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:4:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:15:FF=/opt/ffactory
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:49:  sed -i '1a . /opt/ffactory/scripts/ff_lib_multi.sh || true' "$S/ff_lib.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:60:. /opt/ffactory/scripts/ff_lib.sh 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:61:. /opt/ffactory/scripts/ff_lib_multi.sh 2>/dev/null || true
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:62:MEMORY_SCRIPT="/opt/ffactory/scripts/system_memory.sh"
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:66:  cn=$(docker ps --format '{{.Names}}' | grep -E "ffactory[_-]${svc//-/_}$" || true)
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:119:MEM=/opt/ffactory/system_memory.json
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:120:MEMCMD=/opt/ffactory/scripts/system_memory.sh
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:121:DOCTOR=/opt/ffactory/scripts/ff_doctor.sh
+- /opt/smartfriend-suite/factory/scripts/ff_selfaware_patch.sh:169:  /opt/ffactory/scripts/system_memory.sh service_restart "$SVC" "" || true
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:4:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:11:LOG_FILE="$LOGS/ffactory_titan_full_$TS.log"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:12:PROJECT="ffactory"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:33:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:34:FF_NETWORK=ffactory_net
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:42:PGDB=ffactory_core
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:188:    location /api/       { proxy_pass http://ffactory_investigation_api:8080/; }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:189:    location /analytics/ { proxy_pass http://ffactory_behavioral_analytics:8080/; }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:190:    location /feedback/  { proxy_pass http://ffactory_feedback_api:8080/; }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:212:ORCH="http://ffactory_orchestrator:8060"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:246:SCANNER="http://ffactory_social_analyzer:8103"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:247:CORR="http://ffactory_correlation_engine:8080"
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:431:PGUSER=os.getenv('PGUSER','forensic_user'); PGPASSWORD=os.getenv('PGPASSWORD','Forensic123!'); PGDB=os.getenv('PGDB','ffactory_core')
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:439:  arc=os.path.join(BACKUP_DIR,f"ffactory_backup_$TS.tar.gz".replace("$TS", ts))
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:582:networks: { ffactory_net: {driver: bridge} }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:598:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:608:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:617:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:621:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:630:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:640:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:649:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:659:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:668:    container_name: ffactory_ollama
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:672:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:676:    container_name: ffactory_metabase
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:685:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:690:    container_name: ffactory_ntp
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:696:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:700:    container_name: ffactory_vault
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:707:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:712:    container_name: ffactory_investigation_api
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:715:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:721:    container_name: ffactory_behavioral_analytics
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:724:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:730:    container_name: ffactory_feedback_api
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:733:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:737:  neural-core:        { build: { context: ../apps/neural-core },        container_name: ffactory_neural_core,       restart: unless-stopped, ports: ["127.0.0.1:8000:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:738:  correlation-engine: { build: { context: ../apps/correlation-engine },  container_name: ffactory_correlation_engine, restart: unless-stopped, ports: ["127.0.0.1:8005:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:739:  asr-engine:         { build: { context: ../apps/asr-engine },         container_name: ffactory_asr_engine,        restart: unless-stopped, ports: ["127.0.0.1:8004:8080"], volumes: [asr_models:/root/.cache], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:740:  social-intelligence:{ build: { context: ../apps/social-intelligence }, container_name: ffactory_social_intelligence, restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:741:  quantum-security:   { build: { context: ../apps/quantum-security },   container_name: ffactory_quantum_security,   restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:744:    container_name: ffactory_ai_reporting
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:747:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:752:    container_name: ffactory_orchestrator
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:755:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:760:    container_name: ffactory_ingest_service
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:764:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:769:    container_name: ffactory_error_aggregator
+- /opt/smartfriend-suite/factory/ffactory_titan_full.sh:772:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/apps/relationship-intel/app.py:9:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/apps/social-correlator/app.py:13:DBN=os.getenv("POSTGRES_DB","ffactory"); DBU=os.getenv("POSTGRES_USER","ffadmin"); DBPW=os.getenv("POSTGRES_PASSWORD")
+- /opt/smartfriend-suite/factory/apps/correlation-engine/main.py:19:                "postgresql://ffadmin:Aa100200@@@postgres:5433/ffactory_forensic"
+- /opt/smartfriend-suite/factory/apps/correlation-engine/app.py:8:DB=os.getenv("DB_NAME","ffactory")
+- /opt/smartfriend-suite/factory/apps/telegram-bots/enhanced_bot.py:5:logging.basicConfig(level=logging.INFO); log=logging.getLogger("ffactory-bot")
+- /opt/smartfriend-suite/factory/apps/backup-manager/backup_manager.py:3:PGUSER=os.getenv('PGUSER','forensic_user'); PGPASSWORD=os.getenv('PGPASSWORD','Forensic123!'); PGDB=os.getenv('PGDB','ffactory_core')
+- /opt/smartfriend-suite/factory/apps/backup-manager/backup_manager.py:11:    arc=os.path.join(BACKUP_DIR,f"ffactory_backup_{ts}.tar.gz")
+- /opt/smartfriend-suite/factory/apps/social-archive/app.py:8:DBN=os.getenv("POSTGRES_DB","ffactory"); DBU=os.getenv("POSTGRES_USER","ffadmin"); DBPW=os.getenv("POSTGRES_PASSWORD")
+- /opt/smartfriend-suite/factory/apps/evidence-uploader/app.py:9:S3=os.getenv("S3_ENDPOINT","ffactory_minio:9000")
+- /opt/smartfriend-suite/factory/bin/00_prep.sh:10:FF=/opt/ffactory; APPS=$FF/apps; STACK=$FF/stack; SCRIPTS=$FF/scripts; LOGS=$FF/logs; DATA=$FF/data
+- /opt/smartfriend-suite/factory/bin/00_prep.sh:16:COMPOSE_PROJECT_NAME=ffactory
+- /opt/smartfriend-suite/factory/bin/00_prep.sh:17:FF_NETWORK=ffactory_net
+- /opt/smartfriend-suite/factory/bin/00_prep.sh:24:PGDB=ffactory_core
+- /opt/smartfriend-suite/factory/bin/05_health.sh:3:source /opt/ffactory/stack/.env || true
+- /opt/smartfriend-suite/factory/bin/04_up.sh:3:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/bin/04_up.sh:5:docker compose -p ffactory -f docker-compose.ultimate.yml -f docker-compose.override.yml up -d --build --remove-orphans
+- /opt/smartfriend-suite/factory/bin/04_up.sh:8:echo "logs: docker compose -p ffactory -f $STACK/docker-compose.ultimate.yml -f $STACK/docker-compose.override.yml logs -f --tail=100"
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:3:STACK=/opt/ffactory/stack; install -d -m 755 "$STACK"
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:8:networks: { ffactory_net: {driver: bridge} }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:24:    container_name: ffactory_db
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:34:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:43:    container_name: ffactory_redis
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:47:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:56:    container_name: ffactory_neo4j
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:66:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:75:    container_name: ffactory_minio
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:85:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:94:    container_name: ffactory_ollama
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:98:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:102:    container_name: ffactory_metabase
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:111:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:116:    container_name: ffactory_ntp
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:122:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:126:    container_name: ffactory_vault
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:133:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:138:    container_name: ffactory_investigation_api
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:141:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:147:    container_name: ffactory_behavioral_analytics
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:150:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:156:    container_name: ffactory_feedback_api
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:159:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:163:  neural-core:        { build: { context: ../apps/neural-core },        container_name: ffactory_neural_core,       restart: unless-stopped, ports: ["127.0.0.1:8000:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:164:  correlation-engine: { build: { context: ../apps/correlation-engine },  container_name: ffactory_correlation_engine, restart: unless-stopped, ports: ["127.0.0.1:8005:8080"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:165:  asr-engine:         { build: { context: ../apps/asr-engine },         container_name: ffactory_asr_engine,        restart: unless-stopped, ports: ["127.0.0.1:8004:8080"], volumes: [asr_models:/root/.cache], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:166:  social-intelligence:{ build: { context: ../apps/social-intelligence }, container_name: ffactory_social_intelligence, restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:167:  quantum-security:   { build: { context: ../apps/quantum-security },   container_name: ffactory_quantum_security,   restart: unless-stopped, networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:171:    container_name: ffactory_ai_reporting
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:174:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:179:    container_name: ffactory_orchestrator
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:182:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:187:    container_name: ffactory_ingest_service
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:191:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:196:    container_name: ffactory_error_aggregator
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:199:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:203:  integrity-monitor: { build: { context: ../apps/integrity-monitor }, container_name: ffactory_integrity_monitor, restart: unless-stopped, ports: ["127.0.0.1:8100:8100"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:204:  anomaly-detector:  { build: { context: ../apps/anomaly-detector },  container_name: ffactory_anomaly_detector,  restart: unless-stopped, ports: ["127.0.0.1:8101:8101"], networks: [ffactory_net], depends_on: [redis] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:205:  deception-detector:{ build: { context: ../apps/deception-detector }, container_name: ffactory_deception_detector, restart: unless-stopped, ports: ["127.0.0.1:8102:8102"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:206:  social-analyzer:   { build: { context: ../apps/social-analyzer },    container_name: ffactory_social_analyzer,   restart: unless-stopped, ports: ["127.0.0.1:8103:8103"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:210:    container_name: ffactory_coc_manager
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:216:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:220:  advanced-steganalysis: { build: { context: ../apps/advanced-steganalysis }, container_name: ffactory_advanced_steganalysis, restart: unless-stopped, ports: ["127.0.0.1:8114:8114"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:221:  memory-forensics:      { build: { context: ../apps/memory-forensics },      container_name: ffactory_memory_forensics,   restart: unless-stopped, ports: ["127.0.0.1:8115:8115"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:222:  temporal-forensics:    { build: { context: ../apps/temporal-forensics },    container_name: ffactory_temporal_forensics, restart: unless-stopped, ports: ["127.0.0.1:8116:8116"], networks: [ffactory_net] }
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:227:    container_name: ffactory_media_forensics
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:231:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:235:    container_name: ffactory_medical_forensics
+- /opt/smartfriend-suite/factory/bin/02_compose_write.sh:238:    networks: [ ffactory_net ]
+- /opt/smartfriend-suite/factory/bin/01_stubs.sh:3:FF=/opt/ffactory; APPS=$FF/apps; install -d -m 755 "$APPS"
+- /opt/smartfriend-suite/factory/bin/01_stubs.sh:95:    location /api/       { proxy_pass http://ffactory_investigation_api:8080/; }
+- /opt/smartfriend-suite/factory/bin/01_stubs.sh:96:    location /analytics/ { proxy_pass http://ffactory_behavioral_analytics:8080/; }
+- /opt/smartfriend-suite/factory/bin/01_stubs.sh:97:    location /feedback/  { proxy_pass http://ffactory_feedback_api:8080/; }
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:3:STACK=/opt/ffactory/stack
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:7:docker compose -p ffactory -f docker-compose.ultimate.yml -f docker-compose.override.yml config >/tmp/ffactory_compose_render.yaml 2>/tmp/ffactory_compose_err.txt
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:12:  sed -n '1,200p' /tmp/ffactory_compose_err.txt
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:15:echo "compose config OK → /tmp/ffactory_compose_render.yaml"
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:17:docker compose -p ffactory -f docker-compose.ultimate.yml -f docker-compose.override.yml down --remove-orphans || true
+- /opt/smartfriend-suite/factory/bin/03_preflight.sh:18:docker network rm ffactory_default 2>/dev/null || true
+- /opt/smartfriend-suite/factory/ff_doctor.sh:17:FF="/opt/ffactory"
+- /opt/smartfriend-suite/factory/ff_doctor.sh:72:  env_set COMPOSE_PROJECT_NAME "ffactory"
+- /opt/smartfriend-suite/factory/ff_doctor.sh:313:docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}' | grep -E '^ffactory_' | sort | head -120
+- /opt/smartfriend-suite/factory/ff_doctor.sh:327:echo "   • فحص سريع:         docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}' | grep ffactory"
+- /opt/smartfriend-suite/factory/fix_yaml_complete.sh:4:FILE="/opt/ffactory/stack/docker-compose.ultimate.yml"
+- /opt/smartfriend-suite/apps/ffactory/simple_api.py:13:    return {"status": "healthy", "service": "ffactory", "timestamp": datetime.now().isoformat()}
+- /opt/smartfriend-suite/tools/monitor.sh:7:systemctl is-active ffactory.service sf-cognitive.service sf-telegram.service
+- /opt/smartfriend-suite/bin/keyrotate.sh:24:systemctl reload sf-unified.service ffactory.service 2>/dev/null || true
+- /opt/smartfriend-suite/backups/20251110_172833/apps/ffactory/simple_api.py:13:    return {"status": "healthy", "service": "ffactory", "timestamp": datetime.now().isoformat()}
+- /opt/smartfriend-suite/backups/20251110_171724/apps/ffactory/simple_api.py:13:    return {"status": "healthy", "service": "ffactory", "timestamp": datetime.now().isoformat()}
+ffactory refs 'smartfriend|smartfrind':

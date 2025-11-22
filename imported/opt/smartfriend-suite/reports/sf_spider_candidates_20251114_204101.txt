@@ -1,0 +1,10 @@
+SmartFriend Suite - Spider Candidates
+Timestamp: 20251114_204101
+
+Found spider-like directories:
+/opt/smartfriend-suite-backup-20251109-025421/data/spider_shards
+/opt/smartfriend-suite-backup/data/spider_shards
+/opt/smartfriend-suite/apps/harvester/spider
+/opt/smartfriend-suite/data/spider_shards
+/opt/smartfriend-suite/var/knowledge/raw_spider
+/opt/smartfriend-suite/var/logs/spider

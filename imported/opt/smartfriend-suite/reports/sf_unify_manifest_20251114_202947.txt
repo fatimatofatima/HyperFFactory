@@ -1,0 +1,15 @@
+SmartFriend Suite - Unify Paths Manifest
+Timestamp: 20251114_202947
+APP_ROOT=/opt/smartfriend-suite
+APPS_DIR=/opt/smartfriend-suite/apps
+VAR_DIR=/opt/smartfriend-suite/var
+DB_DIR=/opt/smartfriend-suite/var/db
+LEGACY_DB_DIR=/opt/smartfriend-suite/var/db/legacy
+FF_DB_DIR=/opt/smartfriend-suite/var/db/ffactory
+BACKUP_ROOT=/root/sf_unify_backup_20251114_202947
+
+== Moved DB Files ==
+memory.db: /opt/smartfriend-suite/memory.db -> /opt/smartfriend-suite/var/db/memory.db (backup: /root/sf_unify_backup_20251114_202947/memory.db)
+smart_core_memory.db: /opt/smartfriend-suite/smart_core_memory.db -> /opt/smartfriend-suite/var/db/smart_core_memory.db (backup: /root/sf_unify_backup_20251114_202947/smart_core_memory.db)
+unified_memory.db: /opt/smartfriend-suite/unified_memory.db -> /opt/smartfriend-suite/var/db/unified_memory.db (backup: /root/sf_unify_backup_20251114_202947/unified_memory.db)
+smartfriend_unified.db: /opt/smartfriend-suite/smartfriend_unified.db -> /opt/smartfriend-suite/var/db/smartfriend_unified.db (backup: /root/sf_unify_backup_20251114_202947/smartfriend_unified.db)

@@ -1,0 +1,137 @@
+============================================================
+ SmartFriend Suite – Gap Report (sf / smartfriend / smartfrind)
+ Timestamp : 2025-11-17 04:50:13
+ Hostname  : vmi2733174
+============================================================
+
+------------------------------------------------------------
+1) ملخص حسب العائلة
+------------------------------------------------------------
+• عائلة sf-*
+  - عدد unit files: 44
+  - عدد الوحدات المحملة: 26
+    * waiting: 10
+    * auto-restart: 9
+    * running: 7
+• عائلة smartfriend-*
+  - عدد unit files: 4
+  - عدد الوحدات المحملة: 3
+    * auto-restart: 3
+• عائلة smartfrind-*
+  - عدد unit files: 2
+  - عدد الوحدات المحملة: 5
+    * running: 2
+    * failed: 3
+
+------------------------------------------------------------
+2) وحدات Legacy (smartfrind-*) ما زالت نشطة
+------------------------------------------------------------
+  - smartfrind-envwatch.service	[running]	smartfrind-envwatch.service
+  - smartfrind-gateway.service	[running]	smartfrind-gateway.service
+  - smartfrind-core-watchdog.timer	[failed]	smartfrind-core-watchdog.timer
+  - smartfrind-harvest.timer	[failed]	smartfrind-harvest.timer
+  - smartfrind-ingest.timer	[failed]	smartfrind-ingest.timer
+
+------------------------------------------------------------
+3) خدمات SmartFriend Suite الحرجة من sf-* (Core / Gateway / Memory / Web / Spider / Health / Brain)
+------------------------------------------------------------
+  - sf-core.service                   active=active     enabled=enabled   SmartFriend Core API (8383)
+  - sf-health.service                 active=activating
+unknown enabled=enabled   SmartFriend Suite - health
+  - sf-ingest.service                 active=inactive
+unknown enabled=enabled   SmartFriend Suite - Brain Ingest
+  - sf-kb-build.service               active=inactive
+unknown enabled=enabled   SmartFriend Suite - Knowledge Base Builder
+  - sf-learn.service                  active=inactive
+unknown enabled=enabled   SmartFriend Suite - Brain Learn
+  - sf-learning.service               active=activating
+unknown enabled=enabled   SmartFriend Suite - Brain Continuous Learning Loop
+  - sf-memory.service                 active=activating
+unknown enabled=enabled   SmartFriend Suite - memory
+  - sf-spider.service                 active=activating
+unknown enabled=enabled   SmartFriend Spider (Web Harvester)
+  - sf-unified.service                active=activating
+unknown enabled=enabled   SmartFriend Suite - unified
+  - sf-web.service                    active=activating
+unknown enabled=enabled   SmartFriend Web UI (8390)
+  - sf-kb-build.timer                 active=active     enabled=enabled   Rebuild KB daily
+  - sf-learn.timer                    active=active     enabled=enabled   Run sf-learn hourly
+  - sf-spider.timer                   active=active     enabled=enabled   SmartFriend Suite - Spider scheduled crawl
+
+------------------------------------------------------------
+4) Bots عبر العائلات (sf-*, smartfriend-*, smartfrind-*)
+------------------------------------------------------------
+• Bots من عائلة sf-*:
+  - sf-audit-bot.service              active=inactive
+unknown enabled=enabled   SmartFriend Audit Bot
+  - sf-bot-assistant.service          active=activating
+unknown enabled=enabled   SmartFriend Assistant Bot
+  - sf-bot-behavior.service           active=active     enabled=enabled   SmartFriend Behavior Bot
+  - sf-bot-dev.service                active=active     enabled=enabled   SmartFriend Telegram Bot (Developer)
+  - sf-bot-model.service              active=inactive
+unknown enabled=enabled   SmartFriend Telegram Bot (Model)
+  - sf-bot-programmer.service         active=active     enabled=enabled   SmartFriend Programmer Bot
+  - sf-bot.service                    active=active     enabled=enabled   Main Telegram Bot
+  - sf-telegram-audit.service         active=activating
+unknown enabled=enabled   SmartFriend Audit Bot
+  - sf-telegram.service               active=inactive
+unknown enabled=enabled   SmartFriend Main Bot
+  - sf-bots.target                    active=inactive
+unknown enabled=static    SmartFriend Telegram Bots
+  - sf-bot-programmer.timer           active=inactive
+unknown enabled=masked
+unknown  sf-bot-programmer.timer
+
+• Bots من عائلة smartfriend-*:
+  (لا يوجد bots في هذه العائلة)
+
+• Bots من عائلة smartfrind-*:
+  (لا يوجد bots في هذه العائلة)
+
+
+------------------------------------------------------------
+5) تغطية البورتات الحالية (80, 821x, 82xx)
+------------------------------------------------------------
+tcp   LISTEN 0      2048         0.0.0.0:8080       0.0.0.0:*    users:(("python3",pid=1285248,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      2048       127.0.0.1:8211       0.0.0.0:*    users:(("python3",pid=341896,fd=13))                                                                                                                                                                
+tcp   LISTEN 0      2048       127.0.0.1:8210       0.0.0.0:*    users:(("python",pid=1292122,fd=6))                                                                                                                                                                 
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=2751944,fd=6),("nginx",pid=2751943,fd=6),("nginx",pid=2751942,fd=6),("nginx",pid=2751941,fd=6),("nginx",pid=2751940,fd=6),("nginx",pid=2751939,fd=6),("nginx",pid=1430377,fd=6))
+tcp   LISTEN 0      2048         0.0.0.0:8223       0.0.0.0:*    users:(("python3",pid=1732684,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      2048         0.0.0.0:8222       0.0.0.0:*    users:(("python3",pid=1741226,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      2048         0.0.0.0:8221       0.0.0.0:*    users:(("python3",pid=1741225,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      511             [::]:80            [::]:*    users:(("nginx",pid=2751944,fd=8),("nginx",pid=2751943,fd=8),("nginx",pid=2751942,fd=8),("nginx",pid=2751941,fd=8),("nginx",pid=2751940,fd=8),("nginx",pid=2751939,fd=8),("nginx",pid=1430377,fd=8))
+
+------------------------------------------------------------
+6) خريطة استرشادية للفجوات G1..G10
+------------------------------------------------------------
+G1 – ازدواجية البراند والخدمات:
+  • وجود وحدات smartfrind-* نشطة في قسم (2) ⇒ لازم تتجمّد لاحقاً وننقل منطقها إلى sf-*.
+
+G2 – ملكية البورتات الأساسية (8210 / 8211 / 8220):
+  • من قسم (5): أي process على هذه البورتات ليس من مسار sf-* ⇒ يحتاج نقل أو إعادة توجيه.
+
+G3 – Memory API:
+  • من قسم (3): إذا sf-memory.service inactive/failed أو غير موجود ⇒ Memory API غير جاهز.
+
+G4 – Web UI:
+  • من قسم (3) + قسم (5): إذا sf-web.service failed أو لا يوجد LISTEN على 8390 ⇒ فجوة في لوحة السيوت.
+
+G5 – Brain / Learning:
+  • sf-ingest / sf-kb-build / sf-learn / sf-learning مقابل أي smartfrind-harvest/ingest نشط ⇒ نظامان لنفس الدور.
+
+G6 – Spider / Harvester:
+  • sf-spider.* مقابل smartfrind-harvest.* ⇒ Spider الرسمي لازم يكون من sf-* فقط لاحقاً.
+
+G7 – Bots:
+  • من قسم (4): تكرار أدوار البوت بين sf-* و smartfrind-* ⇒ سنختار لاحقاً Bot رسمي واحد لكل دور.
+
+G8 – Health / Guard:
+  • حالة sf-health.service + أي smartfrind-* watchdog/guardian نشط ⇒ نحتاج Health موحّد من sf-*.
+
+G9 – Secrets / ENV:
+  • أي خدمة sf-* حرجة في قسم (3) حالتها failed ⇒ نرجع لـ journalctl لهذه الخدمة (غالباً توكن/ENV).
+
+G10 – وحدات systemd القديمة:
+  • أي smartfrind-* في قسم (2) حالة failed/inactive مع unit file موجود ⇒ مرشح للأرشفة بدون حذف بيانات.
+
+ملحوظة: هذا السكربت لا يغيّر أي خدمة؛ قراءة وتحليل فقط.

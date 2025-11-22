@@ -1,0 +1,25 @@
+==================================================
+      SmartFriend Suite - خطة تنفيذ وتشخيص
+==================================================
+التاريخ : Sat Nov 15 18:36:31 +03 2025
+السيرفر : vmi2733174
+
+=== حالة النظام (uptime/load) ===
+ 18:36:31 up 7 days, 10:11,  2 users,  load average: 1.39, 1.17, 1.20
+
+=== الذاكرة ===
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.1Gi       8.1Gi        84Mi       2.5Gi        10Gi
+Swap:             0B          0B          0B
+
+=== المساحة (/, /opt/smartfriend-suite) ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       388G  180G  209G  47% /
+/dev/sda1       388G  180G  209G  47% /
+
+==================================================
+1) حصر كل خدمات SmartFriend ذات الصلة (sf-*, smartfrind-*, smartfriend-*).
+==================================================
+UNIT                                     | GROUP              | ACTIVE     | SUB        | STATE    | DESCRIPTION
+-----------------------------------------+--------------------+------------+------------+----------+----------------------------------------------
+sf-backup.service                        | LEGACY/OTHER       | inactive   | dead       | disabled | SmartFriend DB Backup

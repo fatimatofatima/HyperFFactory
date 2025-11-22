@@ -1,0 +1,9 @@
+=== Tables & Views in /opt/BRAIN_CORE/memory/shared.db ===
+name     type 
+-------  -----
+systems  table
+
+=== Row counts (user tables) ===
+table_name  rows
+----------  ----
+systems     15  

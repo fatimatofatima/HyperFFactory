@@ -1,0 +1,483 @@
+FFactory Deep Audit
+Timestamp: 20251122_001428
+Path: /opt/ffactory
+Host: vmi2733174
+Uptime: 1 week, 6 days, 15 hours, 49 minutes
+OS: Ubuntu 22.04.5 LTS
+Disk free (/): 222G
+
+## 1) Tree (depth 3)
+/opt/ffactory
+/opt/ffactory/ffactory2
+/opt/ffactory/ffactory2/.git
+/opt/ffactory/ffactory2/.git/hooks
+/opt/ffactory/ffactory2/.git/info
+/opt/ffactory/stack
+/opt/ffactory/stack/init
+/opt/ffactory/stack/quantum-security
+/opt/ffactory/stack/asr-engine
+/opt/ffactory/stack/ai-reporting
+/opt/ffactory/stack/media-forensics-pro
+/opt/ffactory/stack/correlation-engine
+/opt/ffactory/stack/correlation-engine/app
+/opt/ffactory/stack/config
+/opt/ffactory/stack/advanced-forensics
+/opt/ffactory/stack/advanced-forensics/memory_analyzer
+/opt/ffactory/stack/advanced-forensics/usb_analyzer
+/opt/ffactory/stack/social-intelligence
+/opt/ffactory/stack/__pycache__
+/opt/ffactory/stack/neural-core
+/opt/ffactory/scripts
+/opt/ffactory/scripts/__pycache__
+/opt/ffactory/logs
+/opt/ffactory/config
+/opt/ffactory/audit
+/opt/ffactory/apps
+/opt/ffactory/apps/iot-forensics
+/opt/ffactory/apps/iot-forensics/__pycache__
+/opt/ffactory/apps/quantum-security
+/opt/ffactory/apps/quantum-security/__pycache__
+/opt/ffactory/apps/asr-engine
+/opt/ffactory/apps/asr-engine/__pycache__
+/opt/ffactory/apps/ai-reporting
+/opt/ffactory/apps/ai-reporting/__pycache__
+/opt/ffactory/apps/behavioral-analytics
+/opt/ffactory/apps/behavioral-analytics/__pycache__
+/opt/ffactory/apps/video-metadata
+/opt/ffactory/apps/video-metadata/__pycache__
+/opt/ffactory/apps/predictive-analytics
+/opt/ffactory/apps/predictive-analytics/__pycache__
+/opt/ffactory/apps/linguistic-analysis
+/opt/ffactory/apps/linguistic-analysis/__pycache__
+/opt/ffactory/apps/triage
+/opt/ffactory/apps/triage/__pycache__
+/opt/ffactory/apps/ingest-gateway
+/opt/ffactory/apps/ingest-gateway/__pycache__
+/opt/ffactory/apps/investigation-api
+/opt/ffactory/apps/investigation-api/__pycache__
+/opt/ffactory/apps/relationship-intel
+/opt/ffactory/apps/relationship-intel/__pycache__
+/opt/ffactory/apps/zero-trust-enforcer
+/opt/ffactory/apps/zero-trust-enforcer/__pycache__
+/opt/ffactory/apps/correlation
+/opt/ffactory/apps/correlation/__pycache__
+/opt/ffactory/apps/data-export-service
+/opt/ffactory/apps/data-export-service/__pycache__
+/opt/ffactory/apps/social-correlator
+/opt/ffactory/apps/social-correlator/__pycache__
+/opt/ffactory/apps/ingest-service
+/opt/ffactory/apps/ingest-service/__pycache__
+/opt/ffactory/apps/external-integration
+/opt/ffactory/apps/external-integration/__pycache__
+/opt/ffactory/apps/media-forensics-pro
+/opt/ffactory/apps/media-forensics-pro/__pycache__
+/opt/ffactory/apps/chain-of-custody-manager
+/opt/ffactory/apps/chain-of-custody-manager/__pycache__
+/opt/ffactory/apps/audit-logger
+/opt/ffactory/apps/audit-logger/__pycache__
+/opt/ffactory/apps/memory-forensics
+/opt/ffactory/apps/memory-forensics/__pycache__
+/opt/ffactory/apps/ingest-worker
+/opt/ffactory/apps/ingest-worker/__pycache__
+/opt/ffactory/apps/criminal-profiler
+/opt/ffactory/apps/criminal-profiler/__pycache__
+/opt/ffactory/apps/face-engine
+/opt/ffactory/apps/face-engine/__pycache__
+/opt/ffactory/apps/risk-analyzer
+/opt/ffactory/apps/risk-analyzer/__pycache__
+/opt/ffactory/apps/social-linker
+/opt/ffactory/apps/social-linker/__pycache__
+/opt/ffactory/apps/language-processor
+/opt/ffactory/apps/language-processor/__pycache__
+/opt/ffactory/apps/case-manager
+/opt/ffactory/apps/case-manager/__pycache__
+/opt/ffactory/apps/status-unifier
+/opt/ffactory/apps/status-unifier/__pycache__
+/opt/ffactory/apps/compliance-checker
+/opt/ffactory/apps/compliance-checker/__pycache__
+/opt/ffactory/apps/video-prober
+/opt/ffactory/apps/video-prober/__pycache__
+/opt/ffactory/apps/frontend-dashboard
+/opt/ffactory/apps/frontend-dashboard/html
+/opt/ffactory/apps/frontend-dashboard/__pycache__
+/opt/ffactory/apps/frontend-dashboard/src
+/opt/ffactory/apps/correlation-engine
+/opt/ffactory/apps/correlation-engine/__pycache__
+/opt/ffactory/apps/hashset-service
+/opt/ffactory/apps/hashset-service/__pycache__
+/opt/ffactory/apps/error-aggregator
+/opt/ffactory/apps/error-aggregator/__pycache__
+/opt/ffactory/apps/intrusion-detector
+/opt/ffactory/apps/intrusion-detector/__pycache__
+/opt/ffactory/apps/embed-search
+/opt/ffactory/apps/embed-search/__pycache__
+/opt/ffactory/apps/social-analyzer
+/opt/ffactory/apps/social-analyzer/__pycache__
+/opt/ffactory/apps/anti-anti-forensics
+/opt/ffactory/apps/anti-anti-forensics/__pycache__
+/opt/ffactory/apps/blockchain-analyzer
+/opt/ffactory/apps/blockchain-analyzer/__pycache__
+/opt/ffactory/apps/digital-archiver
+/opt/ffactory/apps/digital-archiver/__pycache__
+/opt/ffactory/apps/deception-detector
+/opt/ffactory/apps/deception-detector/__pycache__
+/opt/ffactory/apps/advanced-forensics
+/opt/ffactory/apps/advanced-forensics/__pycache__
+/opt/ffactory/apps/collaborative-analysis
+/opt/ffactory/apps/collaborative-analysis/__pycache__
+/opt/ffactory/apps/telegram-bots
+/opt/ffactory/apps/telegram-bots/__pycache__
+/opt/ffactory/apps/temporal-forensics
+/opt/ffactory/apps/temporal-forensics/__pycache__
+/opt/ffactory/apps/api-gateway
+/opt/ffactory/apps/api-gateway/__pycache__
+/opt/ffactory/apps/cloud-forensics
+/opt/ffactory/apps/cloud-forensics/__pycache__
+/opt/ffactory/apps/social-intelligence
+/opt/ffactory/apps/social-intelligence/__pycache__
+/opt/ffactory/apps/medical-forensics
+/opt/ffactory/apps/medical-forensics/__pycache__
+/opt/ffactory/apps/backup-manager
+/opt/ffactory/apps/backup-manager/__pycache__
+/opt/ffactory/apps/media-analyzer
+/opt/ffactory/apps/media-analyzer/__pycache__
+/opt/ffactory/apps/alert-manager
+/opt/ffactory/apps/alert-manager/__pycache__
+/opt/ffactory/apps/nlp
+/opt/ffactory/apps/nlp/__pycache__
+/opt/ffactory/apps/graph-writer
+/opt/ffactory/apps/graph-writer/__pycache__
+/opt/ffactory/apps/anomaly-detector
+/opt/ffactory/apps/anomaly-detector/__pycache__
+/opt/ffactory/apps/mobile-forensics
+/opt/ffactory/apps/mobile-forensics/__pycache__
+/opt/ffactory/apps/chain-custody-verifier
+/opt/ffactory/apps/chain-custody-verifier/__pycache__
+/opt/ffactory/apps/bot-admin
+/opt/ffactory/apps/bot-admin/__pycache__
+/opt/ffactory/apps/social-archive
+/opt/ffactory/apps/social-archive/__pycache__
+/opt/ffactory/apps/ocr-engine
+/opt/ffactory/apps/ocr-engine/__pycache__
+/opt/ffactory/apps/media-forensics
+/opt/ffactory/apps/media-forensics/__pycache__
+/opt/ffactory/apps/vision-engine
+/opt/ffactory/apps/vision-engine/__pycache__
+/opt/ffactory/apps/advanced-steganalysis
+/opt/ffactory/apps/advanced-steganalysis/__pycache__
+/opt/ffactory/apps/relationship-risk
+/opt/ffactory/apps/relationship-risk/__pycache__
+/opt/ffactory/apps/neural-core
+/opt/ffactory/apps/neural-core/__pycache__
+/opt/ffactory/apps/deepfake-detector
+/opt/ffactory/apps/deepfake-detector/__pycache__
+/opt/ffactory/apps/behavioral-patterns
+/opt/ffactory/apps/behavioral-patterns/__pycache__
+/opt/ffactory/apps/geospatial-tracker
+/opt/ffactory/apps/geospatial-tracker/__pycache__
+/opt/ffactory/apps/orchestrator
+/opt/ffactory/apps/orchestrator/__pycache__
+/opt/ffactory/apps/real-time-dashboard
+/opt/ffactory/apps/real-time-dashboard/__pycache__
+/opt/ffactory/apps/report-generator
+/opt/ffactory/apps/report-generator/__pycache__
+/opt/ffactory/apps/integrity-monitor
+/opt/ffactory/apps/integrity-monitor/__pycache__
+/opt/ffactory/apps/behavior-analytics
+/opt/ffactory/apps/behavior-analytics/__pycache__
+/opt/ffactory/apps/mobility-analytics
+/opt/ffactory/apps/mobility-analytics/__pycache__
+/opt/ffactory/apps/evidence-tracker
+/opt/ffactory/apps/evidence-tracker/__pycache__
+/opt/ffactory/apps/bot-nextwin
+/opt/ffactory/apps/bot-nextwin/__pycache__
+/opt/ffactory/apps/network-mapper
+/opt/ffactory/apps/network-mapper/__pycache__
+/opt/ffactory/apps/feedback-api
+/opt/ffactory/apps/feedback-api/__pycache__
+/opt/ffactory/apps/threat-intelligence
+/opt/ffactory/apps/threat-intelligence/__pycache__
+/opt/ffactory/apps/evidence-uploader
+/opt/ffactory/apps/evidence-uploader/__pycache__
+/opt/ffactory/bin
+/opt/ffactory/backups
+/opt/ffactory/data
+/opt/ffactory/data/postgres
+/opt/ffactory/data/postgres/pg_multixact
+/opt/ffactory/data/postgres/base
+/opt/ffactory/data/postgres/global
+/opt/ffactory/data/postgres/pg_xact
+
+## 2) Top-level sizes
+4.0K	/opt/ffactory/README.md
+4.0K	/opt/ffactory/fix_yaml_complete.sh
+4.0K	/opt/ffactory/requirements.txt
+4.0K	/opt/ffactory/system_memory.json.bak.1761959078
+8.0K	/opt/ffactory/config
+8.0K	/opt/ffactory/system_memory.json
+16K	/opt/ffactory/ff_doctor.sh
+16K	/opt/ffactory/reports
+36K	/opt/ffactory/ffactory_titan_full.sh
+48K	/opt/ffactory/bin
+92K	/opt/ffactory/ffactory2
+556K	/opt/ffactory/stack
+1.2M	/opt/ffactory/scripts
+2.6M	/opt/ffactory/apps
+5.6M	/opt/ffactory/logs
+30M	/opt/ffactory/audit
+279M	/opt/ffactory/backups
+633M	/opt/ffactory/data
+
+## 3) Scripts (*.sh) sanity
+/opt/ffactory/stack/advanced-forensics/install_volatility3.sh | 711 369 | ##!/bin/bash
+/opt/ffactory/stack/safe_up.sh | 711 1389 | ##!/usr/bin/env bash
+/opt/ffactory/stack/run_titan_safe.sh | 711 34879 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_nlp_power.sh | 755 5571 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_asr_power_final.sh | 755 7251 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_pack.sh | 755 10334 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_correlation_power.sh | 755 6755 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_selective_restore.sh | 755 4064 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_minio_worm.sh | 755 496 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_safe_apply.sh | 755 2560 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ultimate_fixer.sh | 755 5980 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_king_control.sh | 755 5248 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_force_up.sh | 755 1848 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_hotfix_doctor.sh | 755 815 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_neo4j_doctor.sh | 755 5512 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_final_fix.sh | 755 5632 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/docker-entrypoint.wait.sh | 755 607 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_health.sh | 755 83 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_live_monitor.sh | 755 337 | ##!/bin/bash
+/opt/ffactory/scripts/ff_salvage.sh | 755 5903 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/neo4j_stable_fix.sh | 755 2758 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_health_lib.sh | 755 3898 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_core_report.sh | 755 1083 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/wait-for-neo4j.sh | 755 123 | ##!/bin/bash
+/opt/ffactory/scripts/ff_complete_fix.sh | 755 9473 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_smart_maintain.sh | 755 1553 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_nsrl_load.sh | 755 852 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_final_test.sh | 755 1607 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_fix_and_run.sh | 755 10467 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/self_aware_monitor.sh | 755 951 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/deploy-ultimate-system.sh | 755 655 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/wait-entrypoint-deps.sh | 755 463 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/test_restart_memory_v2.sh | 755 1998 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_recover_core_apps.sh | 755 14594 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_full_diag.sh | 755 6368 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_fix_all_now.sh | 755 2480 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_comment.sh | 755 1118 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_super.sh | 755 6696 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_production_check.sh | 755 1256 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/test_investigator.sh | 755 1141 | ##!/bin/bash
+/opt/ffactory/scripts/docker-entrypoint.sh | 755 730 | ##!/bin/sh
+/opt/ffactory/scripts/ff_postgres_setup.sh | 755 3694 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_create_real_ai.sh | 755 5476 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ai_services_fix.sh | 755 942 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_smart_doctor.sh | 755 6388 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_full_power.sh | 755 2201 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_40_ai_echo.sh | 755 602 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_compose_cycle.sh | 755 679 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/setup_real_forensics.sh | 755 25313 | ##!/bin/bash
+/opt/ffactory/scripts/ff_neo4j_fix.sh | 755 1333 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_relation_pack.sh | 755 10955 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_smart_fix.sh | 755 8889 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_pg_rescue.sh | 755 878 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/complete_setup.sh | 755 20212 | ##!/bin/bash
+/opt/ffactory/scripts/ff_port_check.sh | 755 2127 | ##!/bin/bash
+/opt/ffactory/scripts/ff_set_test_pw.sh | 755 3809 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_00_env.sh | 755 572 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/neo4j_doctor_smart.sh | 755 5212 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_safe_rebuild.sh | 755 5131 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_pack_II.sh | 755 16087 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/wait-core.sh | 755 402 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_asr_final_production.sh | 755 6920 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_fix_local_images.sh | 755 889 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_social_pack.sh | 755 11518 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_core_fix_now.sh | 755 3141 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_env_bootstrap.sh | 755 1168 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_create_ai_apps.sh | 755 1805 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_pg_single_fix.sh | 755 3325 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ext_upgrade.sh | 755 8676 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_100_all.sh | 755 499 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_smart.sh | 755 4703 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_start.sh | 755 1255 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_test_restart_grafana.sh | 755 741 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_social_link_power.sh | 755 12205 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/neo4j_quick_fix.sh | 755 1478 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_install_board.sh | 755 10947 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_patch_helpers.sh | 755 1856 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/neo4j_smart_repair.sh | 755 2378 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_crash_diagnostic.sh | 755 286 | ##!/bin/bash
+/opt/ffactory/scripts/ff_ai_fix_final.sh | 755 1371 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_db_rescue.sh | 755 3427 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/fix_bots_and_health.sh | 755 4984 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_hotfix_smart_runner.sh | 755 10694 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_verify_all.sh | 755 1906 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_fix_all.sh | 755 15035 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_final_merge.sh | 755 6532 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/fix_now.sh | 755 3030 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_backup.sh | 755 1079 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ultimate_power.sh | 755 9999 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_all_in_one.sh | 755 20573 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_behavior_pack.sh | 755 9653 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/healthcheck.sh | 755 441 | ##!/bin/bash
+/opt/ffactory/scripts/ff_ultimate_launch.sh | 755 1939 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/audit.sh | 755 1025 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ext_hotfix_and_boot.sh | 755 10059 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_crashwatch.sh | 755 1895 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_30_apps_up.sh | 755 323 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/wait-for-postgres.sh | 755 170 | ##!/bin/bash
+/opt/ffactory/scripts/ff_fix_all.sh | 755 15737 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_90_verify.sh | 755 459 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_db_surgery.sh | 755 3547 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/system_audit.sh | 755 9293 | ##!/bin/bash
+/opt/ffactory/scripts/ff_total_restore.sh | 755 5798 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_20_core_up.sh | 755 393 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_repair_pack.sh | 755 9603 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/doctor_case_manager.sh | 755 939 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_omni.sh | 755 8659 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_pg_fix.sh | 755 4737 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_core_repair_now.sh | 755 4047 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/test_grafana_fix.sh | 755 2059 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/system_identity.sh | 755 1979 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_board.sh | 755 1266 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_final_power_fixed.sh | 755 2762 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/shutdown.sh | 755 192 | ##!/bin/bash
+/opt/ffactory/scripts/ff_db_hotfix.sh | 755 3884 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_check.sh | 755 2702 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_doctor.sh | 755 357 | ##!/bin/bash
+/opt/ffactory/scripts/ff_recover_all.sh | 755 4763 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_70_services.sh | 755 1378 | ##!/bin/bash
+/opt/ffactory/scripts/ff_max_power.sh | 755 5608 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/bots_fix_and_wire.sh | 755 2128 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ext_pack.sh | 755 9189 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_fix_and_run.sh | 755 5967 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_onekey_boot.sh | 755 15180 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_emergency_fix.sh | 755 519 | ##!/bin/bash
+/opt/ffactory/scripts/ffactory_doctor.sh | 755 22721 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/system_memory.sh | 755 2818 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_install_smart_doctor.sh | 755 12499 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_final_status.sh | 755 1734 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/pack_apps_sh.sh | 755 842 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ext_repair.sh | 755 10903 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/neo4j_port_fix_run.sh | 755 3005 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/health_check.sh | 755 476 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_doctor_enhanced.sh | 750 873 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_pack_maxfix.sh | 755 13382 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_fix_and_boot.sh | 755 13824 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_core_restore.sh | 755 4332 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/test_restart_memory_v3.sh | 755 2267 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_50_health_fix.sh | 755 1023 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_fix_now.sh | 755 3692 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/wait-entrypoint.sh | 755 338 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/pack_apps_sh_now.sh | 755 496 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_10_clean.sh | 755 474 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_core_init_once.sh | 755 1299 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_check_all.sh | 755 331 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_recover_db_minimal.sh | 755 2640 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_neo4j_fix.sh | 755 1477 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/backup.sh | 755 403 | ##!/bin/bash
+/opt/ffactory/scripts/ff_fix_build_deps.sh | 755 1081 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_lib.sh | 755 1212 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_armor_up.sh | 755 1596 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_create_real_ai_fixed.sh | 755 6221 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_ultra_pack.sh | 755 8241 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_lib_multi.sh | 755 797 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_pack_max.sh | 755 12987 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_diagnostic_report.sh | 755 2527 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_auto_backup.sh | 755 383 | ##!/bin/bash
+/opt/ffactory/scripts/wait-for-core.sh | 755 545 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ffactory_ops_fix.sh | 755 11065 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_port_fix.sh | 755 3655 | ##!/bin/bash
+/opt/ffactory/scripts/test_grafana_memory.sh | 755 1560 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/test_restart_memory.sh | 755 1534 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_power_pack_v2.sh | 755 9891 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/audio_analysis.sh | 755 820 | ##!/bin/bash
+/opt/ffactory/scripts/ff_final_power.sh | 755 24931 | ##!/usr/bin/env bash
+/opt/ffactory/scripts/ff_selfaware_patch.sh | 755 6297 | ##!/usr/bin/env bash
+/opt/ffactory/ffactory_titan_full.sh | 711 34467 | ##!/usr/bin/env bash
+/opt/ffactory/apps/iot-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/quantum-security/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/asr-engine/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/ai-reporting/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/behavioral-analytics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/predictive-analytics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/linguistic-analysis/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/triage/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/ingest-gateway/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/investigation-api/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/zero-trust-enforcer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/data-export-service/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/ingest-service/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/external-integration/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/media-forensics-pro/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/chain-of-custody-manager/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/audit-logger/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/memory-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/ingest-worker/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/criminal-profiler/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/risk-analyzer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/language-processor/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/case-manager/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/status-unifier/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/compliance-checker/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/frontend-dashboard/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/correlation-engine/start.sh | 711 583 | ##!/usr/bin/env bash
+/opt/ffactory/apps/correlation-engine/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/error-aggregator/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/intrusion-detector/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/social-analyzer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/anti-anti-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/blockchain-analyzer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/digital-archiver/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/deception-detector/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/advanced-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/collaborative-analysis/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/telegram-bots/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/temporal-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/api-gateway/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/cloud-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/social-intelligence/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/medical-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/backup-manager/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/backup-manager/run.sh | 711 80 | ##!/usr/bin/env bash
+/opt/ffactory/apps/media-analyzer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/alert-manager/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/graph-writer/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/anomaly-detector/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/mobile-forensics/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/chain-custody-verifier/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/bot-admin/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/advanced-steganalysis/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/neural-core/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/deepfake-detector/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/behavioral-patterns/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/geospatial-tracker/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/orchestrator/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/real-time-dashboard/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/report-generator/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/integrity-monitor/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/evidence-tracker/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/bot-nextwin/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/network-mapper/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/feedback-api/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/apps/threat-intelligence/docker-entrypoint.sh | 711 1124 | ##!/usr/bin/env bash
+/opt/ffactory/bin/down.sh | 755 109 | ##!/usr/bin/env bash
+/opt/ffactory/bin/doctor.sh | 755 409 | ##!/usr/bin/env bash
+/opt/ffactory/bin/00_prep.sh | 711 3239 | ##!/usr/bin/env bash
+/opt/ffactory/bin/05_health.sh | 711 562 | ##!/usr/bin/env bash
+/opt/ffactory/bin/up.sh | 700 296 | ##!/usr/bin/env bash
+/opt/ffactory/bin/04_up.sh | 711 404 | ##!/usr/bin/env bash
+/opt/ffactory/bin/02_compose_write.sh | 711 11214 | ##!/usr/bin/env bash
+/opt/ffactory/bin/01_stubs.sh | 711 3827 | ##!/usr/bin/env bash
+/opt/ffactory/bin/03_preflight.sh | 711 639 | ##!/usr/bin/env bash
+/opt/ffactory/ff_doctor.sh | 711 13333 | ##!/usr/bin/env bash
+/opt/ffactory/fix_yaml_complete.sh | 711 3571 | ##!/bin/bash
+
+## 4) Port 8170 health
+Port 8170: OPEN
+Health: OK -> {"status":"ok","factory":"gw","version":"1.1"}
+
+## 5) Compose YAML validation
+ERR /opt/ffactory/stack/docker-compose.ultimate.yml
+ERR /opt/ffactory/stack/docker-compose.core.yml

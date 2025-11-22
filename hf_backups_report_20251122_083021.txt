@@ -1,0 +1,452 @@
+=== HyperFFactory Backups Report ===
+Backup dir : /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups
+Generated  : Sat Nov 22 08:30:21 +03 2025
+Max files  : 10
+
+--- Disk usage (df -h /) ---
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       388G  388G   26M 100% /
+
+--- Last 10 hyper-factory_full*.tar.zst (ordered by mtime desc) ---
+ 1. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T234230Z.tar.zst
+ 2. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T232921Z.tar.zst
+ 3. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T230549Z.tar.zst
+ 4. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T230541Z.tar.zst
+ 5. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T224421Z.tar.zst
+ 6. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T224104Z.tar.zst
+ 7. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T222759Z.tar.zst
+ 8. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T221447Z.tar.zst
+ 9. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T220025Z.tar.zst
+10. /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T214854Z.tar.zst
+
+============================================================
+### [1] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T234230Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [2] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T232921Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [3] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T230549Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [4] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T230541Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [5] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T224421Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [6] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T224104Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [7] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T222759Z.tar.zst
+Size     : 134M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [8] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T221447Z.tar.zst
+Size     : 133M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [9] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T220025Z.tar.zst
+Size     : 133M
+Integrity: OK (zstd -t passed)
+Sample tar content (first 40 entries):
+hyper-factory/
+hyper-factory/hf_diag_brain.sh
+hyper-factory/hf_run_learning_cycle.sh
+hyper-factory/hf_run_crawler_health.sh
+hyper-factory/hf_auto_performance_updater.sh
+hyper-factory/hf_task_manager.sh
+hyper-factory/add_backend_routes.sh
+hyper-factory/hf_run_debug_expert_boost_19.sh
+hyper-factory/hf_auto_skills_updater.sh
+hyper-factory/hf_quality_patterns_system.sh
+hyper-factory/crawler/
+hyper-factory/crawler/spiders/
+hyper-factory/crawler/exporters/
+hyper-factory/crawler/processors/
+hyper-factory/crawler/pipelines/
+hyper-factory/crawler/README.md
+hyper-factory/crawler/sources/
+hyper-factory/hf_24_7_control.sh
+hyper-factory/hf_quality_continuous_monitor.sh
+hyper-factory/hf_db_core_init.sh
+hyper-factory/hf_show_reports.sh
+hyper-factory/hf_live_monitoring.sh
+hyper-factory/hf_factory_dashboard.sh
+hyper-factory/stack/
+hyper-factory/stack/model_serving/
+hyper-factory/stack/api_gateway/
+hyper-factory/stack/README.md
+hyper-factory/stack/monitoring/
+hyper-factory/stack/gpu_cluster/
+hyper-factory/stack/vector_db/
+hyper-factory/.gitignore
+hyper-factory/hf_bootstrap_advanced_layout.sh
+hyper-factory/hf_smart_lessons_investigation.sh
+hyper-factory/hf_clean_git_noise.sh
+hyper-factory/hf_run_technical_coach_boost_3.sh
+hyper-factory/.git/
+hyper-factory/.git/packed-refs
+hyper-factory/.git/HEAD
+hyper-factory/.git/FETCH_HEAD
+hyper-factory/.git/branches/
+⚠️  tar -tf أعطى خطأ أثناء القراءة (ربما مشكلة في الأرشيف)
+
+============================================================
+### [10] /root/HyperFFactory/_root_legacy_20251122_023221/hf_backups/hyper-factory_full_20251120T214854Z.tar.zst
+Size     : 67M
+Integrity: FAILED (zstd -t failed)
+
+============================================================
+تم حفظ التقرير في:
+  /root/HyperFFactory/hf_backups_report_20251122_083021.txt

@@ -1,0 +1,15 @@
+
+============================================================
+>>> SmartFriend Suite – Capabilities Audit
+============================================================
+[12:08:11] TS: 20251122_120811
+[12:08:11] Reports:
+[12:08:11]   TXT : /opt/smartfriend-suite/reports/sf_capabilities_20251122_120811.txt
+[12:08:11]   JSON: /opt/smartfriend-suite/reports/sf_capabilities_20251122_120811.json
+
+============================================================
+>>> A) Self-awareness and environment
+============================================================
+[12:08:11] Root suite dir: /opt/smartfriend-suite
+[12:08:11] Existing legacy roots:
+ - /opt/ffactory

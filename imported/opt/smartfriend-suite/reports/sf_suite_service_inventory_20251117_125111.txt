@@ -1,0 +1,660 @@
+============================================================
+ SmartFriend Suite – Service Inventory Report
+ Timestamp : 2025-11-17 12:51:12
+ Hostname  : vmi2733174
+============================================================
+
+### 1) Core directories
+
+drwxr-xr-x 47 smartfriend-suite smartfriend-suite 4096 Nov 17 11:08 /opt/smartfriend-suite
+drwxrwxr-x 10 smartfriend-suite smartfriend-suite 4096 Nov 16 04:58 /opt/smartfriend-suite/var
+drwxrwx--- 3 smartfriend-suite smartfriend-suite 4096 Nov 17 12:44 /opt/smartfriend-suite/var/db
+drwxr-x--- 3 smartfriend-suite smartfriend-suite 4096 Nov 14 20:41 /opt/smartfriend-suite/var/knowledge
+drwxr-xr-x 2 root root 4096 Nov 15 08:44 /opt/smartfriend-suite/var/log
+drwxr-x--- 14 smartfriend-suite smartfriend-suite 4096 Nov 17 10:50 /opt/smartfriend-suite/apps
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 10:51 /opt/smartfriend-suite/apps/core
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 12:36 /opt/smartfriend-suite/apps/brain
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 03:48 /opt/smartfriend-suite/apps/harvester
+drwxr-x--- 3 smartfriend-suite smartfriend-suite 4096 Nov 17 07:29 /opt/smartfriend-suite/apps/unified
+drwxr-x--- 4 smartfriend-suite smartfriend-suite 4096 Nov 17 11:08 /opt/smartfriend-suite/apps/web
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 03:48 /opt/smartfriend-suite/apps/telegram
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 03:48 /opt/smartfriend-suite/apps/learning
+drwxr-x--- 3 smartfriend-suite smartfriend-suite 4096 Nov 17 07:31 /opt/smartfriend-suite/apps/memory
+drwxr-x--- 2 smartfriend-suite smartfriend-suite 4096 Nov 17 03:48 /opt/smartfriend-suite/apps/ffactory
+drwxr-xr-x 4 root root 4096 Nov 16 03:49 /opt/smartfrind
+drwxr-xr-x 14 ffactory ffactory 4096 Nov 15 06:03 /opt/ffactory
+
+------------------------------------------------------------
+
+### 2) Database / knowledge files under SmartFriend Suite
+
+-rw-rw-r-- 1 root              root                      0 Nov 15 13:02 /opt/smartfriend-suite/data/db/memory.db
+-rw-rw---- 3 smartfriend-suite smartfriend-suite 448638976 Nov 16 07:00 /opt/smartfriend-suite/data/db/smartfriend_unified.db
+-rw-rw-r-- 1 smartfriend-suite smartfriend-suite     32768 Nov 15 08:19 /opt/smartfriend-suite/data/memory.db
+-rw-rw-r-- 1 smartfriend-suite smartfriend-suite         0 Nov 15 06:17 /opt/smartfriend-suite/data/smart_core_memory.db
+-rw-rw---- 3 smartfriend-suite smartfriend-suite 448638976 Nov 16 07:00 /opt/smartfriend-suite/data/smartfriend_unified.db
+-rwxrwxr-x 3 smartfriend-suite smartfriend-suite     49152 Nov 15 05:41 /opt/smartfriend-suite/var/db/active_memory.db
+-rwxrwxr-x 1 smartfriend-suite smartfriend-suite     57344 Nov 15 07:01 /opt/smartfriend-suite/var/db/memory.db
+-rw-rw---- 3 smartfriend-suite smartfriend-suite 448638976 Nov 16 07:00 /opt/smartfriend-suite/var/db/smartfriend_unified.db
+
+------------------------------------------------------------
+
+### 3) systemd units – smartfriend-* (Suite Core APIs)
+
+UNIT FILE                     STATE    VENDOR PRESET
+smartfriend-api.service       disabled enabled
+smartfriend-hybrid.service    disabled enabled
+smartfriend-smartcore.service disabled enabled
+smartfriend-unified.service   disabled enabled
+
+4 unit files listed.
+
+UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+------------------------------------------------------------
+
+### 4) systemd units – sf-* (Suite helpers / health / dev)
+
+UNIT FILE                    STATE    VENDOR PRESET
+sf-audit-bot.service         enabled  enabled
+sf-backup.service            enabled  enabled
+sf-bot-assistant.service     enabled  enabled
+sf-bot-behavior.service      disabled enabled
+sf-bot-dev.service           disabled enabled
+sf-bot-model.service         enabled  enabled
+sf-bot-programmer.service    enabled  enabled
+sf-bot.service               enabled  enabled
+sf-cognitive.service         enabled  enabled
+sf-core.service              enabled  enabled
+sf-db-backup.service         static   -
+sf-db-maintenance.service    static   -
+sf-download.service          static   -
+sf-factory.service           enabled  enabled
+sf-fts-maint.service         enabled  enabled
+sf-health.service            enabled  enabled
+sf-ingest.service            enabled  enabled
+sf-kb-build.service          enabled  enabled
+sf-keys-rotate.service       enabled  enabled
+sf-learn.service             enabled  enabled
+sf-learning.service          disabled enabled
+sf-memory.service            enabled  enabled
+sf-service-template@.service disabled enabled
+sf-smartfactory.service      disabled enabled
+sf-smartfriend.service       enabled  enabled
+sf-smartfrind.service        disabled enabled
+sf-smoke.service             static   -
+sf-spider.service            disabled enabled
+sf-telegram-audit.service    disabled enabled
+sf-telegram.service          enabled  enabled
+sf-unified.service           enabled  enabled
+sf-web.service               enabled  enabled
+sf-bots.target               static   -
+sf-backup.timer              enabled  enabled
+sf-bot-programmer.timer      masked   enabled
+sf-db-backup.timer           enabled  enabled
+sf-db-maintenance.timer      enabled  enabled
+sf-download.timer            enabled  enabled
+sf-fts-maint.timer           enabled  enabled
+sf-kb-build.timer            enabled  enabled
+sf-keys-rotate.timer         enabled  enabled
+sf-learn.timer               enabled  enabled
+sf-smoke.timer               enabled  enabled
+sf-spider.timer              enabled  enabled
+
+44 unit files listed.
+
+UNIT                      LOAD   ACTIVE     SUB          DESCRIPTION
+sf-bot-programmer.service loaded active     running      SmartFriend Programmer Bot
+sf-bot.service            loaded active     running      Main Telegram Bot
+sf-cognitive.service      loaded activating auto-restart SmartFriend Cognitive System
+sf-core.service           loaded active     running      SmartFriend Core API (8383)
+sf-health.service         loaded active     running      SmartFriend Health Gate (8210)
+sf-memory.service         loaded activating auto-restart SmartFriend Memory API (8214)
+sf-unified.service        loaded activating auto-restart SmartFriend Unified Gateway (8220)
+sf-web.service            loaded active     running      SmartFriend Web UI (8390)
+sf-backup.timer           loaded active     waiting      Daily SmartFriend DB Backup
+sf-db-backup.timer        loaded active     waiting      Daily backup for SmartFriend DB
+sf-db-maintenance.timer   loaded active     waiting      Daily DB Maintenance at 03:40
+sf-download.timer         loaded active     waiting      Run sf-download every 2h
+sf-fts-maint.timer        loaded active     waiting      Hourly FTS Maintenance
+sf-kb-build.timer         loaded active     waiting      Rebuild KB daily
+sf-keys-rotate.timer      loaded active     waiting      Rotate keys daily
+sf-learn.timer            loaded active     waiting      Run sf-learn hourly
+sf-smoke.timer            loaded active     waiting      SmartFriend smoke check timer
+sf-spider.timer           loaded active     waiting      SmartFriend Suite - Spider scheduled crawl
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+18 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+------------------------------------------------------------
+
+### 5) systemd units – smartfrind-* (Legacy engines)
+
+UNIT FILE                   STATE  VENDOR PRESET
+smartfrind-delta.sh.service masked enabled
+smartfrind-setup.sh.service masked enabled
+
+2 unit files listed.
+
+UNIT                           LOAD      ACTIVE SUB    DESCRIPTION
+smartfrind-core-watchdog.timer not-found failed failed smartfrind-core-watchdog.timer
+smartfrind-harvest.timer       not-found failed failed smartfrind-harvest.timer
+smartfrind-ingest.timer        not-found failed failed smartfrind-ingest.timer
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+3 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+------------------------------------------------------------
+
+### 6) Detailed ExecStart for all related units
+
+----- smartfriend-* units -----
+
+[smartfriend-api.service]
+ExecStart={ path=/opt/smartfriend-suite/venv/bin/uvicorn ; argv[]=/opt/smartfriend-suite/venv/bin/uvicorn api.main:app --host 127.0.0.1 --port 8211 --workers 1 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=smartfriend-api.service
+Description=SmartFriend Unified API
+FragmentPath=/etc/systemd/system/smartfriend-api.service
+
+[smartfriend-hybrid.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/start_hybrid_system.sh ; argv[]=/opt/smartfriend-suite/scripts/start_hybrid_system.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=smartfriend-hybrid.service
+Description=SmartFriend Hybrid API System
+FragmentPath=/etc/systemd/system/smartfriend-hybrid.service
+
+[smartfriend-smartcore.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/run_smart_core.sh ; argv[]=/opt/smartfriend-suite/scripts/run_smart_core.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=smartfriend-smartcore.service
+Description=SmartFriend Smart Core API
+FragmentPath=/etc/systemd/system/smartfriend-smartcore.service
+
+[smartfriend-unified.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/run_unified_api.sh ; argv[]=/opt/smartfriend-suite/scripts/run_unified_api.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=smartfriend-unified.service
+Description=SmartFriend Unified API
+FragmentPath=/etc/systemd/system/smartfriend-unified.service
+
+----- sf-* units -----
+
+[sf-audit-bot.service]
+ExecStart={ path=/usr/bin/flock ; argv[]=/usr/bin/flock -n /run/lock/sf-audit-bot.lock /usr/bin/python3 /opt/smartfriend-suite/integrations/telegram_audit_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-audit-bot.service
+Description=SmartFriend Audit Bot
+FragmentPath=/etc/systemd/system/sf-audit-bot.service
+
+[sf-backup.service]
+ExecStart={ path=/usr/local/sbin/sf_backup_sqlite_vacuum.sh ; argv[]=/usr/local/sbin/sf_backup_sqlite_vacuum.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-backup.service
+Description=SmartFriend DB Backup
+FragmentPath=/etc/systemd/system/sf-backup.service
+
+[sf-bot-assistant.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 apps/telegram-bots/main.py --role assistant --memory ${MEMORY_DB} --unified http://127.0.0.1:8220 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot-assistant.service
+Description=SmartFriend Assistant Bot
+FragmentPath=/etc/systemd/system/sf-bot-assistant.service
+
+[sf-bot-behavior.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 apps/telegram-bots/main.py --role behavior --ffactory http://127.0.0.1:8210 --unified http://127.0.0.1:8220 --memory ${MEMORY_DB} ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot-behavior.service
+Description=SmartFriend Behavior Bot
+FragmentPath=/etc/systemd/system/sf-bot-behavior.service
+
+[sf-bot-dev.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfriend/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot-dev.service
+Description=SmartFriend Telegram Bot (Developer)
+FragmentPath=/etc/systemd/system/sf-bot-dev.service
+
+[sf-bot-model.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfriend/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot-model.service
+Description=SmartFriend Telegram Bot (Model)
+FragmentPath=/etc/systemd/system/sf-bot-model.service
+
+[sf-bot-programmer.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 apps/telegram-bots/main.py --role programmer --ffactory http://127.0.0.1:8210 --unified http://127.0.0.1:8220 --memory ${MEMORY_DB} --port 8081 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot-programmer.service
+Description=SmartFriend Programmer Bot
+FragmentPath=/etc/systemd/system/sf-bot-programmer.service
+
+[sf-bot.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfrind/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfrind/venv/bin/python /opt/smartfriend-suite/bots/main_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-bot.service
+Description=Main Telegram Bot
+FragmentPath=/etc/systemd/system/sf-bot.service
+
+[sf-cognitive.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfriend/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/cognitive_system/consciousness/self_awareness.py ; ignore_errors=no ; start_time=[Mon 2025-11-17 12:51:07 +03] ; stop_time=[Mon 2025-11-17 12:51:08 +03] ; pid=3515995 ; code=exited ; status=0 }
+Id=sf-cognitive.service
+Description=SmartFriend Cognitive System
+FragmentPath=/etc/systemd/system/sf-cognitive.service
+
+[sf-core.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -m uvicorn services.ffactory.simple_api:app --host 127.0.0.1 --port 8211 --workers 1 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-core.service
+Description=SmartFriend Core API (8383)
+FragmentPath=/etc/systemd/system/sf-core.service
+
+[sf-db-backup.service]
+ExecStart={ path=/usr/local/sbin/sf_db_backup.sh ; argv[]=/usr/local/sbin/sf_db_backup.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-db-backup.service
+Description=Backup SmartFriend SQLite
+FragmentPath=/etc/systemd/system/sf-db-backup.service
+
+[sf-db-maintenance.service]
+ExecStart={ path=/usr/local/bin/sf_db_maintenance.sh ; argv[]=/usr/local/bin/sf_db_maintenance.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-db-maintenance.service
+Description=SmartFriend DB Maintenance
+FragmentPath=/etc/systemd/system/sf-db-maintenance.service
+
+[sf-download.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/download_sources.sh ; argv[]=/opt/smartfriend-suite/scripts/download_sources.sh $SOURCES_LIST $OUTPUT_DIR ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-download.service
+Description=SmartFriend Download Sources
+FragmentPath=/etc/systemd/system/sf-download.service
+
+[sf-factory.service]
+ExecStart={ path=/opt/smartfriend-suite/.venv/bin/python ; argv[]=/opt/smartfriend-suite/.venv/bin/python -m uvicorn factory.gateway:app --host 127.0.0.1 --port 8170 --workers 1 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-factory.service
+Description=Factory Gateway (8170)
+FragmentPath=/etc/systemd/system/sf-factory.service
+
+[sf-fts-maint.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_brain_fts_maint.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_brain_fts_maint.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-fts-maint.service
+Description=SmartFriend Suite - FTS Maintenance
+FragmentPath=/etc/systemd/system/sf-fts-maint.service
+
+[sf-health.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -m uvicorn ops.health_gate:app --host 127.0.0.1 --port 8210 --workers 1 --timeout-keep-alive 30 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-health.service
+Description=SmartFriend Health Gate (8210)
+FragmentPath=/etc/systemd/system/sf-health.service
+
+[sf-ingest.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_brain_ingest.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_brain_ingest.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-ingest.service
+Description=SmartFriend Suite - Brain Ingest
+FragmentPath=/etc/systemd/system/sf-ingest.service
+
+[sf-kb-build.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_brain_kb_build.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_brain_kb_build.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-kb-build.service
+Description=SmartFriend Suite - Knowledge Base Builder
+FragmentPath=/etc/systemd/system/sf-kb-build.service
+
+[sf-keys-rotate.service]
+ExecStart={ path=/opt/smartfriend-suite/ops/keys_rotate.py ; argv[]=/opt/smartfriend-suite/ops/keys_rotate.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-keys-rotate.service
+Description=Rotate JWT/Encryption keys
+FragmentPath=/etc/systemd/system/sf-keys-rotate.service
+
+[sf-learn.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_brain_learn.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_brain_learn.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-learn.service
+Description=SmartFriend Suite - Brain Learn
+FragmentPath=/etc/systemd/system/sf-learn.service
+
+[sf-learning.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_brain_learning_loop.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_brain_learning_loop.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-learning.service
+Description=SmartFriend Suite - Brain Continuous Learning Loop
+FragmentPath=/etc/systemd/system/sf-learning.service
+
+[sf-memory.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -m uvicorn apps.memory_api:app --host 127.0.0.1 --port 8214 --workers 1 ; ignore_errors=no ; start_time=[Mon 2025-11-17 12:51:09 +03] ; stop_time=[Mon 2025-11-17 12:51:10 +03] ; pid=3516063 ; code=exited ; status=1 }
+Id=sf-memory.service
+Description=SmartFriend Memory API (8214)
+FragmentPath=/etc/systemd/system/sf-memory.service
+
+[sf-service-template@.service]
+
+[sf-smartfactory.service]
+ExecStart={ path=/usr/bin/flock ; argv[]=/usr/bin/flock -n /run/lock/sf-smartfactory.lock /usr/bin/python3 /opt/smartfriend-suite/integrations/smartfactory_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-smartfactory.service
+Description=SmartFactory Telegram Bot
+FragmentPath=/etc/systemd/system/sf-smartfactory.service
+
+[sf-smartfriend.service]
+ExecStart={ path=/bin/bash ; argv[]=/bin/bash -lc exec /opt/smartfriend-suite/smartfriend/venv/bin/python ${ENTRY:-smartfrind_bot.py} ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-smartfriend.service
+Description=SmartFriend Telegram Bot (primary)
+FragmentPath=/etc/systemd/system/sf-smartfriend.service
+
+[sf-smartfrind.service]
+ExecStart={ path=/usr/bin/flock ; argv[]=/usr/bin/flock -n /run/lock/sf-smartfrind.lock /usr/bin/python3 /opt/smartfriend-suite/integrations/smartfrind_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-smartfrind.service
+Description=SmartFrind Telegram Bot
+FragmentPath=/etc/systemd/system/sf-smartfrind.service
+
+[sf-smoke.service]
+ExecStart={ path=/usr/local/bin/sf-smoke ; argv[]=/usr/local/bin/sf-smoke ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-smoke.service
+Description=SmartFriend smoke check
+FragmentPath=/etc/systemd/system/sf-smoke.service
+
+[sf-spider.service]
+ExecStart={ path=/opt/smartfriend-suite/scripts/sf_spider_run.sh ; argv[]=/opt/smartfriend-suite/scripts/sf_spider_run.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-spider.service
+Description=SmartFriend Spider (Web Harvester)
+FragmentPath=/etc/systemd/system/sf-spider.service
+
+[sf-telegram-audit.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfriend/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_audit_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-telegram-audit.service
+Description=SmartFriend Audit Bot
+FragmentPath=/etc/systemd/system/sf-telegram-audit.service
+
+[sf-telegram.service]
+ExecStart={ path=/opt/smartfriend-suite/smartfriend/venv/bin/python ; argv[]=/opt/smartfriend-suite/smartfriend/venv/bin/python /opt/smartfriend-suite/integrations/telegram_bot.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-telegram.service
+Description=SmartFriend Main Bot
+FragmentPath=/etc/systemd/system/sf-telegram.service
+
+[sf-unified.service]
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -m uvicorn apps.unified.unified_api:app --host 0.0.0.0 --port 8220 --workers 1 --timeout-keep-alive 30 ; ignore_errors=no ; start_time=[Mon 2025-11-17 12:51:09 +03] ; stop_time=[Mon 2025-11-17 12:51:09 +03] ; pid=3516064 ; code=exited ; status=1 }
+Id=sf-unified.service
+Description=SmartFriend Unified Gateway (8220)
+FragmentPath=/etc/systemd/system/sf-unified.service
+
+[sf-web.service]
+ExecStart={ path=/opt/smartfriend-suite/venv/bin/python ; argv[]=/opt/smartfriend-suite/venv/bin/python /opt/smartfriend-suite/run_web.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+Id=sf-web.service
+Description=SmartFriend Web UI (8390)
+FragmentPath=/etc/systemd/system/sf-web.service
+
+[sf-bots.target]
+Id=sf-bots.target
+Description=SmartFriend Telegram Bots
+FragmentPath=/etc/systemd/system/sf-bots.target
+
+[sf-backup.timer]
+Id=sf-backup.timer
+Description=Daily SmartFriend DB Backup
+FragmentPath=/etc/systemd/system/sf-backup.timer
+
+[sf-bot-programmer.timer]
+Id=sf-bot-programmer.timer
+Description=sf-bot-programmer.timer
+FragmentPath=/etc/systemd/system/sf-bot-programmer.timer
+
+[sf-db-backup.timer]
+Id=sf-db-backup.timer
+Description=Daily backup for SmartFriend DB
+FragmentPath=/etc/systemd/system/sf-db-backup.timer
+
+[sf-db-maintenance.timer]
+Id=sf-db-maintenance.timer
+Description=Daily DB Maintenance at 03:40
+FragmentPath=/etc/systemd/system/sf-db-maintenance.timer
+
+[sf-download.timer]
+Id=sf-download.timer
+Description=Run sf-download every 2h
+FragmentPath=/etc/systemd/system/sf-download.timer
+
+[sf-fts-maint.timer]
+Id=sf-fts-maint.timer
+Description=Hourly FTS Maintenance
+FragmentPath=/etc/systemd/system/sf-fts-maint.timer
+
+[sf-kb-build.timer]
+Id=sf-kb-build.timer
+Description=Rebuild KB daily
+FragmentPath=/etc/systemd/system/sf-kb-build.timer
+
+[sf-keys-rotate.timer]
+Id=sf-keys-rotate.timer
+Description=Rotate keys daily
+FragmentPath=/etc/systemd/system/sf-keys-rotate.timer
+
+[sf-learn.timer]
+Id=sf-learn.timer
+Description=Run sf-learn hourly
+FragmentPath=/etc/systemd/system/sf-learn.timer
+
+[sf-smoke.timer]
+Id=sf-smoke.timer
+Description=SmartFriend smoke check timer
+FragmentPath=/etc/systemd/system/sf-smoke.timer
+
+[sf-spider.timer]
+Id=sf-spider.timer
+Description=SmartFriend Suite - Spider scheduled crawl
+FragmentPath=/etc/systemd/system/sf-spider.timer
+
+----- smartfrind-* units -----
+
+[smartfrind-delta.sh.service]
+Id=smartfrind-delta.sh.service
+Description=smartfrind-delta.sh.service
+FragmentPath=/etc/systemd/system/smartfrind-delta.sh.service
+
+[smartfrind-setup.sh.service]
+Id=smartfrind-setup.sh.service
+Description=smartfrind-setup.sh.service
+FragmentPath=/etc/systemd/system/smartfrind-setup.sh.service
+
+------------------------------------------------------------
+
+### 7) Listening ports for SmartFriend / SmartFrind / FFactory
+
+tcp   LISTEN 0      2048         0.0.0.0:8080       0.0.0.0:*    users:(("python3",pid=3413623,fd=13))                                                                                                                                                                      
+tcp   LISTEN 0      2048       127.0.0.1:8211       0.0.0.0:*    users:(("python3",pid=3469135,fd=13))                                                                                                                                                                      
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=3049140,fd=6),("nginx",pid=3049139,fd=6),("nginx",pid=3049137,fd=6),("nginx",pid=3049134,fd=6),("nginx",pid=3049133,fd=6),("nginx",pid=3049132,fd=6),("nginx",pid=1430377,fd=6))       
+tcp   LISTEN 0      2048         0.0.0.0:8222       0.0.0.0:*    users:(("python3",pid=1741226,fd=13))                                                                                                                                                                      
+tcp   LISTEN 0      2048         0.0.0.0:8221       0.0.0.0:*    users:(("python3",pid=1741225,fd=13))                                                                                                                                                                      
+tcp   LISTEN 0      2048         0.0.0.0:8215       0.0.0.0:*    users:(("python",pid=3413464,fd=6))                                                                                                                                                                        
+tcp   LISTEN 0      511             [::]:80            [::]:*    users:(("nginx",pid=3049140,fd=20),("nginx",pid=3049139,fd=20),("nginx",pid=3049137,fd=20),("nginx",pid=3049134,fd=20),("nginx",pid=3049133,fd=20),("nginx",pid=3049132,fd=20),("nginx",pid=1430377,fd=20))
+
+------------------------------------------------------------
+
+### 8) Nginx gateway configs (if present)
+
+>>> /etc/nginx/nginx.conf
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+
+	##
+	# Basic Settings
+	##
+
+	sendfile on;
+	tcp_nopush on;
+	types_hash_max_size 2048;
+	# server_tokens off;
+
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	##
+	# SSL Settings
+	##
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+	ssl_prefer_server_ciphers on;
+
+	##
+	# Logging Settings
+	##
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	##
+	# Gzip Settings
+	##
+
+	gzip on;
+
+	# gzip_vary on;
+	# gzip_proxied any;
+	# gzip_comp_level 6;
+	# gzip_buffers 16 8k;
+	# gzip_http_version 1.1;
+	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+	##
+	# Virtual Host Configs
+	##
+
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#	# See sample authentication script at:
+#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#	# auth_http localhost/auth.php;
+#	# pop3_capabilities "TOP" "USER";
+#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#	server {
+#		listen     localhost:110;
+#		protocol   pop3;
+#		proxy      on;
+#	}
+#
+#	server {
+#		listen     localhost:143;
+#		protocol   imap;
+#		proxy      on;
+#	}
+#}
+
+
+MISSING: /etc/nginx/sites-enabled/default
+
+>>> /etc/nginx/sites-enabled/smartfriend.conf
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name 62.171.172.105 _;
+
+    client_max_body_size 32m;
+
+    location /nginx-health {
+        access_log off;
+        return 200 'OK';
+        add_header Content-Type text/plain;
+    }
+
+    # صفحة الدخول الافتراضية
+    location = / {
+        return 302 /ffactory/docs;
+    }
+
+    # FFactory / Unified / Core / Memory – يمكن تعديل الـ upstreams من متغيرات البيئة
+    location /ffactory/ {
+        proxy_pass         http://127.0.0.1:8211/;
+        proxy_http_version 1.1;
+        proxy_set_header   Host               $host;
+        proxy_set_header   X-Real-IP          $remote_addr;
+        proxy_set_header   X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto  $scheme;
+    }
+
+    location /unified/ {
+        proxy_pass         http://127.0.0.1:8211/;
+        proxy_http_version 1.1;
+        proxy_set_header   Host               $host;
+        proxy_set_header   X-Real-IP          $remote_addr;
+        proxy_set_header   X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto  $scheme;
+    }
+
+    location /core/ {
+        proxy_pass         http://127.0.0.1:8211/;
+        proxy_http_version 1.1;
+        proxy_set_header   Host               $host;
+        proxy_set_header   X-Real-IP          $remote_addr;
+        proxy_set_header   X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto  $scheme;
+    }
+
+    # memory مؤقتاً يمكن تعليقها بتغيير MEMORY_UPSTREAM أو حذف الـ location
+    location /memory/ {
+        proxy_pass         http://127.0.0.1:8214/;
+        proxy_http_version 1.1;
+        proxy_set_header   Host               $host;
+        proxy_set_header   X-Real-IP          $remote_addr;
+        proxy_set_header   X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto  $scheme;
+    }
+}
+
+# SmartFriend Suite - Memory API
+location /memory/ {
+    proxy_pass http://127.0.0.1:8214/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_cache_bypass $http_upgrade;
+}
+
+
+    # Memory API (sf-memory.service على 8214)
+    location /memory/ {
+        proxy_pass http://127.0.0.1:8214/;
+        proxy_connect_timeout 30s;
+        proxy_read_timeout 30s;
+
+        proxy_next_upstream error timeout http_502;
+        proxy_intercept_errors on;
+        error_page 502 =503 /maintenance.html;
+    }
+
+
+>>> /opt/ffactory/stack/nginx.gateway.conf
+worker_processes auto;
+events { worker_connections 1024; }
+http {
+  map $http_upgrade $connection_upgrade { default upgrade; '' close; }
+  server {
+    listen 80;
+
+    location /asr/ { proxy_pass http://host.docker.internal:8086/; proxy_set_header Host $host; }
+    location /nlp/ { proxy_pass http://host.docker.internal:8000/; }
+    location /vision/ { proxy_pass http://host.docker.internal:8092/; }
+    location /ocr/ { proxy_pass http://host.docker.internal:8090/; }
+    location /media/ { proxy_pass http://host.docker.internal:8082/; }
+    location /hash/ { proxy_pass http://host.docker.internal:8083/; }
+    location /social/ { proxy_pass http://host.docker.internal:8088/; }
+    location /embed/ { proxy_pass http://host.docker.internal:8093/; }
+    location /evidence/ { proxy_pass http://host.docker.internal:8095/; }
+    location /audit/ { proxy_pass http://host.docker.internal:8094/; }
+  }
+}
+
+
+------------------------------------------------------------
+
+End of SmartFriend Suite Service Inventory Report
+============================================================

@@ -1,0 +1,14 @@
+SmartFriend Suite - Spider Manifest
+Timestamp: 20251114_204101
+APP_ROOT=/opt/smartfriend-suite
+SPIDER_DIR=/opt/smartfriend-suite/apps/harvester/spider
+RAW_SPIDER_DIR=/opt/smartfriend-suite/var/knowledge/raw_spider
+SPIDER_LOG_DIR=/opt/smartfriend-suite/var/logs/spider
+BACKUP_ROOT=/root/sf_spider_backup_20251114_204101
+
+== Actions ==
+PRIMARY_SPIDER_DIR=(none detected, no auto-copy)
+
+Reports:
+  - Spider candidates: /opt/smartfriend-suite/reports/sf_spider_candidates_20251114_204101.txt
+  - Spider systemd units: /opt/smartfriend-suite/reports/sf_spider_units_20251114_204101.txt

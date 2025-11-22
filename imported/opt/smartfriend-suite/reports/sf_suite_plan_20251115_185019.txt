@@ -1,0 +1,133 @@
+==================================================
+      SmartFriend Suite - خطة تنفيذ وتشخيص
+==================================================
+التاريخ : Sat Nov 15 18:50:19 +03 2025
+السيرفر : vmi2733174
+==================================================
+1) حالة النظام (Uptime / Load / Memory / Disk)
+==================================================
+[2025-11-15 18:50:19] === UPTIME / LOAD ===
+ 18:50:19 up 7 days, 10:25,  2 users,  load average: 1.14, 1.05, 1.12
+[2025-11-15 18:50:19] === MEMORY (free -h) ===
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.1Gi       7.9Gi        84Mi       2.7Gi        10Gi
+Swap:             0B          0B          0B
+[2025-11-15 18:50:19] === DISK USAGE (/, /opt/smartfriend-suite) ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       388G  180G  209G  47% /
+/dev/sda1       388G  180G  209G  47% /
+==================================================
+2) حصر وحدات SmartFriend (systemd units)
+==================================================
+[2025-11-15 18:50:19] === كل الوحدات المعرفة (list-unit-files) ===
+UNIT FILE                         STATE    VENDOR PRESET
+smartfrind-bot.path               disabled enabled
+sf-audit-bot.service              disabled enabled
+sf-backup.service                 disabled enabled
+sf-bot-assistant.service          enabled  enabled
+sf-bot-behavior.service           enabled  enabled
+sf-bot-dev.service                enabled  enabled
+sf-bot-model.service              enabled  enabled
+sf-bot-programmer.service         disabled enabled
+sf-bot.service                    enabled  enabled
+sf-cognitive.service              enabled  enabled
+sf-core.service                   enabled  enabled
+sf-db-backup.service              static   -
+sf-db-maintenance.service         static   -
+sf-download.service               static   -
+sf-factory.service                enabled  enabled
+sf-fts-maint.service              enabled  enabled
+sf-health.service                 enabled  enabled
+sf-ingest.service                 enabled  enabled
+sf-kb-build.service               enabled  enabled
+sf-keys-rotate.service            enabled  enabled
+sf-learn.service                  enabled  enabled
+sf-learning.service               enabled  enabled
+sf-memory.service                 enabled  enabled
+sf-service-template@.service      disabled enabled
+sf-smartfactory.service           disabled enabled
+sf-smartfriend.service            disabled enabled
+sf-smartfrind.service             enabled  enabled
+sf-smoke.service                  static   -
+sf-spider.service                 disabled enabled
+sf-telegram-audit.service         disabled enabled
+sf-telegram.service               disabled enabled
+sf-unified.service                enabled  enabled
+sf-web.service                    enabled  enabled
+smartfriend-api.service           enabled  enabled
+smartfriend-hybrid.service        enabled  enabled
+smartfriend-smartcore.service     enabled  enabled
+smartfriend-unified.service       enabled  enabled
+smartfrind-advanced.service       enabled  enabled
+smartfrind-ai-gateway.service     enabled  enabled
+smartfrind-api.service            enabled  enabled
+smartfrind-ask.service            enabled  enabled
+smartfrind-autolearn.service      static   -
+smartfrind-backup.service         static   -
+smartfrind-bot.service            enabled  enabled
+smartfrind-cma-sync.service       enabled  enabled
+smartfrind-core-watchdog.service  static   -
+smartfrind-core.service           enabled  enabled
+smartfrind-delta.sh.service       masked   enabled
+smartfrind-envwatch.service       static   -
+smartfrind-final.service          enabled  enabled
+smartfrind-gateway.service        enabled  enabled
+smartfrind-guard.service          static   -
+smartfrind-guardian.service       enabled  enabled
+smartfrind-harvest.service        static   -
+smartfrind-ingest.service         static   -
+smartfrind-learner.service        enabled  enabled
+smartfrind-learning-agent.service static   -
+smartfrind-learning.service       enabled  enabled
+smartfrind-local.service          enabled  enabled
+smartfrind-monitor.service        enabled  enabled
+smartfrind-qa.service             enabled  enabled
+smartfrind-raw-clean.service      static   -
+smartfrind-reflector.service      static   -
+smartfrind-runner.service         enabled  enabled
+smartfrind-setup.sh.service       masked   enabled
+smartfrind-simple.service         disabled enabled
+smartfrind-trainer.service        disabled enabled
+smartfrind-ultra.service          disabled enabled
+smartfrind-unified.service        disabled enabled
+smartfrind-watchdog.service       static   -
+smartfrind-gateway.socket         disabled enabled
+sf-bots.target                    static   -
+sf-backup.timer                   enabled  enabled
+sf-bot-programmer.timer           masked   enabled
+sf-db-backup.timer                enabled  enabled
+sf-db-maintenance.timer           enabled  enabled
+sf-download.timer                 enabled  enabled
+sf-fts-maint.timer                enabled  enabled
+sf-kb-build.timer                 enabled  enabled
+sf-keys-rotate.timer              enabled  enabled
+sf-learn.timer                    enabled  enabled
+sf-smoke.timer                    enabled  enabled
+sf-spider.timer                   disabled enabled
+smartfrind-autolearn.timer        enabled  enabled
+smartfrind-backup.timer           enabled  enabled
+smartfrind-cma-sync.timer         enabled  enabled
+smartfrind-core-watchdog.timer    enabled  enabled
+smartfrind-envwatch.timer         enabled  enabled
+smartfrind-guard.timer            disabled enabled
+smartfrind-harvest.timer          enabled  enabled
+smartfrind-ingest.timer           enabled  enabled
+smartfrind-learner.timer          enabled  enabled
+smartfrind-learning-agent.timer   enabled  enabled
+smartfrind-raw-clean.timer        enabled  enabled
+smartfrind-reflector.timer        enabled  enabled
+smartfrind-watchdog.timer         enabled  enabled
+
+96 unit files listed.
+[2025-11-15 18:50:20] === حالة الوحدات (status مختصر) ===
+---- sf-backup.service ----
+    ○ sf-backup.service - SmartFriend DB Backup
+         Loaded: loaded (/etc/systemd/system/sf-backup.service; disabled; vendor preset: enabled)
+        Drop-In: /etc/systemd/system/sf-backup.service.d
+                 └─20-smartfriend-env.conf, 30-backup-fix.conf, 30-unified-backup.conf
+         Active: inactive (dead) since Sat 2025-11-15 14:49:58 +03; 4h 0min ago
+    TriggeredBy: ● sf-backup.timer
+       Main PID: 4073405 (code=exited, status=0/SUCCESS)
+            CPU: 14ms
+    
+    Notice: journal has been rotated since unit was started, output may be incomplete.

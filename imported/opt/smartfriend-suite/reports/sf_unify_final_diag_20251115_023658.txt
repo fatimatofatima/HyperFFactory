@@ -1,0 +1,126 @@
+================================================================
+   🧠 SmartFriend Suite – Final Unification Diagnostic
+   Timestamp: 20251115_023658
+================================================================
+
+------------------------------------------------------------
+1) File-System Layout (Identity / Memory / Knowledge / Spider)
+------------------------------------------------------------
+OK   [APP_ROOT] موجود: /opt/smartfriend-suite
+OK   [DB_DIR (var/db)] موجود: /opt/smartfriend-suite/var/db
+OK   [KNOW_DIR (var/knowledge)] موجود: /opt/smartfriend-suite/var/knowledge
+OK   [LOG_DIR (var/logs)] موجود: /opt/smartfriend-suite/var/logs
+OK   [APPS_DIR (apps)] موجود: /opt/smartfriend-suite/apps
+OK   [SPIDER_DIR (apps/harvester/spider)] موجود: /opt/smartfriend-suite/apps/harvester/spider
+
+------------------------------------------------------------
+2) Unified DBs (memory / knowledge / brain / identity)
+------------------------------------------------------------
+
+>>> DB: /opt/smartfriend-suite/var/db/memory.db
+  - الحالة: موجود
+  - الحجم:  52K
+  - عدد الجداول: 6
+  - integrity_check: ok
+  - الجداول الأساسية (إن وُجدت):
+      * sessions: موجود (0 صفوف)
+      * messages: موجود (0 صفوف)
+      * knowledge_items: موجود (0 صفوف)
+
+>>> DB: /opt/smartfriend-suite/var/db/smart_core_memory.db
+  - الحالة: موجود
+  - الحجم:  52K
+  - عدد الجداول: 6
+  - integrity_check: ok
+  - الجداول الأساسية (إن وُجدت):
+      * sessions: موجود (0 صفوف)
+      * messages: موجود (0 صفوف)
+      * knowledge_items: موجود (0 صفوف)
+
+>>> DB: /opt/smartfriend-suite/var/db/unified_memory.db
+  - الحالة: موجود
+  - الحجم:  52K
+  - عدد الجداول: 6
+  - integrity_check: ok
+  - الجداول الأساسية (إن وُجدت):
+      * sessions: موجود (0 صفوف)
+      * messages: موجود (0 صفوف)
+      * knowledge_items: موجود (0 صفوف)
+
+>>> DB: /opt/smartfriend-suite/var/db/smartfriend_unified.db
+  - الحالة: موجود
+  - الحجم:  52K
+  - عدد الجداول: 6
+  - integrity_check: ok
+  - الجداول الأساسية (إن وُجدت):
+      * sessions: موجود (0 صفوف)
+      * messages: موجود (0 صفوف)
+      * knowledge_items: موجود (0 صفوف)
+
+------------------------------------------------------------
+3) Old Paths Check (pre-unification locations)
+------------------------------------------------------------
+OK   لا توجد قواعد بيانات في المسارات القديمة المذكورة.
+
+------------------------------------------------------------
+4) Systemd Services (Core / Brain / Learning / Knowledge)
+------------------------------------------------------------
+SERVICE smartfrind-core.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-local.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-qa.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-guardian.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-trainer.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-runner.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-advanced.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-ai-gateway.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-unified.service: enabled=disabled
+unknown, active=inactive
+unknown
+SERVICE smartfrind-simple.service: enabled=disabled
+unknown, active=inactive
+unknown
+SERVICE smartfrind-ultra.service: enabled=disabled
+unknown, active=inactive
+unknown
+SERVICE smartfrind-harvest.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-ingest.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-reflector.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-autolearn.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-learning-agent.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-envwatch.service: enabled=static, active=inactive
+unknown
+SERVICE smartfrind-monitor.service: enabled=enabled, active=inactive
+unknown
+SERVICE smartfrind-raw-clean.service: enabled=static, active=inactive
+unknown
+
+------------------------------------------------------------
+5) Unification Decision Summary (Knowledge + Memory + Brain)
+------------------------------------------------------------
+FS-LAYOUT : OK  – هيكل السويت موحّد (var/db, var/knowledge, var/logs, spider).
+DB-PLANE  : OK  – قواعد بيانات الذاكرة/المعرفة سليمة ومتمركزة في var/db، بلا بقايا مسارات قديمة.
+SERVICES  : WARN – بعض الخدمات المُمكّنة ليست active؛ يلزم ضبط Run-Profile قبل تشغيل العقل الموحد.
+
+Business View:
+  - Identity  : تُدار عبر DBs موحّدة في var/db (profile/identity tables إن وُجدت).
+  - Memory    : memory.db + smart_core_memory.db تستخدم نفس الهيكل وتجاوزت integrity_check.
+  - Knowledge : smartfriend_unified.db/unified_memory.db جاهزة لحمل knowledge_items / sources.
+  - Learning  : خدمات trainer/learning-agent/autolearn متوفرة (حتى لو inactive حاليًا).
+  - Brain     : core/local/qa/gateway/guardian متسجلة في systemd وتنتظر Run-Policy نهائي.
+  - Awareness : Spider + harvest/ingest موضوعة في Knowledge Plane ومساراتها الرسمية جاهزة.
+
+📄 تم حفظ هذا التقرير في: /opt/smartfriend-suite/reports/sf_unify_final_diag_20251115_023658.txt
+================================================================

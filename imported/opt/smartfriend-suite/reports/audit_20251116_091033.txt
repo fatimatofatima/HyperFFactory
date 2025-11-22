@@ -1,0 +1,148 @@
+SmartFriend Detailed Report
+===========================
+Generated: 2025-11-16T09:10:34+03:00
+Host: vmi2733174
+
+1) SYSTEM INFORMATION
+   Uptime: up 1 week, 1 day, 45 minutes
+   OS: Ubuntu 22.04.5 LTS
+   Kernel: 5.15.0-161-generic
+   CPU cores: 6
+   Memory total: 11Gi
+   Disk free (/): 206G
+
+2) SERVICES
+   - sf-unified   status=inactive
+unknown pid=yes
+0
+1311375 mem=0 KB since=Sun 2025-11-16 07:43:31 +03
+   - sf-memory    status=inactive
+unknown pid=yes
+0
+1315395 mem=0 KB since=Sun 2025-11-16 07:46:17 +03
+   - sf-factory   status=inactive
+unknown pid=yes
+0
+947042 mem=0 KB since=Sun 2025-11-16 03:41:28 +03
+   - sf-bot       status=active     pid=yes
+1064268
+1064268 mem=0 KB since=Sun 2025-11-16 05:00:16 +03
+
+3) PORTS
+LISTEN 0      2048       127.0.0.1:8170       0.0.0.0:*    users:(("python3",pid=947451,fd=13))                                                                                                                                                                
+
+4) HEALTH ENDPOINTS
+   :8170 -> {"status":"ok","factory":"advanced","analyzers":["behavioral","forensic"],"version":"2.0"}
+   :8214 -> {}
+   :8220 -> {}
+
+5) DATABASES
+   - memory.db: size=32K tables: conversations memories sqlite_sequence
+   - neural_memory.db: size=N/A tables: N/A
+   - smartfriend_unified.db: size=428M tables: ai_memory ai_memory_fts ai_memory_fts_config ai_memory_fts_data ai_memory_fts_docsize ai_memory_fts_idx bronze_pages conversations ingest_runs interactions kb_fts kb_fts_config kb_fts_content kb_fts_data kb_fts_docsize kb_fts_idx knowledge_base memories memory_links memory_vectors search_index search_index_config search_index_content search_index_data search_index_docsize search_index_idx silver_docs sqlite_sequence sqlite_stat1 state summaries
+
+6) IMPORTANT FILES
+   - /opt/smartfriend-suite/apps/unified/unified_api.py : MISSING
+   - /opt/smartfriend-suite/apps/memory_api.py : 640 root:root | 4.0K
+   - /opt/smartfriend-suite/factory/gateway.py : 755 smartfriend-suite:smartfriend-suite | 4.0K
+   - /opt/smartfriend-suite/bots/main_bot.py : 755 smartfriend-suite:smartfriend-suite | 4.0K
+   - /etc/smartfriend/secrets.env : 600 root:root | 4.0K
+
+7) SYSTEMD FAILED UNITS
+   logrotate.service update-notifier-download.service smartfrind-core-watchdog.timer smartfrind-harvest.timer smartfrind-ingest.timer
+
+8) JOURNAL SIZE
+   /var/log/journal: 183M
+
+9) RECENT CRITICAL LOGS (last 50)
+Nov 16 07:50:32 vmi2733174 sshd[1320185]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 07:57:03 vmi2733174 sshd[1328019]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:02:52 vmi2733174 sshd[1333964]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:03:32 vmi2733174 sshd[1334360]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:04:20 vmi2733174 sshd[1335713]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:07:38 vmi2733174 sshd[1338969]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:17:43 vmi2733174 sshd[1351712]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:18:11 vmi2733174 sshd[1352008]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:25:38 vmi2733174 sshd[1362488]: error: kex_exchange_identification: read: Connection reset by peer
+Nov 16 08:26:15 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 20 seq 2 [preauth]
+Nov 16 08:26:15 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 30 seq 3 [preauth]
+Nov 16 08:26:16 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 20 seq 4 [preauth]
+Nov 16 08:26:16 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 30 seq 5 [preauth]
+Nov 16 08:26:18 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 20 seq 6 [preauth]
+Nov 16 08:26:18 vmi2733174 sshd[1362870]: error: kex_protocol_error: type 30 seq 7 [preauth]
+Nov 16 08:28:48 vmi2733174 sshd[1364469]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:30:24 vmi2733174 systemd[1]: Failed to start Download data for packages that failed at package install time.
+Nov 16 08:31:12 vmi2733174 sshd[1368009]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:31:50 vmi2733174 sshd[1368431]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:39:30 vmi2733174 sshd[1376439]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:44:44 vmi2733174 sshd[1384578]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:44:54 vmi2733174 sshd[1385273]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:45:27 vmi2733174 sshd[1387428]: pam_systemd(sshd:session): Failed to release session: Interrupted system call
+Nov 16 08:49:16 vmi2733174 sshd[1390827]: error: kex_exchange_identification: read: Connection reset by peer
+Nov 16 08:49:29 vmi2733174 sshd[1390839]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:49:49 vmi2733174 sshd[1391218]: error: kex_exchange_identification: banner line contains invalid characters
+Nov 16 08:49:52 vmi2733174 sshd[1391233]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:50:10 vmi2733174 sshd[1391608]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 08:56:31 vmi2733174 sshd[1400466]: error: kex_exchange_identification: read: Connection reset by peer
+Nov 16 08:58:35 vmi2733174 sshd[1401898]: error: kex_exchange_identification: Connection closed by remote host
+Nov 16 09:00:43 vmi2733174 sshd[1405510]: error: kex_exchange_identification: Connection closed by remote host
+
+10) FFactory snapshot
+   Path: /opt/ffactory
+   Size: 771M
+   Top dirs:
+/opt/ffactory
+/opt/ffactory/.git
+/opt/ffactory/.git/hooks
+/opt/ffactory/.git/info
+/opt/ffactory/.git/logs
+/opt/ffactory/.git/objects
+/opt/ffactory/.git/refs
+/opt/ffactory/apps
+/opt/ffactory/apps/advanced-forensics
+/opt/ffactory/apps/advanced-steganalysis
+/opt/ffactory/apps/ai-reporting
+/opt/ffactory/apps/alert-manager
+/opt/ffactory/apps/anomaly-detector
+/opt/ffactory/apps/anti-anti-forensics
+/opt/ffactory/apps/api-gateway
+/opt/ffactory/apps/asr-engine
+/opt/ffactory/apps/audit-logger
+/opt/ffactory/apps/backup-manager
+/opt/ffactory/apps/behavior-analytics
+/opt/ffactory/apps/behavioral-analytics
+/opt/ffactory/apps/behavioral-patterns
+/opt/ffactory/apps/blockchain-analyzer
+/opt/ffactory/apps/bot-admin
+/opt/ffactory/apps/bot-nextwin
+/opt/ffactory/apps/case-manager
+/opt/ffactory/apps/chain-custody-verifier
+/opt/ffactory/apps/chain-of-custody-manager
+/opt/ffactory/apps/cloud-forensics
+/opt/ffactory/apps/collaborative-analysis
+/opt/ffactory/apps/compliance-checker
+/opt/ffactory/apps/correlation
+/opt/ffactory/apps/correlation-engine
+/opt/ffactory/apps/criminal-profiler
+/opt/ffactory/apps/data-export-service
+/opt/ffactory/apps/deception-detector
+/opt/ffactory/apps/deepfake-detector
+/opt/ffactory/apps/digital-archiver
+/opt/ffactory/apps/embed-search
+/opt/ffactory/apps/error-aggregator
+/opt/ffactory/apps/evidence-tracker
+/opt/ffactory/apps/evidence-uploader
+/opt/ffactory/apps/external-integration
+/opt/ffactory/apps/face-engine
+/opt/ffactory/apps/feedback-api
+/opt/ffactory/apps/frontend-dashboard
+/opt/ffactory/apps/geospatial-tracker
+/opt/ffactory/apps/graph-writer
+/opt/ffactory/apps/hashset-service
+/opt/ffactory/apps/ingest-gateway
+/opt/ffactory/apps/ingest-service
+   Key scripts:
+/opt/ffactory/scripts/ff_doctor_enhanced.sh | 750 ffactory:ffactory | 4.0K
+/opt/ffactory/scripts/self_aware_monitor.sh | 755 ffactory:ffactory | 4.0K
+/opt/ffactory/ff_doctor.sh | 711 ffactory:ffactory | 16K
+/opt/ffactory/ffactory_titan_full.sh | 711 ffactory:ffactory | 36K

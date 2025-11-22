@@ -1,0 +1,23 @@
+=== Tables & Views in /opt/smartfriend-suite/var/db/unified_memory.db ===
+name             type 
+---------------  -----
+knowledge_items  table
+messages         table
+meta             table
+sessions         table
+sqlite_sequence  table
+sqlite_stat1     table
+
+=== Row counts (user tables) ===
+table_name  rows
+----------  ----
+meta        1   
+table_name  rows
+----------  ----
+sessions    0   
+table_name  rows
+----------  ----
+messages    0   
+table_name       rows
+---------------  ----
+knowledge_items  0   

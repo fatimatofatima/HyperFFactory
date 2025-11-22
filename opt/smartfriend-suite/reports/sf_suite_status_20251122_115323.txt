@@ -1,0 +1,262 @@
+============================================================
+ SmartFriend Suite – Complete Status Snapshot
+ Timestamp : 2025-11-22 11:53:23
+ Hostname  : vmi2733174
+============================================================
+
+### 1) System summary
+
+---- uptime ----
+ 11:53:23 up 14 days,  3:28,  6 users,  load average: 0.25, 0.33, 0.28
+
+---- free -h ----
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       7.3Gi       191Mi        85Mi       4.2Gi       4.0Gi
+Swap:             0B          0B          0B
+
+------------------------------------------------------------
+
+### 2) Key SmartFriend Suite services (sf-*)
+
+[sf-core.service]
+sf-core.service enabled enabled
+● sf-core.service - SmartFriend Core API (8383)
+     Loaded: loaded (/etc/systemd/system/sf-core.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-core.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Thu 2025-11-20 10:40:00 +03; 2 days ago
+   Main PID: 1326720 (python3)
+      Tasks: 7 (limit: 14298)
+     Memory: 32.6M
+        CPU: 6min 48.973s
+     CGroup: /system.slice/sf-core.service
+             └─1326720 /usr/bin/python3 -m uvicorn services.ffactory.simple_api:app --host 127.0.0.1 --port 8211 --workers 1
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+
+[sf-unified.service]
+sf-unified.service disabled enabled
+● sf-unified.service - SmartFriend Unified Gateway (8220)
+     Loaded: loaded (/etc/systemd/system/sf-unified.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-unified.service.d
+             └─20-smartfriend-env.conf, 30-workingdir.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-22 11:53:21 +03; 1s ago
+    Process: 3131963 ExecStart=/usr/bin/python3 -m uvicorn apps.unified.unified_api:app --host 0.0.0.0 --port 8220 --workers 1 --timeout-keep-alive 30 (code=exited, status=1/FAILURE)
+   Main PID: 3131963 (code=exited, status=1/FAILURE)
+        CPU: 488ms
+  (no status)
+
+[sf-memory.service]
+sf-memory.service disabled enabled
+● sf-memory.service - SmartFriend Memory API (8214)
+     Loaded: loaded (/etc/systemd/system/sf-memory.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-memory.service.d
+             └─20-smartfriend-env.conf, 30-workingdir.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-22 11:53:21 +03; 1s ago
+    Process: 3131962 ExecStart=/usr/bin/python3 -m uvicorn apps.memory_api:app --host 127.0.0.1 --port 8214 --workers 1 (code=exited, status=1/FAILURE)
+   Main PID: 3131962 (code=exited, status=1/FAILURE)
+        CPU: 446ms
+  (no status)
+
+[sf-web.service]
+sf-web.service enabled enabled
+● sf-web.service - SmartFriend Web UI (8390)
+     Loaded: loaded (/etc/systemd/system/sf-web.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-web.service.d
+             └─20-smartfriend-env.conf, 30-workingdir.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-22 11:53:19 +03; 4s ago
+    Process: 3131934 ExecStart=/opt/smartfriend-suite/venv/bin/python /opt/smartfriend-suite/run_web.py (code=exited, status=203/EXEC)
+   Main PID: 3131934 (code=exited, status=203/EXEC)
+        CPU: 5ms
+  (no status)
+
+[sf-spider.service]
+sf-spider.service disabled enabled
+● sf-spider.service - SmartFriend Spider (Web Harvester)
+     Loaded: loaded (/etc/systemd/system/sf-spider.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-spider.service.d
+             └─40-workingdir-and-env.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-22 11:53:20 +03; 2s ago
+TriggeredBy: ● sf-spider.timer
+    Process: 3131959 ExecStart=/opt/smartfriend-suite/scripts/sf_spider_run.sh (code=exited, status=203/EXEC)
+   Main PID: 3131959 (code=exited, status=203/EXEC)
+        CPU: 2ms
+  (no status)
+
+[sf-health.service]
+sf-health.service enabled enabled
+● sf-health.service - SmartFriend Health Gate (8210)
+     Loaded: loaded (/etc/systemd/system/sf-health.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-health.service.d
+             └─20-smartfriend-env.conf, 30-workingdir.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2025-11-22 11:53:21 +03; 2s ago
+    Process: 3131961 ExecStart=/usr/bin/python3 -m uvicorn ops.health_gate:app --host 127.0.0.1 --port 8210 --workers 1 --timeout-keep-alive 30 (code=exited, status=1/FAILURE)
+   Main PID: 3131961 (code=exited, status=1/FAILURE)
+        CPU: 442ms
+
+Nov 22 11:53:21 vmi2733174 systemd[1]: sf-health.service: Main process exited, code=exited, status=1/FAILURE
+Nov 22 11:53:21 vmi2733174 systemd[1]: sf-health.service: Failed with result 'exit-code'.
+  (no status)
+
+[sf-bot.service]
+sf-bot.service enabled enabled
+● sf-bot.service - Main Telegram Bot
+     Loaded: loaded (/etc/systemd/system/sf-bot.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-bot.service.d
+             └─20-smartfriend-env.conf, 30-secrets-fix.conf, 40-final-fix.conf
+     Active: active (running) since Thu 2025-11-20 10:40:06 +03; 2 days ago
+   Main PID: 1327046 (python)
+      Tasks: 6 (limit: 14298)
+     Memory: 30.2M
+        CPU: 1min 53.254s
+     CGroup: /system.slice/sf-bot.service
+             └─1327046 /opt/smartfriend-suite/smartfrind/venv/bin/python /opt/smartfriend-suite/bots/main_bot.py
+
+Nov 22 11:52:42 vmi2733174 python[1327046]: INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7985788141:AAGEWK4Qs-NTamwaN3F10q6qC3CVq3d_QA8/getUpdates "HTTP/1.1 200 OK"
+Nov 22 11:52:52 vmi2733174 python[1327046]: INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7985788141:AAGEWK4Qs-NTamwaN3F10q6qC3CVq3d_QA8/getUpdates "HTTP/1.1 200 OK"
+Nov 22 11:53:02 vmi2733174 python[1327046]: INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7985788141:AAGEWK4Qs-NTamwaN3F10q6qC3CVq3d_QA8/getUpdates "HTTP/1.1 200 OK"
+Nov 22 11:53:12 vmi2733174 python[1327046]: INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7985788141:AAGEWK4Qs-NTamwaN3F10q6qC3CVq3d_QA8/getUpdates "HTTP/1.1 200 OK"
+Nov 22 11:53:22 vmi2733174 python[1327046]: INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7985788141:AAGEWK4Qs-NTamwaN3F10q6qC3CVq3d_QA8/getUpdates "HTTP/1.1 200 OK"
+
+[sf-bot-model.service]
+sf-bot-model.service disabled enabled
+○ sf-bot-model.service - SmartFriend Telegram Bot (Model)
+     Loaded: loaded (/etc/systemd/system/sf-bot-model.service; disabled; vendor preset: enabled)
+     Active: inactive (dead)
+  (no status)
+
+[sf-bot-programmer.service]
+sf-bot-programmer.service enabled enabled
+● sf-bot-programmer.service - SmartFriend Programmer Bot
+     Loaded: loaded (/etc/systemd/system/sf-bot-programmer.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-bot-programmer.service.d
+             └─20-smartfriend-env.conf
+     Active: active (running) since Thu 2025-11-20 10:40:00 +03; 2 days ago
+   Main PID: 1326719 (python3)
+      Tasks: 6 (limit: 14298)
+     Memory: 32.1M
+        CPU: 6min 42.721s
+     CGroup: /system.slice/sf-bot-programmer.service
+             └─1326719 /usr/bin/python3 apps/telegram-bots/main.py --role programmer --ffactory http://127.0.0.1:8210 --unified http://127.0.0.1:8220 --memory "" --port 8081
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+
+[sf-telegram.service]
+sf-telegram.service disabled enabled
+○ sf-telegram.service - SmartFriend Main Bot
+     Loaded: loaded (/etc/systemd/system/sf-telegram.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-telegram.service.d
+             └─20-smartfriend-env.conf, secrets.conf
+     Active: inactive (dead)
+  (no status)
+
+[sf-telegram-audit.service]
+sf-telegram-audit.service disabled enabled
+○ sf-telegram-audit.service - SmartFriend Audit Bot
+     Loaded: loaded (/etc/systemd/system/sf-telegram-audit.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-telegram-audit.service.d
+             └─20-smartfriend-env.conf, secrets.conf
+     Active: inactive (dead)
+  (no status)
+
+[sf-smartfriend.service]
+sf-smartfriend.service enabled enabled
+○ sf-smartfriend.service - SmartFriend Telegram Bot (primary)
+     Loaded: loaded (/etc/systemd/system/sf-smartfriend.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-smartfriend.service.d
+             └─20-smartfriend-env.conf
+     Active: inactive (dead) since Sun 2025-11-16 07:35:48 +03; 6 days ago
+   Main PID: 1300806 (code=exited, status=0/SUCCESS)
+        CPU: 984ms
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+  (no status)
+
+[sf-smartfrind.service]
+sf-smartfrind.service disabled enabled
+○ sf-smartfrind.service - SmartFrind Telegram Bot
+     Loaded: loaded (/etc/systemd/system/sf-smartfrind.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-smartfrind.service.d
+             └─20-smartfriend-env.conf, api-override.conf, secrets.conf
+     Active: inactive (dead)
+  (no status)
+
+[sf-smartfactory.service]
+sf-smartfactory.service disabled enabled
+○ sf-smartfactory.service - SmartFactory Telegram Bot
+     Loaded: loaded (/etc/systemd/system/sf-smartfactory.service; disabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/sf-smartfactory.service.d
+             └─20-smartfriend-env.conf, api-override.conf
+     Active: inactive (dead) (Result: exit-code) since Mon 2025-11-17 07:17:11 +03; 5 days ago
+   Main PID: 3046606 (code=exited, status=1/FAILURE)
+        CPU: 1.307s
+
+Notice: journal has been rotated since unit was started, output may be incomplete.
+  (no status)
+
+------------------------------------------------------------
+
+### 3) All sf-* runtimes (list-units)
+
+UNIT                      LOAD   ACTIVE     SUB          DESCRIPTION
+sf-bot-programmer.service loaded active     running      SmartFriend Programmer Bot
+sf-bot.service            loaded active     running      Main Telegram Bot
+sf-core.service           loaded active     running      SmartFriend Core API (8383)
+sf-db-backup.service      loaded failed     failed       Backup SmartFriend SQLite
+sf-db-maintenance.service loaded failed     failed       SmartFriend DB Maintenance
+sf-download.service       loaded failed     failed       SmartFriend Download Sources
+sf-fts-maint.service      loaded activating auto-restart SmartFriend Suite - FTS Maintenance
+sf-gateway.service        loaded active     running      SmartFriend Main Gateway (8220)
+sf-health.service         loaded activating auto-restart SmartFriend Health Gate (8210)
+sf-kb-build.service       loaded activating auto-restart SmartFriend Suite - Knowledge Base Builder
+sf-keys-rotate.service    loaded failed     failed       Rotate JWT/Encryption keys
+sf-learn.service          loaded activating auto-restart SmartFriend Suite - Brain Learn
+sf-memory-fixed.service   loaded activating auto-restart SmartFriend Memory API (8214)
+sf-memory.service         loaded activating auto-restart SmartFriend Memory API (8214)
+sf-smoke.service          loaded failed     failed       SmartFriend smoke check
+sf-spider.service         loaded activating auto-restart SmartFriend Spider (Web Harvester)
+sf-unified-fixed.service  loaded activating auto-restart SmartFriend Unified Gateway (8220)
+sf-unified.service        loaded activating auto-restart SmartFriend Unified Gateway (8220)
+sf-web.service            loaded activating auto-restart SmartFriend Web UI (8390)
+sf-backup.timer           loaded active     waiting      Daily SmartFriend DB Backup
+sf-db-backup.timer        loaded active     waiting      Daily backup for SmartFriend DB
+sf-db-maintenance.timer   loaded active     waiting      Daily DB Maintenance at 03:40
+sf-download.timer         loaded active     waiting      Run sf-download every 2h
+sf-fts-maint.timer        loaded active     waiting      Hourly FTS Maintenance
+sf-kb-build.timer         loaded active     waiting      Rebuild KB daily
+sf-keys-rotate.timer      loaded active     waiting      Rotate keys daily
+sf-learn.timer            loaded active     waiting      Run sf-learn hourly
+sf-smoke.timer            loaded active     waiting      SmartFriend smoke check timer
+sf-spider.timer           loaded active     waiting      SmartFriend Suite - Spider scheduled crawl
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+29 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+------------------------------------------------------------
+
+### 4) Listening ports (SmartFriend / SmartFrind / Suite)
+
+tcp   LISTEN 0      2048         0.0.0.0:8080       0.0.0.0:*    users:(("python3",pid=1326719,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      2048       127.0.0.1:8211       0.0.0.0:*    users:(("python3",pid=1326720,fd=13))                                                                                                                                                               
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=3118457,fd=6),("nginx",pid=3118456,fd=6),("nginx",pid=3118455,fd=6),("nginx",pid=3118454,fd=6),("nginx",pid=3118452,fd=6),("nginx",pid=3118451,fd=6),("nginx",pid=1430377,fd=6))
+tcp   LISTEN 0      2048         0.0.0.0:8220       0.0.0.0:*    users:(("python",pid=1326957,fd=3),("python",pid=1326956,fd=3),("python",pid=1326954,fd=3))                                                                                                         
+
+------------------------------------------------------------
+
+### 5) Nginx health-check (/nginx-health)
+
+<html>
+<head><title>401 Authorization Required</title></head>
+<body>
+<center><h1>401 Authorization Required</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+------------------------------------------------------------
+
+End of SmartFriend Suite – Status Snapshot
+============================================================

@@ -1,0 +1,8 @@
+SmartFriend Suite - Unify DB Paths Manifest
+Timestamp: 20251114_203129
+APP_ROOT=/opt/smartfriend-suite
+VAR_DIR=/opt/smartfriend-suite/var
+DB_DIR=/opt/smartfriend-suite/var/db
+BACKUP_ROOT=/root/sf_unify_backup_20251114_203129
+
+== Moved DB Files ==

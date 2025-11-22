@@ -1,0 +1,200 @@
+
+============================================================
+ 1) System Overview (OS / Resources)
+============================================================
+Timestamp      : 20251115_024035
+Hostname       : vmi2733174
+Kernel         : Linux 5.15.0-161-generic
+Uptime         : up 6 days, 18 hours, 15 minutes
+Load Average   : 0.75 0.82 0.84
+
+Disk /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       388G  157G  231G  41% /
+
+Memory:
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.0Gi       5.9Gi        84Mi       4.7Gi        10Gi
+Swap:             0B          0B          0B
+
+============================================================
+ 2) SmartFriend Suite Layout (Identity/Memory/Knowledge/Awareness)
+============================================================
+OK   [APP_ROOT] موجود: /opt/smartfriend-suite
+OK   [DB_DIR (var/db)] موجود: /opt/smartfriend-suite/var/db
+OK   [KNOW_DIR (var/knowledge)] موجود: /opt/smartfriend-suite/var/knowledge
+OK   [LOG_DIR (var/logs)] موجود: /opt/smartfriend-suite/var/logs
+OK   [APPS_DIR (apps)] موجود: /opt/smartfriend-suite/apps
+OK   [SPIDER_DIR (apps/harvester/spider)] موجود: /opt/smartfriend-suite/apps/harvester/spider
+OK   Legacy SmartFrind DB موجودة: /var/lib/smartfrind/smart_memory.db
+
+============================================================
+ 3) Unified DBs Health (Identity / Memory / Knowledge)
+============================================================
+------------------------------------------------------------
+>>> DB: memory.db
+   المسار : /opt/smartfriend-suite/var/db/memory.db
+   الحجم  : 52K
+   integrity_check: ok
+   * sessions: موجود (0 صفوف)
+   * messages: موجود (0 صفوف)
+   * knowledge_items: موجود (0 صفوف)
+------------------------------------------------------------
+>>> DB: smart_core_memory.db
+   المسار : /opt/smartfriend-suite/var/db/smart_core_memory.db
+   الحجم  : 52K
+   integrity_check: ok
+   * sessions: موجود (0 صفوف)
+   * messages: موجود (0 صفوف)
+   * knowledge_items: موجود (0 صفوف)
+------------------------------------------------------------
+>>> DB: unified_memory.db
+   المسار : /opt/smartfriend-suite/var/db/unified_memory.db
+   الحجم  : 52K
+   integrity_check: ok
+   * sessions: موجود (0 صفوف)
+   * messages: موجود (0 صفوف)
+   * knowledge_items: موجود (0 صفوف)
+------------------------------------------------------------
+>>> DB: smartfriend_unified.db
+   المسار : /opt/smartfriend-suite/var/db/smartfriend_unified.db
+   الحجم  : 52K
+   integrity_check: ok
+   * sessions: موجود (0 صفوف)
+   * messages: موجود (0 صفوف)
+   * knowledge_items: موجود (0 صفوف)
+
+============================================================
+ 4) Legacy SmartFrind DB (smart_memory.db)
+============================================================
+   المسار : /var/lib/smartfrind/smart_memory.db
+   الحجم  : 1.3M
+   integrity_check: ok
+   * ai_memory: 1175 سجل
+   * knowledge_base: 783 سجل
+   * ai_memory_fts: 1175 سجل
+   * user_memory: 0 سجل
+   * interactions: 0 سجل
+
+   اختبارات FTS (بحث نصي سريع):
+   - 'python': 42 نتيجة
+   - 'docker': 37 نتيجة
+   - 'machine learning': 63 نتيجة
+
+============================================================
+ 5) Systemd Services (Brain / Learning / Gateways / Spider)
+============================================================
+SERVICE smartfrind-core.service : enabled=enabled  active=inactive
+unknown  (Core Brain)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-local.service : enabled=enabled  active=inactive
+unknown  (Local Brain)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-qa.service : enabled=enabled  active=inactive
+unknown  (QA Brain)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-guardian.service : enabled=enabled  active=inactive
+unknown  (Guardian / Safety)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-trainer.service : enabled=enabled  active=inactive
+unknown  (Trainer / Learning)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-runner.service : enabled=enabled  active=inactive
+unknown  (Runner / Orchestrator)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-advanced.service : enabled=enabled  active=inactive
+unknown  (Advanced Brain)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-ai-gateway.service : enabled=enabled  active=inactive
+unknown  (AI Gateway)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-unified.service : enabled=disabled
+unknown  active=inactive
+unknown  (Unified Mode)
+SERVICE smartfrind-simple.service : enabled=disabled
+unknown  active=inactive
+unknown  (Simple Mode)
+SERVICE smartfrind-ultra.service : enabled=disabled
+unknown  active=inactive
+unknown  (Ultra Mode)
+SERVICE smartfrind-harvest.service : enabled=static  active=inactive
+unknown  (Harvest)
+SERVICE smartfrind-ingest.service : enabled=static  active=inactive
+unknown  (Ingest)
+SERVICE smartfrind-reflector.service : enabled=static  active=inactive
+unknown  (Reflector)
+SERVICE smartfrind-autolearn.service : enabled=static  active=inactive
+unknown  (AutoLearn)
+SERVICE smartfrind-learning-agent.service : enabled=static  active=inactive
+unknown  (Learning Agent)
+SERVICE smartfrind-envwatch.service : enabled=static  active=inactive
+unknown  (Env Watch)
+SERVICE smartfrind-monitor.service : enabled=enabled  active=inactive
+unknown  (Monitor)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+SERVICE smartfrind-raw-clean.service : enabled=static  active=inactive
+unknown  (Raw Clean)
+SERVICE sf-spider.service : enabled=enabled  active=inactive
+unknown  (Spider / Awareness)
+   -> WARN: الخدمة مُمكّنة لكن غير نشطة (سياسة التشغيل مطلوبة).
+
+============================================================
+ 6) HTTP Gateways Health (Core / Unified / Memory / Learning / FFactory)
+============================================================
+Unified Gateway / Docs:
+   Unified API => http://127.0.0.1:8220/docs (HTTP 200)
+
+Memory / Learning Gateways:
+   Memory API => http://127.0.0.1:8214/docs (HTTP 200)
+   Core API => http://127.0.0.1:8211/docs (HTTP 200)
+   Unified Gateway 8221 => http://127.0.0.1:8221/docs (HTTP 200)
+   Learning Gateway 8222 => http://127.0.0.1:8222/docs (HTTP 200)
+
+FFactory Gateway:
+   FFactory Gateway => http://127.0.0.1:8170/ (HTTP 404)
+
+============================================================
+ 7) Knowledge Data Quality (Distribution / Freshness)
+============================================================
+إحصائيات عامة:
+إجمالي السجلات في knowledge_base: 783
+عدد التصنيفات: 74
+أقدم سجل: 2025-11-07 05:24:41
+أحدث سجل: 2025-11-07 06:29:22
+
+أعلى 10 تصنيفات حسب الحجم:
+interactive_learning    | 168| 21.5%
+curriculum              | 156| 19.9%
+learning_outcomes       |  96| 12.3%
+ai                      |  37|  4.7%
+mlops                   |  27|  3.4%
+curriculum_en           |  26|  3.3%
+programming             |  16|  2.0%
+llm_apis                |  16|  2.0%
+resources_mlops         |  12|  1.5%
+resources_llm           |  12|  1.5%
+
+============================================================
+ 8) Business Layers Summary
+============================================================
+Identity  : تُدار عبر قواعد البيانات في /opt/smartfriend-suite/var/db + legacy /var/lib/smartfrind/smart_memory.db (الجداول المرتبطة بالهوية/البروفايل إن وُجدت).
+Memory    : memory.db + smart_core_memory.db + unified_memory.db تعمل كأساس ذاكرة قصيرة/طويلة المدى.
+Knowledge : smartfriend_unified.db + knowledge_base داخل smart_memory.db تمثّل طبقة المعرفة القابلة للبحث والتوسّع.
+Learning  : خدمات trainer / learning-agent / autolearn / harvest / ingest تقدّم قنوات تعلم من المناهج والمصادر الخارجية.
+Brain     : smartfrind-core/local/qa/advanced/ai-gateway + smart_core API تمثّل العقل التنفيذي والتحليلي.
+Awareness : Spider الرسمي + FFactory Gateway + مراقبة البوابات تمثّل وعي النظام بالبيئة ومصادر الويب.
+
+============================================================
+ 9) Final Decision (Readiness / Identity / Unified Brain)
+============================================================
+Metrics:
+   OK   : 20
+   WARN : 20
+   FAIL : 0
+
+🎯 OVERALL STATE : READY_WITH_WARNINGS
+ - البنية سليمة وقابلة للتشغيل الكامل، لكن توجد نقاط تحذير (خدمات غير نشطة أو Health 404) تحتاج ضبط Run-Profile قبل الاعتماد النهائي.
+
+📄 تم حفظ التقرير في:
+   /opt/smartfriend-suite/reports/sf_master_full_diagnostic_20251115_024035.txt
+============================================================
