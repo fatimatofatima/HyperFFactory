@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# HyperFFactory – Health/Fix/Report Scripts Scanner (Optimized)
+# - قراءة فقط
+# - نطاق محدود لمجلدات الكود
+# - لا يلمس ffactory ولا أي مشاريع خارج HyperFFactory
+# - يتحمل عدم وجود نتائج بدون إسقاط السكربتات الإدارية
+
 set -euo pipefail
 
 BASE_DIR="/root/HyperFFactory"
@@ -15,18 +21,46 @@ echo "BASE_DIR: $BASE_DIR"
 echo "OUT_FILE: $OUT_FILE"
 echo
 
-TMP="$(mktemp)"
-trap 'rm -f "$TMP"' EXIT
+# مجلدات الكود التي نهتم بها فقط
+SCAN_TARGETS=(
+  "tools"
+  "scripts"
+  "workers"
+  "bin"
+  "config"
+  "db"
+)
 
-# جمع كل سكربتات الفحص/الصحة/الإصلاح/التقارير/الباك أب
-find "$BASE_DIR" \
-  \( -name "*.sh" -o -name "*.py" \) -type f 2>/dev/null | \
-  grep -Ei 'check|health|fix|repair|diag|diagnostic|audit|report|backup|snapshot|status|monitor|validate|verify' | \
-  sort -u > "$TMP"
+TMP_ALL="$(mktemp)"
+TMP_FILTERED="$(mktemp)"
+cleanup() {
+  rm -f "$TMP_ALL" "$TMP_FILTERED"
+}
+trap cleanup EXIT
 
-if [[ ! -s "$TMP" ]]; then
-  echo "⚠️ لا توجد سكربتات مطابقة للأنماط المحددة."
-  echo "⚠️ لا توجد سكربتات مطابقة للأنماط المحددة." > "$OUT_FILE"
+# 1) تجميع كل السكربتات (sh/py) من مجلدات الكود فقط
+> "$TMP_ALL"
+for rel in "${SCAN_TARGETS[@]}"; do
+  if [[ -d "$rel" ]]; then
+    find "$rel" \( -name "*.sh" -o -name "*.py" \) -type f 2>/dev/null >> "$TMP_ALL"
+  fi
+done
+
+# لو مفيش أي سكربتات في هذه المجلدات
+if [[ ! -s "$TMP_ALL" ]]; then
+  echo "⚠️ لا توجد سكربتات sh/py داخل مجلدات الكود المحددة."
+  echo "⚠️ لا توجد سكربتات sh/py داخل مجلدات الكود المحددة." > "$OUT_FILE"
+  exit 0
+fi
+
+# 2) فلترة السكربتات الخاصة بـ health/fix/report/backup...
+#   ملاحظة: grep هنا قد لا يجد تطابقات، لذلك نسمح له بالفشل بدون إسقاط السكربت
+grep -Ei 'check|health|fix|repair|diag|diagnostic|audit|report|backup|snapshot|status|monitor|validate|verify' \
+  "$TMP_ALL" 2>/dev/null | sort -u > "$TMP_FILTERED" || true
+
+if [[ ! -s "$TMP_FILTERED" ]]; then
+  echo "⚠️ لا توجد سكربتات مطابقة للأنماط المحددة داخل مجلدات الكود."
+  echo "⚠️ لا توجد سكربتات مطابقة للأنماط المحددة داخل مجلدات الكود." > "$OUT_FILE"
   exit 0
 fi
 
@@ -75,7 +109,7 @@ fi
     fi
 
     echo "$tags -> $path"
-  done < "$TMP"
+  done < "$TMP_FILTERED"
 } | tee "$OUT_FILE"
 
 echo
