@@ -1,235 +1,189 @@
-# HyperFFactory 🚀
-
-<div align="center">
-
-![HyperFFactory Logo](https://img.shields.io/badge/HyperFFactory-Advanced%20AI%20Factory-blue)
-![Version](https://img.shields.io/badge/version-1.0.0-green)
-![License](https://img.shields.io/badge/license-MIT-yellow)
-
-**مصنع الهايبر المتقدم - نظام متكامل لإدارة المشاريع البرمجية والذكاء الاصطناعي**
-
-</div>
-
-## 📖 الوصف
-
-HyperFFactory هو نظام متكامل لإدارة وتطوير المشاريع البرمجية المتقدمة، يحتوي على مكتبة شاملة من السكريبتات والأدوات البرمجية مع هيكل منظم للذكاء الاصطناعي وإدارة المشاريع.
+# HyperFFactory – المصنع الموحّد الرسمي
 
-## 🏗️ الهيكل التنظيمي
+## 1. تعريف مختصر
 
-```
+HyperFFactory هو المصنع الموحّد لتجميع وتشغيل الأنظمة التالية على السيرفر:
 
-HyperFFactory/
-├── 📂 ai/                           # أنظمة الذكاء الاصطناعي
-│   ├── conversations/              # محادثات الذكاء الاصطناعي
-│   ├── datasets/                   # مجموعات البيانات
-│   ├── models/                     # نماذج الذكاء الاصطناعي
-│   ├── patterns/                   # أنماط التعلم
-│   ├── prompts/                    # أوامر الذكاء الاصطناعي
-│   └── skills_tracks/              # مسارات المهارات
-├── 📂 apps/                        # التطبيقات والخدمات
-│   ├── backend_coach_api/          # واجهة برمجة التطبيقات
-│   ├── legacy_bridge/              # جسر الأنظمة القديمة
-│   ├── netflow_inspector/          # مفتش تدفق الشبكة
-│   └── timeline_analyzer/          # محلل الخط الزمني
-├── 📂 audit/                       # أنظمة التدقيق والأمان
-├── 📂 backups/                     # النسخ الاحتياطية
-├── 📂 collected_scripts/           # المكتبة البرمجية
-│   ├── py_scripts/                 # سكريبتات بايثون
-│   └── sh_scripts/                 # سكريبتات شيل
-├── 📂 collected_scripts_from_opt/  # السكريبتات المجمعة (15,114 ملف)
-├── 📂 config/                      # إعدادات النظام
-├── 📂 db/                         # قواعد البيانات
-│   ├── audit/                     # قاعدة بيانات التدقيق
-│   ├── identity/                  # قاعدة بيانات الهوية
-│   ├── knowledge/                 # قاعدة بيانات المعرفة
-│   ├── memory/                    # قاعدة بيانات الذاكرة
-│   ├── meta/                      # قاعدة بيانات التعريف
-│   ├── skills/                    # قاعدة بيانات المهارات
-│   └── tasks/                     # قاعدة بيانات المهام
-├── 📂 docs/                       # التوثيق
-│   ├── agents/                    # وثائق الوكلاء
-│   ├── apis/                      # وثائق واجهات البرمجة
-│   ├── architectures/             # وثائق الهندسة المعمارية
-│   ├── integration/               # وثائق التكامل
-│   └── workflows/                 # وثائق سير العمل
-├── 📂 opt/                        # المشاريع المنظمة
-│   ├── _root_legacy_20251122_023221/  # المشاريع القديمة
-│   ├── imported/                  # المشاريع المستوردة
-│   └── smartfriend-suite/        # مجموعة الصديق الذكي
-├── 📂 reports/                    # التقارير
-│   ├── ai_eval/                  # تقييم الذكاء الاصطناعي
-│   ├── apps_status/              # حالة التطبيقات
-│   ├── backups_audit/            # تدقيق النسخ الاحتياطية
-│   ├── integration/              # تقارير التكامل
-│   ├── performance/              # تقارير الأداء
-│   ├── scripts_index/            # فهرس السكريبتات
-│   └── stack_status/             # حالة المكونات
-├── 📂 scripts/                   # السكريبتات
-│   ├── agents/                   # سكريبتات الوكلاء
-│   ├── ai/                       # سكريبتات الذكاء الاصطناعي
-│   ├── analysis/                 # سكريبتات التحليل
-│   ├── core/                     # السكريبتات الأساسية
-│   ├── db/                       # سكريبتات قواعد البيانات
-│   ├── debug/                    # سكريبتات التصحيح
-│   ├── deploy/                   # سكريبتات النشر
-│   ├── fix/                      # سكريبتات الإصلاح
+- SmartFriend Suite (هوية، ذاكرة، بوتات، Web/Gateway)
+- FFactory / AI Stack (خدمات الذكاء الاصطناعي والدعم)
+- سكربتات الفحص، الإصلاح، النسخ الاحتياطي، والتشغيل الآلي
 
-│   ├── gateways/                 # سكريبتات البوابات
+> جميع الريبوهاِت على GitHub تستخدم للاستدلال والتوثيق فقط.  
+> التشغيل الفعلي والاعتماد الإنتاجي على السيرفر داخل الهيكل الموحّد.
 
-│   ├── health/                   # سكريبتات الصحة
+## 2. مواقع التنفيذ الرسمية
 
-│   ├── integration/              # سكريبتات التكامل
+- المصنع الموحّد (Orchestrator):
+  - `/root/HyperFFactory`
 
-│   ├── maintenance/              # سكريبتات الصيانة
+- أنظمة متكاملة تحت سيطرته (تكامل فقط – ليست جزءًا من الشجرة الداخلية):
+  - `/opt/smartfriend-suite`  ← نظام SmartFriend Suite
+  - `/opt/ffactory`          ← نظام FFactory / AI Stack (Stack مستقل متكامل)
 
-│   ├── migration/                # سكريبتات الهجرة
+أي تشغيل أو سكربت خارج هذه البنية يعتبر مخالفة لسياسة الهيكل الموحّد ويجب إصلاحه.
 
-│   ├── reports/                  # سكريبتات التقارير
+## 3. دور الريبوهاِت (للاستدلال فقط)
 
-│   ├── services/                 # سكريبتات الخدمات
+- `HyperFFactory`          ← التصميم والهوية للمصنع الموحّد.
+- `hyper-factory`          ← مرجع لخط إنتاج بيانات بسيط (inbox → raw → processed → …).
+- `ffactory` / `ffactory2` ← مراجع بنية الـ AI Stack (Postgres, Ollama, ASR, …).
+- `smartfriend-suite`      ← كود SmartFriend المنتج (apps/gateway/bots/…).
+- `smartfrind`             ← نسخة Legacy قديمة (غير معتمدة للإنتاج).
+- `other`                  ← سكربتات وأرشيف وتاريخ تجارب.
 
-│   ├── spiders/                  # سكريبتات العناكب
+## 4. خريطة العمل الموحدة (Roadmap عالية المستوى)
 
-│   ├── suites/                   # سكريبتات المجموعات
+### المرحلة 1 – التوحيد الأساسي
 
-│   ├── testing/                  # سكريبتات الاختبار
+- توحيد مسارات التنفيذ تحت:
+  - `/root/HyperFFactory`
+  - `/opt/smartfriend-suite`
+  - `/opt/ffactory` كنظام خارجي متكامل.
+- تجميع سكربتات وتشخيصات الأنظمة داخل:
+  - `HyperFFactory/imported/`
+  - `HyperFFactory/reports/`
+- إنشاء مركز صحّة موحّد (Unified Health Center).
 
-│   └── unification/              # سكريبتات التوحيد
+### المرحلة 2 – الدمج والتكامل
 
-├── 📂 src/                       # المصادر
+- قناة تكامل رسمية بين HyperFFactory و SmartFriend (Health / Memory / Knowledge / Gateway).
+- قناة تكامل رسمية بين HyperFFactory و FFactory (AI / ASR / Tools).
+- توحيد مسارات النسخ الاحتياطي والسياسات التشغيلية.
 
-│   ├── apps/                     # تطبيقات المصدر
+### المرحلة 3 – التحسين والجودة
 
-│   └── ops/                      # عمليات المصدر
-
-├── 📂 stack/                     # المكونات الأساسية
-
-│   ├── ai_support/               # دعم الذكاء الاصطناعي
-
-│   ├── core/                     # النواة الأساسية
-
-│   ├── ffactory2/                # المصنع المتقدم
-
-│   ├── integrations/             # التكاملات
-
-│   ├── monitoring/               # المراقبة
-
-│   └── other_tools/              # الأدوات الأخرى
-
-└── 📂 var/                       # البيانات المتغيرة
-
-```
-├── db/                       # قواعد البيانات المتغيرة
-
-├── log/                      # السجلات
-
-└── run/                      # ملفات التشغيل
-```
-
-```
-
-## 📊 الإحصائيات
-
-- **🔄 إجمالي الملفات البرمجية:** 15,114 ملف
-- **📝 ملفات Shell Script:** 7,557 ملف
-- **🐍 ملفات Python Script:** 7,557 ملف
-- **💾 حجم المكتبة البرمجية:** 236MB
-- **📁 إجمالي المجلدات:** 424,150
-- **📄 إجمالي الملفات:** 2,972,636
-
-## 🚀 البدء السريع
-
-```bash
-# استنساخ المستودع
-git clone https://github.com/fatimatofatima/HyperFFactory.git
-cd HyperFFactory
-
-# عرض الهيكل (يتطلب تثبيت tree)
-tree -L 2
-
-# أو استخدام find لعرض الهيكل
-find . -maxdepth 2 -type d | sort
-```
-
-🔧 الميزات
-
-🤖 أنظمة الذكاء الاصطناعي
-
-· نماذج محادثة متقدمة
-· أنظمة تعلم آلي
-· معالجة اللغة الطبيعية
-
-🛠️ أدوات التطوير
-
-· مكتبة سكريبتات شاملة
-· أدوات أتمتة متقدمة
-· أنظمة نشر وتكامل
-
-🔒 الأمان والتدقيق
-
-· أنظمة مراقبة متقدمة
-· أدوات اكتشاف الثغرات
-· أنظمة تسجيل شاملة
-
-📈 الإدارة والمراقبة
-
-· تقارير أداء مفصلة
-· أنظمة صحة الخدمات
-· أدوات تحليل البيانات
-
-📝 الترخيص
-
-هذا المشروع مرخص تحت رخصة MIT.
-
-🤝 المساهمة
-
-المساهمات مرحب بها! يرجى:
-
-1. Fork المشروع
-2. إنشاء فرع للميزة (git checkout -b feature/AmazingFeature)
-3. commit التغييرات (git commit -m 'Add some AmazingFeature')
-4. push إلى الفرع (git push origin feature/AmazingFeature)
-5. فتح طلب دمج
-
-📞 التواصل
-
-· المطور: fatimatofatima
-· البريد الإلكتروني: fatimatofayima988@gmail.com
-· المستودع: https://github.com/fatimatofatima/HyperFFactory
-
-🙏 الشكر
-
-شكراً لجميع المساهمين الذين ساعدوا في تطوير هذا المشروع المتقدم.
-
----
-
-<div align="center">⭐ إذا أعجبك هذا المشروع، لا تنسى ترك نجمة!
-
-</div>
-EOFecho "✅ تم إنشاء README.md"
-
-إنشاء ملف ترخيص
-
-echo "📄 إنشاء ملف الترخيص..."
-cat > LICENSE << 'EOF'
-MIT License
-
-Copyright (c) 2025 fatimatofatima
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- تعريف مؤشرات أداء (KPIs) وتشغيل فحوصات دورية.
+- لوحات تحكم موحّدة (CLI / Telegram / Web).
+- تحسين الأداء، الأمان، والاختبارات المستمرة.
+
+## 5. سياسة التشغيل
+
+1) التنفيذ من داخل الهيكل الموحّد فقط.  
+2) عدم المساس بمشروع FFactory المنتج (Stack مستقل، دمج فقط).  
+3) عدم حذف أي قاعدة بيانات أو تقارير تشخيص أو أرشيف.  
+4) GitHub للمرجع فقط، السيرفر هو مصدر الحقيقة الوحيد.  
+
+## 6. سياسة الهيكل الموحّد الصارمة (Unified Tree Policy)
+
+هذه السياسة مُلزِمة لكل سكربت/خدمة/نموذج يعمل تحت HyperFFactory:
+
+- الجذر الرسمي الوحيد للشجرة الداخلية هو:  
+  - `/root/HyperFFactory`
+
+- يجب أن يوجد مجلد داخلي `opt/` تحت هذا الجذر:  
+  - ` /root/HyperFFactory/opt` جزء من الهيكل الموحّد،  
+  - ليس بديلًا عن `/opt` الخاص بالنظام، ولا يُستخدم كـ mount أو مسار خارجي.
+
+- يُمنع نهائيًا على أي سكربت أو خدمة تابعة لـ HyperFFactory:
+  - إنشاء ملفات/مجلدات/venv/خدمات **خارج** `/root/HyperFFactory`،  
+  - باستثناء نقاط التكامل المعرفة صراحة مع:
+    - `/opt/smartfriend-suite`
+    - `/opt/ffactory`
+  - وأي استخدام خارج هذا الاستثناء يُعتبر مخالفة لسياسة الهيكل.
+
+- يُمنع نهائيًا استخدام **symlink** أو **hardlink** داخل `/root/HyperFFactory` تشير إلى:
+  - `/`, `/opt`, `/usr`, `/var` أو أي مسار خارج الجذر،
+  - وأي symlink/hardlink من هذا النوع يُصنّف "مؤشّر تهريب" (Escape Pointer) ويجب كشفه وإزالته.
+
+- مراقبة هذه السياسة تتم عبر:
+  - سكربت `bin/hf_assert_unified_tree.sh`
+  - وسكربتات الحراسة مثل `bin/hf_guard.sh`
+  - وأي مخالفة يتم تسجيلها في تقارير `reports/` وقواعد بيانات `db/meta/`.
+
+## 7. إلزام تسجيل التقدّم والمسارات والحالة في الخطة
+
+1. **تسجيل التقدّم (Progress Logging Mandatory):**  
+   - يجب على كل نموذج/خدمة/سكربت أن يكتب تقدّمه في:
+     - ملفات تحت `reports/` (logs / JSON / summaries)
+     - والسجلات تحت `db/meta/` عند الحاجة (مثل `hf_changes.db`).
+   - أي خطوة تنفيذية مهمّة تتم بدون تسجيل تقدّمها تعتبر **مخالفة تشغيلية**.
+
+2. **تسجيل المسارات (Path & Context Logging):**  
+   - كل عملية إصلاح/فحص/تشغيل يجب أن تُسجّل مع:
+     - اسم السكربت / الخدمة،
+     - المسار الذي تعمل عليه داخل الهيكل،
+     - وقت التنفيذ (timestamp)،
+     - الحالة (نجاح / تحذير / فشل).
+   - الهدف: تتبّع تاريخ التغييرات على الشجرة الموحدة بدون ضياع أي خطوة.
+
+3. **ربط التقدّم بخريطة العمل (Plan-Aware Logging):**  
+   - أي تغيير جوهري في الهيكل أو الخدمات يجب أن يُربط بـ:
+     - بند واضح في `README.md` (أو ملفات التصميم)،
+     - وتحديث في `plan_status.md` يوضّح حالة التنفيذ (✅ / ⏭ / 🟡).
+   - لا يُعتبر أي تغيّر "مكتمل" إلا إذا:
+     - تم تنفيذه داخل الهيكل الموحّد،
+     - وتم تسجيله في التقارير،
+     - وتم عكسه في حالة الخطة.
+
+
+## 8. أنظمة المهام والجودة والخبرة والأخطاء
+
+هذه الأنظمة تعمل فوق HyperFFactory وتستخدم نفس سياسة الهيكل الموحّد وقاعدة "عدم حذف البيانات". الهدف: تتبّع ما يحدث (Tasks)، كيف يحدث (Quality)، من الذي ينفّذ (Experience)، وما الذي كسر (Errors).
+
+### 8.1 نظام المهام (Tasks System)
+
+- الهدف:
+  - تسجيل كل مهمة مهمّة في المصنع (فحص، إصلاح، ترحيل، تكامل).
+  - ربط المهام بالمدراء/العمّال (actors) والزمن والحالة.
+- المبادئ:
+  - كل مهمة يجب أن تحتوي على: `id، actor، scope، status، priority، created_at، updated_at`.
+  - الحالات المسموح بها للمهام: `PLANNED، RUNNING، DONE، FAILED، SKIPPED`.
+  - لا يتم حذف المهام نهائيًا، بل يتم تحديث حالتها فقط.
+- التكامل مع الأنظمة الحالية:
+  - يمكن ربط المهام بأحداث `hf_changes.db` (progress log).
+  - يمكن لاحقًا إنشاء تقارير منطقية تجمع بين المهام والتقدّم الفعلي.
+
+### 8.2 نظام الجودة (Quality System)
+
+- الهدف:
+  - قياس جودة تشغيل الأنظمة (SmartFriend / FFactory / HyperFFactory).
+  - اكتشاف الفترات/السكربتات التي تسبب أعطال متكررة أو نتائج ضعيفة.
+- المبادئ:
+  - كل فحص جودة يجب أن يخزّن: `actor، check_name، result، score (0–100)، details، ts`.
+  - لا توجد "نجاح/فشل" فقط؛ وإنما "درجة جودة" يمكن تتبّعها زمنيًا.
+  - تقارير الجودة تعتمد على:
+    - تقارير الصحة (health reports) الموجودة في `reports/`.
+    - سجل التقدّم `hf_changes.db`.
+- أمثلة لاستخدامه:
+  - مقارنة جودة تشغيل SmartFriend عبر الأيام.
+  - قياس استقرار ffactory stack بعد كل تحديث/إعادة تشغيل.
+
+### 8.3 نظام الخبرة والتدريب (Experience & Training)
+
+- الهدف:
+  - إعطاء "مستوى خبرة" لكل Actor (مدير/عامل) حسب تاريخ نجاحه/أخطائه.
+  - تسجيل جلسات التدريب/التجارب التي ترفع خبرة النظام أو تقلّلها.
+- المبادئ:
+  - لكل Actor يمكن تخزين:
+    - counters مثل: `runs_total، runs_success، runs_failed`.
+    - مشتقات مثل: `success_rate` و `experience_level` (مثلاً: NOVICE، STABLE، EXPERT).
+  - جلسات التدريب (Training Sessions) تُسجَّل كمهام خاصّة مرتبطة بـ Actor أو مجموعة Actors.
+- التكامل:
+  - يمكن ربط هذا النظام بجداول التعلّم (مثل `hf_learning.db`) بحيث:
+    - يتم قراءة قائمة السكربتات والمدراء من learning layer.
+    - يتم إسناد مستوى خبرة لكل سكربت/Actor بناءً على الأداء الفعلي.
+
+### 8.4 نظام الأخطاء (Errors & Incidents)
+
+- الهدف:
+  - توحيد رؤية الأخطاء والحوادث (Incidents) في مكان واحد.
+  - معرفة أي سكربت/Actor يسبب أعطال متكررة، ومتى حصل ذلك.
+- المبادئ:
+  - كل Incident يجب أن يحتوي على:
+    - `id، actor، error_type، error_message، severity (LOW/MEDIUM/HIGH/CRITICAL)، ts، context`.
+  - لا يتم حذف الأخطاء، وإنما تُضاف فوق سجل زمني مستمر.
+  - يمكن الإشارة إلى روابط (paths / reports) لتسهيل التحقيق.
+- التكامل:
+  - النظام يعتمد أساسًا على:
+    - رسائل الفشل القادمة من السكربتات.
+    - وربطها مع `hf_changes.db` لعمل Trace كامل لما حدث قبل/بعد الخطأ.
+  - تقارير الأخطاء تساعد نظام الجودة على حساب "استقرار" كل Actor/خدمة.
+
+### 8.5 العلاقة مع خطّة HyperFFactory
+
+- كل هذه الأنظمة الأربعة تعمل فوق:
+  - طبقة التعلّم (hf_learning.db) ← معرفة من هم المدراء/العمّال.
+  - طبقة التقدّم (hf_changes.db)   ← معرفة ماذا حدث ومتى.
+- لا يتم تنفيذ أي جزء منها خارج `/root/HyperFFactory`.
+- يتم إضافة حالة التنفيذ لهذه الأنظمة في `plan_status.md` مع استخدام الرموز:
+  - ✅ مكتمل / 🟡 قيد التنفيذ / ⏭ خطوة قادمة.
