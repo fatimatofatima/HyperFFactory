@@ -4,29 +4,28 @@ from pathlib import Path
 
 
 class QualityManager:
-    """👨‍💼 مدير نظام الجودة - مسؤول عن مراقبة الجودة والمعايير"""
+    """مدير نظام الجودة - مراقبة الجودة والمعايير"""
 
     def __init__(self, base_path: str = "/root/HyperFFactory"):
         self.base_path = Path(base_path)
 
     def perform_quality_check(self, product_data: Dict[str, Any]) -> Dict[str, Any]:
         """إجراء فحص جودة للمنتج"""
-        quality_score = self.calculate_quality_score(product_data)
+        quality_score = self._calculate_quality_score(product_data)
 
-        check_result: Dict[str, Any] = {
+        result: Dict[str, Any] = {
             "check_id": f"qc_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             "product_id": product_data.get("id", "unknown"),
             "timestamp": datetime.now().isoformat(),
             "score": quality_score,
             "status": "passed" if quality_score >= 0.85 else "failed",
-            "defects": self.identify_defects(product_data),
-            "recommendations": self.generate_recommendations(quality_score),
+            "defects": self._identify_defects(product_data),
+            "recommendations": self._generate_recommendations(quality_score),
         }
+        return result
 
-        return check_result
-
-    def calculate_quality_score(self, product_data: Dict[str, Any]) -> float:
-        """حساب درجة الجودة (منطق مبدئي قابل للتطوير)"""
+    def _calculate_quality_score(self, product_data: Dict[str, Any]) -> float:
+        """حساب درجة الجودة (منطق مبدئي)"""
         base_score = 0.8
         adjustments = product_data.get("quality_metrics", {})
 
@@ -39,8 +38,8 @@ class QualityManager:
 
         return max(0.0, min(1.0, final_score))
 
-    def identify_defects(self, product_data: Dict[str, Any]) -> List[str]:
-        """تحديد العيوب بناء على الميتريكس"""
+    def _identify_defects(self, product_data: Dict[str, Any]) -> List[str]:
+        """تحديد العيوب من الميتريكس"""
         defects: List[str] = []
         metrics = product_data.get("quality_metrics", {})
 
@@ -53,22 +52,20 @@ class QualityManager:
 
         return defects
 
-    def generate_recommendations(self, quality_score: float) -> List[str]:
+    def _generate_recommendations(self, quality_score: float) -> List[str]:
         """توليد توصيات للتحسين"""
         recommendations: List[str] = []
-
         if quality_score < 0.7:
-            recommendations.append("تحسين عملية المراقبة الأولية")
-            recommendations.append("تدريب العمال على المعايير الجديدة")
+            recommendations.append("تحسين المراقبة الأولية")
+            recommendations.append("تدريب إضافي لفريق الجودة")
         elif quality_score < 0.85:
-            recommendations.append("مراجعة خطوات الجودة النهائية")
+            recommendations.append("مراجعة خطوات الفحص النهائي")
         else:
             recommendations.append("الحفاظ على المستوى الحالي")
-
         return recommendations
 
     def get_quality_report(self) -> Dict[str, Any]:
-        """تقرير الجودة الشامل (Placeholder مبدئي)"""
+        """تقرير جودة تجميعي (Placeholder)"""
         return {
             "timestamp": datetime.now().isoformat(),
             "overall_quality_score": 0.82,
@@ -83,8 +80,7 @@ class QualityManager:
 if __name__ == "__main__":
     import json
 
-    quality_manager = QualityManager()
-
+    qm = QualityManager()
     sample_product = {
         "id": "product_001",
         "quality_metrics": {
@@ -93,7 +89,6 @@ if __name__ == "__main__":
             "timeliness": 0.78,
         },
     }
-
-    print("👨‍💼 مدير الجودة جاهز!")
-    check_result = quality_manager.perform_quality_check(sample_product)
-    print(json.dumps(check_result, indent=2, ensure_ascii=False))
+    print("👨‍💼 QualityManager جاهز")
+    res = qm.perform_quality_check(sample_product)
+    print(json.dumps(res, indent=2, ensure_ascii=False))

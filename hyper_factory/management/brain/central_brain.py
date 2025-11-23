@@ -6,26 +6,25 @@ from pathlib import Path
 
 
 class CentralManagementBrain:
-    """🧠 العقل المدير المركزي - المسؤول عن التخطيط الاستراتيجي واتخاذ القرارات"""
+    """العقل المدير المركزي - التخطيط الاستراتيجي واتخاذ القرارات"""
 
     def __init__(self, base_path: str = "/root/HyperFFactory"):
         self.base_path = Path(base_path)
         self.db_path = self.base_path / "var" / "db" / "management"
         self.db_path.mkdir(parents=True, exist_ok=True)
 
-        # قواعد البيانات
         self.workers_db = self.db_path / "workers.db"
         self.tasks_db = self.db_path / "tasks.db"
         self.quality_db = self.db_path / "quality.db"
         self.performance_db = self.db_path / "performance.db"
 
-        self.setup_databases()
-        self.initialize_strategic_goals()
+        self._setup_databases()
+        self._init_strategic_goals()
 
-    def setup_databases(self) -> None:
+    def _setup_databases(self) -> None:
         """إنشاء وتهيئة قواعد البيانات الإدارية"""
 
-        # قاعدة بيانات العمال
+        # قاعدة العمال
         with sqlite3.connect(self.workers_db) as conn:
             conn.execute(
                 """
@@ -34,9 +33,9 @@ class CentralManagementBrain:
                     name TEXT NOT NULL,
                     role TEXT NOT NULL,
                     department TEXT,
-                    skills TEXT,            -- JSON list
+                    skills TEXT,
                     experience_level INTEGER,
-                    current_tasks TEXT,      -- JSON list
+                    current_tasks TEXT,
                     performance_score REAL DEFAULT 0.0,
                     status TEXT DEFAULT 'active',
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -45,7 +44,7 @@ class CentralManagementBrain:
                 """
             )
 
-        # قاعدة بيانات المهام
+        # قاعدة المهام
         with sqlite3.connect(self.tasks_db) as conn:
             conn.execute(
                 """
@@ -59,8 +58,8 @@ class CentralManagementBrain:
                     assigned_by TEXT,
                     status TEXT DEFAULT 'pending',
                     deadline TIMESTAMP,
-                    quality_metrics TEXT,    -- JSON object
-                    completion_time INTEGER, -- minutes
+                    quality_metrics TEXT,
+                    completion_time INTEGER,
                     actual_time INTEGER,
                     quality_score REAL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -69,7 +68,7 @@ class CentralManagementBrain:
                 """
             )
 
-        # قاعدة بيانات الجودة
+        # قاعدة الجودة
         with sqlite3.connect(self.quality_db) as conn:
             conn.execute(
                 """
@@ -78,8 +77,8 @@ class CentralManagementBrain:
                     product_id TEXT,
                     inspector_id TEXT,
                     check_type TEXT,
-                    metrics TEXT,           -- JSON object
-                    defects TEXT,           -- JSON list
+                    metrics TEXT,
+                    defects TEXT,
                     score REAL,
                     status TEXT,
                     recommendations TEXT,
@@ -88,8 +87,7 @@ class CentralManagementBrain:
                 """
             )
 
-    def initialize_strategic_goals(self) -> None:
-        """تهيئة الأهداف الاستراتيجية الأساسية"""
+    def _init_strategic_goals(self) -> None:
         self.strategic_goals = {
             "vision": "بناء مصنع ذكي متكامل ذاتي الإدارة",
             "strategic_goals": [
@@ -111,17 +109,17 @@ class CentralManagementBrain:
         }
 
     def strategic_planning(self) -> Dict[str, Any]:
-        """التخطيط الاستراتيجي الشامل للمصنع"""
+        """خطة استراتيجية شاملة للمصنع"""
         return {
             "timestamp": datetime.now().isoformat(),
             "strategic_vision": self.strategic_goals["vision"],
-            "current_performance": self.analyze_current_performance(),
+            "current_performance": self._analyze_current_performance(),
             "goals": self.strategic_goals["strategic_goals"],
-            "resource_allocation_plan": self.create_resource_plan(),
+            "resource_allocation_plan": self._create_resource_plan(),
         }
 
-    def analyze_current_performance(self) -> Dict[str, Any]:
-        """تحليل الأداء الحالي للمصنع (Placeholder مبدئي)"""
+    def _analyze_current_performance(self) -> Dict[str, Any]:
+        """تحليل أولي للأداء (Placeholder يمكن تطويره لاحقاً)"""
         return {
             "overall_efficiency": 0.78,
             "quality_rate": 0.82,
@@ -129,7 +127,7 @@ class CentralManagementBrain:
             "resource_utilization": 0.65,
         }
 
-    def create_resource_plan(self) -> Dict[str, Any]:
+    def _create_resource_plan(self) -> Dict[str, Any]:
         """خطة تخصيص الموارد"""
         return {
             "human_resources": {
@@ -144,6 +142,6 @@ class CentralManagementBrain:
 
 if __name__ == "__main__":
     brain = CentralManagementBrain()
-    print("🧠 العقل المدير جاهز!")
+    print("🧠 CentralManagementBrain جاهز")
     plan = brain.strategic_planning()
     print(json.dumps(plan, indent=2, ensure_ascii=False))
