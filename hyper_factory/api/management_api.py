@@ -10,6 +10,7 @@ from hyper_factory.management.managers.quality_manager import QualityManager
 
 router = APIRouter(prefix="/management", tags=["Management"])
 
+# تهيئة المديرين
 brain = CentralManagementBrain()
 ops_manager = OperationsManager()
 quality_manager = QualityManager()
@@ -17,57 +18,57 @@ quality_manager = QualityManager()
 
 @router.get("/strategic-plan")
 async def get_strategic_plan() -> Dict[str, Any]:
-    """الخطة الاستراتيجية"""
+    """الحصول على الخطة الاستراتيجية"""
     try:
         plan = brain.strategic_planning()
         return {"status": "success", "data": plan}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.post("/production-plan")
 async def create_production_plan(orders: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """خطة إنتاجية"""
+    """إنشاء خطة إنتاجية"""
     try:
         plan = ops_manager.create_production_plan(orders)
         return {"status": "success", "data": plan}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.get("/operations-status")
 async def get_operations_status() -> Dict[str, Any]:
-    """حالة العمليات"""
+    """الحصول على حالة العمليات"""
     try:
         status = ops_manager.monitor_operations()
         return {"status": "success", "data": status}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.post("/quality-check")
 async def perform_quality_check(product_data: Dict[str, Any]) -> Dict[str, Any]:
-    """فحص جودة"""
+    """إجراء فحص جودة"""
     try:
         result = quality_manager.perform_quality_check(product_data)
         return {"status": "success", "data": result}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.get("/quality-report")
 async def get_quality_report() -> Dict[str, Any]:
-    """تقرير الجودة"""
+    """تقرير الجودة الشامل"""
     try:
         report = quality_manager.get_quality_report()
         return {"status": "success", "data": report}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.get("/health")
 async def management_health() -> Dict[str, Any]:
-    """Health check لنظام الإدارة"""
+    """فحص صحة نظام الإدارة"""
     return {
         "status": "healthy",
         "service": "Management System",
