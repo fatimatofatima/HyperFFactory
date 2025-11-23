@@ -1,0 +1,6 @@
+# HyperFFactory – Knowledge Config
+root: db/knowledge/knowledge.db
+role: knowledge_store
+description: >
+  مستودع المعرفة للمستندات والـ chunks الدلالية المرتبطة بالملفات،
+  الويب، والتوثيق الداخلي.

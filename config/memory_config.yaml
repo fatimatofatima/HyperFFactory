@@ -1,0 +1,6 @@
+# HyperFFactory – Memory Config
+root: db/memory/memory.db
+role: operational_memory
+description: >
+  ذاكرة تشغيلية لتسجيل الأحداث على مستوى HyperFFactory
+  (actors, scopes, payload).

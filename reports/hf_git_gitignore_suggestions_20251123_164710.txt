@@ -1,0 +1,18 @@
+# HyperFFactory – Gitignore suggestions (20251123_164710)
+# هذه ليست .gitignore فعلية؛ مجرد اقتراحات manual
+
+# EXTERNAL_SUITE (smartfriend-suite / smartfrind / ffactory)
+opt/smartfriend-suite/reports/sf_service_matrix_20251122_120450.csv
+
+# EXTERNAL_SUITE (smartfriend-suite / smartfrind / ffactory)
+opt/smartfriend-suite/reports/sf_service_matrix_20251122_121002.csv
+
+# EXTERNAL_SUITE (smartfriend-suite / smartfrind / ffactory)
+opt/smartfriend-suite/reports/sf_service_matrix_20251122_122610.csv
+
+# EXTERNAL_SUITE (smartfriend-suite / smartfrind / ffactory)
+opt/smartfriend-suite/unify_memory.py
+
+# EXTERNAL_SUITE (smartfriend-suite / smartfrind / ffactory)
+opt/smartfriend-suite/var/
+

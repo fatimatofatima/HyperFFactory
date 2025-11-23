@@ -1,0 +1,87 @@
+# HyperFFactory - Core AI Agents (Analyst / Knowledge Spider)
+# هذا الملف لا يستبدل config/agents.yaml
+# بل يضيف تعريفات واضحة للعمّال الأساسيين، قابلة للدمج لاحقًا.
+
+agents:
+
+  # 1) عامل تحليل السجلات والتقارير
+  - id: analyst
+    label: "Hyper Analyst"
+    kind: ai_agent
+    role: log_analyst
+    description: >
+      عامل متخصص في تحليل السجلات (logs)، تقارير الصحة، تقارير الجودة،
+      وأنماط الأخطاء؛ مهمته استخراج أنماط وتوصيات تشغيلية للمصنع الموحّد.
+
+    runtime:
+      actor_id: analyst
+      category: ai_workers
+      # نقطة التشغيل المنطقية (يمكن ربطها لاحقًا بأي واجهة تشغيل فعلية)
+      start:
+        cmd: "scripts/ai/run_agent.sh"
+        args: ["analyst"]
+        workdir: "/root/HyperFFactory"
+      health:
+        cmd: "scripts/health/agent_health.sh"
+        args: ["analyst"]
+        workdir: "/root/HyperFFactory"
+
+    db:
+      # قواعد البيانات التي يقرأ منها / يكتب إليها هذا العامل
+      quality_db:  "db/meta/hf_quality.db"
+      errors_db:   "db/meta/hf_errors.db"
+      tasks_db:    "db/meta/hf_tasks.db"
+      learning_db: "db/meta/hf_learning.db"
+
+    # اتفاق رسمي على أسماء الـ actor/source داخل الجداول:
+    conventions:
+      # في جدول quality_checks داخل hf_quality.db
+      quality_actor: "analyst"
+      # في جدول errors داخل hf_errors.db
+      error_actor:   "analyst"
+      # في جدول tasks داخل hf_tasks.db
+      task_actor:    "analyst"
+      # في جدول learning داخل hf_learning.db
+      learning_source: "analyst"
+
+  # 2) عامل سبايدر المعرفة (Knowledge Spider)
+  - id: knowledge_spider
+    label: "Knowledge Spider"
+    kind: ai_agent
+    role: knowledge_spider
+    description: >
+      عامل مسؤول عن زيارة المصادر (تقارير، سكربتات، تكوينات) وفحص حال
+      سبايدر SmartFriend، وربط نتائج السبيدر بخط التعلّم والخبرة في
+      HyperFFactory.
+
+    runtime:
+      actor_id: knowledge_spider
+      category: ai_workers
+      # نقطة تشغيل منطقية لسبايدر المعرفة (يمكن لاحقًا ربطها بسكربت فعلي)
+      start:
+        cmd: "scripts/ai/run_agent.sh"
+        args: ["knowledge_spider"]
+        workdir: "/root/HyperFFactory"
+      health:
+        cmd: "scripts/health/agent_health.sh"
+        args: ["knowledge_spider"]
+        workdir: "/root/HyperFFactory"
+
+    db:
+      quality_db:  "db/meta/hf_quality.db"
+      errors_db:   "db/meta/hf_errors.db"
+      tasks_db:    "db/meta/hf_tasks.db"
+      learning_db: "db/meta/hf_learning.db"
+
+    conventions:
+      # هذا العامل هو "الوجه الرسمي" لسبايدر المعرفة داخل الـ DBs
+      quality_actor:   "knowledge_spider"
+      error_actor:     "knowledge_spider"
+      task_actor:      "knowledge_spider"
+      learning_source: "knowledge_spider"
+
+      # ربط خاص مع أنماط spider التي أدخلها hf_workers_scan_and_learn
+      # (التي رأيناها في hf_learning.db بصيغة pattern = 'spider:...'):
+      # أي أنماط learning.source = 'hf_workers_scan' و pattern يبدأ بـ 'spider:'
+      # يمكن اعتبارها "مواد خام" لعامل knowledge_spider.
+      derived_from_source: "hf_workers_scan"

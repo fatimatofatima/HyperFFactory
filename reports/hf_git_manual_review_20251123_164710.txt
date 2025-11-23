@@ -1,0 +1,30 @@
+# HyperFFactory – Manual review (20251123_164710)
+# مسارات UNKNOWN تحتاج قرار يدوي
+
+activate_full_brain.sh
+brain_monitor.sh
+collected_scripts/sh_scripts/
+data/
+db_inventory_20251122_034302.tsv
+docs/UNIFIED_FACTORY_LOGIN.md
+docs/scripts_catalog.md
+fix_identity_schema.sql
+fix_knowledge_schema.sql
+fix_knowledge_schema_correct.sql
+fix_meta_columns.sql
+hf_backups_report_20251123_051136.txt
+hyper_bootstrap_enhanced.sh
+hyper_bootstrap_local.sh
+hyper_bootstrap_production.sh
+hyper_check_short.sh
+hyper_factory/__init__.py
+hyper_factory/api/__init__.py
+hyper_factory/api/main.py
+hyper_final_check.sh
+hyper_repo_manager.sh
+hyper_server_check.sh
+plan_status.md.bak_20251123_161340
+أي
+التنفيذ
+جميع
+مهم:

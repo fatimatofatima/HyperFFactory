@@ -1,0 +1,3 @@
+(هنا تلصق كل الأسطر اللي نسختها من git status من أول
+?? imported/opt/report/...
+لحد آخر سطر paths)

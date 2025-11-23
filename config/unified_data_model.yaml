@@ -1,0 +1,42 @@
+# HyperFFactory – Unified Data Model (Reference Only)
+# تعريف منطقي للكيانات الأساسية (لا يطبّق تلقائياً على أي DB).
+
+entities:
+  user:
+    table: users
+    fields:
+      id:            {type: INTEGER, pk: true}
+      external_id:   {type: TEXT, unique: true, nullable: true}
+      display_name:  {type: TEXT}
+      created_at:    {type: TEXT}
+      meta_json:     {type: TEXT, nullable: true}
+
+  session:
+    table: sessions
+    fields:
+      id:            {type: INTEGER, pk: true}
+      user_id:       {type: INTEGER, fk: users.id}
+      source_system: {type: TEXT}
+      started_at:    {type: TEXT}
+      ended_at:      {type: TEXT, nullable: true}
+      meta_json:     {type: TEXT, nullable: true}
+
+  message:
+    table: messages
+    fields:
+      id:            {type: INTEGER, pk: true}
+      session_id:    {type: INTEGER, fk: sessions.id}
+      role:          {type: TEXT}      # user / assistant / system / agent
+      content:       {type: TEXT}
+      created_at:    {type: TEXT}
+      meta_json:     {type: TEXT, nullable: true}
+
+  evaluation:
+    table: evaluations
+    fields:
+      id:            {type: INTEGER, pk: true}
+      message_id:    {type: INTEGER, fk: messages.id}
+      score:         {type: REAL}
+      label:         {type: TEXT}
+      created_at:    {type: TEXT}
+      meta_json:     {type: TEXT, nullable: true}

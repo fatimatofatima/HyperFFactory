@@ -1,0 +1,37 @@
+# HyperFFactory – Lakehouse Manifest (Skeleton)
+# هذه النسخة مبدئية فقط لتثبيت الهيكل.
+# لاحقاً يمكن توسيعها بالمصانع والجداول وحالات الجودة والتدريب.
+
+lakehouse:
+  root: data_lakehouse
+
+  zones:
+    raw_zone:
+      path: data_lakehouse/raw_zone
+      description: "منطقة الإدخال الخام من الأنظمة المختلفة"
+    cleansed_zone:
+      path: data_lakehouse/cleansed_zone
+      description: "بيانات منقّاة وموحّدة جاهزة للتحليل"
+    semantic_zone:
+      path: data_lakehouse/semantic_zone
+      description: "تمثيلات دلالية (Features, Embeddings, Patterns)"
+    serving_zone:
+      path: data_lakehouse/serving_zone
+      description: "مخرجات نهائية جاهزة للاستهلاك (Dashboards / APIs)"
+
+factories:
+  model_factory:
+    root: factories/model_factory
+    inputs: factories/model_factory/incoming
+    outputs: factories/model_factory/trained
+    logs: factories/model_factory/logs
+
+  knowledge_factory:
+    root: factories/knowledge_factory
+    inputs: factories/knowledge_factory/incoming
+    outputs: factories/knowledge_factory/curated
+
+  quality_factory:
+    root: factories/quality_factory
+    inputs: factories/quality_factory/inputs
+    outputs: factories/quality_factory/reports

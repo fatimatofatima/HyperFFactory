@@ -1,0 +1,22 @@
+# HyperFFactory – SmartFriend Suite Integration (Skeleton)
+# هذا الملف لا يفعّل أي شيء بمفرده؛ فقط يعرّف نقاط التكامل المتفق عليها.
+
+version: 1
+external_system: "smartfriend_suite"
+
+paths:
+  root: "/opt/smartfriend-suite"
+  db_main: "/opt/smartfriend-suite/var/db/smartfriend_unified.db"
+  reports_dir: "/opt/smartfriend-suite/reports"
+
+health:
+  service_matrix_csv_glob: "sf_service_matrix_*.csv"
+  audit_reports_glob: "audit_*.json"
+
+policies:
+  touch_files: false          # لا تعديل على ملفات smartfriend من HyperFFactory
+  touch_services: false       # لا إدارة systemd للوحدات sf-* من هذا المستوى
+  role: "observer"            # HyperFFactory يعمل كمراقب/محلل فقط هنا
+
+notes:
+  - "يتم استهلاك هذه الإعدادات من سكربتات health/integration فقط."

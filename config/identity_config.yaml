@@ -1,0 +1,6 @@
+# HyperFFactory – Identity Config
+root: db/identity/identity.db
+role: identity_registry
+description: >
+  سجل الهوية الرئيسي (entities + links) المستخدم لربط HyperFFactory
+  مع SmartFriend Suite و FFactory على مستوى الكيانات.
