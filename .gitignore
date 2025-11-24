@@ -147,3 +147,27 @@ reports/hf_git_untracked_classified_*.log
 reports/hf_assert_unified_tree_*.log
 reports/hf_kill_escape_symlinks_*.log
 # END HyperFFactory Baseline Ignore
+# >>> HyperFFactory runtime ignore (auto) >>>
+# runtime databases and data
+db/
+data/
+reports/
+imported/
+snapshot/
+var/
+
+# external stacks / imported suites (keep only orchestration code here)
+opt/
+
+# local heavy / generated files
+hf_backups_report_*.txt
+db_inventory_*.tsv
+
+# generic logs and sqlite/db files
+*.log
+*.db
+*.sqlite
+# <<< HyperFFactory runtime ignore (auto) <<<
+
+# Large local-only file
+structure.txt
