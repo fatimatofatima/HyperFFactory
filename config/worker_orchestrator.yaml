@@ -1,0 +1,68 @@
+# HyperFFactory – Worker Orchestrator Config
+# يعرّف خط التشغيل الأساسي (Pipeline) ingestor → processor → analyzer → reporter
+# بدون إلزام بأي DB محدد – الربط التفصيلي يتم لاحقاً عند الحاجة.
+
+version: 1
+namespace: hyperffactory
+
+pipeline:
+  id: "basic_text_pipeline"
+  description: "خط إنتاج بسيط (inbox → raw → processed → semantic → serving) كما في hyper-factory."
+  stages:
+    - INGEST
+    - PROCESS
+    - ANALYZE
+    - REPORT
+
+workers:
+
+  ingestor_basic:
+    script: "workers/ingestor_basic.sh"
+    stage: "INGEST"
+    description: "سحب الملفات من data/inbox إلى data/raw."
+    inputs:
+      - "data/inbox"
+    outputs:
+      - "data/raw"
+    plan_step: "INGEST_BASIC"
+    enabled: true
+
+  processor_basic:
+    script: "workers/processor_basic.sh"
+    stage: "PROCESS"
+    description: "توليد metadata أولي في data/processed."
+    inputs:
+      - "data/raw"
+    outputs:
+      - "data/processed"
+    plan_step: "PROCESS_BASIC"
+    enabled: true
+
+  analyzer_basic:
+    script: "workers/analyzer_basic.sh"
+    stage: "ANALYZE"
+    description: "تحويل metadata إلى تمثيل دلالي في data/semantic."
+    inputs:
+      - "data/processed"
+    outputs:
+      - "data/semantic"
+    plan_step: "ANALYZE_BASIC"
+    enabled: true
+
+  reporter_basic:
+    script: "workers/reporter_basic.sh"
+    stage: "REPORT"
+    description: "إنتاج تقارير نهائية في data/serving و reports/."
+    inputs:
+      - "data/semantic"
+    outputs:
+      - "data/serving"
+      - "reports"
+    plan_step: "REPORT_BASIC"
+    enabled: true
+
+orchestration_policy:
+  default_retry: 1
+  stop_on_stage_failure: true
+  log_to:
+    - "reports"

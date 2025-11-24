@@ -1,0 +1,125 @@
+version: 1
+
+bots:
+  - key: smartfriend_main
+    layer: smartfriend-suite
+    role: personal-assistant
+    description: "المساعد الشخصي والمتحدث الرسمي للنظام"
+    telegram:
+      username: "YOUR_SMARTFRIEND_BOT_USERNAME"
+      chat_ids_whitelist: []
+    capabilities:
+      - dialog
+      - explain_status
+      - summarize_reports
+      - route_high_level_requests
+    permissions:
+      exec_scripts: []
+      db_read:
+        - smartfriend_unified.db
+      scope:
+        - user-help
+        - docs
+        - status-explain
+        - coaching
+
+  - key: hyper_factory_bot
+    layer: hyper-factory
+    role: devops-orchestrator
+    description: "بوت إدارة وتشغيل HyperFFactory"
+    telegram:
+      username: "YOUR_HYPER_BOT_USERNAME"
+      chat_ids_whitelist: []
+    capabilities:
+      - run_health_checks
+      - run_workers
+      - generate_reports
+      - query_hf_dbs
+    permissions:
+      exec_scripts:
+        - tools/hf_scan_health_fix_reports.sh
+        - tools/hf_check_remaining_gaps.sh
+        - tools/hf_scan_brain_memory_quality.sh
+        - tools/check_hf_backups.sh
+        - workers/ingestor_basic.sh
+        - workers/processor_basic.sh
+        - workers/analyzer_basic.sh
+        - workers/reporter_basic.sh
+      db_read:
+        - db/meta/hf_quality.db
+        - db/meta/hf_learning.db
+        - db/meta/hf_errors.db
+        - db/meta/hf_ops_meta.db
+      scope:
+        - hyper-devops
+        - hyper-pipeline
+        - hyper-reports
+
+  - key: ffactory_bot
+    layer: ffactory
+    role: forensics-analyst
+    description: "بوت التحليل الجنائي والسلوكي الخاص بـ FFactory"
+    telegram:
+      username: "YOUR_FFACTORY_BOT_USERNAME"
+      chat_ids_whitelist: []
+    capabilities:
+      - run_forensics_modules
+      - generate_forensics_reports
+      - query_graph
+    permissions:
+      exec_scripts: []
+      db_read:
+        - neo4j
+      scope:
+        - forensics
+        - behavior-analytics
+        - threat-intel
+
+routing:
+  domains:
+    default:
+      primary_bot: smartfriend_main
+      fallbacks: [hyper_factory_bot]
+
+    hyper-devops:
+      primary_bot: hyper_factory_bot
+      fallbacks: [smartfriend_main]
+
+    hyper-pipeline:
+      primary_bot: hyper_factory_bot
+      fallbacks: []
+
+    forensics:
+      primary_bot: ffactory_bot
+      fallbacks: [hyper_factory_bot]
+
+    behavior-analytics:
+      primary_bot: ffactory_bot
+      fallbacks: [hyper_factory_bot]
+
+    user-help:
+      primary_bot: smartfriend_main
+      fallbacks: []
+
+classification_hints:
+  keywords:
+    hyper-devops:
+      - "health"
+      - "hf_"
+      - "pipeline"
+      - "worker"
+      - "dbs status"
+    forensics:
+      - "forensics"
+      - "evidence"
+      - "case"
+      - "timeline"
+      - "investigation"
+    behavior-analytics:
+      - "behavior"
+      - "patterns"
+      - "anomaly"
+    user-help:
+      - "شرح"
+      - "ساعدني"
+      - "ما معنى"

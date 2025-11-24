@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "namespace": "hyperffactory",
+  "groups": [
+    {
+      "id": "governance",
+      "description": "حوكمة المصنع الموحّد (خطة التنفيذ، المهام، الجودة، الأخطاء).",
+      "modules": [
+        "hyper_core",
+        "quality_layer",
+        "learning_layer",
+        "errors_layer"
+      ]
+    },
+    {
+      "id": "external_systems",
+      "description": "أنظمة خارجية متكاملة عبر الجسر الرسمي فقط.",
+      "modules": [
+        "smartfriend_suite",
+        "ffactory_stack"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "hyper_core",
+      "to": "smartfriend_suite",
+      "relation": "reads_health_and_db_only"
+    },
+    {
+      "from": "hyper_core",
+      "to": "ffactory_stack",
+      "relation": "stack_bridge_only"
+    },
+    {
+      "from": "quality_layer",
+      "to": "hyper_core",
+      "relation": "evaluates_runtime"
+    },
+    {
+      "from": "learning_layer",
+      "to": "hyper_core",
+      "relation": "learns_from_tasks_and_runs"
+    },
+    {
+      "from": "errors_layer",
+      "to": "hyper_core",
+      "relation": "records_incidents"
+    }
+  ],
+  "health_checks": {
+    "smartfriend_suite": {
+      "type": "external",
+      "script_hint": "tools/hf_scan_health_fix_reports.sh"
+    },
+    "ffactory_stack": {
+      "type": "external",
+      "script_hint": "scripts/core/ffactory_status.sh"
+    }
+  }
+}

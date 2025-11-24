@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+# HyperFFactory – Start SmartFriend Suite + FFactory + Telegram Bots (unified runner)
+
+set -Eeuo pipefail
+
+ROOT="/root/HyperFFactory"
+cd "$ROOT"
+
+REPORT_DIR="$ROOT/reports"
+mkdir -p "$REPORT_DIR"
+
+TS="$(date +%Y%m%d_%H%M%S)"
+LOG="$REPORT_DIR/hf_start_smartfriend_and_ffactory_${TS}.log"
+
+log() {
+  # دالة لوج سليمة بدون أخطاء date
+  echo "[$(date '+%F %T')] $*" | tee -a "$LOG"
+}
+
+SM_ROOT="/opt/smartfriend-suite"
+FF_ROOT="/opt/ffactory"
+
+log "====================================================="
+log "HyperFFactory – Start SmartFriend Suite + FFactory + Telegram Bots"
+log "ROOT : $ROOT"
+log "TIME : $TS"
+log "LOG  : $LOG"
+log "====================================================="
+
+log "SmartFriend root : $SM_ROOT (exists: $( [ -d "$SM_ROOT" ] && echo YES || echo NO ))"
+log "ffactory root    : $FF_ROOT"
+
+############################################
+# Step 1: Start SmartFriend Suite services
+############################################
+log "== Step 1: Start SmartFriend Suite services =="
+
+SF_SERVICES=(
+  sf-core
+  sf-web
+  sf-health
+  sf-memory
+  sf-bot
+)
+
+for s in "${SF_SERVICES[@]}"; do
+  if systemctl list-unit-files "${s}.service" >/dev/null 2>&1; then
+    log "  → starting ${s}.service ..."
+    if systemctl start "${s}.service"; then
+      log "    ✅ ${s}.service started"
+    else
+      log "    ⚠️ ${s}.service failed to start (systemd exit != 0)"
+    fi
+  else
+    log "  ⚠️ ${s}.service not defined on this system – skipping."
+  fi
+done
+
+log "== SmartFriend services status =="
+for s in "${SF_SERVICES[@]}"; do
+  if systemctl list-unit-files "${s}.service" >/dev/null 2>&1; then
+    st="$(systemctl is-active "${s}.service" 2>/dev/null || true)"
+    log "  - ${s}.service : ${st}"
+  fi
+done
+
+############################################
+# Step 2: HTTP Health checks (SmartFriend + ffactory)
+############################################
+log "== Step 2: HTTP Health checks =="
+
+if command -v curl >/dev/null 2>&1; then
+  declare -a ENDPOINTS=(
+    "SmartFriend Memory API|http://127.0.0.1:8214/health"
+    "SmartFriend Web UI|http://127.0.0.1:8390/health"
+    "SmartFriend Health API|http://127.0.0.1:8215/health"
+    "SmartFriend Gateway|http://127.0.0.1:8220/health"
+    "FFactory ASR/Echo|http://127.0.0.1:8086/health"
+    "FFactory Ollama|http://127.0.0.1:11435/health"
+  )
+
+  for item in "${ENDPOINTS[@]}"; do
+    name="${item%%|*}"
+    url="${item##*|}"
+    if curl -fsS "$url" >/dev/null 2>&1; then
+      log "  ✅ ${name} OK at ${url}"
+    else
+      log "  ⚠️ ${name} not responding at ${url}"
+    fi
+  done
+else
+  log "  ⚠️ curl not installed – skipping HTTP checks."
+fi
+
+############################################
+# Step 3: Start ffactory stack (Docker core)
+############################################
+log "== Step 3: Start ffactory stack (Docker core) =="
+
+if [ -d "$FF_ROOT" ]; then
+  if command -v docker >/dev/null 2>&1; then
+    if [ -f "$FF_ROOT/stack/docker-compose.core.yml" ]; then
+      log "  ▶️ running: docker compose -f stack/docker-compose.core.yml up -d (in $FF_ROOT)"
+      (
+        cd "$FF_ROOT"
+        docker compose -f stack/docker-compose.core.yml up -d
+      ) && log "  ✅ ffactory core stack up" \
+        || log "  ⚠️ docker compose core stack returned non-zero status"
+
+      log "== ffactory containers snapshot =="
+      (
+        cd "$FF_ROOT"
+        docker compose -f stack/docker-compose.core.yml ps
+      ) | tee -a "$LOG" || true
+    else
+      log "  ⚠️ stack/docker-compose.core.yml not found under $FF_ROOT – skipping ffactory core start"
+    fi
+  else
+    log "  ⚠️ docker binary not found – cannot start ffactory stack"
+  fi
+else
+  log "  ⚠️ ${FF_ROOT} not found – ffactory stack not available"
+fi
+
+############################################
+# Step 4: Telegram bots (status snapshot)
+############################################
+log "== Step 4: Telegram bots (SmartFriend) – systemd status snapshot =="
+
+BOT_SERVICES=(
+  sf-bot
+  sf-bot-assistant
+  sf-bot-pro
+  sf-bot-mod
+)
+
+for s in "${BOT_SERVICES[@]}"; do
+  if systemctl list-unit-files "${s}.service" >/dev/null 2>&1; then
+    log "--- status: ${s}.service ---"
+    systemctl --no-pager -l status "${s}.service" 2>&1 | sed 's/^/  /' | tee -a "$LOG" || true
+  else
+    log "ℹ️ bot ${s}.service not defined on this server (skip)."
+  fi
+done
+
+log "====================================================="
+log "✅ HyperFFactory Orchestrator (SmartFriend + FFactory + Telegram snapshot) finished"
+log "📄 Report: $LOG"
+log "====================================================="

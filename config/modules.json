@@ -1,0 +1,67 @@
+[
+  {
+    "id": "hyper_core",
+    "type": "core",
+    "description": "الطبقة الأساسية داخل /root/HyperFFactory (scripts, tools, workers, sql, reports).",
+    "root": ".",
+    "managed_by": "HyperFFactory",
+    "enabled": true
+  },
+  {
+    "id": "smartfriend_suite",
+    "type": "external_system",
+    "description": "SmartFriend Suite تحت /opt/smartfriend-suite – نظام منتج مستقل.",
+    "root": "/opt/smartfriend-suite",
+    "managed_by": "SmartFriend Suite",
+    "enabled": true,
+    "integration": {
+      "mode": "health_and_db_bridge",
+      "bridge_scripts": [
+        "bin/hyper_bootstrap_smartfriend_suite.sh",
+        "bin/hyper_recover_smartfriend_unified.sh",
+        "tools/hf_find_smartfriend_unified_db.sh",
+        "tools/hf_scan_health_fix_reports.sh"
+      ]
+    }
+  },
+  {
+    "id": "ffactory_stack",
+    "type": "external_stack",
+    "description": "FFactory / AI Stack المستقل تحت /opt/ffactory (Postgres, Ollama, ASR...).",
+    "root": "/opt/ffactory",
+    "managed_by": "ffactory",
+    "enabled": true,
+    "integration": {
+      "mode": "stack_bridge",
+      "bridge_scripts": [
+        "scripts/integration/integrate_ffactory2.sh",
+        "scripts/core/ffactory_run_stack.sh",
+        "scripts/core/ffactory_status.sh"
+      ]
+    }
+  },
+  {
+    "id": "quality_layer",
+    "type": "meta_db",
+    "description": "طبقة جودة التشغيل (hf_quality.db) – سجلات فحوصات الجودة.",
+    "db_path": "db/meta/hf_quality.db",
+    "enabled": true
+  },
+  {
+    "id": "learning_layer",
+    "type": "meta_db",
+    "description": "طبقة التعلّم والخبرة (hf_learning.db).",
+    "db_path": "db/meta/hf_learning.db",
+    "enabled": true
+  },
+  {
+    "id": "errors_layer",
+    "type": "meta_db",
+    "description": "طبقة تسجيل الحوادث والأخطاء (hf_errors.db, hf_ops_meta.db).",
+    "db_paths": [
+      "db/meta/hf_errors.db",
+      "db/meta/hf_ops_meta.db"
+    ],
+    "enabled": true
+  }
+]

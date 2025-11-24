@@ -1,0 +1,70 @@
+# HyperFFactory – Agents & Governance Registry
+# هذا الملف يربط أسماء العوامل (Agents) بدورهم داخل المصنع الموحّد.
+# لا يحتوي على أسرار، ويمكن تتبّعه في git بأمان.
+
+version: 1
+namespace: hyperffactory
+
+agents:
+
+  - id: debug_expert
+    name: "Debug Expert"
+    description: "تحليل الأعطال والـ logs على مستوى HyperFFactory + SmartFriend + FFactory."
+    enabled: true
+    skills:
+      - inspect_logs
+      - classify_errors
+      - propose_fixes
+    preferred_tools:
+      - tools/hf_scan_health_fix_reports.sh
+      - tools/hf_scan_repo_health_fix_report.sh
+    domains:
+      - hyper_core
+      - smartfriend_suite
+      - ffactory_stack
+
+  - id: system_architect
+    name: "System Architect"
+    description: "مراجعة الهيكل الموحّد، الخطة التنفيذية، وتوازن التكامل بين الأنظمة."
+    enabled: true
+    skills:
+      - read_plan
+      - check_unified_tree
+      - recommend_changes
+    preferred_tools:
+      - tools/hf_assert_unified_tree.sh
+      - tools/hf_show_plan.sh
+      - tools/hf_update_readme_real.sh
+    domains:
+      - hyper_core
+      - governance
+
+  - id: technical_coach
+    name: "Technical Coach"
+    description: "متابعة تطور العمال والسكربتات وربطها بنظام التعلّم (hf_learning.db)."
+    enabled: false
+    skills:
+      - track_runs
+      - compute_experience
+    preferred_tools: []
+    domains:
+      - learning
+
+  - id: knowledge_spider
+    name: "Knowledge Spider"
+    description: "جمع المعرفة من الريبوهاِت والتقارير لاستثمارها داخل HyperFFactory."
+    enabled: false
+    skills:
+      - scan_repos
+      - index_docs
+    preferred_tools: []
+    domains:
+      - knowledge
+
+routing:
+  errors:
+    primary_agents: [debug_expert]
+  architecture:
+    primary_agents: [system_architect]
+  quality:
+    primary_agents: [technical_coach]

@@ -1,0 +1,49 @@
+# HyperFFactory – Management Profile (v1)
+# ملف تعريف لدورة الإدارة الموحّدة
+# السكربت hf_management_smart_run.sh يقرأ المفاتيح العلوية فقط (health_enabled, ...)
+
+profile_name: default
+mode: quick   # quick | full
+
+# مفاتيح بسيطة يقرأها سكربت الإدارة (سطر واحد لكل مفتاح)
+health_enabled: true
+plan_sync_enabled: true
+backups_enabled: true
+git_enabled: false
+auto_updater_enabled: false
+
+# توثيق إضافي (لا يُقرأ أوتوماتيك الآن، فقط مرجع تصميمي)
+health:
+  include_db_checks: true
+  steps:
+    - hf_health_all
+    - hyper_check_all_dbs
+    - hf_scan_health_fix_reports
+    - hf_scan_repo_health_fix_report
+
+plan_sync:
+  steps:
+    - hf_sync_status_and_plan
+    - hf_show_plan
+
+backups:
+  steps:
+    - check_hf_backups
+    - hf_backups_quick_report
+
+git:
+  safe_only: true
+  steps:
+    - hf_update_plan_and_repo
+    - hf_build_management_and_push
+
+auto_updater:
+  note: "تشغيل setup_auto_updater مرة واحدة أو حسب الحاجة"
+
+smartfriend:
+  root: /opt/smartfriend-suite
+  note: "تكامل عبر bin/hyper_bootstrap_smartfriend_suite.sh و hyper_recover_smartfriend_unified.sh"
+
+ffactory:
+  root: /opt/ffactory
+  note: "Stack خارجي متكامل – لا تعديل من المصنع، تكامل فقط"
