@@ -23,9 +23,25 @@ echo " TIME : $NOW"
 echo "=================================================="
 echo
 
+log_incident() {
+  local actor="$1"
+  local error_type="$2"
+  local severity="$3"
+  local message="$4"
+  local context="$5"
+  local exit_code="${6:-1}"
+  local report_path="${7:-}"
+
+  if [ -x "./tools/hf_log_incident.sh" ]; then
+    HF_ROOT="$ROOT" HF_SOURCE_SCRIPT="hf_stage10_governance_full.sh" \
+      ./tools/hf_log_incident.sh "$actor" "$error_type" "$severity" "$message" "$context" "$exit_code" "$report_path" || true
+  fi
+}
+
 run_step() {
   local label="$1"
   local script="$2"
+  local severity="${3:-MEDIUM}"
 
   echo "--------------------------------------------------"
   echo "▶ $label"
@@ -33,12 +49,13 @@ run_step() {
 
   if [ ! -x "$script" ]; then
     echo "⚠️ السكربت غير موجود أو غير قابل للتنفيذ: $script"
+    log_incident "$label" "SCRIPT_NOT_FOUND" "$severity" "Script not found or not executable: $script" "ROOT=$ROOT;TIME=$NOW" 127 "$script"
     echo
     return
   fi
 
   set +e
-  "$script" | sed 's/^/  /'
+  HF_ROOT="$ROOT" HF_SOURCE_SCRIPT="$script" "$script" | sed 's/^/  /'
   local rc=$?
   set -e
 
@@ -46,26 +63,27 @@ run_step() {
     echo "✅ $label – OK"
   else
     echo "⚠️ $label – فشل برمز $rc (متابعة باقي المراحل)"
+    log_incident "$label" "SCRIPT_FAILURE" "$severity" "Script $script failed with exit code $rc" "ROOT=$ROOT;TIME=$NOW" "$rc"
   fi
   echo
 }
 
-# 1) لوحة HyperFFactory العامة (dashboard CLI)
-run_step "Main HyperFFactory Dashboard (hf_dashboard_cli.sh)" "$DASHBOARD_CLI"
+# 1) لوحة HyperFFactory العامة
+run_step "Main HyperFFactory Dashboard (hf_dashboard_cli.sh)" "$DASHBOARD_CLI" "MEDIUM"
 
 # 2) Snapshots للحالة العامة و KPIs
-run_step "Status Snapshot (hf_status_snapshot.sh)" "$STATUS_SNAPSHOT"
-run_step "KPI Snapshot (hf_kpi_snapshot.sh)" "$KPI_SNAPSHOT"
+run_step "Status Snapshot (hf_status_snapshot.sh)" "$STATUS_SNAPSHOT" "LOW"
+run_step "KPI Snapshot (hf_kpi_snapshot.sh)" "$KPI_SNAPSHOT" "LOW"
 
-# 3) تحليل المهام والمجدولات من المصدر الرسمي hf_ops_meta
-run_step "Tasks & Schedulers Inspection (hf_inspect_tasks_and_schedulers.sh)" "$TASKS_SCHED"
+# 3) تحليل المهام والمجدولات
+run_step "Tasks & Schedulers Inspection (hf_inspect_tasks_and_schedulers.sh)" "$TASKS_SCHED" "MEDIUM"
 
-# 4) لوحة الجودة / الميتا + محرك الأنماط (للمراجعة Governance)
-run_step "Quality / Meta Dashboard (hf_quality_dashboard_cli.sh)" "$QUALITY_DASH"
-run_step "Patterns Engine (hf_patterns_engine_cli.sh)" "$PATTERNS_CLI"
+# 4) لوحة الجودة / الميتا + محرك الأنماط
+run_step "Quality / Meta Dashboard (hf_quality_dashboard_cli.sh)" "$QUALITY_DASH" "LOW"
+run_step "Patterns Engine (hf_patterns_engine_cli.sh)" "$PATTERNS_CLI" "LOW"
 
 echo "=================================================="
 echo " ملخص Stage10 – Governance & Dashboards:"
-echo "  - تم تشغيل لوحات HyperFFactory الأساسية، snapshots، وقراءة المهام والمجدولات."
-echo "  - تم تضمين جودة/أنماط كجزء من حوكمة المصنع."
+echo "  - تم تشغيل لوحات HyperFFactory الأساسية، snapshots، والمهام والمجدولات."
+echo "  - أي فشل تم تسجيله كنظام Incidents في hf_errors.db."
 echo "=================================================="

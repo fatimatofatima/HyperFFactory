@@ -22,6 +22,21 @@ echo " TIME : $NOW"
 echo "=================================================="
 echo
 
+log_incident() {
+  local actor="$1"
+  local error_type="$2"
+  local severity="$3"
+  local message="$4"
+  local context="$5"
+  local exit_code="${6:-1}"
+  local report_path="${7:-}"
+
+  if [ -x "./tools/hf_log_incident.sh" ]; then
+    HF_ROOT="$ROOT" HF_SOURCE_SCRIPT="hf_stage9_forensics_full.sh" \
+      ./tools/hf_log_incident.sh "$actor" "$error_type" "$severity" "$message" "$context" "$exit_code" "$report_path" || true
+  fi
+}
+
 run_step() {
   local label="$1"
   local script="$2"
@@ -32,12 +47,13 @@ run_step() {
 
   if [ ! -x "$script" ]; then
     echo "⚠️ السكربت غير موجود أو غير قابل للتنفيذ: $script"
+    log_incident "$label" "SCRIPT_NOT_FOUND" "HIGH" "Script not found or not executable: $script" "ROOT=$ROOT;TIME=$NOW" 127 "$script"
     echo
     return
   fi
 
   set +e
-  "$script" | sed 's/^/  /'
+  HF_ROOT="$ROOT" HF_SOURCE_SCRIPT="$script" "$script" | sed 's/^/  /'
   local rc=$?
   set -e
 
@@ -45,25 +61,28 @@ run_step() {
     echo "✅ $label – OK"
   else
     echo "⚠️ $label – فشل برمز $rc (متابعة باقي المراحل)"
+    log_incident "$label" "SCRIPT_FAILURE" "HIGH" "Script $script failed with exit code $rc" "ROOT=$ROOT;TIME=$NOW" "$rc"
   fi
   echo
 }
 
-# 1) فحص تكامل شامل بين الأنظمة (HyperFFactory / SmartFriend / FFactory)
+# 1) فحص تكامل شامل بين الأنظمة
 run_step "Stage9 Core – Full Integration Scan (hf_full_integration_scan.sh)" "$CORE_SCAN"
 
-# 2) محاولة إصلاح الفجوات المسجّلة (Gaps)
+# 2) محاولة إصلاح الفجوات
 run_step "Fix All Gaps (hf_fix_all_gaps.sh)" "$FIX_GAPS"
 
-# 3) تقرير فجوات + مهام متعلقة بها
+# 3) تقرير الفجوات والمهام
 run_step "Gaps & Tasks Report (hf_gap_and_tasks_report.sh)" "$GAPS_REPORT"
 
 # 4) تدقيق قواعد البيانات الرسمية
 run_step "DB Audit (hf_db_audit.sh)" "$DB_AUDIT"
+
+# 5) تدقيق قواعد البيانات الظلية / الثانوية
 run_step "DB Shadow Audit (hf_db_shadow_audit.sh)" "$DB_SHADOW"
 
 echo "=================================================="
 echo " ملخص Stage9 – Forensics & Gaps:"
 echo "  - تم تشغيل فحص التكامل، إصلاح الفجوات، تقارير gaps، وتدقيق DB."
-echo "  - راجع تقارير /root/HyperFFactory/reports/ لمزيد من التفاصيل."
+echo "  - أي فشل تم تسجيله كنظام Incidents في hf_errors.db."
 echo "=================================================="
