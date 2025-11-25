@@ -1,90 +1,82 @@
 #!/usr/bin/env bash
-# تفعيل أنظمة META: tasks / quality / learning / errors داخل HyperFFactory
+# HyperFFactory – Meta Systems Orchestrator (using wrappers, not raw stages)
 
-set -Eeuo pipefail
+set -euo pipefail
 
-ROOT="/root/HyperFFactory"
-DB_DIR="$ROOT/db/meta"
-SQL_DIR="$ROOT/sql"
-LOG_DIR="$ROOT/logs"
-mkdir -p "$LOG_DIR" "$DB_DIR"
+ROOT="${1:-/root/HyperFFactory}"
+cd "$ROOT" || { echo "❌ لا يمكن الدخول إلى $ROOT"; exit 1; }
 
-STAMP="$(date +%Y%m%d_%H%M%S)"
-LOG_FILE="$LOG_DIR/hf_run_meta_systems_${STAMP}.log"
+TOOLS_DIR="$ROOT/tools"
+WORKERS_DIR="$ROOT/HyperFFactory/workers"
+NOW="$(date '+%Y-%m-%d %H:%M:%S %z')"
 
-exec > >(tee -a "$LOG_FILE") 2>&1
+run_step() {
+  local label="$1"; shift
+  local bin="$1"
+  echo "--------------------------------------------------"
+  echo "▶ $label"
+  echo "--------------------------------------------------"
 
-log() {
-    printf '%s %s\n' "$(date -Iseconds)" "$*"
+  if [ ! -x "$bin" ]; then
+    echo "⚠️ تخطي: الملف غير موجود أو غير قابل للتنفيذ: $bin"
+    echo
+    return 0
+  fi
+
+  shift || true
+
+  if "$bin" "$@"; then
+    echo "✅ $label – OK"
+  else
+    local rc=$?
+    echo "❌ $label – فشل برمز $rc (متابعة بقية الخطوات)"
+  fi
+
+  echo
 }
 
-ensure_db_from_sql() {
-    local db_path="$1"
-    local sql_path="$2"
-    local label="$3"
+echo "=================================================="
+echo " HyperFFactory – Meta Systems Orchestrator"
+echo " ROOT : $ROOT"
+echo " TIME : $NOW"
+echo "=================================================="
+echo
 
-    if [[ ! -f "$sql_path" ]]; then
-        log "⚠️ ملف SQL مفقود لـ $label: $sql_path (تخطي)"
-        return
-    fi
+# 1) Stage4 – Quality / Errors / Learning (Wrapper)
+run_step "Stage4 – Quality / Errors / Learning (wrapper)" \
+  "$TOOLS_DIR/hf_stage4_quality_full.sh"
 
-    if [[ -f "$db_path" ]]; then
-        log "ℹ️ DB موجودة مسبقًا لـ $label: $db_path (لن يتم حذفها)"
-    else
-        log "▶ إنشاء DB جديدة لـ $label: $db_path"
-        sqlite3 "$db_path" < "$sql_path"
-        log "✅ تم إنشاء DB: $db_path من: $sql_path"
-    fi
-}
+# 2) Stage8 – Unified Health (Wrapper)
+run_step "Stage8 – Unified Health (wrapper)" \
+  "$TOOLS_DIR/hf_stage8_unified_health_full.sh"
 
-run_if_exists() {
-    local script="$1"
-    if [[ -x "$script" ]]; then
-        log "▶ تشغيل: $script"
-        "$script"
-        log "✅ انتهى بنجاح: $script"
-    elif [[ -f "$script" ]]; then
-        log "⚠️ موجود لكنه غير قابل للتنفيذ: $script (تخطي)"
-    else
-        log "ℹ️ غير موجود (تخطي): $script"
-    fi
-}
+# 3) Quality / Meta Dashboard (رؤية موحدة)
+run_step "Quality / Meta Dashboard (CLI)" \
+  "$TOOLS_DIR/hf_quality_dashboard_cli.sh"
 
-log "============================================================"
-log "== HF RUN META SYSTEMS (TASKS / QUALITY / LEARNING / ERRORS)"
-log "============================================================"
-log "ROOT = $ROOT"
-log "DB   = $DB_DIR"
-log "LOG  = $LOG_FILE"
-log
+# 4) Patterns Engine CLI (من hf_learning → hf_patterns)
+run_step "Patterns Engine (hf_learning → hf_patterns)" \
+  "$TOOLS_DIR/hf_patterns_engine_cli.sh"
 
-cd "$ROOT"
+# 5) Basic Pipeline Workers عبر الـ wrappers الرسمية (إن وُجدت)
+if [ -d "$WORKERS_DIR" ]; then
+  echo "--------------------------------------------------"
+  echo "▶ Basic Pipeline Workers via HyperFFactory/workers"
+  echo "--------------------------------------------------"
 
-# 1) إنشاء قواعد بيانات meta من الـ schema SQL (بدون حذف إن وجدت)
-ensure_db_from_sql "$DB_DIR/hf_ops_meta.db"   "$SQL_DIR/meta_hf_ops_meta_schema.sql"   "OPS_META"
-ensure_db_from_sql "$DB_DIR/hf_quality.db"    "$SQL_DIR/meta_hf_quality_schema.sql"    "QUALITY"
-ensure_db_from_sql "$DB_DIR/hf_learning.db"   "$SQL_DIR/meta_hf_learning_schema.sql"   "LEARNING"
-ensure_db_from_sql "$DB_DIR/hf_errors.db"     "$SQL_DIR/meta_hf_errors_schema.sql"     "ERRORS"
+  run_step "Basic Worker – ingestor_basic" \
+    "$WORKERS_DIR/ingestor_basic.sh"
 
-# 2) تهيئة جدول المهام في hf_ops_meta.db (init_hf_ops_meta_tasks.sql)
-if [[ -f "$SQL_DIR/init_hf_ops_meta_tasks.sql" ]]; then
-    log "▶ تهيئة/تحديث جدول المهام في hf_ops_meta.db من init_hf_ops_meta_tasks.sql"
-    sqlite3 "$DB_DIR/hf_ops_meta.db" < "$SQL_DIR/init_hf_ops_meta_tasks.sql" || \
-        log "⚠️ تحذير أثناء تنفيذ init_hf_ops_meta_tasks.sql (راجع لاحقًا)"
+  run_step "Basic Worker – processor_basic" \
+    "$WORKERS_DIR/processor_basic.sh"
+
+  run_step "Basic Worker – analyzer_basic" \
+    "$WORKERS_DIR/analyzer_basic.sh"
 else
-    log "⚠️ init_hf_ops_meta_tasks.sql غير موجود (تخطي التهيئة التفصيلية للمهام)"
+  echo "⚠️ تخطي workers: المجلد غير موجود: $WORKERS_DIR"
+  echo
 fi
 
-# 3) تشغيل تقارير المهام والجودة والـ workers
-log
-log "---- تقارير المهام والجودة والـ workers ----"
-run_if_exists "$ROOT/tools/hf_tasks_overview.sh"
-run_if_exists "$ROOT/tools/hf_quality_report.sh"
-run_if_exists "$ROOT/tools/hf_workers_inventory.sh"
-run_if_exists "$ROOT/bin/hf_meta_dump_schemas.sh"
-
-log
-log "============================================================"
-log "انتهى HF RUN META SYSTEMS (بدون حذف أي سجلات قديمة)."
-log "راجع اللوج: $LOG_FILE"
-log "============================================================"
+echo "=================================================="
+echo " انتهاء تشغيل Meta Systems Orchestrator"
+echo "=================================================="
