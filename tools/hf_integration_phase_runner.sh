@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 # HyperFFactory – Integration Phase Runner
-# دورة واحدة تجمع مراحل:
-#  - Bootstrap Phases
-#  - Meta Systems
-#  - Unified Integration
-#  - (اختياري في وضع full) فهرس داخلي + master fix/report
+# يجمع مراحل التكامل/الدمج في دورة واحدة.
+#
+# أوضاع التشغيل:
+#   --mode=light  : خطوات أساسية (meta + unified integration)
+#   --mode=full   : كل المراحل (bootstrap + meta + unified + index)
+#
+# ملاحظات:
+# - لا يخرج من أول خطأ، بل يسجل الخطأ ويكمل باقي الخطوات.
+# - لا يلمس أي شيء خارج /root/HyperFFactory و /opt/smartfriend-suite و /opt/ffactory (قراءة فقط).
 
-set -Eeuo pipefail
+set -Euo pipefail
 
 ROOT="/root/HyperFFactory"
 LOG_DIR="$ROOT/logs"
@@ -23,7 +27,7 @@ log() {
 
 MODE="light"
 
-# قراءة خيارات السطر
+# قراءة خيارات التشغيل
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --mode=*)
@@ -31,7 +35,7 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         *)
-            log "⚠️ خيار غير معروف: $1 (تخطيه)"
+            log "WARN  خيار غير معروف: $1 (تخطيه)"
             shift
             ;;
     esac
@@ -42,70 +46,79 @@ log "== HF Integration Phase Runner (mode=${MODE})"
 log "============================================================"
 log "ROOT : ${ROOT}"
 log "LOG  : ${LOG_FILE}"
+log "============================================================"
 
-cd "$ROOT"
+# خطوة مساعدة لتشغيل أمر مع عنوان
+run_step() {
+    local title="$1"
+    local cmd="$2"
 
-# دالة تنفيذ خطوة مع لوج وفشل غير قاتل
-step() {
-    local title="$1"; shift
-    log "------------------------------------------------------------"
     log "---- START STEP: ${title} ----"
-
-    if [[ $# -eq 0 ]]; then
-        log "⚠️ لا يوجد أمر مُعطى لهذه الخطوة (skip)"
-        return 0
-    fi
-
-    # إن كان أول وسيط مسار سكربت، نتأكد من وجوده وصلاحيته
-    if [[ "$1" == /* || "$1" == ./* || "$1" == */* ]]; then
-        if [[ ! -x "$1" ]]; then
-            log "⚠️ السكربت غير موجود أو غير قابل للتنفيذ: $1 (skip)"
-            return 0
-        fi
-    fi
-
-    if "$@"; then
-        log "✅ DONE STEP:  ${title}"
+    local rc=0
+    # تشغيل الأمر داخل subshell حتى لا يكسّر البيئة العامة
+    bash -c "cd '${ROOT}' && ${cmd}" || rc=$?
+    if [[ "$rc" -eq 0 ]]; then
+        log "DONE STEP:  ${title}"
     else
-        log "⚠️ FAILED STEP: ${title} (مواصلة بقية الخطوات)"
+        log "WARN FAILED STEP: ${title} (rc=${rc} – سيتم الاستمرار)"
     fi
+    log "-----------------------------"
 }
 
 # 0) فحص أساسي للمسار والأدوات
-step "0) فحص أساسي للمسار والأدوات" bash -lc "
-    cd \"$ROOT\" || exit 1
-    echo \"ROOT OK: $(pwd)\"
-    if command -v sqlite3 >/dev/null 2>&1; then
-        echo \"sqlite3: OK\"
-    else
-        echo \"⚠️ sqlite3 غير متوفر\"
+run_step "0) فحص أساسي للمسار والأدوات" '
+    if [[ ! -d "$ROOT" ]]; then
+        echo "ERROR ROOT غير موجود: $ROOT"
+        exit 1
     fi
-    if command -v docker >/dev/null 2>&1; then
-        echo \"docker: OK\"
-    else
-        echo \"⚠️ docker غير متوفر أو غير في PATH\"
-    fi
-"
+    cd "$ROOT"
+    command -v sqlite3 >/dev/null 2>&1 || echo "INFO sqlite3 غير متوفر (بعض المراحل قد تعتمد عليه)"
+'
 
-# 1) Bootstrap Phases
-step "1) HF RUN BOOTSTRAP PHASES" "$ROOT/tools/hf_run_bootstrap_phases.sh"
-
-# 2) Meta Systems (Tasks / Quality / Learning / Errors)
-step "2) HF RUN META SYSTEMS" "$ROOT/tools/hf_run_meta_systems.sh"
-
-# 3) Unified Integration (Suite + ffactory + Telegram snapshot)
-step "3) HF RUN UNIFIED INTEGRATION" "$ROOT/tools/hf_run_unified_integration.sh"
-
-# 4) فهرس داخلي + Master Fix/Report (في وضع full فقط)
+# 1) Bootstrap phases (في وضع full فقط – آمن/Idempotent)
 if [[ "$MODE" == "full" ]]; then
-    step "4) Build Internal Files Index (hf_build_internal_index.sh إن وجد)" \
-         "$ROOT/tools/hf_build_internal_index.sh"
+    if [[ -x "$ROOT/tools/hf_run_bootstrap_phases.sh" ]]; then
+        run_step "1) Bootstrap phases (hf_run_bootstrap_phases.sh)" \
+                 "tools/hf_run_bootstrap_phases.sh"
+    else
+        log "INFO تخطي bootstrap: tools/hf_run_bootstrap_phases.sh غير موجود/غير قابل للتنفيذ."
+    fi
+fi
 
-    step "5) Master Fix & Report (hf_master_fix_and_report.sh إن وجد)" \
-         "$ROOT/tools/hf_master_fix_and_report.sh"
+# 2) Meta systems (tasks / quality / learning / errors)
+if [[ -x "$ROOT/tools/hf_run_meta_systems.sh" ]]; then
+    run_step "2) Meta systems (hf_run_meta_systems.sh)" \
+             "tools/hf_run_meta_systems.sh"
+else
+    log "INFO تخطي meta systems: tools/hf_run_meta_systems.sh غير موجود/غير قابل للتنفيذ."
+fi
+
+# 3) Unified integration (SmartFriend + FFactory snapshot)
+if [[ -x "$ROOT/tools/hf_run_unified_integration.sh" ]]; then
+    run_step "3) Unified integration (hf_run_unified_integration.sh)" \
+             "tools/hf_run_unified_integration.sh"
+elif [[ -x "$ROOT/tools/hf_ops_start_suite_and_ffactory.sh" ]]; then
+    # نسخة أقدم من سكربت التكامل
+    run_step "3) Unified integration (hf_ops_start_suite_and_ffactory.sh)" \
+             "tools/hf_ops_start_suite_and_ffactory.sh"
+else
+    log "INFO تخطي unified integration: لا يوجد hf_run_unified_integration.sh ولا hf_ops_start_suite_and_ffactory.sh."
+fi
+
+# 4) Internal files index (اختياري – لا نفشل الدورة لو غاب)
+if [[ "$MODE" == "full" ]]; then
+    if [[ -x "$ROOT/tools/hf_build_internal_index.sh" ]]; then
+        run_step "4) Internal files index (hf_build_internal_index.sh)" \
+                 "tools/hf_build_internal_index.sh"
+    else
+        log "INFO تخطي index: tools/hf_build_internal_index.sh غير موجود/غير قابل للتنفيذ."
+    fi
 fi
 
 log "============================================================"
-log "== HF Integration Phase Runner finished (mode=${MODE})"
-log "== راجع اللوج: ${LOG_FILE}"
+log "انتهت دورة HF Integration Phase Runner (mode=${MODE})."
+log "راجع اللوج عند الحاجة:"
+log "  ${LOG_FILE}"
 log "============================================================"
+
+exit 0
