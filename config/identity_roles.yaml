@@ -1,0 +1,281 @@
+version: 1
+updated_at: "2025-11-25T00:40:00+03:00"
+
+# خريطة الهوية والأدوار والتكامل في المنظومة
+# الهدف: توضيح "مين مسؤول عن إيه" بدون كسر هويّة أي نظام قائم
+
+systems:
+
+  hyper_ffactory:
+    id: hyper_ffactory
+    name: "HyperFFactory – Orchestrator & Brain"
+    type: "orchestrator"
+    status: "implemented"   # مطبّق فعليًا
+    description: >
+      HyperFFactory هو المخّ المركزي:
+      مسؤول عن التشغيل الموحّد، الميتاداتا، التعلّم، مراقبة الجودة، وربط الأنظمة ببعض.
+    ownership: "root"
+    responsibilities:
+      - "تشغيل/فحص SmartFriend Suite (sf-core, sf-web, sf-memory, sf-health) عبر سكربتات hf_*"
+      - "تشغيل/فحص ffactory / hyper_ffactory2 stacks (عبر Docker) بدون لمس هويتهم الداخلية"
+      - "إدارة قواعد البيانات الميتا: hf_ops_meta, hf_learning, hf_quality, hf_errors, hf_patterns, hyper_meta"
+      - "تسجيل الحوادث والتقدّم والتجارب (experiences, incidents, progress_log, tasks, quality_checks)"
+      - "بناء تقارير فحص وتشغيل موحدة (hf_full_integration_scan, hf_smartfriend_suite_doctor, hf_ops_start_suite_and_ffactory)"
+      - "التكامل مع أنظمة التحليل السلوكي/الزمني كـ مخزن ومعالجة ميتا للأنماط"
+    boundaries:
+      - "لا يحلّ محل SmartFriend كواجهة محادثة مباشرة مع المستخدم"
+      - "لا يغيّر هوية ffactory أو SmartFriend أو أي خدمة قائمة؛ فقط ينسّق تشغيلها ويراقبها"
+      - "لا يتخذ قرارات نهائية عن المستخدم بدون مرور عبر واجهة معتمدة (بوت/لوحة)"
+    data_stores:
+      - "data/meta/hf_ops_meta.db"
+      - "data/meta/hf_learning.db"
+      - "data/meta/hf_quality.db"
+      - "data/meta/hf_errors.db"
+      - "data/meta/hf_patterns.db"
+      - "data/meta/hyper_meta.db"
+    key_scripts:
+      - "tools/hf_smartfriend_suite_doctor.sh"
+      - "tools/hf_ops_start_suite_and_ffactory.sh"
+      - "tools/hf_start_smartfriend_and_ffactory.sh"
+      - "tools/hf_full_integration_scan.sh"
+    integrations:
+      smartfriend_suite:
+        mode: "control_and_health"
+        details:
+          - "يتأكد من حالة خدمات sf-* عبر systemd"
+          - "يفحص /health على بورتات 8383/8214/8215/8390/8220"
+      ffactory_stack:
+        mode: "docker_discovery"
+        details:
+          - "يرصد حاويات ffactory/hyper_ffactory/hyper_ai"
+          - "يستنتج مسارات docker-compose من labels (مثلاً stack/ffactory2/docker-compose.ffactory2.yml)"
+      behavioral_engine:
+        mode: "meta_brain"
+        details:
+          - "يخزن الأنماط والحالات التعلميّة في hf_patterns/hf_learning"
+          - "يوفّر أرضية للتحليل الجنائي والسلوكي (بدون أن يكون هو المنفّذ المباشر فقط)"
+
+  smartfriend_suite:
+    id: smartfriend_suite
+    name: "SmartFriend Suite – Friend & Memory"
+    type: "assistant_platform"
+    status: "implemented"
+    description: >
+      SmartFriend Suite هو صديق النظام ومندوبه الرسمي للتحدث مع المستخدم:
+      يمتلك ذاكرة موحّدة دائمة، APIات أساسية، ولوحة ويب، ويتكامل مع HyperFFactory كجزء من المنظومة.
+    ownership: "user_primary"   # انت صاحب الصلاحية الأعلى
+    responsibilities:
+      - "تقديم واجهة محادثة (Telegram/WebUI) تتعامل مع المستخدم كصديق ومساعد ذكي"
+      - "إدارة الذاكرة الدائمة للمستخدم (smartfriend_unified.db) بدون لمس قواعد HyperFFactory"
+      - "توفير APIs: core, memory, health, web UI"
+      - "استقبال تقارير وأوامر من HyperFFactory وعرضها للمستخدم بصورة بشرية مفهومة"
+      - "تنفيذ بعض المهام نيابة عن المستخدم (استدعاء أنظمة أخرى، تنفيذ أوامر محددة) ضمن الحدود المسموح بها"
+    boundaries:
+      - "لا يحاول إدارة Docker أو تشغيل خدمات النظام خارج نطاق صلاحياته (هذا دور HyperFFactory)"
+      - "لا يغيّر في ملفات HyperFFactory أو ffactory بدون أوامر صريحة من المستخدم أو من أوركستريتور معتمد"
+      - "يحافظ على هوية الذاكرة المستقلة؛ بيانات المستخدم لا تُخلط مع بيانات الأنظمة الأخرى في نفس الجداول"
+    data_stores:
+      - "/opt/smartfriend-suite/var/db/smartfriend_unified.db"
+      - "/opt/smartfriend-suite/var/knowledge/*"
+      - "/opt/smartfriend-suite/var/logs/*"
+    services:
+      core:
+        systemd_unit: "sf-core.service"
+        status: "active"
+        ports:
+          - 8383
+        role: "Core API"
+      memory:
+        systemd_unit: "sf-memory.service"
+        status: "active"
+        ports:
+          - 8214
+        role: "Memory API"
+      health:
+        systemd_unit: "sf-health.service"
+        status: "active"
+        ports:
+          - 8215
+        role: "Health API"
+      web:
+        systemd_unit: "sf-web.service"
+        status: "active"
+        ports:
+          - 8390
+        role: "Web UI"
+      gateway:
+        systemd_unit: "smartfrind-gateway.service"
+        status: "degraded_or_off"
+        ports:
+          - 8220
+        role: "Gateway / Router"
+      telegram_bots:
+        # تقسيم البوتات كما هوية منفصلة، حتى لو بعضها مخطط فقط
+        main_friend:
+          systemd_unit: "sf-bot.service"
+          status: "partial"   # ظاهر كـ activating
+          role: "الصديق الأساسي – يتكلم في كل المواضيع مع المستخدم ويخزن الذاكرة"
+        programmer_bot:
+          systemd_unit: "sf-bot-programmer.service"
+          status: "planned"   # موجودة في المنظومة لكن ليست مفعلة حاليًا
+          role: "بوت المبرمج – حوار برمجي وتقارير وتنفيذ تعديلات"
+        assistant_bot:
+          systemd_unit: "sf-bot-assistant.service"
+          status: "planned"
+          role: "مساعد عام – تنظيم مهام، تذكير، إدارة أعمال يومية"
+        pro_bot:
+          systemd_unit: "sf-bot-pro.service"
+          status: "planned"
+          role: "نسخة متقدمة – تحليلات أعمق وتقارير مهنية"
+        behavior_bot:
+          systemd_unit: "sf-bot-behavior.service"
+          status: "planned"
+          role: "بوت التحليل الجنائي والسلوكي – واجهة تقارير وتحليل علاقات"
+
+  behavioral_forensic_engine:
+    id: behavioral_forensic_engine
+    name: "Behavioral & Forensic Analysis Engine"
+    type: "analytics_engine"
+    status: "partial"   # الهيكل موجود، التنفيذ الكامل لسه
+    description: >
+      هذا هو نظام التحليل الجنائي والسلوكي:
+      هدفه فهم الأنماط الزمنية، العلاقات بين الأحداث، الشذوذ، وسلوك الأنظمة والمستخدم،
+      كمحرك مستقل يستخدم بيانات من HyperFFactory وSmartFriend بدون أن يذيب هويتهما.
+    ownership: "hyper_ffactory_core"
+    responsibilities:
+      - "قراءة بيانات from hf_learning, hf_patterns, hf_ops_meta, hf_quality لتوليد أنماط سلوكية"
+      - "تحليل التايملاين (timeline) وتحديد الفترات الحرجة، الشذوذ، والتغييرات في السلوك"
+      - "توليد تقارير جنائية/سلوكية تُرسل إلى سطر الأوامر أو SmartFriend أو بوت behavior"
+      - "بناء قاعدة أنماط (patterns.json + hf_patterns.db) تتوسع مع الوقت"
+      - "دعم التحقيقات (forensics) في سلوك الأنظمة أو المهام أو حتى استخدام المستخدم نفسه (بموافقته)"
+    boundaries:
+      - "لا يخزّن أسرار أو كلمات مرور؛ يتعامل فقط مع ميتاداتا وأنماط"
+      - "لا يتخذ قرارات تشغيل/إيقاف خدمات مباشرة؛ يكتفي بالتوصية أو التصنيف، وHyperFFactory يتولى التنفيذ إن لزم"
+      - "لا يتدخل في ذاكرة SmartFriend للمستخدم إلا عبر APIات واضحة وبإذن"
+    data_stores:
+      - "data/meta/hf_patterns.db"
+      - "data/meta/hf_learning.db"
+      - "ai/patterns/patterns.json"
+      - "reports/behavioral_*.log"
+    components:
+      timeline_analyzer_app:
+        path: "apps/timeline_analyzer"
+        status: "skeleton"   # تعريف موجود لكن بدون حاويات أو تنفيذ كامل
+        description: "تطبيق تحليلي لقراءة التايملاين وبناء تقارير نمطية"
+      behavior_bot_integration:
+        status: "planned"
+        description: "تكامل مع sf-bot-behavior.service لعرض تقارير جنائية/سلوكية للمستخدم"
+      workers:
+        - "workers/* (planned workers for pattern extraction, anomaly detection, drift detection)"
+
+  ffactory_stack:
+    id: ffactory_stack
+    name: "FFactory / HyperFFactory2 Stack"
+    type: "ai_infra_and_experiments"
+    status: "implemented_experimental"
+    description: >
+      ffactory/hyper_ffactory2 الآن تُعتبر بنية تحتية وخطوط تجريبية (ASR, AI Gateway, Analytics ...)
+      وليست هدفًا نهائيًا للعبة معيّنة. يمكن استخدامها كمصادر ذكاء/بنى تحتية داخل HyperFFactory عند الحاجة.
+    ownership: "hyper_ffactory_orchestrated"
+    responsibilities:
+      - "توفير حاويات AI (hyper_ai_gateway, hyper_smartfriend_knowledge, hyper_smartfriend_ai_bridge)"
+      - "توفير بنية تحليل/لوغيات (ffactory-elk-example-1) يمكن استغلالها لاحقًا"
+      - "خدمة أي مشاريع تجريبية (مثل أنظمة اللعبة السابقة) بدون أن تكون هدف المنظومة الأساسي"
+    boundaries:
+      - "لا يُعتمد عليها كنظام رئيسي لتحليل لعبة معينة في هذه الهوية"
+      - "لا تغيّر في HyperFFactory أو SmartFriend؛ بل تُدار منهما"
+    docker:
+      discovered_containers:
+        - "hyper_ffactory2_analytics"
+        - "hyper_ffactory2_advanced_bridge"
+        - "hyper_smartfriend_knowledge"
+        - "hyper_smartfriend_ai_bridge"
+        - "hyper_legacy_ffactory2_bridge"
+        - "hyper_legacy_ffactory_bridge"
+        - "hyper_ai_gateway"
+        - "ffactory-elk-example-1"
+      compose_source_hint:
+        working_dir: "/root/HyperFFactory/stack/ffactory2"
+        compose_file: "docker-compose.ffactory2.yml"
+      desired_mapping:
+        target_stack_root: "/opt/ffactory/stack"
+        target_compose: "/opt/ffactory/stack/docker-compose.core.yml"
+        note: >
+          هذا مجرد اقتراح توثيقي لمصدر الـ compose الحالي،
+          وليس أمرًا أو تغييرًا تلقائيًا في الملفات.
+
+bots_roles_matrix:
+  # مصفوفة سريعة توضح أدوار البوتات كما هو مطلوب على مستوى الهوية
+  telegram:
+    - name: "SmartFriend Main Friend"
+      systemd_unit: "sf-bot.service"
+      role: "صديق ذكي دائم الذاكرة – يتكلم في كل المواضيع، صديق شخصي للمستخدم"
+      skills:
+        - "حوار عام"
+        - "سؤال/جواب"
+        - "تذكّر المعلومات طويلة المدى"
+        - "طلب تقارير من HyperFFactory وعرضها بشكل مفهوم"
+    - name: "SmartFriend Programmer"
+      systemd_unit: "sf-bot-programmer.service"
+      role: "المبرمج/المهندس – حوار تقني وتنفيذ تعديلات في الملفات/الأكواد عبر منظومة HyperFFactory"
+      skills:
+        - "مناقشة تصميمات الكود"
+        - "اقتراح تعديلات على مشاريع السيرفر"
+        - "تنفيذ سكربتات أو إصلاحات بعد موافقة المستخدم"
+    - name: "SmartFriend General Assistant"
+      systemd_unit: "sf-bot-assistant.service"
+      role: "مساعد شخصي – إدارة مهام وجدولة وتذكير"
+      skills:
+        - "إدارة قائمة مهام"
+        - "تلخيص تقارير"
+        - "التذكير بالمواعيد/المهام"
+    - name: "SmartFriend Pro"
+      systemd_unit: "sf-bot-pro.service"
+      role: "نسخة متقدمة – تحليلات وتقارير عالية المستوى عن الأنظمة"
+      skills:
+        - "تلخيص حالة السيرفر والأنظمة"
+        - "بناء تقارير تنفيذية لصاحب النظام"
+    - name: "Behavior & Forensic Bot"
+      systemd_unit: "sf-bot-behavior.service"
+      role: "بوابة التحليل الجنائي والسلوكي – تقارير علاقات وتحليل نمط سلوك الأنظمة"
+      skills:
+        - "عرض أنماط مكتشفة (patterns) من hf_patterns.db"
+        - "عرض تحليلات تايملاين"
+        - "إظهار شذوذ/حالات خاصة في الأداء أو الاستخدام"
+
+integration_matrix:
+  # خريطة بسيطة لطريقة تدفّق الحوار والمعلومات
+  user_facing_flow:
+    - step: 1
+      from: "User"
+      to: "SmartFriend Bots (Telegram/WebUI)"
+      description: "المستخدم يتكلم مع البوتات (الصديق/المبرمج/السلوكي...) كواجهات بشرية"
+    - step: 2
+      from: "SmartFriend Bots"
+      to: "SmartFriend Core & Memory"
+      description: "الرسائل تتحول لعمليات على قاعدة smartfriend_unified.db وAPIs داخل السيوت"
+    - step: 3
+      from: "SmartFriend Suite"
+      to: "HyperFFactory"
+      description: "إرسال طلبات تشغيل/تقارير أو استعلامات عن حالة الأنظمة ونتائج التحليل"
+    - step: 4
+      from: "HyperFFactory"
+      to: "Behavioral Forensic Engine / FFactory Stack / Other Systems"
+      description: "تنفيذ التحليلات، تشغيل الحاويات، رصد الأنماط، وتخزين الميتاداتا"
+    - step: 5
+      from: "HyperFFactory & Analytics"
+      to: "SmartFriend"
+      description: "إرجاع تقارير ونتائج تحليل جاهزة للعرض بأسلوب مفهوم"
+    - step: 6
+      from: "SmartFriend"
+      to: "User"
+      description: "عرض التقارير/الاقتراحات للمستخدم، مع إبقاء هوية كل نظام واضحة في الرسالة"
+
+planned_extensions:
+  - id: psmart_root
+    description: "ربط أنظمة مثل Psmart (عند ظهورها) بهيكل HyperFFactory كعامل تحليلي مستقل"
+    status: "future"
+  - id: external_tools
+    description: "دمج تحليلات صور/PDF/ملفات أخرى كخدمات يستدعيها HyperFFactory لصالح SmartFriend والأنظمة الأخرى"
+    status: "future"
+

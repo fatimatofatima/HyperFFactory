@@ -52,3 +52,31 @@ CREATE TABLE learning_skill_states (
 );
 CREATE UNIQUE INDEX idx_skill_state_actor_skill
   ON learning_skill_states(actor, skill_key);
+CREATE TABLE learning_events (
+      id            INTEGER PRIMARY KEY AUTOINCREMENT,
+      source        TEXT NOT NULL,    -- hyper, smartfriend, ffactory, game_engine...
+      event_type    TEXT NOT NULL,    -- success, failure, anomaly, pattern, ...
+      reference_id  TEXT,             -- task id / round id / job id...
+      payload       TEXT,             -- JSON أو نص حر
+      created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    , ts TEXT, source_system TEXT);
+CREATE TABLE lessons_learned (
+      id            INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_code   TEXT NOT NULL UNIQUE,
+      title         TEXT NOT NULL,
+      description   TEXT,
+      impact_area   TEXT,             -- risk, performance, accuracy, operations...
+      confidence    REAL DEFAULT 0.0, -- 0–1
+      created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+CREATE TABLE learning_jobs (
+      id            INTEGER PRIMARY KEY AUTOINCREMENT,
+      job_code      TEXT NOT NULL,
+      status        TEXT NOT NULL,    -- PLANNED/RUNNING/DONE/FAILED
+      scope         TEXT NOT NULL,    -- أي نطاق تعلّم (game, ocr, factory...)
+      params        TEXT,             -- JSON
+      result        TEXT,
+      created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );

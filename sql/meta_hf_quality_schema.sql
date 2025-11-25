@@ -26,3 +26,23 @@ CREATE TABLE quality_events (
 );
 CREATE INDEX idx_quality_events_sys_metric
   ON quality_events(system_name, metric_name);
+CREATE TABLE quality_metrics (
+      id           INTEGER PRIMARY KEY AUTOINCREMENT,
+      metric_code  TEXT NOT NULL UNIQUE,
+      name         TEXT NOT NULL,
+      description  TEXT,
+      target_value REAL,
+      unit         TEXT,
+      is_active    INTEGER NOT NULL DEFAULT 1,
+      created_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    , ts TEXT, dimension TEXT);
+CREATE TABLE quality_runs (
+      id           INTEGER PRIMARY KEY AUTOINCREMENT,
+      check_code   TEXT NOT NULL,
+      target       TEXT NOT NULL,    -- ما الذي تم فحصه (db/file/service/stack...)
+      status       TEXT NOT NULL,    -- OK / WARN / FAIL
+      details      TEXT,
+      started_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      finished_at  TEXT
+    );

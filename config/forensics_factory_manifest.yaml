@@ -1,0 +1,62 @@
+id: forensics_factory
+name: "Forensics & Behavioral Intelligence Factory"
+
+# هذا هو جذر نسخة الباك-أب التي تحتوي على ال Stack + Apps
+root: "/root/HyperFFactory/_root_legacy_20251122_023221/SMARTFRIEND_TARGETED_BACKUP"
+
+stacks_root: "stack"
+apps_root: "apps"
+
+groups:
+  forensics:
+    - advanced-forensics
+    - media-forensics
+    - media-forensics-pro
+    - temporal-forensics
+  behavioral:
+    - behavioral-analytics
+    - behavior-analytics
+    - behavioral-patterns
+    - social-intelligence
+    - relationship-intel
+    - relationship-risk
+    - threat-intelligence
+    - risk-analyzer
+  engines:
+    - asr-engine
+    - ocr-engine
+    - vision-engine
+    - face-engine
+    - nlp
+    - language-processor
+    - neural-core
+    - embed-search
+  api_and_orchestration:
+    - api-gateway
+    - orchestrator
+    - frontend-dashboard
+    - real-time-dashboard
+    - report-generator
+    - alert-manager
+  bots:
+    - telegram-bots
+    - bot-admin
+    - bot-nextwin
+
+integration:
+  mode: "external-factory-legacy-snapshot"
+  hyperffactory:
+    # HyperFFactory يتعامل معه كـ Factory مستقل، ليس جزءًا من الشجرة الداخلية
+    data_lake_roots:
+      - "/root/HyperFFactory/data"
+  smartfriend:
+    # التكامل مستقبلاً سيكون عبر بوتات تليجرام و/أو API Gateway فقط
+    via_bots: true
+    via_gateway: true
+
+status: "discovered"
+notes: |
+  هذا المصنع مأخوذ من SMARTFRIEND_TARGETED_BACKUP
+  ويتم التعامل معه كمنصة تحليل جنائي/سلوكي مستقلة بهويتها.
+  لا يتم تغيير مساراته أو أسمائه، فقط تعريفه داخل HyperFFactory
+  واستخدامه كمصدر قدرات (Forensics / Behavior / AI Engines) عند الحاجة.

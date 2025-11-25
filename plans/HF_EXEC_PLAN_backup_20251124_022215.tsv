@@ -1,0 +1,8 @@
+ID	STAGE	CATEGORY	CODE	TITLE	TASK	STATUS	OWNER	LAST_NOTE
+HF-001	Stage1	Foundation	HF-001	تهيئة مشروع HyperFFactory تحت /root/HyperFFactory	تهيئة مشروع HyperFFactory تحت /root/HyperFFactory	DONE	root	تم إنشاء المشروع وتجميع الملفات الأساسية
+HF-002	Stage1	Import	HF-002	استيراد smartfriend-suite والأنظمة القديمة إلى imported/opt/root	استيراد smartfriend-suite والأنظمة القديمة إلى imported/opt/root	DONE	root	الشجرة موجودة تحت imported/ و opt/smartfriend-suite
+HF-003	Stage1	Data	HF-003	توحيد قواعد البيانات في db/ و var/db وربط meta/hyper_meta.db	توحيد قواعد البيانات في db/ و var/db وربط meta/hyper_meta.db	IN_PROGRESS	root	تحت التنفيذ – يحتاج مراجعة جداول identity/knowledge/memory
+HF-004	Stage2	Management	HF-004	تعريف طبقة management داخل hyper_factory/management وربطها بقواعد البيانات	تعريف طبقة management داخل hyper_factory/management وربطها بقواعد البيانات	TODO	root	تحديد الـ Managers والواجهات المطلوبة
+HF-005	Stage2	Stack	HF-005	تنظيف وتثبيت stack/core و stack/ai_support لخدمة HyperFFactory	تنظيف وتثبيت stack/core و stack/ai_support لخدمة HyperFFactory	TODO	root	تثبيت وترتيب الخدمات الأساسية فقط
+HF-006	Stage3	Dashboard	HF-006	بناء لوحات تحكم ومراقبة أعلى logs/ و reports/	بناء لوحات تحكم ومراقبة أعلى logs/ و reports/	TODO	root	لوحة بسيطة للحالة + تقارير أساسية
+HF-007	Stage3	ControlPanel	HF-007	تصميم واجهة أوامر موحدة (Control Panel) لأهم سكربتات الإدارة	تصميم واجهة أوامر موحدة (Control Panel) لأهم سكربتات الإدارة	IN_PROGRESS	root	الربط مع scripts/* و tools/*

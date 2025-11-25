@@ -1,0 +1,36 @@
+# ================================================
+# HyperFFactory – Unified Backup Policy Manifest
+# Generated at: 2025-11-25 06:01:54 +0300
+# This file هو توصيف منطقي للسياسة المتفق عليها،
+# التنفيذ الفعلي (cron/systemd) يتم في مراحل أخرى.
+# ================================================
+
+[ROOTS]
+HYPERFFACTORY_ROOT=/root/HyperFFactory
+HYPERFFACTORY_DB_ROOT=/root/HyperFFactory/var/db
+HYPERFFACTORY_META_DB_ROOT=/root/HyperFFactory/db/meta
+SMARTFRIEND_DB_ROOT=/opt/smartfriend-suite/var/db
+SMARTFRIND_LEGACY_DB_ROOT=/var/lib/smartfrind
+FFACTORY_ROOT=/opt/ffactory
+BACKUP_ROOT=/root/backups
+
+[POLICY]
+# 1) HyperFFactory DBs:
+#    - backup إلى: ${BACKUP_ROOT}/hyper-ffactory/db/ (كل *.db تحت var/db و db/meta)
+#    - تكرار مقترح: يومي + قبل أي تغييرات كبرى.
+
+# 2) SmartFriend Suite DBs:
+#    - backup إلى: ${BACKUP_ROOT}/smartfriend-suite/db/
+#    - يحترم المسار الرسمي الموحد smartfriend_unified.db.
+
+# 3) Legacy smartfrind DBs:
+#    - backup إلى: ${BACKUP_ROOT}/smartfrind-legacy/db/
+#    - للمرجعية فقط (لا تعديل على النظام القديم).
+
+# 4) ffactory:
+#    - backup/ snapshot يتم عبر خدمات ffactory-backup / ffactory-snapshot الموجودة.
+#    - هذا الملف لا يغيّر أي إعداد داخل ffactory; فقط يعرّف سياسة عليا.
+
+[IMPLEMENTATION_NOTES]
+# - Stage 3 يغلق التصميم المنطقي للسياسة.
+# - ربط السياسة فعليًا بـ cron/systemd timers سيتم في Stage 8 (Schedulers).

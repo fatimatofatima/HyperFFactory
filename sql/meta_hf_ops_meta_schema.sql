@@ -6,7 +6,7 @@ CREATE TABLE tasks (
   priority INTEGER,
   created_at TEXT,
   updated_at TEXT
-);
+, code TEXT, title TEXT, stage TEXT, category TEXT, task TEXT, owner TEXT, last_note TEXT, plan_ref TEXT);
 CREATE TABLE sqlite_sequence(name,seq);
 CREATE TABLE quality_checks (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,4 +43,5 @@ CREATE TABLE progress_log (
   status TEXT,
   details TEXT,
   ts TEXT
-);
+, actor TEXT, scope TEXT);
+CREATE UNIQUE INDEX idx_tasks_plan_ref_unique ON tasks(plan_ref);
