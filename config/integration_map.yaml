@@ -1,0 +1,31 @@
+# HyperFFactory Integration Map
+# -----------------------------
+# يربط أسماء الخدمات داخل HyperFFactory بالخدمات الحقيقية
+# في smartfriend-suite و ffactory
+
+version: 1
+
+smartfriend_suite:
+  memory_api:
+    base_url: "http://127.0.0.1:8214"
+    health_path: "/health"
+  web_ui:
+    base_url: "http://127.0.0.1:8390"
+    health_path: "/health"
+  health_api:
+    base_url: "http://127.0.0.1:8215"
+    health_path: "/health"
+
+ffactory_stack:
+  core_api:
+    base_url: "http://127.0.0.1:8383"
+    health_path: "/health"
+  ai_gateway:
+    base_url: "http://127.0.0.1:9000"
+    health_path: "/health"
+
+hyperfactory:
+  status_snapshot:
+    script: "tools/hf_status_snapshot.sh"
+  dashboard_cli:
+    script: "tools/hf_dashboard_cli.sh"

@@ -1,148 +1,205 @@
-# HyperFFactory – حالة التنفيذ والتكامل (Execution Status)
+# HyperFFactory – Plan Status
 
-> هذا الملف هو المرجع الرسمي لحالة HyperFFactory على السيرفر:
-> - لا يصف SmartFriend Suite نفسها، بل وضع التكامل معها.
-> - يركّز على: الصحة، العمال، خط الإنتاج، الميتا، والحوكمة.
+هذا الملف يلخص حالة تنفيذ خريطة العمل الموحدة للمصنع الموحّد HyperFFactory
+ويستخدم نفس الرموز المتفق عليها:
+- ✅ مكتمل
+- 🟡 قيد التنفيذ
+- ⏭ خطوة قادمة / مخططة
 
-## 1) ملخص تنفيذي
-
-- مستوى جاهزية طبقة **الصحة + العمال + خط الإنتاج + الميتا**: حوالي **80–90% مكتمل**.
-- مستوى جاهزية **الحوكمة والتخطيط الموحد (Unified Plan / Config / Backups / Schedulers)**: حوالي **20–30% مكتمل**.
-- آخر نقطة مرجعية عملية:
-  - `status/STATUS_HYPER_INTEGRATION.md`  
-  - Timestamp آخر تكامل: مذكور داخل الملف.
+> المصدر التنفيذي الحقيقي هو ما يحدث داخل /root/HyperFFactory (Tasks / Quality / Errors / Registry)،  
+> GitHub والوثائق مرجع تصميمي فقط.
 
 ---
 
-## 2) المراحل (Phases)
+## 1) طبقة الهيكل الموحّد Unified Tree & Meta Layer
 
-### Phase 1 – Core Integration & Health (البنية التشغيلية الأساسية)
+### 1.1 الجذر والسياسة
 
-**الهدف:**  
-امتلاك مركز صحّة وتشغيل وتكامل أساسي ثابت لـ HyperFFactory بدون لمس ffactory أو SmartFriend Suite نفسها.
+- ✅ تثبيت الجذر الرسمي للمصنع:
+  - ROOT = `/root/HyperFFactory`
+- ✅ اعتماد سياسة Unified Tree Policy:
+  - ممنوع إنشاء شجرات أو venv أو خدمات خارج الجذر إلا لنقاط التكامل المصرّح بها:
+    - `/opt/smartfriend-suite`
+    - `/opt/ffactory`
+  - ممنوع symlinks/hardlinks هاربة من داخل HyperFFactory إلى `/`, `/opt`, `/usr`, `/var`.
+- ✅ تفعيل حراسة الشجرة:
+  - `bin/hf_assert_unified_tree.sh`
+  - `bin/hf_guard.sh`
+  - `bin/hf_guard_plus_dbmgr.sh`
 
-| ID   | البند                                                | الحالة      | ملاحظات عملية                                                                 |
-|------|------------------------------------------------------|------------|-------------------------------------------------------------------------------|
-| P1-1 | توحيد فحص الصحة SmartFriend + FFactory               | DONE       | عبر `bin/hf_health_all.sh` و `bin/hf_smart_integration_cycle.sh`.            |
-| P1-2 | مركز حالة العمال والجودة/الأخطاء/التعلّم/المهام     | DONE       | `bin/hf_workers_status.sh` + `hf_quality.db`, `hf_errors.db`, `hf_learning.db`, `hf_tasks.db`, `hf_changes.db`. |
-| P1-3 | خط إنتاج بيانات أساسي (ingestor → reporter)         | DONE       | `bin/hf_run_basic_pipeline.sh` + العمال الأربعة؛ يعمل حتى لو inbox فارغ.     |
-| P1-4 | طبقة ميتا للمهام والتقدم                             | DONE       | `hf_ops_meta.db` (جداول `tasks`, `progress_log`) مربوطة مع `hf_progress_exec.sh`. |
-| P1-5 | نقطة دخول موحّدة لدورات التكامل                     | DONE       | `bin/hf_smart_integration_cycle.sh` (4 خطوات: Health + Workers + Pipeline + Summary). |
-| P1-6 | تقرير تكامل نصي موحّد                                | DONE       | تقارير `reports/hf_smart_integration_cycle_*.log` + ملخص DBs في خطوة Summary. |
+### 1.2 طبقة الميتا وقواعد البيانات
 
-**حالة Phase 1:**  
-✅ مكتملة وظيفيًا (MVP قوي) وقابلة للتشغيل من السيرفر ومن الريبو.
-
----
-
-### Phase 2 – Governance & Unified Plan (الحوكمة والخطة الموحدة)
-
-**الهدف:**  
-تثبيت “العقل الإداري” لـ HyperFFactory: من هو صاحب الحقيقة، وكيف تُدار الخطط، وكيف تُوثّق الحالة.
-
-| ID   | البند                                                                   | الحالة      | ملاحظات عملية                                                                 |
-|------|-------------------------------------------------------------------------|------------|-------------------------------------------------------------------------------|
-| P2-1 | تعريف رسمي لدور HyperFFactory مقابل SmartFriend Suite                  | PLANNED    | HyperFFactory = مصنع بيانات/تحليل؛ SmartFriend = مصدر الهوية/الذاكرة.       |
-| P2-2 | توحيد ملف خطة واحد (هذا الملف + HF_EXEC_PLAN.tsv + أدوات العرض)       | IN_PROGRESS| `plan_status.md` + `plans/HF_EXEC_PLAN.tsv` + `tools/hf_show_plan.sh`.       |
-| P2-3 | ربط بعض البنود بـ `hf_ops_meta.tasks` (actor / scope)                  | PLANNED    | مثل ربط `hyper_brain_controller`، `hyper_guard`، إلخ.                         |
-| P2-4 | سياسة Backup رسمية موثَّقة لـ HyperFFactory                            | PLANNED    | استخدام أدوات مثل: `tools/check_hf_backups.sh`, `tools/hf_backups_quick_report.sh`. |
-| P2-5 | احترام فصل الملكية: عدم لمس `/opt/ffactory` و`/opt/smartfriend-suite`  | ACTIVE     | سياسة ثابتة، مذكورة هنا كجزء من الحوكمة.                                     |
-| P2-6 | تعريف واضح لملفات “الداتا الثقيلة / snapshots / imported`”            | PLANNED    | فقط على السيرفر؛ لا تُضمّن في Git إلا بقرار صريح.                            |
-| P2-7 | ربط خطّة التنفيذ مع سكربتات الإدارة (hf_update_plan_and_repo.sh, إلخ) | IN_PROGRESS| السكربتات موجودة تحت `scripts/` وتحتاج توثيقًا ومواءمة مع هذه الخطة.        |
-
-**حالة Phase 2:**  
-🔄 قيد البناء؛ هذا الملف نفسه هو أول خطوة صريحة في توثيق الحوكمة.
+- ✅ إنشاء وتشغيل قواعد الميتا الأساسية تحت `db/meta/`:
+  - `hf_tasks.db`      ← نظام المهام.
+  - `hf_errors.db`     ← نظام الحوادث والأخطاء.
+  - `hf_quality.db`    ← نظام فحوص الجودة.
+  - `hf_registry.db`   ← Registry للسكربتات والأنظمة.
+  - `hf_files_index.db`← فهرس الشجرة.
+  - `hf_db_registry.db`← Registry لقواعد البيانات.
+  - قواعد أخرى: `hf_actors.db`, `hf_changes.db`, `hyper_meta.db`, ...
+- ✅ فحص التكامل عبر:
+  - `tools/hf_db_manager_run.sh`
+  - `tools/hf_db_registry_status.sh`
+  - PRAGMA integrity_check = ok للقواعد المفحوصة.
 
 ---
 
-### Phase 3 – Advanced Infrastructure (Data Lakehouse / Factories / Stack)
+## 2) نظام المهام Tasks System
 
-**الهدف:**  
-الوصول للبنية المتقدمة التي ذكرتها سابقًا (Lakehouse, Factories, Stack, Agents, Systems).
+- ✅ إنشاء hf_tasks.db وربطه بالهيكل:
+  - جدول tasks يحتوي على (id, actor, scope, status, priority, title, details, created_at, updated_at ...).
+- ✅ Seed لمهام إدارة قواعد الميتا (DB Manager):
+  - `db_manager:meta_dbs:*` (check_schema, integrity_check, vacuum, size_report, backup_policy, scan_meta_dbs, rebuild_registry, rebuild_index).
+  - `db_manager:registry:*` (scan, validate_index, rebuild_index, orphans_cleanup).
+- ✅ ربط المهام بالـ Guard و db_manager:
+  - `tools/hf_tasks_seed_db_manager.sh`
+  - `tools/hf_tasks_feedback_from_quality_and_errors.sh`
+  - `tools/hf_tasks_sync_plan.sh`
 
-#### 3.1 البنية التحتية المتقدمة (Infrastructure)
+### 2.1 حالة المهام الحالية (ملخص منطقي)
 
-من قائمة النواقص التي ذكرتها:
-
-- data_lakehouse/ (كامل - Raw → Cleansed → Semantic → Serving)
-- factories/ (مصنع النماذج - مصنع المعرفة - مصنع الجودة)
-- stack/ (GPU cluster - Model serving - Vector DB)
-
-حالة التنفيذ داخل HyperFFactory حتى الآن:
-
-| ID    | العنصر                  | المسار المستهدف           | الحالة      | ملاحظات |
-|-------|-------------------------|---------------------------|------------|---------|
-| INF-1 | data_lakehouse/        | `data_lakehouse/`         | NOT_STARTED| لم تُنشأ بنية Lakehouse مستقلة بعد. |
-| INF-2 | factories/             | `factories/`              | NOT_STARTED| لم يُبنَ مصنع نماذج/معرفة موحّد بعد. |
-| INF-3 | stack/                 | `stack/`                  | PARTIAL    | توجد بعض ملفات stack/ لـ ffactory والـ AI stack، لكن ليست Lakehouse/Factories موحّدة. |
-
-#### 3.2 العوامل المتقدمة (Agents)
-
-- agents/debug_expert/
-- agents/system_architect/
-- agents/technical_coach/
-- agents/knowledge_spider/
-
-حاليًا:
-
-| ID     | العامل              | الحالة      | ملاحظات |
-|--------|---------------------|------------|---------|
-| AG-1   | debug_expert        | NOT_STARTED| البنية المنطقية موجودة في الخطة، لم يُنفّذ كعامل مستقل. |
-| AG-2   | system_architect    | NOT_STARTED| – |
-| AG-3   | technical_coach     | NOT_STARTED| – |
-| AG-4   | knowledge_spider    | PARTIAL    | توجد أدوات جمع معرفة (SmartFriend spider)، لكن لم تُربَط كـ Agent ضمن HyperFFactory. |
-
-#### 3.3 الأنظمة المتقدمة (Systems)
-
-- نظام الأنماط (Patterns) - التعلم من الأخطاء  
-- نظام الجودة (Quality) - التقييم التلقائي  
-- نظام الذاكرة الزمنية - تطور المستخدمين  
-- نظام التكامل - ربط مع أنظمة خارجية  
-
-حالة هذه الأنظمة داخل HyperFFactory:
-
-| ID     | النظام                       | الحالة      | ملاحظات |
-|--------|------------------------------|------------|---------|
-| SYS-1  | نظام الأنماط (Patterns)     | PARTIAL    | hf_learning.db يجمع أحداث تعلّم، لكن لا يوجد Engine أنماط متكامل بعد. |
-| SYS-2  | نظام الجودة (Quality)       | PARTIAL    | توجد سجلات جودة في `hf_quality.db`، تحتاج Engine + سياسات. |
-| SYS-3  | الذاكرة الزمنية             | NOT_STARTED| لا يوجد نظام زمني للمستخدمين/الكيانات حتى الآن ضمن HyperFFactory. |
-| SYS-4  | نظام التكامل مع أنظمة خارجية| PARTIAL    | التكامل مع SmartFriend Suite و ffactory موجود على مستوى الصحة فقط. |
+- عدد المهام الكلي (تقريبي وفقًا للحالة الأخيرة): ~28
+  - DONE    : ≈ 11–13
+  - PLANNED : الباقي (مهام جارية/مخططة)
+  - RUNNING : 0 حاليًا (تنفيذ تتابعي من السكربتات)
 
 ---
 
-## 4) ربط الخطة مع الواقع التشغيلي
+## 3) نظام الجودة Quality System
 
-### 4.1 مصادر الحالة العملية (Ground Truth)
-
-- قواعد بيانات الميتا:
-  - `/root/HyperFFactory/db/meta/hf_ops_meta.db`
-  - `/root/HyperFFactory/db/meta/hf_quality.db`
-  - `/root/HyperFFactory/db/meta/hf_errors.db`
-  - `/root/HyperFFactory/db/meta/hf_learning.db`
-  - `/root/HyperFFactory/db/meta/hf_tasks.db`
-  - `/root/HyperFFactory/db/meta/hf_changes.db`
-- التقارير النصية:
-  - `reports/hf_smart_integration_cycle_*.log`
-  - `reports/hf_health_report_*.log`
-  - `reports/hf_basic_pipeline_*.log`
-  - `reports/hf_progress_*.log`
-
-### 4.2 سياسة التعامل مع الملفات الثقيلة / imported / snapshots
-
-- كل المسارات تحت:
-  - `imported/`
-  - `snapshot/`
-  - `var/lib/docker/overlay2/…`
-  - `var/lib/smartfrind/sources/repos/…`
-  - نسخ SmartFriend Suite (`imported/opt/smartfriend-suite/...`)
-- تُعتبر **بيانات تشغيل/أرشيف** على السيرفر، وليست جزءًا من الكود المصدري لـ HyperFFactory.
-- لا تُضاف إلى Git إلا بقرار صريح ضمن خطة منفصلة للأرشفة.
+- ✅ إنشاء hf_quality.db وربطه بالهيكل.
+- ✅ استخدام فحوص الجودة لتغذية:
+  - Dashboard / Snapshot
+  - Tasks Feedback (تحويل نتائج بعض الفحوص إلى مهام PLANNED أو INCIDENT TASKS).
+- ✅ سكربتات ذات صلة:
+  - `tools/hf_quality_stage6.sh`
+  - `tools/hf_quality_stage6_fixed.sh`
+  - تقارير الجودة تظهر في `reports/` وتنعكس في `hf_status_snapshot.sh`.
 
 ---
 
-## 5) ما بعد هذا الملف
+## 4) نظام الأخطاء والحوادث Errors & Incidents
 
-- هذا الملف يثبّت وضع التنفيذ الحالي.
-- أي تطوّر في HyperFFactory يجب أن يمر عبر:
-  1. تحديث هذا الملف (`plan_status.md`) أو `plans/HF_EXEC_PLAN.tsv`.
-  2. توثيق التغييرات عبر تقارير `hf_smart_integration_cycle.sh` و `hf_repo_update.sh`.
+- ✅ إنشاء hf_errors.db وربطه بالـ Guard وباقي الأنظمة.
+- ✅ تخزين الحوادث مع:
+  - id, actor, error_type, error_message, severity, ts, context
+- ✅ تحويل الأخطاء الحرجة إلى مهام:
+  - `incident:*` عبر `tools/hf_tasks_feedback_from_quality_and_errors.sh`
+- ✅ أمثلة على مهام Incident:
+  - `hyper_guard | incident:service_check | PLANNED | HIGH`
+  - `hf_health_all | incident:smartfriend_services | PLANNED | HIGH`
+
+---
+
+## 5) Registry / Index / Dashboard
+
+### 5.1 Registry Systems
+
+- ✅ `hf_db_registry.db`:
+  - يحتوي جدول meta_dbs مع قائمة كاملة بقواعد الميتا (hf_tasks, hf_errors, hf_quality, hf_actors, hf_changes, hyper_meta, ...).
+- ✅ `hf_registry.db`:
+  - جداول: db_registry, scripts_registry, systems_registry
+  - يستخدم لتسجيل السكربتات والأنظمة تحت HyperFFactory.
+
+### 5.2 Files Index
+
+- ✅ `hf_files_index.db`:
+  - جدول files_index مع الحقول: path, name, parent, type, size_bytes, mtime_ts, ...
+  - يتم بناؤه/إعادة بنائه عبر عمليات db_manager (op_rebuild_index).
+
+### 5.3 Dashboard / Status Snapshot
+
+- ✅ `tools/hf_status_snapshot.sh`:
+  - يعرض:
+    - Tasks Summary
+    - Errors Summary
+    - Quality Summary
+    - Registry Snapshot
+    - Docker Snapshot
+- ✅ `tools/hf_dashboard_cli.sh`:
+  - لوحة CLI فوق الـ Snapshot + استعلامات إضافية من hf_tasks.db.
+  - توفر رؤية تشغيلية متناسقة للمصنع الموحّد.
+
+---
+
+## 6) أنظمة Experience / Skills / Training
+
+هذه هي الطبقة التي أشرتَ أنها **غير مكتملة بعد**:
+
+### 6.1 الحالة الحالية
+
+- 🟡 الهيكل الأساسي موجود:
+  - `hf_actors.db` موجود بجداول:
+    - hf_actors, hf_actor_tags, hf_actor_links, sqlite_sequence
+  - `hf_learning.db` مذكور في المهام (hyper_learning_manager) ولكن لم يُستكمل كتطبيق إنتاجي.
+- ⏭ لا يوجد حتى الآن نظام كامل لمقاييس الخبرة:
+  - runs_total, runs_success, runs_failed
+  - success_rate, experience_level (NOVICE/STABLE/EXPERT)
+  - training_sessions، experiments، learning_runs، ...
+
+### 6.2 المهام المزروعة لتكميل نظام الخبرة (من hf_tasks_seed_experience_and_integration.sh)
+
+- ⏭ `hyper_experience_manager | experience_system | PLANNED`:
+  1. تصميم مخطط قاعدة بيانات الخبرة والمهارات  
+     - تعريف الجداول والمقاييس لكل Actor.
+  2. ربط نظام الخبرة بطبقة المهام والأخطاء والجودة  
+     - قراءة نتائج المهام وفحوص الجودة لتحديث counters و success_rate.
+  3. إنشاء وظائف تجميع دورية لمقاييس الخبرة  
+     - Jobs أسبوعية/يومية لتحديث مؤشرات الخبرة.
+  4. إضافة عرض Dashboard لمستويات الخبرة والمهارات  
+     - توسيع hf_dashboard_cli.sh لعرض مؤشرات الخبرة.
+
+---
+
+## 7) تكامل HyperFFactory مع SmartFriend Suite / FFactory
+
+### 7.1 الحالة الحالية
+
+- ✅ على مستوى الملفات:
+  - HyperFFactory لا يعبث ببنية:
+    - `/opt/smartfriend-suite`
+    - `/opt/ffactory`
+  - يعتبرهما أنظمة متكاملة مستقلة (Stack / Suite) ويتم التعامل معهما كنقاط تكامل فقط.
+- ✅ على مستوى الحاويات Docker:
+  - حاويات تكامل وتشغيل AI/Workers ظاهرة في snapshot:
+    - `hyper_ai_gateway`
+    - `hyper_smartfriend_ai_bridge`
+    - `hyper_ffactory2_analytics`
+    - `hyper_ffactory2_advanced_bridge`
+    - `hyper_legacy_ffactory_bridge`
+    - `hyper_legacy_ffactory2_bridge`
+    - وغيرها ضمن ffactory stack.
+- 🟡 مستوى التكامل الفعلي عبر HyperFFactory:
+  - توجد مهام Incident و Health موجهة لـ smartfriend_services و ffactory، لكن
+  - لا توجد بعد طبقة API/Adapters موحّدة تحت HyperFFactory تتعامل رسميًا مع:
+    - Memory API / Health API / Web Gateway
+    - AI Gateway / ASR / Ollama / Tools
+
+### 7.2 المهام المزروعة لتكميل التكامل (من hf_tasks_seed_experience_and_integration.sh)
+
+- ⏭ `hyper_integration_manager | apis_integration | PLANNED`:
+  1. حصر واجهات SmartFriend و FFactory ووضع خريطة تكامل  
+     - جمع endpoints للذاكرة والصحة والبوابات و AI Stack وتوثيقها في خريطة موحّدة.
+  2. تصميم طبقة جسور Adapters داخل HyperFFactory  
+     - تعريف abstraction لاستدعاء SmartFriend/FFactory من سكربتات HyperFFactory.
+  3. تنفيذ جسور API للـ Health والذاكرة و AI  
+     - سكربتات/خدمات صغيرة تبني Health Checks / AI Calls وتغذي Tasks/Quality/Errors.
+  4. توثيق قناة التكامل الموحدة  
+     - تحديث README/تصميم HyperFFactory لتوضيح مسار البيانات بين الأنظمة.
+
+---
+
+## 8) حالة التنفيذ الإجمالية
+
+- ✅ مرحلة التوحيد الأساسي:
+  - ROOT + Unified Tree Policy + Meta DBs + Guard + Registry/Index
+- ✅ مرحلة الدمج التشغيلي عبر Tasks/Quality/Errors/Registry:
+  - الأنظمة الأربعة تعمل فوق الهيكل الموحّد، وتسجّل التقدّم والحوادث والجودة.
+- 🟡 مرحلة نظام الخبرة والمهارات (Experience / Skills / Training):
+  - تم تعريف المهام في hf_tasks.db، التنفيذ التفصيلي لم يبدأ بعد.
+- 🟡 مرحلة تكامل الـ APIs مع SmartFriend/FFactory:
+  - الحاويات والجسور موجودة، والمهام التصميمية مزروعة، لكن طبقة Adapters الموحدة لم تُنفّذ بعد.
+- ⏭ مراحل لاحقة:
+  - لوحات تحكم متقدمة (Telegram / Web).
+  - توسيع Learning Layer لتسجيل تجارب وتجارب محاكاة (experiments).
+  - تحسين KPIs وربطها بالـ Experience & Quality Systems.
